@@ -1,0 +1,159 @@
+{
+  "AddManagedAccountController_updateManagedAccountToIBAN" : {
+    "id" : "AddManagedAccountController_updateManagedAccountToIBAN",
+    "crudOperationId" : null,
+    "service" : "AddManagedAccountService",
+    "controller" : "AddManagedAccountController",
+    "operationType" : null,
+    "type" : "com.create_account.managedaccountmodel.ManagedAccountModel",
+    "wmServiceOperationInfo" : {
+      "name" : "updateManagedAccountToIBAN",
+      "methodType" : "put",
+      "relativePath" : "/addManagedAccount/managedAccountToIBAN",
+      "directPath" : null,
+      "httpMethod" : "put",
+      "parameters" : [ {
+        "name" : "hostName",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "java.lang.String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "authorization",
+        "parameterType" : "header",
+        "required" : false,
+        "type" : "java.lang.String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "managedAccountId",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "java.lang.String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "ManagedAccountModel",
+        "parameterType" : "body",
+        "required" : true,
+        "type" : "com.create_account.managedaccountmodel.ManagedAccountModel",
+        "readOnly" : false,
+        "contentType" : null
+      } ],
+      "definitions" : {
+        "com.create_account.managedaccountmodel.ManagedAccountModel" : [ {
+          "name" : "name",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.String",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "currency",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.String",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "stateBlockedReason",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.String",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "id",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.String",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "ibanNumber",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.String",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "stateDestroyedReason",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.String",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "state",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.String",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "balance",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.String",
+          "readOnly" : false,
+          "contentType" : null
+        } ]
+      },
+      "produces" : null,
+      "consumes" : null,
+      "proxySettings" : {
+        "web" : true,
+        "mobile" : true,
+        "withCredentials" : false
+      },
+      "securityDefinitions" : [ ]
+    }
+  },
+  "AddManagedAccountController_createManagedAccount" : {
+    "id" : "AddManagedAccountController_createManagedAccount",
+    "crudOperationId" : null,
+    "service" : "AddManagedAccountService",
+    "controller" : "AddManagedAccountController",
+    "operationType" : null,
+    "type" : "com.create_account.managedaccountmodel.ManagedAccountModel",
+    "wmServiceOperationInfo" : {
+      "name" : "createManagedAccount",
+      "methodType" : "post",
+      "relativePath" : "/addManagedAccount/managedAccount",
+      "directPath" : null,
+      "httpMethod" : "post",
+      "parameters" : [ {
+        "name" : "hostName",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "java.lang.String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "authorization",
+        "parameterType" : "header",
+        "required" : false,
+        "type" : "java.lang.String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "Map",
+        "parameterType" : "body",
+        "required" : true,
+        "type" : "java.util.Map",
+        "readOnly" : false,
+        "contentType" : null
+      } ],
+      "definitions" : { },
+      "produces" : null,
+      "consumes" : null,
+      "proxySettings" : {
+        "web" : true,
+        "mobile" : true,
+        "withCredentials" : false
+      },
+      "securityDefinitions" : [ ]
+    }
+  }
+}

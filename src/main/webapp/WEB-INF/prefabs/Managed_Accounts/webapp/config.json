@@ -1,0 +1,111 @@
+{
+  "displayName" : "Managed Accounts",
+  "group" : "",
+  "iconUrl" : "/resources/images/imagelists/icon-manage-ledgers.svg",
+  "resources" : {
+    "styles" : [ "/pages/Main/Main.css" ],
+    "scripts" : [ ]
+  },
+  "properties" : {
+    "enduserid" : {
+      "type" : "string",
+      "displayName" : "Enduser Id",
+      "description" : "Id value to fetch ledgers of the user",
+      "bindable" : "in-bound",
+      "widget" : "string",
+      "show" : true,
+      "showAt" : "",
+      "disabled" : false
+    },
+    "selectedledgerid" : {
+      "type" : "string",
+      "displayName" : "Selected Ledger Id",
+      "description" : "id of selected ledger",
+      "bindable" : "out-bound",
+      "value" : "bind:Widgets.list1.selecteditem.id",
+      "widget" : "string",
+      "show" : false,
+      "showAt" : "",
+      "disabled" : true
+    },
+    "servicehost" : {
+      "type" : "string",
+      "displayName" : "Servicehost",
+      "description" : "Service to invoke",
+      "bindable" : "in-bound",
+      "value" : "APIVendor(W)",
+      "widget" : "list",
+      "options" : [ "APIVendor(R)", "APIVendor(W)", "APIVendor(B)" ],
+      "show" : true,
+      "showAt" : "",
+      "disabled" : false
+    },
+    "authtoken" : {
+      "type" : "string",
+      "displayName" : "Authtoken",
+      "description" : "Authorisation needed for root user",
+      "bindable" : "in-bound",
+      "widget" : "string",
+      "show" : true,
+      "showAt" : "",
+      "disabled" : false
+    },
+    "accountprofileid" : {
+      "type" : "string",
+      "displayName" : "Accountprofileid",
+      "description" : "Account Profile Id",
+      "bindable" : "out-bound",
+      "value" : "bind:Variables.JS_getManagedAccounts.dataSet[0].profileId",
+      "widget" : "string",
+      "show" : false,
+      "showAt" : "",
+      "disabled" : true
+    },
+    "itemsperpage" : {
+      "type" : "number",
+      "displayName" : "Itemsperpage",
+      "description" : "Number of accounts to be displayed",
+      "bindable" : "in-bound",
+      "widget" : "string",
+      "show" : true,
+      "showAt" : "",
+      "disabled" : false
+    },
+    "accounttype" : {
+      "type" : "string",
+      "displayName" : "Accounttype",
+      "description" : "Accounttype",
+      "bindable" : "in-bound",
+      "value" : "bind:'All'",
+      "widget" : "string",
+      "show" : true,
+      "showAt" : "",
+      "disabled" : false
+    }
+  },
+  "events" : {
+    "onLedgerselect" : {
+      "description" : "Callback action which will be triggered on selection of ledger",
+      "eventData" : "",
+      "displayName" : "Ledger Select"
+    },
+    "onTransferfundsclick" : {
+      "description" : "Callback action which will be triggered on tranfer funds button click",
+      "eventData" : "",
+      "displayName" : "Transfer Funds Click"
+    },
+    "onAccountscount" : {
+      "description" : "to get count of accounts",
+      "eventData" : "",
+      "displayName" : "Accountscount"
+    }
+  },
+  "methods" : {
+    "refreshLedgers" : {
+      "description" : "on adding a ledger, invoke this method to view latest ledger info in the list",
+      "parameters" : [ ],
+      "returnType" : "void",
+      "example" : ""
+    }
+  }
+}

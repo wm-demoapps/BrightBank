@@ -1,0 +1,76 @@
+{
+  "TransactionListController_getAccountTransactions" : {
+    "id" : "TransactionListController_getAccountTransactions",
+    "crudOperationId" : null,
+    "service" : "TransactionListService",
+    "controller" : "TransactionListController",
+    "operationType" : null,
+    "type" : "array",
+    "wmServiceOperationInfo" : {
+      "name" : "getAccountTransactions",
+      "methodType" : "get",
+      "relativePath" : "/transactionList/accountTransactions",
+      "directPath" : null,
+      "httpMethod" : "get",
+      "parameters" : [ {
+        "name" : "hostName",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "java.lang.String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "authorization",
+        "parameterType" : "header",
+        "required" : false,
+        "type" : "java.lang.String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "transactionsType",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "java.lang.String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "accountOrCardId",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "java.lang.String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "fromDate",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "java.lang.String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "toTimestamp",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "java.lang.String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "itemsPerPage",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "java.lang.Integer",
+        "readOnly" : false,
+        "contentType" : null
+      } ],
+      "definitions" : { },
+      "produces" : null,
+      "consumes" : null,
+      "proxySettings" : {
+        "web" : true,
+        "mobile" : true,
+        "withCredentials" : false
+      },
+      "securityDefinitions" : [ ]
+    }
+  }
+}

@@ -1,0 +1,128 @@
+{
+  "basePath" : "${rest.wvrCardPurchaseAtMerchant.basepath}",
+  "paths" : {
+    "/api/cards/{cardId}/purchase" : {
+      "post" : {
+        "x-WM-METHOD_NAME" : "invoke",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "produces" : [ "application/json" ],
+        "operationId" : "wvrCardPurchaseAtMerchant_invoke",
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "$ref" : "#/definitions/RootResponse"
+            },
+            "description" : "Success"
+          }
+        },
+        "parameters" : [ {
+          "x-WM-VARIABLE_KEY" : "",
+          "x-WM-EDITABLE" : true,
+          "in" : "header",
+          "name" : "Content-Type",
+          "format" : "string",
+          "description" : "Content-Type",
+          "type" : "string",
+          "items" : {
+            "type" : "string"
+          },
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.String",
+          "required" : false,
+          "x-WM-VARIABLE_TYPE" : "PROMPT"
+        }, {
+          "x-WM-VARIABLE_KEY" : "",
+          "x-WM-EDITABLE" : true,
+          "in" : "header",
+          "name" : "programme-key",
+          "format" : "string",
+          "description" : "programme-key",
+          "type" : "string",
+          "items" : {
+            "type" : "string"
+          },
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.String",
+          "required" : false,
+          "x-WM-VARIABLE_TYPE" : "PROMPT"
+        }, {
+          "schema" : {
+            "$ref" : "#/definitions/RootRequest"
+          },
+          "x-WM-VARIABLE_KEY" : "",
+          "in" : "body",
+          "name" : "RequestBody",
+          "description" : "RequestBody",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Object",
+          "required" : false,
+          "x-WM-VARIABLE_TYPE" : "PROMPT"
+        }, {
+          "x-WM-VARIABLE_KEY" : "",
+          "in" : "path",
+          "name" : "cardId",
+          "format" : "string",
+          "type" : "string",
+          "required" : true,
+          "x-WM-VARIABLE_TYPE" : "PROMPT"
+        } ],
+        "tags" : [ "wvrCardPurchaseAtMerchant" ],
+        "consumes" : [ "application/json" ]
+      },
+      "x-WM-BASE_PATH" : "/api/cards/{cardId}/purchase",
+      "x-WM-TAG" : "wvrCardPurchaseAtMerchant",
+      "x-WM-RELATIVE_PATH" : "",
+      "x-WM-COMPLETE_PATH" : "${rest.wvrCardPurchaseAtMerchant.scheme}://${rest.wvrCardPurchaseAtMerchant.host}${rest.wvrCardPurchaseAtMerchant.basepath}/api/cards/{cardId}/purchase"
+    }
+  },
+  "host" : "${rest.wvrCardPurchaseAtMerchant.host}",
+  "schemes" : [ "${rest.wvrCardPurchaseAtMerchant.scheme}" ],
+  "definitions" : {
+    "Request.transactionAmount" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "wvrCardPurchaseAtMerchant.Request.transactionAmount",
+      "x-WM-TAGS" : [ "wvrCardPurchaseAtMerchant" ],
+      "required" : [ "amount", "currency" ],
+      "properties" : {
+        "amount" : {
+          "type" : "string"
+        },
+        "currency" : {
+          "type" : "string"
+        }
+      }
+    },
+    "RootRequest" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "wvrCardPurchaseAtMerchant.RootRequest",
+      "x-WM-TAGS" : [ "wvrCardPurchaseAtMerchant" ],
+      "required" : [ "merchantName", "transactionAmount" ],
+      "properties" : {
+        "transactionAmount" : {
+          "$ref" : "#/definitions/Request.transactionAmount"
+        },
+        "merchantName" : {
+          "type" : "string"
+        }
+      }
+    },
+    "RootResponse" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "wvrCardPurchaseAtMerchant.RootResponse",
+      "x-WM-TAGS" : [ "wvrCardPurchaseAtMerchant" ],
+      "required" : [ "code" ],
+      "properties" : {
+        "code" : {
+          "type" : "string"
+        }
+      }
+    }
+  },
+  "swagger" : "2.0",
+  "info" : {
+    "x-WM-USE_PROXY_FOR_WEB" : true,
+    "x-WM-USE_PROXY_FOR_MOBILE" : true,
+    "x-WM-API_ID" : "680d74f2-32f7-4f1f-b6c8-94716ce0f19f",
+    "x-WM-SERVICE_ID" : "weavr",
+    "version" : "2.0",
+    "x-WM-SERVICE_TYPE" : "RestService",
+    "x-WM-USE_WITH_CREDENTIALS" : false
+  },
+  "tags" : [ {
+    "name" : "wvrCardPurchaseAtMerchant"
+  } ]
+}

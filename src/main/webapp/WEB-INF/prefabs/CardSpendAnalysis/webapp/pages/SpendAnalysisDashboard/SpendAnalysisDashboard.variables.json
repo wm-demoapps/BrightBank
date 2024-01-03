@@ -1,0 +1,41 @@
+{
+  "svGetSpendAnalysisForDashboard" : {
+    "_id" : "wm-svGetSpendAnalysisForDashboard-wm.ServiceVariable-1678342514141",
+    "name" : "svGetSpendAnalysisForDashboard",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "cardId",
+      "value" : "bind:Prefab.cardid",
+      "type" : "string"
+    }, {
+      "target" : "authToken",
+      "value" : "bind:Prefab.authtoken",
+      "type" : "string"
+    }, {
+      "target" : "baseCurrency",
+      "value" : "bind:Prefab.basecurrency",
+      "type" : "string"
+    }, {
+      "target" : "month",
+      "value" : "bind:Prefab.month",
+      "type" : "integer"
+    } ],
+    "type" : "com.wavemaker.spendanalysis.spendanalysisservice.model.CardSpendsModel",
+    "service" : "SpendAnalysisService",
+    "operation" : "getCardSpendAnalysisData",
+    "operationId" : "SpendAnalysisController_getCardSpendAnalysisData",
+    "operationType" : "get",
+    "serviceType" : "JavaService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "onSuccess" : "svGetSpendAnalysisForDashboardonSuccess(variable, data, options)",
+    "startUpdate" : false,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "SpendAnalysis"
+  }
+}

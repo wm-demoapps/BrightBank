@@ -1,0 +1,134 @@
+{
+  "basePath" : "${rest.googleAddressByPlaceId.basepath}",
+  "paths" : {
+    "/api/place/details/json" : {
+      "x-WM-BASE_PATH" : "/api/place/details/json",
+      "x-WM-TAG" : "RestServiceVirtualController",
+      "x-WM-RELATIVE_PATH" : "",
+      "get" : {
+        "x-WM-METHOD_NAME" : "invoke",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "produces" : [ "application/json" ],
+        "operationId" : "googleAddressByPlaceId_RestServiceVirtualController-invoke",
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "$ref" : "#/definitions/RootResponse"
+            },
+            "description" : "Success"
+          }
+        },
+        "parameters" : [ {
+          "x-WM-VARIABLE_KEY" : "",
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "fields",
+          "format" : "string",
+          "description" : "fields",
+          "type" : "string",
+          "required" : false,
+          "x-WM-VARIABLE_TYPE" : "PROMPT"
+        }, {
+          "x-WM-VARIABLE_KEY" : "",
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "place_id",
+          "format" : "string",
+          "description" : "place_id",
+          "type" : "string",
+          "required" : false,
+          "x-WM-VARIABLE_TYPE" : "PROMPT"
+        }, {
+          "x-WM-VARIABLE_KEY" : "",
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "key",
+          "format" : "string",
+          "description" : "key",
+          "type" : "string",
+          "required" : false,
+          "x-WM-VARIABLE_TYPE" : "PROMPT"
+        } ],
+        "tags" : [ "RestServiceVirtualController" ],
+        "consumes" : [ "application/json" ]
+      },
+      "x-WM-COMPLETE_PATH" : "${rest.googleAddressByPlaceId.scheme}://${rest.googleAddressByPlaceId.host}${rest.googleAddressByPlaceId.basepath}/api/place/details/json"
+    }
+  },
+  "host" : "${rest.googleAddressByPlaceId.host}",
+  "schemes" : [ "${rest.googleAddressByPlaceId.scheme}" ],
+  "definitions" : {
+    "Response.address_componentsEntryItem" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "googleAddressByPlaceId.Response.address_componentsEntryItem",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "required" : [ "long_name", "short_name", "types" ],
+      "properties" : {
+        "types" : {
+          "x-WM-IS_LIST" : true,
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        },
+        "short_name" : {
+          "type" : "string"
+        },
+        "long_name" : {
+          "type" : "string"
+        }
+      }
+    },
+    "java.lang.Object" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "googleAddressByPlaceId.java.lang.Object",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    },
+    "RootResponse" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "googleAddressByPlaceId.RootResponse",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "required" : [ "html_attributions", "result", "status" ],
+      "properties" : {
+        "result" : {
+          "$ref" : "#/definitions/Response.result"
+        },
+        "html_attributions" : {
+          "x-WM-IS_LIST" : true,
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/java.lang.Object"
+          }
+        },
+        "status" : {
+          "type" : "string"
+        }
+      }
+    },
+    "Response.result" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "googleAddressByPlaceId.Response.result",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "required" : [ "address_components" ],
+      "properties" : {
+        "address_components" : {
+          "x-WM-IS_LIST" : true,
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Response.address_componentsEntryItem"
+          }
+        }
+      }
+    }
+  },
+  "swagger" : "2.0",
+  "info" : {
+    "x-WM-USE_PROXY_FOR_WEB" : true,
+    "x-WM-USE_PROXY_FOR_MOBILE" : true,
+    "x-WM-API_ID" : "81c54968-8200-49c1-96c8-cb3a9f6f1a38",
+    "x-WM-SERVICE_ID" : "googleapis",
+    "version" : "2.0",
+    "x-WM-SERVICE_TYPE" : "RestService",
+    "x-WM-USE_WITH_CREDENTIALS" : false
+  },
+  "tags" : [ {
+    "name" : "RestServiceVirtualController",
+    "description" : "Rest service swagger documentation"
+  } ]
+}

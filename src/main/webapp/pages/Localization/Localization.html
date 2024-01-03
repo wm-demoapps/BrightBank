@@ -1,0 +1,96 @@
+<wm-page pagetitle="Localization" name="page1">
+    <wm-header content="header" name="header1"></wm-header>
+    <wm-content name="content1">
+        <wm-left-panel columnwidth="2" content="leftnav" name="left_panel1"></wm-left-panel>
+        <wm-page-content columnwidth="10" name="page_content1" class="app-page-content app-content-column spacing-large">
+            <wm-layoutgrid name="layoutgrid1" class="spacing-base">
+                <wm-gridrow name="gridrow1">
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn1">
+                        <wm-label name="label1" class="f-lg font-medium" caption="bind:appLocale.LABEL_ACCOUNTS" animation="fadeInDown"></wm-label>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn2" horizontalalign="right">
+                        <wm-container name="container5_1" display="inline-block" margin="-12px 20px unset unset" show="true" deferload="true" animation="fadeInDown">
+                            <wm-select name="selectAccountType" dataset="English, عربي" datavalue="English" class="filter base-height" on-change="selectAccountTypeChange($event, widget, newVal, oldVal)" show="true" datafield="All Fields" placeholder="" required="true"></wm-select>
+                        </wm-container>
+                        <wm-button class="btn-secondary" caption="bind:appLocale.LABEL_ADD_ACCOUNT" type="button" name="buttonAddAccount" iconclass="wi wi-plus" on-click="Widgets.dialogCreateAccount.open()" show="true" deferload="true" margin="-2px unset unset unset" animation="fadeInDown"></wm-button>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow2">
+                    <wm-gridcolumn columnwidth="12" name="gridcolumn3">
+                        <wm-list listclass="list-group" template="true" template-name="Business Card" itemsperrow="xs-1 sm-2 md-3 lg-3" class="app-livelist app-panel list-card" statehandler="none" name="listAccounts" navigation="On-Demand" paginationclass="btn-default" nodatamessage=""
+                            loadingdatamsg="" pagesize="10" dataset="bind:Variables.stvLocalizedDataList.dataSet">
+                            <wm-listtemplate layout="media" name="listtemplate2">
+                                <wm-card name="card1" class="pointer">
+                                    <wm-card-content name="card_content1">
+                                        <wm-layoutgrid name="layoutgrid2" height="170px">
+                                            <wm-gridrow name="gridrow3">
+                                                <wm-gridcolumn columnwidth="8" name="gridcolumn5" class="col-xs-8">
+                                                    <wm-label caption="bind:Widgets.selectAccountType.displayValue == 'English' ? Widgets.listAccounts.currentItem.tag : Widgets.listAccounts.currentItem.tagArabic" class="text-muted f-xxs-2" name="Tag"></wm-label>
+                                                    <wm-label name="accountType" class="p f-sm font-semibold text-ellipsis" caption="bind:Widgets.selectAccountType.displayValue == 'English' ? Widgets.listAccounts.currentItem.accountType : Widgets.listAccounts.currentItem.accountTypeArabic" fontunit="em"></wm-label>
+                                                    <wm-label name="accountNumber" caption="bind:Widgets.selectAccountType.displayValue == 'English' ? Widgets.listAccounts.currentItem.accountNumber : Widgets.listAccounts.currentItem.accountNumberArabic" class="f-xs font-medium text-muted"></wm-label>
+                                                </wm-gridcolumn>
+                                                <wm-gridcolumn columnwidth="4" name="gridcolumn6" class="col-xs-1" horizontalalign="right">
+                                                    <wm-icon name="iconCurrency" iconclass="bind:&quot;fa &quot; + (Widgets.listAccounts.currentItem.currency==&quot;GBP&quot;?&quot;fa-gbp&quot;:Widgets.listAccounts.currentItem.currency==&quot;USD?&quot;?&quot;fa-usd&quot;: &quot;fa-euro&quot;)" class="icon-lg"
+                                                        conditionalclass="bind:Widgets.listAccounts.currentItem.currency==&quot;GBP&quot;?&quot;label-success&quot;:Widgets.listAccounts.currentItem.currency==&quot;USD?&quot;?&quot;label-info&quot;: &quot;label-danger&quot;"></wm-icon>
+                                                </wm-gridcolumn>
+                                            </wm-gridrow>
+                                            <wm-gridrow name="gridrow5" padding="60px unset unset unset"></wm-gridrow>
+                                            <wm-gridrow name="gridrow6">
+                                                <wm-gridcolumn columnwidth="6" name="gridcolumn8">
+                                                    <wm-icon name="iconBalance" caption="bind:Widgets.listAccounts.currentItem.balance+&quot;.00&quot;" iconclass="bind:&quot;fa f-lg &quot; + (Widgets.listAccounts.currentItem.currency==&quot;GBP&quot;?&quot;fa-gbp&quot;:Widgets.listAccounts.currentItem.currency==&quot;USD?&quot;?&quot;fa-usd&quot;: &quot;fa-euro&quot;)"
+                                                        class="f-xl"></wm-icon>
+                                                </wm-gridcolumn>
+                                                <wm-gridcolumn columnwidth="6" name="gridcolumn9"></wm-gridcolumn>
+                                            </wm-gridrow>
+                                        </wm-layoutgrid>
+                                    </wm-card-content>
+                                </wm-card>
+                            </wm-listtemplate>
+                        </wm-list>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+            </wm-layoutgrid>
+        </wm-page-content>
+    </wm-content>
+    <wm-footer content="footer" name="footer1"></wm-footer>
+    <wm-dialog dialogtype="design-dialog" modal="false" title="bind:appLocale.LABEL_CREATE_ACCOUNT" iconclass="" name="dialogCreateAccount" closable="false">
+        <wm-layoutgrid name="layoutgrid3">
+            <wm-gridrow name="gridrow6_1">
+                <wm-gridcolumn columnwidth="12" name="gridcolumn8_1">
+                    <wm-form errormessage="" captionposition="top" title="" enctype="application/x-www-form-urlencoded" method="post" dataset="bind:Variables.stvCreateAccount.dataSet" captionalign="left" name="stvCreateAccountForm1">
+                        <wm-layoutgrid columns="1" name="layoutgrid4">
+                            <wm-gridrow name="gridrow9">
+                                <wm-gridcolumn columnwidth="12" name="gridcolumn14">
+                                    <wm-form-field name="savingAccount" displayname="bind:appLocale.LABEL_SAVINGS_ACCOUNT" show="true" placeholder="bind:appLocale.LABEL_SAVINGS_ACCOUNT_PLACEHOLDER" type="string" key="Saving_Account" widget="text" inputtype="text" readonly="false"></wm-form-field>
+                                </wm-gridcolumn>
+                            </wm-gridrow>
+                            <wm-gridrow name="gridrow10">
+                                <wm-gridcolumn columnwidth="12" name="gridcolumn15">
+                                    <wm-form-field name="currency" displayname="bind:appLocale.LABEL_SELECT_CURRENCY" show="true" type="string" key="currency" widget="switch" dataset="bind:Variables.stvAssetType.dataSet" datafield="type" displayfield="name" defaultvalue="bind:'gbp'"></wm-form-field>
+                                </wm-gridcolumn>
+                            </wm-gridrow>
+                            <wm-gridrow name="gridrow11">
+                                <wm-gridcolumn columnwidth="12" name="gridcolumn16">
+                                    <wm-form-field name="accountType" displayname="bind:appLocale.LABEL_PRIMARY_USE" show="true" type="string" key="accountType" widget="switch" dataset="bind:Widgets.selectAccountType.displayValue == 'English' ? Variables.stvPrimaryUsageType.dataSet.english :Variables.stvPrimaryUsageType.dataSet.arabic"
+                                        datafield="dataValue" displayfield="name" defaultvalue="bind:'ledger-primary-use-types-payments'" placeholder="" required="false">&gt;</wm-form-field>
+                                </wm-gridcolumn>
+                            </wm-gridrow>
+                        </wm-layoutgrid>
+                    </wm-form>
+                </wm-gridcolumn>
+            </wm-gridrow>
+            <wm-gridrow name="gridrow8">
+                <wm-gridcolumn columnwidth="6" name="gridcolumn12"></wm-gridcolumn>
+                <wm-gridcolumn columnwidth="6" name="gridcolumn13"></wm-gridcolumn>
+            </wm-gridrow>
+            <wm-gridrow name="gridrow7">
+                <wm-gridcolumn columnwidth="6" name="gridcolumn10"></wm-gridcolumn>
+                <wm-gridcolumn columnwidth="6" name="gridcolumn11"></wm-gridcolumn>
+            </wm-gridrow>
+        </wm-layoutgrid>
+        <wm-dialogactions name="dialogactions1">
+            <wm-button class="form-reset btn-default" caption="bind:appLocale.LABEL_BUTTON_CANCEL" on-click="Widgets.dialogCreateAccount.close()" name="buttonCancel"></wm-button>
+            <wm-button class="form-save  btn-secondary" caption="bind:appLocale.LABEL_BUTTON_CREATE" on-click="closeDialog()" name="buttonCreate"></wm-button>
+        </wm-dialogactions>
+    </wm-dialog>
+</wm-page>

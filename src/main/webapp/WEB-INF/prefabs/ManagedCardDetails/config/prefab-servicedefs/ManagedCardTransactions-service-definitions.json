@@ -1,0 +1,48 @@
+{
+  "ManagedCardTransactionsController_getManagedCardById" : {
+    "id" : "ManagedCardTransactionsController_getManagedCardById",
+    "crudOperationId" : null,
+    "service" : "ManagedCardTransactions",
+    "controller" : "ManagedCardTransactionsController",
+    "operationType" : null,
+    "type" : "com.managedcarddetails.managedcardmodel.ManagedCardModel",
+    "wmServiceOperationInfo" : {
+      "name" : "getManagedCardById",
+      "methodType" : "get",
+      "relativePath" : "/managedCardTransactions/managedCardById",
+      "directPath" : null,
+      "httpMethod" : "get",
+      "parameters" : [ {
+        "name" : "hostName",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "java.lang.String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "authorization",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "java.lang.String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "managedCardId",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "java.lang.String",
+        "readOnly" : false,
+        "contentType" : null
+      } ],
+      "definitions" : { },
+      "produces" : null,
+      "consumes" : null,
+      "proxySettings" : {
+        "web" : true,
+        "mobile" : true,
+        "withCredentials" : false
+      },
+      "securityDefinitions" : [ ]
+    }
+  }
+}

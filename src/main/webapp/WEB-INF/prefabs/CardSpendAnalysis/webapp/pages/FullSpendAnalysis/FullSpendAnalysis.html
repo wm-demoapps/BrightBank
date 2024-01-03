@@ -1,0 +1,157 @@
+<wm-partial name="partial1">
+    <wm-container name="containerWeb" showindevice="md,lg">
+        <wm-layoutgrid name="layoutgrid1" class="spacing-base">
+            <wm-gridrow name="gridrow1">
+                <wm-gridcolumn columnwidth="5" name="gridcolumn1">
+                    <wm-container name="container4" class="panel p-lg" height="720px" margin="unset unset 0px unset">
+                        <wm-layoutgrid name="layoutgrid2">
+                            <wm-gridrow name="gridrow11">
+                                <wm-gridcolumn columnwidth="12" name="gridcolumn20">
+                                    <wm-container name="container5" class="bg-active no-radius-bottom p-sm">
+                                        <wm-layoutgrid name="layoutgrid6" class="spacing-small">
+                                            <wm-gridrow name="gridrow12">
+                                                <wm-gridcolumn columnwidth="4" name="gridcolumn23">
+                                                    <wm-container name="container14" display="inline-block">
+                                                        <wm-label caption="Total balance" name="label19_1" class="f-xxs-2"></wm-label>
+                                                        <wm-label class="f-sm-2 font-medium text-ellipsis" caption="bind:(Variables.getCardSpendAnalysis.dataSet.spendTransactions.length > 0 ? (Variables.getCardSpendAnalysis.dataSet.totalBalance | toCurrency: Prefab.basecurrency: '2') : '-')"
+                                                            name="label20_1" conditionalclass="bind:Variables.getCardSpendAnalysis.dataSet.spendTransactions.length < 1 ? 'text-center' : ''" margin="unset unset 0px unset"></wm-label>
+                                                    </wm-container>
+                                                </wm-gridcolumn>
+                                                <wm-gridcolumn columnwidth="4" name="gridcolumn24">
+                                                    <wm-container name="container15" display="inline-block">
+                                                        <wm-label name="label3" caption="Total income" class="f-xxs-2"></wm-label>
+                                                        <wm-label name="label4" class="f-sm-2 font-medium text-ellipsis" caption="bind:(Variables.getCardSpendAnalysis.dataSet.spendTransactions.length > 0 ? (Variables.getCardSpendAnalysis.dataSet.totalIncome | toCurrency: Prefab.basecurrency : '2') : '-')"
+                                                            conditionalclass="bind:Variables.getCardSpendAnalysis.dataSet.spendTransactions.length < 1 ? 'text-center' : ''" margin="unset unset 0px unset"></wm-label>
+                                                    </wm-container>
+                                                </wm-gridcolumn>
+                                                <wm-gridcolumn columnwidth="4" name="gridcolumn27">
+                                                    <wm-container name="container16" display="inline-block">
+                                                        <wm-label name="label5" caption="Total expense" class="f-xxs-2"></wm-label>
+                                                        <wm-label name="label6" class="f-sm-2 font-medium text-ellipsis" caption="bind:(Variables.getCardSpendAnalysis.dataSet.spendTransactions.length > 0 ? (&quot;-&quot; + Variables.getCardSpendAnalysis.dataSet.totalExpense | toCurrency: Prefab.basecurrency : '2') : '-')"
+                                                            conditionalclass="bind:Variables.getCardSpendAnalysis.dataSet.spendTransactions.length < 1 ? 'text-center' : ''" margin="unset unset 0px unset"></wm-label>
+                                                    </wm-container>
+                                                </wm-gridcolumn>
+                                            </wm-gridrow>
+                                        </wm-layoutgrid>
+                                    </wm-container>
+                                </wm-gridcolumn>
+                            </wm-gridrow>
+                            <wm-gridrow name="gridrow3_1">
+                                <wm-gridcolumn columnwidth="12" name="gridcolumn6">
+                                    <wm-container name="containerWithData" show="bind:Variables.getCardSpendAnalysis.dataSet.spendTransactions.length > 0 ? true : false">
+                                        <wm-chart type="Donut" title="" height="300px" iconclass="wi wi-pie-chart" dataset="bind:Variables.getCardSpendAnalysis.dataSet.spendsByCategory" name="chartSpendsOnCategory" showlegend="right" legendtype="classic"
+                                            showlabels="inside" xaxisdatakey="category" yaxisdatakey="amount" nodatamessage="No Spend Transactions" ynumberformat=".2f" customcolors="#5176f2, #d083ff, #37bbb2, #ff6f51, #48bae8, #e3487b"></wm-chart>
+                                        <wm-container name="containerLastMonthStatistics" show="bind:Variables.getCardSpendAnalysis.dataSet.currentMonthStatistics.highestSpendCategory &amp;&amp; Variables.getCardSpendAnalysis.dataSet.currentMonthStatistics.lowestSpendCategory">
+                                            <wm-layoutgrid name="layoutgrid3">
+                                                <wm-gridrow name="gridrow6">
+                                                    <wm-gridcolumn columnwidth="12" name="gridcolumn10">
+                                                        <wm-container name="container6" class="p-md bg-default">
+                                                            <wm-label name="label12" caption="Highest spend category" class="p text-muted f-xxs-2"></wm-label>
+                                                            <wm-label name="label14" caption="bind:Variables.getCardSpendAnalysis.dataSet.currentMonthStatistics.highestSpendCategory" class="f-sm font-medium" margin="unset unset 0px unset"></wm-label>
+                                                            <wm-label padding="unset unset unset 1em" name="label15" caption="bind:Variables.getCardSpendAnalysis.dataSet.currentMonthStatistics.highestSpendAmount | toCurrency: Prefab.basecurrency: '2'"
+                                                                class="f-sm font-medium border-left" margin="unset unset 0em 1em"></wm-label>
+                                                        </wm-container>
+                                                    </wm-gridcolumn>
+                                                </wm-gridrow>
+                                                <wm-gridrow name="gridrow7">
+                                                    <wm-gridcolumn columnwidth="12" name="gridcolumn12">
+                                                        <wm-container name="container3" show="bind:Variables.getCardSpendAnalysis.dataSet.currentMonthStatistics.lowestSpendCategory &amp;&amp; Variables.getCardSpendAnalysis.dataSet.currentMonthStatistics.lowestSpendCategory != Variables.getCardSpendAnalysis.dataSet.currentMonthStatistics.highestSpendCategory"
+                                                            class="p-md">
+                                                            <wm-label caption="Lowest spend category" name="label13" class="p text-muted f-xxs-2"></wm-label>
+                                                            <wm-label name="label16" caption="bind:Variables.getCardSpendAnalysis.dataSet.currentMonthStatistics.lowestSpendCategory" margin="unset unset 0px unset" class="f-sm font-medium"></wm-label>
+                                                            <wm-label padding="unset unset unset 1em" name="label17" caption="bind:Variables.getCardSpendAnalysis.dataSet.currentMonthStatistics.lowestSpendAmount | toCurrency: Prefab.basecurrency: '2'"
+                                                                class="f-sm font-medium border-left" margin="unset unset 0em 1em"></wm-label>
+                                                        </wm-container>
+                                                    </wm-gridcolumn>
+                                                </wm-gridrow>
+                                            </wm-layoutgrid>
+                                        </wm-container>
+                                    </wm-container>
+                                    <wm-container name="containerWithOutData" class="no-data-panel" show="bind:Variables.getCardSpendAnalysis.dataSet.spendTransactions.length < 1 ? true : false" margin="37% unset unset unset">
+                                        <wm-picture resizemode="cover" name="picture1" class="no-data-img" picturesource="resources/images/imagelists/no-chart-data.svg"></wm-picture>
+                                        <wm-label name="label23" class="no-data-title" caption="No data available for Spend Analysis"></wm-label>
+                                        <wm-label class="no-data-description" name="label24" caption="You can only see Spend Analysis information  after you make transactions on your cards"></wm-label>
+                                    </wm-container>
+                                </wm-gridcolumn>
+                            </wm-gridrow>
+                        </wm-layoutgrid>
+                    </wm-container>
+                </wm-gridcolumn>
+                <wm-gridcolumn columnwidth="7" name="gridcolumn3_1">
+                    <wm-container name="container11" class="panel p-md" height="720px" margin="unset unset 0px unset">
+                        <wm-table statehandler="URL" name="getCardSpendAnalysisDataTable1" title="Transactions" dataset="bind:Variables.getCardSpendAnalysis.dataSet.spendTransactions" navigation="Classic" filtermode="search" enablesort="true" showrecordcount="true"
+                            navigationalign="right" show="true" searchlabel="Search by" deferload="true">
+                            <wm-table-column binding="toName" caption="To" widget-type="label" edit-widget-type="text" type="string" show="true" readonly="false">
+                                <wm-label caption="bind:row.getProperty('toName')" class="font-semibold text-normal" conditionalclass="" condtionalstyle=""></wm-label>
+                            </wm-table-column>
+                            <wm-table-column binding="processedTimestamp" caption="Date" widget-type="label" edit-widget-type="text" type="string" searchable="false" show="true" readonly="false">
+                                <wm-label caption="bind:row.getProperty('processedTimestamp') | toDate: 'dd/MM/yyyy'" class="" conditionalclass="" condtionalstyle="" conditionalstyle=""></wm-label>
+                                <wm-label caption="bind:row.getProperty('processedTimestamp') | toDate: 'hh:mm'" class="p text-muted f-xxs-3" conditionalclass="" condtionalstyle="" conditionalstyle=""></wm-label>
+                            </wm-table-column>
+                            <wm-table-column binding="category" caption="Category" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                            <wm-table-column binding="transactionId" caption="Transaction Id" width="120px" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                            <wm-table-column binding="amount" caption="Amount" widget-type="label" textalignment="right" edit-widget-type="text" type="string" show="true" readonly="false">
+                                <wm-label caption="bind:row.getProperty('amount') | toCurrency: Prefab.basecurrency : '2'" class="text-danger" conditionalclass="" condtionalstyle="" conditionalstyle=""></wm-label>
+                            </wm-table-column>
+                        </wm-table>
+                        <wm-container class="no-data-panel" name="containerRecentTransaction" show="bind:Variables.getCardSpendAnalysis.dataSet.spendTransactions.length < 1 ? true : false" deferload="true" margin="20% unset unset unset">
+                            <wm-picture resizemode="cover" class="no-data-img" name="picture2" picturesource="resources/images/imagelists/no-transactions.svg"></wm-picture>
+                            <wm-label class="no-data-title" caption="No data available for Transactions" name="label25"></wm-label>
+                            <wm-label class="no-data-description" caption="You can only see Transaction information after you  make transactions on your cards" name="label26"></wm-label>
+                        </wm-container>
+                    </wm-container>
+                </wm-gridcolumn>
+            </wm-gridrow>
+        </wm-layoutgrid>
+    </wm-container>
+    <wm-container name="containerMobile" showindevice="xs,sm">
+        <wm-layoutgrid name="layoutgrid4">
+            <wm-gridrow name="gridrow8">
+                <wm-gridcolumn columnwidth="12" name="gridcolumn12_1">
+                    <wm-container name="container1" horizontalalign="center" class="bg-highlight">
+                        <wm-label padding="unset 0.5em" caption="Total Expenses" name="label18" class="f-xs p font-medium" margin="unset unset 8px unset"></wm-label>
+                        <wm-label padding="unset 0.5em" class="f-l font-semibold text-highlight" caption="bind:Variables.getCardSpendAnalysis.dataSet.totalExpense | toCurrency: Prefab.basecurrency : '2'" name="label19"></wm-label>
+                    </wm-container>
+                </wm-gridcolumn>
+            </wm-gridrow>
+            <wm-gridrow name="gridrow9">
+                <wm-gridcolumn columnwidth="12" name="gridcolumn14">
+                    <wm-list listclass="list-group" itemclass="list-group-item" template="true" template-name="Contact List" itemsperrow="xs-1 sm-1 md-1 lg-1" class="media-list" datafield="All Fields" statehandler="URL" name="getCardSpendAnalysisDataList1"
+                        dataset="bind:Variables.getCardSpendAnalysis.dataSet.spendsByCategory" navigation="None">
+                        <wm-listtemplate layout="inline" name="listtemplate2">
+                            <wm-linearlayout direction="row" spacing="8" padding="8px" name="linearlayout1" verticalalign="center">
+                                <wm-linearlayoutitem flexgrow="0" name="linearlayoutitem1">
+                                    <wm-icon name="icon1" iconclass="bind:Variables.stvMobileIcons.dataSet[Widgets.getCardSpendAnalysisDataList1.currentItem.category]" conditionalclass="bind:Variables.stvMobileIconStyles.dataSet[Widgets.getCardSpendAnalysisDataList1.currentItem.category]"
+                                        class="icon-lg"></wm-icon>
+                                </wm-linearlayoutitem>
+                                <wm-linearlayoutitem name="linearlayoutitem2" flexgrow="1">
+                                    <wm-linearlayout direction="column" name="linearlayout2">
+                                        <wm-linearlayoutitem flexgrow="1" name="linearlayoutitem3">
+                                            <wm-linearlayout direction="row" name="linearlayout3">
+                                                <wm-linearlayoutitem flexgrow="1" name="linearlayoutitem5">
+                                                    <wm-label name="label28" caption="bind:Widgets.getCardSpendAnalysisDataList1.currentItem.category" class="f-sm-2 font-medium"></wm-label>
+                                                </wm-linearlayoutitem>
+                                                <wm-linearlayoutitem flexgrow="0" name="linearlayoutitem6">
+                                                    <wm-label name="label29" caption="bind:Widgets.getCardSpendAnalysisDataList1.currentItem.amount | toCurrency: Prefab.basecurrency: '2'" class="f-xxs font-medium"></wm-label>
+                                                </wm-linearlayoutitem>
+                                                <wm-linearlayoutitem name="linearlayoutitem7" flexgrow="0" class="border-left" padding="unset unset unset 8px">
+                                                    <wm-label name="label30" caption="bind:((Widgets.getCardSpendAnalysisDataList1.currentItem.amount/Variables.getCardSpendAnalysis.dataSet.totalExpense) * 100)  | numberToString: '2' | suffix: '%'" class="f-xxs font-medium spend-percent"></wm-label>
+                                                </wm-linearlayoutitem>
+                                            </wm-linearlayout>
+                                        </wm-linearlayoutitem>
+                                        <wm-linearlayoutitem name="linearlayoutitem4" flexgrow="1">
+                                            <wm-container name="container13">
+                                                <wm-progress-bar datavalue="bind:Widgets.getCardSpendAnalysisDataList1.currentItem.amount" name="progress_bar1" maxvalue="bind:Variables.getCardSpendAnalysis.dataSet.totalExpense" margin="3px unset unset unset"
+                                                    conditionalclass="bind:Variables.stvProgressbarStyles.dataSet[Widgets.getCardSpendAnalysisDataList1.currentItem.category]"></wm-progress-bar>
+                                            </wm-container>
+                                        </wm-linearlayoutitem>
+                                    </wm-linearlayout>
+                                </wm-linearlayoutitem>
+                            </wm-linearlayout>
+                        </wm-listtemplate>
+                    </wm-list>
+                </wm-gridcolumn>
+            </wm-gridrow>
+        </wm-layoutgrid>
+    </wm-container>
+</wm-partial>

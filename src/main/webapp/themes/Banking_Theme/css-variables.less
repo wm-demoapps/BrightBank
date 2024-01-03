@@ -1,0 +1,117 @@
+
+@icon-font: 'brightbank' !important;
+@wm-left-panel-link-color: #9da2a8;
+@wm-left-panel-bg: #fff;
+@wm-left-panel-link-active-color: #656df9;
+@wm-left-panel-link-active-bg: @wm-active-bg-gradient;
+
+
+@brand-primary:         #656df9;
+@brand-success:         #08c58a;
+@brand-info:            #0295db;
+@brand-warning:         #ff9642;
+@brand-danger:          #ec477c;
+
+@wm-active-text-gradient: linear-gradient(143deg, var(--brand-primary) 50%, var(--brand-primary-2) 105%); 
+@wm-active-bg-gradient: linear-gradient(179deg, var(--brand-primary) 50%, var(--brand-primary-2) 111%);
+@wm-active-bg-gradient-o: linear-gradient(123deg, var(--brand-primary-o) 50%, var(--brand-primary-o-2) 111%);
+@wm-danger-bg-gradient: linear-gradient(93deg, var(--brand-danger) 2%, var(--brand-danger-2));
+
+@brand-primary-gradient: linear-gradient(257deg, var(--btn-gradient-1), var(--btn-gradient-2));
+@brand-secondary-gradient: linear-gradient(253deg, var(--brand-secondary-2), var(--brand-secondary));
+@brand-success-gradient: linear-gradient(330deg, #84d155 85%, #37bbb2 15%);
+@wm-left-bg-gradient: linear-gradient(136deg, var(--brand-primary) 50%, var(--brand-primary-2) 103%);
+@tabs-border-gradient: linear-gradient(92deg, var(--brand-primary) 50%, var(--brand-primary-2) 95%);
+
+@font-size-base: 13px;
+
+:root{
+    --f-xxl: 36px;
+    --f-xl: 32px;
+    --f-lg: 28px;
+    --f-l: 20px;
+    --f-m: 18px;
+    --f-sm: 16px;
+    --f-sm-2: 15px;
+    --f-xs: 14px;
+    --f-xxs: 13px;
+    --f-xxs-2: 12px;
+    --f-xxs-3: 11px;
+    --btn-gradient-1: #6a7fff;
+    --btn-gradient-2: #9a5aff;
+    --brand-primary: #656df9;
+    --brand-primary-2: #ee6390;
+    --brand-primary-o: rgba(101, 109, 249, 0.12);
+    --brand-primary-o-2: rgba(238, 99, 144, 0.15);
+    --brand-secondary: rgba(255, 111, 81, 1);
+    --brand-secondary-2: rgba(255, 150, 66, 1);
+    --brand-secondary-o: rgba(255, 111, 81, 0.1);
+    --brand-tertiary: #ff7250;
+    --brand-tertiary-text: var(--brand-tertiary);
+    --brand-tertiary-bg: rgba(255, 255, 255, 0);
+    --brand-tertiary-bg-active: rgba(255, 255, 255, 1);
+    --brand-tertiary-border: var(--brand-tertiary);
+    --brand-success: #08c58a;
+    --brand-success-2: #1db569;
+    --brand-success-o: rgba(8, 197, 138, 0.1);
+    --brand-info: #7684fc;
+    --brand-info-o: rgba(118, 132, 252, 0.1);
+    --brand-info-2: #5176f2;
+    --brand-info-2-o: #97afff;
+    --brand-warning: #ff8650;
+    --brand-warning-o: rgba(255, 134, 80, 0.1);
+    --brand-danger: #ec477c;
+    --brand-danger-2: #fb587b;
+    --brand-danger-o-2: rgba(251, 88, 123, 0.1);
+    --brand-bg-text: #ffffff;
+    --brand-bg-text-muted: rgba(255, 255, 255, 0.7);
+    --special-bg-text: #ffffff;
+    --spl-bg-stopper-1: #5176f2;
+    --spl-bg-stopper-2: #97afff;
+    --spl-label-border: rgba(255, 255, 255, 0.4);
+    --special-bg-gradient: linear-gradient(140deg, var(--spl-bg-stopper-1) 8%, var(--spl-bg-stopper-2) 100%);
+    --filter-text: #171717;
+    --text-muted: rgba(115, 119, 122, 1);//#73777a
+    --active-text-muted: rgba(23, 23, 23, 1);
+    --active-text-muted-7: rgba(23, 23, 23, 0.7);
+    --body-bg: #fbfbfc;
+    --text-color: #30373b;
+    --text-color-2: rgba(53, 54, 59, 0.9);
+    --f-base: @font-size-base;
+    --seperator-color: #999999;
+    --seperator-bg-color: rgba(247, 247, 247, 0.2);
+    --icon-font: @icon-font;
+    --bg-highlight: rgba(123, 152, 250, 0.1);
+    --bg-default: #f9f9f9;
+    --border-default: #e4e4e4;
+    --active-text-gradient: @wm-active-text-gradient;
+    --active-bg-gradient: @wm-active-bg-gradient;
+    --active-bg-gradient-o: @wm-active-bg-gradient-o;
+    --primary-bg-gradient: @brand-primary-gradient;
+    --secondary-bg-gradient: @brand-secondary-gradient;
+    --info-bg-gradient: linear-gradient(140deg, var(--brand-info-2) 8%, var(--brand-info-2-o) 100%);
+    --border-color: #ebebeb;
+    --border-color-2: rgba(85, 79, 79, 0.2);
+    --border-color-3: rgba(247, 247, 247, 0.2);
+    --list-border-color: #e7e7e7;//list border color
+    --grid-header-text-color: #888888;
+    --grid-header-border: #f2f2f2;
+    --grid-header-bg: linear-gradient(to top, #fbfbfb, #f4f4f4 19%);
+    --grid-border: #f0eaea;
+    --grid-text-color: #35363b;
+    --grid-text-muted-color: #838383;
+    --danger-bg-gradient: @wm-danger-bg-gradient;
+    --primary-text-gradient: @wm-active-text-gradient;
+    --secondary-text-gradient: @brand-secondary-gradient;
+    --tabs-border-gradient: @tabs-border-gradient;
+/*-----Left panel-----*/
+    --left-panel-bg: @wm-left-panel-bg;
+    --left-panel-link-color: @wm-left-panel-link-color;
+    --left-panel-icon-color: #858ea6;
+    --left-panel-link-border: #f4f4f4;
+    --left-panel-link-active-color: @wm-left-panel-link-active-color;
+    --left-panel-link-active-bg: @wm-left-panel-link-active-bg;
+    --left-panel-icon-active-color: var(--primary-text-gradient);
+
+    --btn-min-width: 113px;
+}

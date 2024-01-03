@@ -1,0 +1,58 @@
+{
+  "basePath" : "${rest.DeleteGoalField.basepath}",
+  "paths" : {
+    "/BrightBankDB/GoalFormFields/{goal_id}" : {
+      "x-WM-BASE_PATH" : "/BrightBankDB/GoalFormFields/{goal_id}",
+      "x-WM-TAG" : "RestServiceVirtualController",
+      "x-WM-RELATIVE_PATH" : "",
+      "x-WM-COMPLETE_PATH" : "${rest.DeleteGoalField.scheme}://${rest.DeleteGoalField.host}${rest.DeleteGoalField.basepath}/BrightBankDB/GoalFormFields/{goal_id}",
+      "delete" : {
+        "x-WM-METHOD_NAME" : "invoke",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "produces" : [ "application/json" ],
+        "operationId" : "DeleteGoalField_RestServiceVirtualController-invoke",
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "$ref" : "#/definitions/RootResponse"
+            },
+            "description" : "Success"
+          }
+        },
+        "parameters" : [ {
+          "x-WM-VARIABLE_KEY" : "",
+          "in" : "path",
+          "name" : "goal_id",
+          "format" : "string",
+          "type" : "string",
+          "required" : true,
+          "x-WM-VARIABLE_TYPE" : "PROMPT"
+        } ],
+        "tags" : [ "RestServiceVirtualController" ],
+        "consumes" : [ "application/json" ]
+      }
+    }
+  },
+  "host" : "${rest.DeleteGoalField.host}",
+  "schemes" : [ "${rest.DeleteGoalField.scheme}" ],
+  "definitions" : {
+    "RootResponse" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "DeleteGoalField.RootResponse",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    }
+  },
+  "swagger" : "2.0",
+  "info" : {
+    "x-WM-USE_PROXY_FOR_WEB" : true,
+    "x-WM-USE_PROXY_FOR_MOBILE" : true,
+    "x-WM-API_ID" : "9ee1677c-f815-4066-9ebc-03e162e01e29",
+    "x-WM-SERVICE_ID" : "onwavemaker",
+    "version" : "2.0",
+    "x-WM-SERVICE_TYPE" : "RestService",
+    "x-WM-USE_WITH_CREDENTIALS" : false
+  },
+  "tags" : [ {
+    "name" : "RestServiceVirtualController",
+    "description" : "Rest service swagger documentation"
+  } ]
+}

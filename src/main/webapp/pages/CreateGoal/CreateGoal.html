@@ -1,0 +1,8 @@
+<wm-page pagetitle="Create Goal" name="page1">
+    <wm-content name="content1">
+        <wm-page-content columnwidth="12" name="page_content1">
+            <wm-prefab prefabname="CreateWealthGoal" name="CreateWealthGoal1" userid="bind:Variables.consumerGet.dataSet.rootUser.email" authtoken="bind:Variables.loggedInUser.dataSet.userAttributes.authtoken" enduserid="bind:Variables.loggedInUser.dataSet.id" on-navigatetogoalslist="Actions.goToPage_WealthGoals.invoke()"
+                height="100%"></wm-prefab>
+        </wm-page-content>
+    </wm-content>
+</wm-page>

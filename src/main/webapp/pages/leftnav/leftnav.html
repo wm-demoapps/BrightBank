@@ -1,0 +1,25 @@
+<wm-partial name="leftnav" type="leftnav">
+    <wm-nav name="leftnavigation" type="pills" layout="stacked">
+        <wm-nav-item name="list_dashboard">
+            <wm-anchor caption="bind:appLocale.LABEL_DASHBOARD" name="dashboardLink" iconclass="bb-dashboard" on-click="Actions.goToPage_Dashboard.invoke()"></wm-anchor>
+        </wm-nav-item>
+        <wm-nav-item name="list_order">
+            <wm-anchor caption="bind:appLocale.LABEL_ACCOUNTS" name="orderLink" iconclass="bb-accounts" on-click="Actions.goToPage_ManagedAccounts.invoke()"></wm-anchor>
+        </wm-nav-item>
+        <wm-nav-item name="list_support">
+            <wm-anchor caption="bind:appLocale.LABEL_CARDS" name="supportLink" iconclass="bb-credit-card" on-click="Actions.goToPage_ManagedCards.invoke()"></wm-anchor>
+        </wm-nav-item>
+        <wm-nav-item name="nav_item5">
+            <wm-anchor name="anchor5" iconclass="bb-pie-chart-outlined" caption="bind:appLocale.LABEL_SPEND_ANALYSIS" on-click="Actions.goToPage_SpendAnalysis.invoke()"></wm-anchor>
+        </wm-nav-item>
+        <wm-nav-item name="nav_item6">
+            <wm-anchor name="anchorWealthGoals" iconclass="bb-wealth" caption="bind:appLocale.LABEL_WEALTH_GOALS" on-click="Actions.goToPage_WealthGoals.invoke()"></wm-anchor>
+        </wm-nav-item>
+        <wm-nav-item name="nav_item6_1" show="bind:Variables.loggedInUser.dataSet.roles[0] ==='Admin' ? true : false" deferload="false">
+            <wm-anchor name="anchorManageThemes" iconclass="wm-sl-r sl-settings" caption="bind:appLocale.LABEL_SETTINGS" show="true" on-click="Actions.goToPage_Settings.invoke()"></wm-anchor>
+        </wm-nav-item>
+        <wm-nav-item name="nav_item7" accessroles="Everyone" show="bind:Variables.loggedInUser.dataSet.roles[0] ==='Admin' ? true : false">
+            <wm-anchor name="anchorLocalization" iconclass="wi wi-globe fa-lg" caption="bind:appLocale.LABEL_LOCALIZATION" on-click="Actions.goToPage_Localization.invoke()" accessroles="Everyone"></wm-anchor>
+        </wm-nav-item>
+    </wm-nav>
+</wm-partial>

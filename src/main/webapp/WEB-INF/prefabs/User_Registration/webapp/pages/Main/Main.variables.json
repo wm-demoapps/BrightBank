@@ -1,0 +1,361 @@
+{
+  "AssetClass" : {
+    "_id" : "wm-AssetClass-wm.Variable-1623667998324",
+    "name" : "AssetClass",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "name" : "Currency",
+      "dataValue" : "currency"
+    }, {
+      "name" : "Commodity",
+      "dataValue" : "commodity"
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "AssetTypeData" : {
+    "_id" : "wm-AssetTypeData-wm.Variable-1624439605545",
+    "name" : "AssetTypeData",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "name" : "EUR",
+      "type" : "eur"
+    }, {
+      "name" : "GBP",
+      "type" : "gbp"
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "CompanyData" : {
+    "_id" : "wm-CompanyData-wm.Variable-1623648835876",
+    "name" : "CompanyData",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "name" : "",
+      "trading_name" : "",
+      "web_site" : "",
+      "industry" : "",
+      "email" : "",
+      "telephone" : "",
+      "registration_number" : "",
+      "registration_address" : {
+        "company_address_region" : "",
+        "address_number" : "",
+        "address_street" : "",
+        "address_city" : "",
+        "address_postal_code" : "",
+        "address_iso_country" : ""
+      },
+      "directors" : [ {
+        "date_appointed" : "",
+        "job_title" : "",
+        "person" : {
+          "country_of_residence" : [ "" ],
+          "email" : "",
+          "name" : "",
+          "telephone" : "",
+          "date_of_birth" : ""
+        }
+      } ]
+    },
+    "type" : "entry",
+    "isList" : false,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "DirectorsList" : {
+    "_id" : "wm-DirectorsList-wm.Variable-1625141321451",
+    "name" : "DirectorsList",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "date_appointed" : "",
+      "job_title" : "",
+      "person" : {
+        "country_of_residence" : [ "" ],
+        "email" : "",
+        "name" : "",
+        "telephone" : "",
+        "date_of_birth" : "",
+        "nationality" : [ "" ]
+      }
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "enduserIdData" : {
+    "_id" : "wm-enduserIdData-wm.Variable-1623668404996",
+    "name" : "enduserIdData",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "dataValue" : ""
+    },
+    "type" : "string",
+    "isList" : false,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "formData" : {
+    "_id" : "wm-formData-wm.Variable-1623669218644",
+    "name" : "formData",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "name" : "name0",
+      "dataValue" : "dataValue0"
+    },
+    "type" : "entry",
+    "isList" : false,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "IndustryList" : {
+    "_id" : "wm-IndustryList-wm.Variable-1624952995612",
+    "name" : "IndustryList",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "name" : "ACCOUNTING"
+    }, {
+      "name" : "AUDIT"
+    }, {
+      "name" : "FINANCE"
+    }, {
+      "name" : "PUBLIC SECTOR ADMINISTRATION"
+    }, {
+      "name" : "ART ENTERTAINMENT"
+    }, {
+      "name" : "AUTO AVIATION"
+    }, {
+      "name" : "BANKING LENDING"
+    }, {
+      "name" : "BUSINESS CONSULTANCY LEGAL"
+    }, {
+      "name" : "CONSTRUCTION REPAIR"
+    }, {
+      "name" : "INFORMATIONAL TECHNOLOGIES"
+    }, {
+      "name" : "MEDICAL SERVICES"
+    }, {
+      "name" : "NON GOVERNMENTAL ORGANIZATION"
+    }, {
+      "name" : "INSURANCE SECURITY"
+    }, {
+      "name" : "TRAVEL TOURISM"
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "JS_createNewUserIdentity" : {
+    "_id" : "wm-JS_createNewUserIdentity-wm.ServiceVariable-1625642005506",
+    "name" : "JS_createNewUserIdentity",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "service" : "CreateUserIdentity",
+    "operation" : "createNewUserIdentity",
+    "operationId" : "CreateUserIdentityController_createNewUserIdentity",
+    "operationType" : "post",
+    "serviceType" : "JavaService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "CreateUserIdentity"
+  },
+  "ledgerInfo" : {
+    "_id" : "wm-ledgerInfo-wm.Variable-1623926656391",
+    "name" : "ledgerInfo",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "assetType" : "GBP",
+      "partnerProduct" : "PayrNet-GBP-2",
+      "jurisdicton" : "GBR"
+    }, {
+      "assetType" : "USD",
+      "partnerProduct" : "PayrNet-USD-1",
+      "jurisdicton" : "US"
+    }, {
+      "assetType" : "EUR",
+      "partnerProduct" : "PayrNet-EUR-1",
+      "jurisdicton" : "GBR"
+    }, {
+      "assetType" : "AUD",
+      "partnerProduct" : "Banking-AUD-1",
+      "jurisdicton" : "AUS"
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "Md_UserType" : {
+    "_id" : "wm-Md_UserType-wm.Variable-1626070275544",
+    "name" : "Md_UserType",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "name" : "Consumer",
+      "initialPicture" : "resources/images/imagelists/img-individual-normal.png",
+      "selectedPicture" : "resources/images/imagelists/img-individual-active.png"
+    }, {
+      "name" : "Corporate",
+      "initialPicture" : "resources/images/imagelists/img-company-normal.png",
+      "selectedPicture" : "resources/images/imagelists/img-company-active.png"
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "PersonData" : {
+    "_id" : "wm-PersonData-wm.Variable-1623648704072",
+    "name" : "PersonData",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "full_name" : {
+        "first_name" : "",
+        "middle_name" : "",
+        "last_name" : ""
+      },
+      "name" : "",
+      "email" : "",
+      "date_of_birth" : "",
+      "date_onboarded" : "",
+      "telephone" : "",
+      "nationality" : [ "" ],
+      "country_of_residence" : [ "" ],
+      "address" : {
+        "address_number" : "",
+        "address_street" : "",
+        "address_city" : "",
+        "address_postal_code" : "",
+        "address_iso_country" : "",
+        "address_region" : ""
+      }
+    },
+    "type" : "entry",
+    "isList" : false,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "RootUserEmail" : {
+    "_id" : "wm-RootUserEmail-wm.Variable-1625654779854",
+    "name" : "RootUserEmail",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "dataValue" : ""
+    },
+    "type" : "string",
+    "isList" : false,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "supportedLocale" : {
+    "_id" : "wm-wm.Variable1402640443182",
+    "name" : "supportedLocale",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataSet" : {
+      "en" : "English"
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  },
+  "UserInfo" : {
+    "_id" : "wm-UserInfo-wm.Variable-1625806133818",
+    "name" : "UserInfo",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "enduser_id" : "",
+      "company" : {
+        "name" : "",
+        "trading_name" : "",
+        "web_site" : "",
+        "industry" : "",
+        "email" : "",
+        "telephone" : "",
+        "registration_number" : "",
+        "registration_address" : {
+          "company_address_region" : "",
+          "address_number" : "",
+          "address_street" : "",
+          "address_city" : "",
+          "address_postal_code" : "",
+          "address_iso_country" : ""
+        },
+        "directors" : [ {
+          "date_appointed" : "",
+          "job_title" : "",
+          "person" : {
+            "country_of_residence" : [ "" ],
+            "email" : "",
+            "name" : "",
+            "telephone" : "",
+            "date_of_birth" : ""
+          }
+        } ]
+      },
+      "person" : {
+        "full_name" : {
+          "first_name" : "",
+          "middle_name" : "",
+          "last_name" : ""
+        },
+        "name" : "",
+        "email" : "",
+        "date_of_birth" : "",
+        "date_onboarded" : "",
+        "telephone" : "",
+        "nationality" : [ "" ],
+        "country_of_residence" : [ "" ],
+        "address" : {
+          "address_number" : "",
+          "address_street" : "",
+          "address_city" : "",
+          "address_postal_code" : "",
+          "address_iso_country" : "",
+          "address_region" : ""
+        }
+      }
+    },
+    "type" : "entry",
+    "isList" : false,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  }
+}

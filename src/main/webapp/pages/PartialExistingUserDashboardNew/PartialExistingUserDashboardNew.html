@@ -1,0 +1,75 @@
+<wm-partial name="partial1">
+    <wm-layoutgrid name="layoutgrid1" class="spacing-base">
+        <wm-gridrow name="gridrow7_1">
+            <wm-gridcolumn columnwidth="8" name="gridcolumn10" class="col-xs-6">
+                <wm-label name="label2" caption="Dashboard" class="f-xl font-semibold" margin="unset unset 0px unset" animation="fadeInDown"></wm-label>
+            </wm-gridcolumn>
+            <wm-gridcolumn columnwidth="4" name="gridcolumn12" horizontalalign="right" class="col-xs-6">
+                <wm-container name="container1" display="inline-block" animation="fadeInDown">
+                    <wm-select placeholder="Select Currency" dataset="bind:Variables.stvCurrencies.dataSet" datafield="value" displayfield="displayName" datavalue="USD" name="selectaseCurrency" class="filter"></wm-select>
+                </wm-container>
+            </wm-gridcolumn>
+        </wm-gridrow>
+        <wm-gridrow name="gridrow8">
+            <wm-gridcolumn columnwidth="7" name="gridcolumn12_1">
+                <wm-layoutgrid name="layoutgrid2" class="spacing-base">
+                    <wm-gridrow name="gridrow3">
+                        <wm-gridcolumn columnwidth="6" name="gridcolumn7">
+                            <wm-tile class="bg-primary bg-watermark" name="tile1" animation="fadeInLeft" height="330">
+                                <wm-prefab prefabname="NetWorthDashboard" name="NetWorthDashboard1" basecurrency="bind:Widgets.selectaseCurrency.datavalue" userid="bind:Variables.consumerGet.dataSet.rootUser.email" authtoken="bind:Variables.loggedInUser.dataSet.userAttributes.authtoken"></wm-prefab>
+                            </wm-tile>
+                        </wm-gridcolumn>
+                        <wm-gridcolumn columnwidth="6" name="gridcolumn8">
+                            <wm-tile class="bg-active" name="tile2" animation="fadeInDown" height="156">
+                                <wm-prefab prefabname="AccountsSummary" name="AccountsSummary2" basecurrency="bind:Widgets.selectaseCurrency.datavalue"></wm-prefab>
+                            </wm-tile>
+                            <wm-tile class="bg-active" name="tile3" animation="fadeInUp" height="156">
+                                <wm-prefab prefabname="CardsSummary" name="CardsSummary2" basecurrency="bind:Widgets.selectaseCurrency.datavalue"></wm-prefab>
+                            </wm-tile>
+                        </wm-gridcolumn>
+                    </wm-gridrow>
+                    <wm-gridrow name="gridrow7">
+                        <wm-gridcolumn columnwidth="12" name="gridcolumn15">
+                            <wm-container name="container4" class="panel p-lg payments-height" animation="fadeInUp" show="bind:containsGoals" margin="unset unset 0px unset">
+                                <wm-label name="label3" class="p text-uppercase font-medium f-sm-2" caption="Upcoming Transactions" margin="unset unset 1em unset" animation="fadeInDown"></wm-label>
+                                <wm-container name="container7" overflow="auto" height="280px">
+                                    <wm-prefab prefabname="UpcomingGoalPayments" name="UpcomingGoalPayments1" authtoken="bind:Variables.loggedInUser.dataSet.userAttributes.authtoken" userid="bind:Variables.consumerGet.dataSet.rootUser.email" basecurrency="bind:Widgets.selectaseCurrency.datavalue"
+                                        on-goalslength="UpcomingGoalPayments1Goalslength($event, $data)" show="bind:containsGoals" apikey="bind:'vrdO4T5327wBeqOUIIABDQ=='" animation="fadeInUp"></wm-prefab>
+                                    <wm-container name="containerNoData" show="bind:containsGoals == false" horizontalalign="center" class="no-data-panel" margin="2em unset unset unset" animation="fadeInUp">
+                                        <wm-picture resizemode="cover" name="pictureNoData" picturesource="resources/images/imagelists/no-payments.svg" class="no-data-img img-sm"></wm-picture>
+                                        <wm-label padding="unset 0.5em" name="labelNoProjects" caption="View all of your upcoming Wealth Goals payments here..." class="no-data-description"></wm-label>
+                                    </wm-container>
+                                </wm-container>
+                            </wm-container>
+                        </wm-gridcolumn>
+                    </wm-gridrow>
+                </wm-layoutgrid>
+            </wm-gridcolumn>
+            <wm-gridcolumn columnwidth="5" name="gridcolumn13_1">
+                <wm-container name="container3" class="panel p-lg" animation="fadeInRight" margin="unset unset 0px unset">
+                    <wm-layoutgrid name="layoutgrid4" class="spacing-base">
+                        <wm-gridrow name="gridrow6_1">
+                            <wm-gridcolumn columnwidth="6" name="gridcolumn8_1" class="col-xs-6">
+                                <wm-label name="label1" class="text-uppercase font-medium f-sm-2" caption="Spend Analysis" animation="fadeInLeft"></wm-label>
+                            </wm-gridcolumn>
+                            <wm-gridcolumn columnwidth="6" name="gridcolumn9" horizontalalign="right" class="col-xs-6">
+                                <wm-container name="container2" display="inline-block" margin="-0.5em unset unset unset" animation="fadeInRight">
+                                    <wm-select dataset="bind:Variables.svGetAllCards.dataSet.cards" datafield="id" displayfield="friendlyName" datavalue="bind:Variables.svGetAllCards.dataSet.cards[0].id" placeholder="Select Card" name="selectCard" displayexpression="bind:$[friendlyName] + &quot; - **** &quot; + $[cardNumberLastFour]"
+                                        class="filter"></wm-select>
+                                </wm-container>
+                            </wm-gridcolumn>
+                        </wm-gridrow>
+                        <wm-gridrow name="gridrow7_2">
+                            <wm-gridcolumn columnwidth="12" name="gridcolumn12_2">
+                                <wm-container name="container8" overflow="auto" height="618px">
+                                    <wm-prefab prefabname="CardSpendAnalysis" name="CardSpendAnalysis1" authtoken="bind:Variables.loggedInUser.dataSet.userAttributes.authtoken" cardid="bind:Widgets.selectCard.datavalue" basecurrency="bind:Widgets.selectaseCurrency.datavalue" month="bind:App.getCurrentMonth()"
+                                        show="true" animation="fadeInUp"></wm-prefab>
+                                    <!--<wm-container name="containerNoSpendData" show="bind:containsSpendingTrns == false" horizontalalign="center" class="no-data-panel" margin="35% unset unset unset" animation="fadeInUp"><wm-picture resizemode="cover" name="pictureNoSpendData" picturesource="resources/images/imagelists/no-spend-analysis.svg" class="no-data-img img-sm"></wm-picture><wm-label padding="unset 0.5em" name="labelNoProjects" caption="Spend analysis from all of your cardswill appear here, along with your most recent transaction" class="no-data-description"></wm-label></wm-container>--></wm-container>
+                            </wm-gridcolumn>
+                        </wm-gridrow>
+                    </wm-layoutgrid>
+                </wm-container>
+            </wm-gridcolumn>
+        </wm-gridrow>
+    </wm-layoutgrid>
+</wm-partial>

@@ -1,0 +1,118 @@
+{
+  "displayName" : "ManagedCardDetails",
+  "group" : "",
+  "iconUrl" : "/resources/images/imagelists/prefab-icon.png",
+  "resources" : {
+    "styles" : [ "/pages/Main/Main.css" ],
+    "scripts" : [ "/resources/javascript/client.1.js" ]
+  },
+  "properties" : {
+    "servicehost" : {
+      "type" : "string",
+      "displayName" : "Servicehost",
+      "description" : "Service to invoke",
+      "bindable" : "in-bound",
+      "value" : "APIVendor(W)",
+      "widget" : "list",
+      "options" : [ "APIVendor(R)", "APIVendor(W)", "APIVendor(B)" ],
+      "show" : true,
+      "showAt" : "",
+      "disabled" : false
+    },
+    "authtoken" : {
+      "type" : "string",
+      "displayName" : "Authtoken",
+      "description" : "Authorisation for root user",
+      "bindable" : "in-bound",
+      "widget" : "string",
+      "show" : true,
+      "showAt" : "",
+      "disabled" : false
+    },
+    "managedcardid" : {
+      "type" : "string",
+      "displayName" : "ManagedCardId",
+      "description" : "Managed Card Id",
+      "bindable" : "in-bound",
+      "widget" : "string",
+      "show" : true,
+      "showAt" : "",
+      "disabled" : false
+    },
+    "uikey" : {
+      "type" : "string",
+      "displayName" : "UI Key",
+      "description" : "UI Key for CVV component",
+      "bindable" : "in-bound",
+      "value" : "3by2OE5IsSYBekKIoTMACA==",
+      "widget" : "string",
+      "show" : true,
+      "showAt" : "",
+      "disabled" : false
+    },
+    "showfund" : {
+      "type" : "boolean",
+      "displayName" : "Show Fund Card Button",
+      "description" : "Show Fund Card Button",
+      "bindable" : "in-bound",
+      "value" : true,
+      "widget" : "checkbox",
+      "show" : true,
+      "showAt" : "Main.buttonFundCard",
+      "disabled" : false
+    },
+    "showtransfer" : {
+      "type" : "boolean",
+      "displayName" : "Showtransfer",
+      "description" : "Show Transfer Button",
+      "bindable" : "in-bound",
+      "value" : true,
+      "widget" : "checkbox",
+      "show" : true,
+      "showAt" : "Main.buttonTransferFunds",
+      "disabled" : false
+    },
+    "showspendlimit" : {
+      "type" : "boolean",
+      "displayName" : "Showspendlimit",
+      "description" : "Show Spendlimit button",
+      "bindable" : "in-bound",
+      "value" : true,
+      "widget" : "checkbox",
+      "show" : true,
+      "showAt" : "Main.buttonChangeSpendLimit",
+      "disabled" : false
+    },
+    "selectedcarddetails" : {
+      "type" : "string",
+      "displayName" : "Selectedcarddetails",
+      "description" : "Selected card details",
+      "bindable" : "out-bound",
+      "value" : "bind:Variables.getManagedCardById.dataSet",
+      "widget" : "string",
+      "show" : false,
+      "showAt" : "",
+      "disabled" : true
+    }
+  },
+  "events" : {
+    "onFundcardclick" : {
+      "description" : "Fund card button click",
+      "eventData" : "",
+      "displayName" : "Fundcardclick"
+    },
+    "onChangespendlimit" : {
+      "description" : "Change Spend limit button click",
+      "eventData" : "",
+      "displayName" : "Changespendlimit"
+    }
+  },
+  "methods" : {
+    "refreshCards" : {
+      "description" : "Refresh card details after funding the card",
+      "parameters" : [ ],
+      "returnType" : "void",
+      "example" : ""
+    }
+  }
+}

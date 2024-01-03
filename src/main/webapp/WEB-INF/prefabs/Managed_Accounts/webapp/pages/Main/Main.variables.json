@@ -1,0 +1,98 @@
+{
+  "getManagedCardsCount" : {
+    "_id" : "wm-getManagedCardsCount-wm.ServiceVariable-1626015756174",
+    "name" : "getManagedCardsCount",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "hostName",
+      "value" : "bind:servicehost",
+      "type" : "string"
+    }, {
+      "target" : "authorization",
+      "value" : "bind:authtoken",
+      "type" : "string"
+    } ],
+    "type" : "com.managed_accounts.managedaccountmodel.ManagedAccountModel",
+    "service" : "ManagedAccounts",
+    "operation" : "getManagedCardsCount",
+    "operationId" : "ManagedAccountsController_getManagedAccount",
+    "serviceType" : "JavaService",
+    "dataSet" : [ ],
+    "isList" : true,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false
+  },
+  "JS_getManagedAccounts" : {
+    "_id" : "wm-JS_getManagedAccounts-wm.ServiceVariable-1625039773183",
+    "name" : "JS_getManagedAccounts",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "hostName",
+      "value" : "bind:servicehost",
+      "type" : "string"
+    }, {
+      "target" : "authorization",
+      "value" : "bind:authtoken",
+      "type" : "string"
+    }, {
+      "target" : "accountId",
+      "value" : "bind:enduserid",
+      "type" : "string"
+    }, {
+      "target" : "accountType",
+      "value" : "bind:accounttype ? accounttype : 'All'",
+      "type" : "string"
+    } ],
+    "type" : "com.managed_accounts.managedaccountmodel.ManagedAccountModel",
+    "service" : "ManagedAccounts",
+    "operation" : "getManagedAccount",
+    "operationId" : "ManagedAccountsController_getManagedAccount",
+    "operationType" : "get",
+    "serviceType" : "JavaService",
+    "dataSet" : [ ],
+    "isList" : true,
+    "maxResults" : 20,
+    "onSuccess" : "JS_getManagedAccountsonSuccess(variable, data, options)",
+    "startUpdate" : false,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "ManagedAccounts"
+  },
+  "ManagedAccountInfo" : {
+    "_id" : "wm-ManagedAccountInfo-wm.Variable-1625039708151",
+    "name" : "ManagedAccountInfo",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ {
+      "target" : "dataBinding",
+      "value" : "bind:servicehost==\"Railsbank\"?(Variables.JS_getManagedAccounts.dataSet):(Variables.JS_getManagedAccounts.dataSet[0].accounts)"
+    } ],
+    "dataSet" : [ {
+      "data" : ""
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "supportedLocale" : {
+    "_id" : "wm-wm.Variable1402640443182",
+    "name" : "supportedLocale",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataSet" : {
+      "en" : "English"
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  }
+}

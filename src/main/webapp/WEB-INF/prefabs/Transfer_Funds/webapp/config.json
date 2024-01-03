@@ -1,0 +1,97 @@
+{
+  "displayName" : "Transfer Funds",
+  "group" : "",
+  "iconUrl" : "/resources/images/imagelists/icon-transfer-money.svg",
+  "resources" : {
+    "styles" : [ "/pages/Main/Main.css" ],
+    "scripts" : [ ]
+  },
+  "properties" : {
+    "enduserid" : {
+      "type" : "string",
+      "displayName" : "End User / Transaction Profile Id",
+      "description" : "End User Id value to fetch beneficiaries of that particular user",
+      "bindable" : "in-bound",
+      "widget" : "string",
+      "show" : true,
+      "showAt" : "",
+      "disabled" : false
+    },
+    "ledgerid" : {
+      "type" : "string",
+      "displayName" : "Ledger / Account Id",
+      "description" : "Ledger Id of end user",
+      "bindable" : "in-bound",
+      "widget" : "string",
+      "show" : true,
+      "showAt" : "",
+      "disabled" : false
+    },
+    "servicehost" : {
+      "type" : "string",
+      "displayName" : "Servicehost",
+      "description" : "Service to invoke",
+      "bindable" : "in-bound",
+      "value" : "APIVendor(W)",
+      "widget" : "list",
+      "options" : [ "APIVendor(R)", "APIVendor(W)", "APIVendor(B)" ],
+      "show" : true,
+      "showAt" : "",
+      "disabled" : false
+    },
+    "authtoken" : {
+      "type" : "string",
+      "displayName" : "Authtoken",
+      "description" : "Authorisation token value for root user",
+      "bindable" : "in-bound",
+      "widget" : "string",
+      "show" : true,
+      "showAt" : "",
+      "disabled" : false
+    },
+    "selectedbeneficiaryid" : {
+      "type" : "string",
+      "displayName" : "Selected Beneficiary Id",
+      "description" : "provide id value of selected beneficiary while transferring funds to beneficiaries",
+      "bindable" : "in-bound",
+      "widget" : "string",
+      "show" : true,
+      "showAt" : "",
+      "disabled" : false
+    },
+    "selectedledgerid" : {
+      "type" : "string",
+      "displayName" : "Selected Ledger Id",
+      "description" : "provide id value of selected ledger while transferring funds to beneficiaries",
+      "bindable" : "in-bound",
+      "widget" : "string",
+      "show" : true,
+      "showAt" : "",
+      "disabled" : false
+    },
+    "wizardlayout" : {
+      "type" : "string",
+      "displayName" : "Wizard Layout",
+      "description" : "Display's the wizard in the selected layout",
+      "bindable" : "in-bound",
+      "value" : "Horizontal Layout",
+      "widget" : "list",
+      "options" : [ "Horizontal Layout", "Vertical Layout" ],
+      "show" : true,
+      "disabled" : false
+    }
+  },
+  "events" : {
+    "onTransactionsuccess" : {
+      "description" : "Callback action which will be triggered on succesful transaction",
+      "eventData" : "",
+      "displayName" : "Transaction Success"
+    },
+    "onCancel" : {
+      "description" : "close the parent dialog",
+      "eventData" : "",
+      "displayName" : "Cancel"
+    }
+  },
+  "methods" : { }
+}

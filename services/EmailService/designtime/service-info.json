@@ -1,0 +1,8 @@
+{
+  "id" : "EmailService",
+  "type" : "JavaService",
+  "packageNames" : [ "com.weavrbank.emailservice" ],
+  "serviceClassNames" : [ "com.weavrbank.emailservice.EmailService" ],
+  "title" : "EmailService",
+  "mockEnabled" : false
+}

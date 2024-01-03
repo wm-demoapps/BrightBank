@@ -1,0 +1,58 @@
+{
+  "displayName" : "UpcomingGoalPayments",
+  "group" : "",
+  "iconUrl" : "/resources/images/imagelists/prefab-icon.png",
+  "resources" : {
+    "styles" : [ "/pages/Main/Main.css" ],
+    "scripts" : [ ]
+  },
+  "properties" : {
+    "userid" : {
+      "type" : "string",
+      "displayName" : "Userid",
+      "description" : "Userid",
+      "bindable" : "in-bound",
+      "widget" : "string",
+      "show" : true,
+      "showAt" : "",
+      "disabled" : false
+    },
+    "basecurrency" : {
+      "type" : "string",
+      "displayName" : "Basecurrency",
+      "description" : "Basecurrency",
+      "bindable" : "in-bound",
+      "widget" : "string",
+      "show" : true,
+      "showAt" : "",
+      "disabled" : false
+    },
+    "authtoken" : {
+      "type" : "string",
+      "displayName" : "Authtoken",
+      "description" : "Authtoken",
+      "bindable" : "in-bound",
+      "widget" : "string",
+      "show" : true,
+      "showAt" : "",
+      "disabled" : false
+    },
+    "apikey" : {
+      "type" : "string",
+      "displayName" : "Apikey",
+      "description" : "apikey",
+      "bindable" : "in-bound",
+      "widget" : "string",
+      "show" : true,
+      "disabled" : false
+    }
+  },
+  "events" : {
+    "onGoalslength" : {
+      "description" : "to get goals length",
+      "eventData" : "",
+      "displayName" : "Goalslength"
+    }
+  },
+  "methods" : { }
+}

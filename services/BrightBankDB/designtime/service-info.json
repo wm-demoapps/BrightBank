@@ -1,0 +1,7 @@
+{
+  "id" : "BrightBankDB",
+  "type" : "DataService",
+  "packageNames" : [ "com.weavrbank.brightbankdb" ],
+  "title" : "BrightBankDB",
+  "mockEnabled" : false
+}

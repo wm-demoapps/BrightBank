@@ -1,0 +1,49 @@
+{
+  "getGoalsWithUpcomingDates" : {
+    "_id" : "wm-getGoalsWithUpcomingDates-wm.ServiceVariable-1677937204288",
+    "name" : "getGoalsWithUpcomingDates",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "userId",
+      "value" : "bind:userid",
+      "type" : "string"
+    }, {
+      "target" : "authtoken",
+      "value" : "bind:authtoken",
+      "type" : "string"
+    }, {
+      "target" : "apikey",
+      "value" : "bind:apikey",
+      "type" : "string"
+    } ],
+    "type" : "com.wavemaker.upcominggoalpayments.CustomWealthGoalAPI.WealthGoalsListModel",
+    "service" : "CustomWealthGoalAPI",
+    "operation" : "CustomWealthGoalAPI_CustomWealthGoalController_getWealthGoalsListForUser",
+    "operationId" : "CustomWealthGoalAPI_CustomWealthGoalController_getWealthGoalsListForUser",
+    "operationType" : "list",
+    "serviceType" : "OpenAPIService",
+    "dataSet" : [ ],
+    "isList" : true,
+    "maxResults" : 20,
+    "onSuccess" : "getGoalsWithUpcomingDatesonSuccess(variable, data, options)",
+    "startUpdate" : true,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "CustomWealthGoal"
+  },
+  "supportedLocale" : {
+    "_id" : "wm-wm.Variable1402640443182",
+    "name" : "supportedLocale",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataSet" : {
+      "en" : "English"
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  }
+}

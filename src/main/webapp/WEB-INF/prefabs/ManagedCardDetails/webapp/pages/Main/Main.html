@@ -1,0 +1,138 @@
+<wm-prefab-container name="prefab_container1">
+    <wm-layoutgrid name="layoutgrid6_1" columns="1" class="spacing-base">
+        <wm-gridrow name="gridrow18">
+            <wm-gridcolumn columnwidth="12" name="gridcolumn40_1">
+                <wm-list listclass="list-group" template="true" template-name="Business Card" itemsperrow="xs-1 sm-1 md-1 lg-1" class="list-card" statehandler="none" name="getAllManagedCardsList1" dataset="bind:Variables.getManagedCardById.dataSet" navigation="None"
+                    pagesize="1" on-render="getAllManagedCardsList1Render(widget, $data)" selectfirstitem="false" selectionlimit="1" itemclass="bind:item.cardType == 'VIRTUAL' ?  'virtual-card':'physical-card'" showindevice="md,lg">
+                    <wm-listtemplate layout="media" name="listtemplate1">
+                        <wm-card name="card1" imageheight="260px" margin="unset unset 0px unset">
+                            <wm-card-content name="card_content1">
+                                <wm-layoutgrid columns="2" name="layoutgrid2" height="190" class="spacing-small">
+                                    <wm-gridrow name="gridrow5">
+                                        <wm-gridcolumn columnwidth="8" name="gridcolumn10" class="col-xs-8">
+                                            <wm-label caption="bind:Widgets.getAllManagedCardsList1.currentItem.cardType==&quot;VIRTUAL&quot;?&quot;Virtual Card&quot;:&quot;Physical Card&quot;" margin="unset unset 0px unset" name="label6" class="f-l font-semibold text-ellipsis"></wm-label>
+                                            <wm-label name="Department" caption="bind:Widgets.getAllManagedCardsList1.currentItem.cardBrand+ &quot; (&quot;+Widgets.getAllManagedCardsList1.currentItem.currency+(Widgets.getAllManagedCardsList1.currentItem.currency==&quot;GBP&quot;?&quot; £&quot;:Widgets.getAllManagedCardsList1.currentItem.currency==&quot;USD&quot;?&quot; $&quot;:&quot; €&quot;)+&quot; )&quot;"
+                                                margin="unset unset 0em unset" class="f-xxs-2 font-medium text-muted text-ellipsis"></wm-label>
+                                        </wm-gridcolumn>
+                                        <wm-gridcolumn columnwidth="4" name="gridcolumn34" class="col-xs-4" horizontalalign="right">
+                                            <wm-label name="label8" class="f-xxs-2 font-medium text-muted text-ellipsis" caption="Balance" margin="unset unset 0px unset"></wm-label>
+                                            <wm-label caption="bind:((Widgets.getAllManagedCardsList1.currentItem.currency==&quot;GBP&quot;?&quot;£ &quot;:(Widgets.getAllManagedCardsList1.currentItem.currency==&quot;USD&quot;?&quot;$ &quot;:&quot;€ &quot;))+((Widgets.getAllManagedCardsList1.currentItem.balance) | numberToString: '2'))"
+                                                class="pull-right" margin="unset unset 0px unset" whitespace="nowrap" name="label7" fontsize="12"></wm-label>
+                                        </wm-gridcolumn>
+                                    </wm-gridrow>
+                                    <wm-gridrow name="gridrow9_1" padding="24px unset unset unset">
+                                        <wm-gridcolumn columnwidth="12" name="gridcolumn16_1">
+                                            <wm-container name="container4" class="card-number">
+                                                <wm-container name="container1" display="inline-flex">
+                                                    <wm-icon name="icon1" iconclass="fa fa-circle"></wm-icon>
+                                                    <wm-icon iconclass="fa fa-circle" name="icon2"></wm-icon>
+                                                    <wm-icon iconclass="fa fa-circle" name="icon3"></wm-icon>
+                                                    <wm-icon iconclass="fa fa-circle" name="icon4"></wm-icon>
+                                                </wm-container>
+                                                <wm-container display="inline-flex" name="container2">
+                                                    <wm-icon iconclass="fa fa-circle" name="icon5"></wm-icon>
+                                                    <wm-icon iconclass="fa fa-circle" name="icon6"></wm-icon>
+                                                    <wm-icon iconclass="fa fa-circle" name="icon7"></wm-icon>
+                                                    <wm-icon iconclass="fa fa-circle" name="icon8"></wm-icon>
+                                                </wm-container>
+                                                <wm-container display="inline-flex" name="container3">
+                                                    <wm-icon iconclass="fa fa-circle" name="icon9"></wm-icon>
+                                                    <wm-icon iconclass="fa fa-circle" name="icon10"></wm-icon>
+                                                    <wm-icon iconclass="fa fa-circle" name="icon11"></wm-icon>
+                                                    <wm-icon iconclass="fa fa-circle" name="icon12"></wm-icon>
+                                                </wm-container>
+                                                <wm-label name="labelCardNumber" caption="bind:item.cardNumberLastFourDigits" margin="unset unset 0px unset"></wm-label>
+                                            </wm-container>
+                                        </wm-gridcolumn>
+                                    </wm-gridrow>
+                                    <wm-gridrow name="gridrow8" padding="24px unset unset unset">
+                                        <wm-gridcolumn columnwidth="5" name="gridcolumn16" class="col-xs-5">
+                                            <wm-label caption="Card Holder Name" margin="unset unset 0em unset" name="label10" class="f-xxs-2 font-medium text-muted text-ellipsis"></wm-label>
+                                            <wm-label caption="bind:Widgets.getAllManagedCardsList1.currentItem.name" margin="unset unset 0em unset" name="label12" class="f-sm-2 font-medium text-ellipsis"></wm-label>
+                                        </wm-gridcolumn>
+                                        <wm-gridcolumn columnwidth="2" name="gridcolumn24_1" horizontalalign="center" class="col-xs-2">
+                                            <wm-label padding="unset 0.5em unset unset" name="label16" caption="CVV" margin="0.7em unset unset unset" fontsize="11" show="false" deferload="true"></wm-label>
+                                            <wm-html name="html1" horizontalalign="center" margin="unset unset unset 0.7em" fontsize="12" show="false" deferload="true"><span id="cvv"></span></wm-html>
+                                        </wm-gridcolumn>
+                                        <wm-gridcolumn columnwidth="5" name="gridcolumn17" horizontalalign="right" class="col-xs-5">
+                                            <wm-label caption="Valid Thru" class="f-xxs-2 font-medium text-muted text-ellipsis" margin="unset unset 0em unset" name="label11"></wm-label>
+                                            <wm-label caption="bind:calculateExpiryDate(Widgets.getAllManagedCardsList1.currentItem.cardExpiry)" class="f-sm-2 font-medium text-ellipsis" margin="unset unset 0em unset" name="label13"></wm-label>
+                                        </wm-gridcolumn>
+                                    </wm-gridrow>
+                                </wm-layoutgrid>
+                            </wm-card-content>
+                        </wm-card>
+                    </wm-listtemplate>
+                </wm-list>
+                <wm-card imageheight="260px" name="card2" showindevice="xs,sm">
+                    <wm-card-content name="card_content2">
+                        <wm-layoutgrid columns="2" name="layoutgrid3">
+                            <wm-gridrow name="gridrow11">
+                                <wm-gridcolumn columnwidth="6" class="col-xs-6" name="gridcolumn21">
+                                    <wm-label caption="bind:Widgets.getAllManagedCardsList1.currentItem.cardType+&quot; CARD&quot;" margin="0px unset" whitespace="nowrap" fontweight="bold" fontsize="11" name="label15"></wm-label>
+                                </wm-gridcolumn>
+                                <wm-gridcolumn columnwidth="6" class="col-xs-6" name="gridcolumn22">
+                                    <wm-label class="pull-right" caption="BALANCE" fontsize="10" whitespace="nowrap" name="label16_1"></wm-label>
+                                </wm-gridcolumn>
+                            </wm-gridrow>
+                            <wm-gridrow name="gridrow12">
+                                <wm-gridcolumn columnwidth="6" class="col-xs-6" name="gridcolumn23">
+                                    <wm-label caption="bind:Variables.getManagedCardById.dataSet.cardBrand+ &quot; (&quot;+Variables.getManagedCardById.dataSet.currency+(Variables.getManagedCardById.dataSet.currency==&quot;GBP&quot;?&quot; £&quot;:Variables.getManagedCardById.dataSet.currency==&quot;USD&quot;?&quot; $&quot;:&quot; €&quot;)+&quot; )&quot;"
+                                        margin="0.3em unset 0em unset" whitespace="nowrap" fontsize="9" name="label17"></wm-label>
+                                </wm-gridcolumn>
+                                <wm-gridcolumn columnwidth="6" horizontalalign="right" class="col-xs-6" name="gridcolumn24">
+                                    <wm-label caption="bind:((Variables.getManagedCardById.dataSet.currency==&quot;GBP&quot;?&quot;£ &quot;:(Variables.getManagedCardById.dataSet.currency==&quot;USD&quot;?&quot;$ &quot;:&quot;€ &quot;))+((Variables.getManagedCardById.dataSet.balance) | numberToString: '2'))"
+                                        class="pull-right" margin="unset unset 0px unset" whitespace="nowrap" fontsize="12" name="label18"></wm-label>
+                                </wm-gridcolumn>
+                            </wm-gridrow>
+                            <wm-gridrow name="gridrow13">
+                                <wm-gridcolumn columnwidth="3" name="gridcolumn25">
+                                    <wm-label padding="unset 0.5em" caption="XXXX" margin="1em unset unset unset" fontsize="19" name="label19"></wm-label>
+                                </wm-gridcolumn>
+                                <wm-gridcolumn columnwidth="3" name="gridcolumn26">
+                                    <wm-label padding="unset 0.5em" caption="XXXX" fontsize="19" margin="1em unset unset unset" name="label20"></wm-label>
+                                </wm-gridcolumn>
+                                <wm-gridcolumn columnwidth="3" name="gridcolumn27">
+                                    <wm-label padding="unset 0.5em" caption="XXXX" margin="1em unset unset unset" fontsize="19" name="label21"></wm-label>
+                                </wm-gridcolumn>
+                                <wm-gridcolumn columnwidth="3" name="gridcolumn28">
+                                    <wm-label padding="unset 0.5em" caption="bind:Variables.getManagedCardById.dataSet.cardNumberLastFourDigits" fontsize="19" margin="1em unset unset unset" name="label22"></wm-label>
+                                </wm-gridcolumn>
+                            </wm-gridrow>
+                            <wm-gridrow name="gridrow15">
+                                <wm-gridcolumn columnwidth="6" class="col-xs-5" name="gridcolumn30">
+                                    <wm-label caption="NAME" margin="0.7em unset 0em unset" whitespace="nowrap" fontsize="11" name="label24"></wm-label>
+                                </wm-gridcolumn>
+                                <wm-gridcolumn columnwidth="2" horizontalalign="center" class="col-xs-2" name="gridcolumn31"></wm-gridcolumn>
+                                <wm-gridcolumn columnwidth="4" horizontalalign="right" class="col-xs-5" name="gridcolumn32">
+                                    <wm-label caption="VALID THRU" class="pull-right" margin="0.7em unset 0em unset" whitespace="nowrap" fontsize="11" name="label26"></wm-label>
+                                </wm-gridcolumn>
+                            </wm-gridrow>
+                            <wm-gridrow name="gridrow16">
+                                <wm-gridcolumn columnwidth="6" class="col-xs-5" name="gridcolumn33">
+                                    <wm-label caption="bind:Variables.getManagedCardById.dataSet.name" margin="unset unset 0em unset" whitespace="nowrap" fontweight="bold" fontsize="13" name="label27"></wm-label>
+                                </wm-gridcolumn>
+                                <wm-gridcolumn columnwidth="2" horizontalalign="center" class="col-xs-2" name="gridcolumn34_1"></wm-gridcolumn>
+                                <wm-gridcolumn columnwidth="4" horizontalalign="right" class="col-xs-5" name="gridcolumn35">
+                                    <wm-label caption="bind:calculateExpiryDate(Variables.getManagedCardById.dataSet.cardExpiry)" class="pull-right" margin="unset unset 0em unset" whitespace="nowrap" fontsize="13" fontweight="bold" name="label28"></wm-label>
+                                </wm-gridcolumn>
+                            </wm-gridrow>
+                            <wm-gridrow name="gridrow17">
+                                <wm-gridcolumn columnwidth="12" name="gridcolumn36"></wm-gridcolumn>
+                            </wm-gridrow>
+                        </wm-layoutgrid>
+                    </wm-card-content>
+                </wm-card>
+            </wm-gridcolumn>
+        </wm-gridrow>
+        <wm-gridrow name="gridrow19">
+            <wm-gridcolumn columnwidth="6" name="gridcolumn41" horizontalalign="left" class="col-xs-6">
+                <wm-button class="btn-secondary btn-block" caption="Fund Card" type="button" name="buttonFundCard" on-click="buttonFundCardClick($event, widget)" show="bind:showfund"></wm-button>
+                <wm-button class="btn-secondary btn-block" caption="Transfer Funds" type="button" on-click="buttonTransferFundsClick($event, widget)" name="buttonTransferFunds" show="bind:showtransfer"></wm-button>
+            </wm-gridcolumn>
+            <wm-gridcolumn columnwidth="6" name="gridcolumn38" horizontalalign="right" class="col-xs-6">
+                <wm-button caption="Add Spend Limit" type="button" name="buttonChangeSpendLimit" class="btn-tertiary btn-block" on-click="buttonChangeSpendLimitClick($event, widget)" show="bind:showspendlimit"></wm-button>
+            </wm-gridcolumn>
+        </wm-gridrow>
+    </wm-layoutgrid>
+</wm-prefab-container>

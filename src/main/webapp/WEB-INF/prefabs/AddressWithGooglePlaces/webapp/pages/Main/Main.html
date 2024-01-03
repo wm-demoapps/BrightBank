@@ -1,0 +1,36 @@
+<wm-prefab-container name="prefab_container1">
+    <wm-form errormessage="" captionposition="top" title="" enctype="application/x-www-form-urlencoded" method="post" dataset="bind:Variables.AddressDetails.dataSet" captionalign="left" name="AddressDetailsForm1">
+        <wm-layoutgrid columns="2" name="layoutgrid1">
+            <wm-gridrow name="gridrow4">
+                <wm-gridcolumn columnwidth="12" name="gridcolumn7">
+                    <wm-form-field displayname="Search" widget="autocomplete" show="true" type="custom" name="form_field7" placeholder="Address Search" dataset="bind:Variables.svGoogleAutoComplete.dataSet.predictions" searchkey="input" displaylabel="description"
+                        on-select="form_field7Select($event, widget, selectedValue)"></wm-form-field>
+                </wm-gridcolumn>
+            </wm-gridrow>
+            <wm-gridrow name="gridrow1">
+                <wm-gridcolumn columnwidth="6" name="gridcolumn1">
+                    <wm-form-field name="street" displayname="Street Address" key="street" type="string" show="true" widget="text" inputtype="search" placeholder="Ex: Windsor Road" updateon="default" required="bind:streetrequired"></wm-form-field>
+                </wm-gridcolumn>
+                <wm-gridcolumn columnwidth="6" name="gridcolumn2">
+                    <wm-form-field name="buildingOrAddressLine2" key="buildingOrAddressLine2" type="string" displayname="Apartment/Suit" widget="text" show="true" placeholder="Ex: 402, 4th floor" required="true"></wm-form-field>
+                </wm-gridcolumn>
+            </wm-gridrow>
+            <wm-gridrow name="gridrow2">
+                <wm-gridcolumn columnwidth="6" name="gridcolumn3">
+                    <wm-form-field name="city" readonly="false" displayname="City" key="city" type="string" show="true" widget="text" inputtype="text" placeholder="Ex: Islington"></wm-form-field>
+                </wm-gridcolumn>
+                <wm-gridcolumn columnwidth="6" name="gridcolumn4">
+                    <wm-form-field name="state" readonly="false" displayname="State" key="state" type="string" show="true" widget="text" inputtype="text" placeholder="Ex: Westminster"></wm-form-field>
+                </wm-gridcolumn>
+            </wm-gridrow>
+            <wm-gridrow name="gridrow3">
+                <wm-gridcolumn columnwidth="6" name="gridcolumn5">
+                    <wm-form-field name="postalCode" readonly="false" displayname="Postal Code" key="postalCode" type="string" show="true" widget="text" inputtype="text" placeholder="Ex: NW1 5HE"></wm-form-field>
+                </wm-gridcolumn>
+                <wm-gridcolumn columnwidth="6" name="gridcolumn6">
+                    <wm-form-field name="country" readonly="false" displayname="Country Of Residence" key="country" type="string" show="true" widget="text" inputtype="text" placeholder="Ex: GB" required="true"></wm-form-field>
+                </wm-gridcolumn>
+            </wm-gridrow>
+        </wm-layoutgrid>
+    </wm-form>
+</wm-prefab-container>

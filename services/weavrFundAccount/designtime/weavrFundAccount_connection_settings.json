@@ -1,0 +1,35 @@
+{
+  "endpointAddress" : "https://sandbox.weavr.io/simulate/api/accounts/{managed_account_id}/deposit",
+  "method" : "POST",
+  "headers" : {
+    "programme-key" : [ "BpoPo5uKbrIBekKIoTMBCA==" ]
+  },
+  "redirectEnabled" : true,
+  "requestBody" : "{\n  \"depositAmount\": {\n    \"currency\": \"GBP\",\n    \"amount\": 10000\n  }\n}",
+  "queryParams" : { },
+  "authDetails" : null,
+  "contentType" : "application/json",
+  "multiParamInfoList" : null,
+  "sampleHttpResponseDetails" : {
+    "statusCode" : 200,
+    "headers" : {
+      "Date" : [ "Thu, 02 Feb 2023 13:21:00 GMT" ],
+      "Content-Type" : [ "application/json" ],
+      "Content-Length" : [ "25" ],
+      "Connection" : [ "keep-alive" ],
+      "call-ref" : [ "109795348091633675" ],
+      "request-ref" : [ "7521933025833340832" ],
+      "correlation_id" : [ "7521933025833340832" ],
+      "x-request-id" : [ "6863463b-ed13-4fa0-be6c-ece5ec346380" ],
+      "x-envoy-upstream-service-time" : [ "311" ],
+      "referrer-policy" : [ "same-origin" ],
+      "strict-transport-security" : [ "max-age=31536000; includeSubDomains" ],
+      "x-content-type-options" : [ "nosniff" ],
+      "x-frame-options" : [ "SAMEORIGIN" ],
+      "x-xss-protection" : [ "1; mode=block" ],
+      "server" : [ "envoy" ]
+    },
+    "responseBody" : "{\"code\":\"COMPLETED\"}",
+    "convertedResponse" : null
+  }
+}

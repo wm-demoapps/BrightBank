@@ -1,0 +1,24 @@
+{
+  "getLoginTime" : {
+    "_id" : "wm-getLoginTime-wm.ServiceVariable-1627014686431",
+    "name" : "getLoginTime",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "type" : "com.wavemaker.commons.wrapper.StringWrapper",
+    "service" : "securityService",
+    "operation" : "getLoginTime",
+    "operationId" : "SecurityController_getLoginTime",
+    "operationType" : "get",
+    "serviceType" : "SecurityServiceType",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : true,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "Security"
+  }
+}

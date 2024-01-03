@@ -1,0 +1,312 @@
+{
+  "basePath" : "${rest.CustomWealthGoalAPI.basepath}",
+  "paths" : {
+    "/customWealthGoal/wealthGoalsListForUser" : {
+      "x-WM-BASE_PATH" : "/customWealthGoal",
+      "x-WM-TAG" : "CustomWealthGoalController",
+      "x-WM-RELATIVE_PATH" : "/wealthGoalsListForUser",
+      "get" : {
+        "x-WM-METHOD_NAME" : "CustomWealthGoalAPI_CustomWealthGoalController_getWealthGoalsListForUser",
+        "x-WM-CRUD_OPERATION_ID" : "CustomWealthGoalAPI.CustomWealthGoalController",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-OPERATION_TYPE" : "list",
+        "operationId" : "CustomWealthGoalAPI_CustomWealthGoalController_getWealthGoalsListForUser",
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "x-WM-IS_LIST" : true,
+              "type" : "array",
+              "items" : {
+                "x-WM-TYPE_ARGUMENTS" : [ ],
+                "$ref" : "#/definitions/WealthGoalsListModel"
+              }
+            },
+            "description" : "Success"
+          }
+        },
+        "parameters" : [ {
+          "x-WM-EDITABLE" : true,
+          "x-WM-UUID" : "a0b04b56-ebb5-41a5-a656-7b69f1c0e491",
+          "in" : "query",
+          "name" : "userId",
+          "type" : "string",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.String",
+          "required" : false,
+          "x-WM-ORIGINAL-NAME" : "userId"
+        }, {
+          "x-WM-EDITABLE" : true,
+          "x-WM-UUID" : "a1098322-95e7-4e0c-8512-3018c78bc14f",
+          "in" : "query",
+          "name" : "authtoken",
+          "type" : "string",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.String",
+          "required" : false,
+          "x-WM-ORIGINAL-NAME" : "authtoken"
+        }, {
+          "x-WM-EDITABLE" : true,
+          "x-WM-UUID" : "748fc2d4-5e5b-4c42-a3e8-59fd426adacf",
+          "in" : "query",
+          "name" : "apikey",
+          "type" : "string",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.String",
+          "required" : false,
+          "x-WM-ORIGINAL-NAME" : "apikey"
+        } ],
+        "tags" : [ "CustomWealthGoalController" ]
+      },
+      "x-WM-COMPLETE_PATH" : "${rest.CustomWealthGoalAPI.scheme}://${rest.CustomWealthGoalAPI.host}${rest.CustomWealthGoalAPI.basepath}/customWealthGoal/wealthGoalsListForUser"
+    }
+  },
+  "host" : "${rest.CustomWealthGoalAPI.host}",
+  "schemes" : [ "${rest.CustomWealthGoalAPI.scheme}" ],
+  "definitions" : {
+    "LocalDateTime" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "com.wavemaker.networthdashboard.CustomWealthGoalAPI.LocalDateTime",
+      "x-WM-TAGS" : [ "CustomWealthGoalController" ],
+      "properties" : {
+        "date" : {
+          "x-WM-TYPE_ARGUMENTS" : [ ],
+          "$ref" : "#/definitions/LocalDate"
+        },
+        "time" : {
+          "x-WM-TYPE_ARGUMENTS" : [ ],
+          "$ref" : "#/definitions/LocalTime"
+        }
+      }
+    },
+    "ManagedAccountModel" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "com.wavemaker.networthdashboard.CustomWealthGoalAPI.ManagedAccountModel",
+      "x-WM-TAGS" : [ "CustomWealthGoalController" ],
+      "properties" : {
+        "ibanNumber" : {
+          "type" : "string"
+        },
+        "stateDestroyedReason" : {
+          "type" : "string"
+        },
+        "balance" : {
+          "type" : "string"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "stateBlockedReason" : {
+          "type" : "string"
+        },
+        "currency" : {
+          "type" : "string"
+        },
+        "id" : {
+          "type" : "string"
+        },
+        "tag" : {
+          "type" : "string"
+        },
+        "state" : {
+          "type" : "string"
+        }
+      }
+    },
+    "LocalTime" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "com.wavemaker.networthdashboard.CustomWealthGoalAPI.LocalTime",
+      "x-WM-TAGS" : [ "CustomWealthGoalController" ],
+      "properties" : {
+        "hour" : {
+          "format" : "byte",
+          "type" : "string"
+        },
+        "nano" : {
+          "format" : "int32",
+          "type" : "integer"
+        },
+        "minute" : {
+          "format" : "byte",
+          "type" : "string"
+        },
+        "second" : {
+          "format" : "byte",
+          "type" : "string"
+        }
+      }
+    },
+    "WealthGoalsListModel" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "com.wavemaker.networthdashboard.CustomWealthGoalAPI.WealthGoalsListModel",
+      "x-WM-TAGS" : [ "CustomWealthGoalController" ],
+      "properties" : {
+        "goal" : {
+          "x-WM-TYPE_ARGUMENTS" : [ ],
+          "$ref" : "#/definitions/WealthGoals"
+        },
+        "upcomingDueDate" : {
+          "x-WM-SUB_FORMAT" : "date",
+          "format" : "date",
+          "type" : "string"
+        },
+        "accountDetails" : {
+          "x-WM-TYPE_ARGUMENTS" : [ ],
+          "$ref" : "#/definitions/ManagedAccountModel"
+        },
+        "amountSaved" : {
+          "format" : "double",
+          "type" : "number"
+        },
+        "timeLeft" : {
+          "x-WM-TYPE_ARGUMENTS" : [ ],
+          "$ref" : "#/definitions/GoalTimeLeftModel"
+        }
+      }
+    },
+    "WealthGoals" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "com.wavemaker.networthdashboard.CustomWealthGoalAPI.WealthGoals",
+      "x-WM-TAGS" : [ "CustomWealthGoalController" ],
+      "properties" : {
+        "isAutoDebitEnabled" : {
+          "type" : "boolean"
+        },
+        "amount" : {
+          "format" : "double",
+          "type" : "number"
+        },
+        "recurringDay" : {
+          "x-WM-SUB_FORMAT" : "date",
+          "format" : "date",
+          "type" : "string"
+        },
+        "isActive" : {
+          "type" : "boolean"
+        },
+        "createdOn" : {
+          "x-WM-TYPE_ARGUMENTS" : [ ],
+          "$ref" : "#/definitions/LocalDateTime"
+        },
+        "userId" : {
+          "type" : "string"
+        },
+        "savingFrequency" : {
+          "x-WM-TYPE_ARGUMENTS" : [ ],
+          "$ref" : "#/definitions/SavingFrequency"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "timeToGoal" : {
+          "format" : "double",
+          "type" : "number"
+        },
+        "id" : {
+          "format" : "int32",
+          "type" : "integer"
+        },
+        "savingFrequencyId" : {
+          "format" : "int32",
+          "type" : "integer"
+        },
+        "goalCategoryId" : {
+          "format" : "int32",
+          "type" : "integer"
+        },
+        "wealthGoalCategory" : {
+          "x-WM-TYPE_ARGUMENTS" : [ ],
+          "$ref" : "#/definitions/WealthGoalCategory"
+        },
+        "recuringDebitAccountId" : {
+          "type" : "string"
+        },
+        "recurringDebitAmount" : {
+          "format" : "double",
+          "type" : "number"
+        }
+      }
+    },
+    "SavingFrequency" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "com.wavemaker.networthdashboard.CustomWealthGoalAPI.SavingFrequency",
+      "x-WM-TAGS" : [ "CustomWealthGoalController" ],
+      "properties" : {
+        "displayName" : {
+          "type" : "string"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "id" : {
+          "format" : "int32",
+          "type" : "integer"
+        },
+        "isActive" : {
+          "type" : "boolean"
+        }
+      }
+    },
+    "WealthGoalCategory" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "com.wavemaker.networthdashboard.CustomWealthGoalAPI.WealthGoalCategory",
+      "x-WM-TAGS" : [ "CustomWealthGoalController" ],
+      "properties" : {
+        "displayName" : {
+          "type" : "string"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "icon" : {
+          "type" : "string"
+        },
+        "id" : {
+          "format" : "int32",
+          "type" : "integer"
+        },
+        "isActive" : {
+          "type" : "boolean"
+        }
+      }
+    },
+    "GoalTimeLeftModel" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "com.wavemaker.networthdashboard.CustomWealthGoalAPI.GoalTimeLeftModel",
+      "x-WM-TAGS" : [ "CustomWealthGoalController" ],
+      "properties" : {
+        "unit" : {
+          "type" : "string"
+        },
+        "value" : {
+          "format" : "int32",
+          "type" : "integer"
+        }
+      }
+    },
+    "LocalDate" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "com.wavemaker.networthdashboard.CustomWealthGoalAPI.LocalDate",
+      "x-WM-TAGS" : [ "CustomWealthGoalController" ],
+      "properties" : {
+        "month" : {
+          "format" : "int32",
+          "type" : "integer"
+        },
+        "year" : {
+          "format" : "int32",
+          "type" : "integer"
+        },
+        "day" : {
+          "format" : "int32",
+          "type" : "integer"
+        }
+      }
+    }
+  },
+  "swagger" : "2.0",
+  "info" : {
+    "x-WM-USE_PROXY_FOR_WEB" : true,
+    "x-WM-USE_PROXY_FOR_MOBILE" : true,
+    "description" : "Swagger API documentation for CustomWealthGoalService",
+    "x-WM-SERVICE_ID" : "CustomWealthGoalAPI",
+    "title" : "CustomWealthGoalServiceService Swagger Documentation",
+    "version" : "2.0",
+    "x-WM-SERVICE_TYPE" : "OpenAPIService",
+    "x-WM-USE_WITH_CREDENTIALS" : false
+  },
+  "tags" : [ {
+    "x-WM-FULLY_QUALIFIED_NAME" : "com.wavemaker.networthdashboard.CustomWealthGoalAPI.CustomWealthGoalController",
+    "name" : "CustomWealthGoalController",
+    "description" : "controller class for java service execution",
+    "x-WM-VERSION" : "",
+    "x-WM-CONTROLLER_NAME" : "CustomWealthGoal"
+  } ]
+}

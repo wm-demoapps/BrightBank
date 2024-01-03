@@ -1,0 +1,14 @@
+<wm-prefab-container name="prefab_container1">
+    <wm-layoutgrid name="layoutgrid1">
+        <wm-gridrow name="gridrow1">
+            <wm-gridcolumn columnwidth="12" name="gridcolumn1">
+                <wm-container name="container1" content="SpendAnalysisDashboard" show="bind:page == 'Dashboard'"></wm-container>
+            </wm-gridcolumn>
+        </wm-gridrow>
+        <wm-gridrow name="gridrow2">
+            <wm-gridcolumn columnwidth="12" name="gridcolumn3">
+                <wm-container name="container2" content="FullSpendAnalysis" show="bind:page == 'FullSpendAnalysis'"></wm-container>
+            </wm-gridcolumn>
+        </wm-gridrow>
+    </wm-layoutgrid>
+</wm-prefab-container>

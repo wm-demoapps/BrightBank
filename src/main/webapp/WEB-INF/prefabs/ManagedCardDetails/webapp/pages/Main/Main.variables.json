@@ -1,0 +1,47 @@
+{
+  "getManagedCardById" : {
+    "_id" : "wm-getManagedCardById-wm.ServiceVariable-1625213342769",
+    "name" : "getManagedCardById",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "hostName",
+      "value" : "bind:servicehost",
+      "type" : "string"
+    }, {
+      "target" : "authorization",
+      "value" : "bind:authtoken",
+      "type" : "string"
+    }, {
+      "target" : "managedCardId",
+      "value" : "bind:managedcardid",
+      "type" : "string"
+    } ],
+    "service" : "ManagedCardTransactions",
+    "operation" : "getManagedCardById",
+    "operationId" : "ManagedCardTransactionsController_getManagedCardById",
+    "operationType" : "get",
+    "serviceType" : "JavaService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "ManagedCardTransactions"
+  },
+  "supportedLocale" : {
+    "_id" : "wm-wm.Variable1402640443182",
+    "name" : "supportedLocale",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataSet" : {
+      "en" : "English"
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  }
+}

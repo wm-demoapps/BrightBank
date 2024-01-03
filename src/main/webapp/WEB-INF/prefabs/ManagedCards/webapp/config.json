@@ -1,0 +1,122 @@
+{
+  "displayName" : "ManagedCards",
+  "group" : "",
+  "iconUrl" : "/resources/images/imagelists/icon-cards.svg",
+  "resources" : {
+    "styles" : [ "/pages/Main/Main.css" ],
+    "scripts" : [ ]
+  },
+  "properties" : {
+    "servicehost" : {
+      "type" : "string",
+      "displayName" : "Servicehost",
+      "description" : "Which service host need to invoke",
+      "bindable" : "in-bound",
+      "value" : "APIVendor(W)",
+      "widget" : "list",
+      "options" : [ "APIVendor(R)", "APIVendor(W)", "APIVendor(B)" ],
+      "show" : true,
+      "showAt" : "",
+      "disabled" : false
+    },
+    "authtoken" : {
+      "type" : "string",
+      "displayName" : "Authtoken",
+      "description" : "AuthToken for Weavr",
+      "bindable" : "in-bound",
+      "widget" : "string",
+      "show" : true,
+      "showAt" : "",
+      "disabled" : false
+    },
+    "uikey" : {
+      "type" : "string",
+      "displayName" : "Uikey",
+      "description" : "UI Key for CVV component",
+      "bindable" : "in-bound",
+      "value" : "3by2OE5IsSYBekKIoTMACA==",
+      "widget" : "string",
+      "show" : true,
+      "showAt" : "",
+      "disabled" : false
+    },
+    "selectedcardid" : {
+      "type" : "string",
+      "displayName" : "Selectedcardid",
+      "description" : "Selected managed card Id",
+      "bindable" : "out-bound",
+      "value" : "",
+      "widget" : "string",
+      "show" : false,
+      "showAt" : "",
+      "disabled" : true
+    },
+    "cardtype" : {
+      "type" : "string",
+      "displayName" : "Select Card Type",
+      "description" : "Select Card Type(Display simple card or Display Card with More options)",
+      "bindable" : "in-bound",
+      "value" : "SimpleCard",
+      "widget" : "list",
+      "options" : [ "SimpleCard", "CardFlipView" ],
+      "show" : true,
+      "showAt" : "",
+      "disabled" : false
+    },
+    "enduserid" : {
+      "type" : "string",
+      "displayName" : "Enduser Id",
+      "description" : "pass id value to fetch cards of the user",
+      "bindable" : "in-bound",
+      "widget" : "string",
+      "show" : true,
+      "showAt" : "",
+      "disabled" : false
+    },
+    "selectedcard" : {
+      "type" : "object",
+      "displayName" : "Selectedcard",
+      "description" : "get selectedcard deatils",
+      "bindable" : "out-bound",
+      "widget" : "string",
+      "show" : false,
+      "disabled" : true
+    }
+  },
+  "events" : {
+    "onCardnumberselect" : {
+      "description" : "Card Number select event",
+      "eventData" : "",
+      "displayName" : "Cardnumberselect"
+    },
+    "onShowcvv" : {
+      "description" : "Show CVV",
+      "eventData" : "",
+      "displayName" : "Showcvv"
+    },
+    "onCardsrender" : {
+      "description" : "On Cards Render Event exposed on list",
+      "eventData" : "",
+      "displayName" : "Cards Render"
+    },
+    "onCardscount" : {
+      "description" : "to get cards length",
+      "eventData" : "",
+      "displayName" : "Cardscount"
+    }
+  },
+  "methods" : {
+    "refreshCards" : {
+      "description" : "Refresh Managed Cards",
+      "parameters" : [ ],
+      "returnType" : "void",
+      "example" : ""
+    },
+    "totalBalance" : {
+      "description" : "Total Available Balance present in all the cards",
+      "parameters" : [ ],
+      "returnType" : "string",
+      "example" : ""
+    }
+  }
+}

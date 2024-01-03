@@ -1,0 +1,165 @@
+{
+  "CardsTypeData" : {
+    "_id" : "wm-CardsTypeData-wm.Variable-1625497866176",
+    "name" : "CardsTypeData",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "name" : "Physical Card",
+      "initialPicture" : "resources/images/imagelists/physical-card-inactive.svg",
+      "selectedPicture" : "resources/images/imagelists/physical-card-active.svg"
+    }, {
+      "name" : "Virtual Card",
+      "initialPicture" : "resources/images/imagelists/virtual-card-inactive.svg",
+      "selectedPicture" : "resources/images/imagelists/virtual-card-active.svg"
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "CreateManagedCard" : {
+    "_id" : "wm-CreateManagedCard-wm.Variable-1625122483346",
+    "name" : "CreateManagedCard",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "profileId" : "",
+      "friendlyName" : "",
+      "nameOnCard" : "",
+      "cardholderMobileNumber" : "",
+      "billingAddress" : {
+        "addressLine1" : "",
+        "addressLine2" : "",
+        "city" : "",
+        "postCode" : "",
+        "state" : "",
+        "country" : ""
+      },
+      "tag" : "",
+      "mode" : "",
+      "currency" : "",
+      "cardDesign" : "",
+      "cardType" : "",
+      "expiryDate" : "",
+      "ledgerId" : "",
+      "spentLimit" : "",
+      "type" : "",
+      "enduserId" : ""
+    },
+    "type" : "entry",
+    "isList" : false,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "CreateVirtualCardRailsBank" : {
+    "_id" : "wm-CreateCardRailsBank-wm.Variable-1625326301372",
+    "name" : "CreateVirtualCardRailsBank",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "cardDesign" : "",
+      "cardType" : "",
+      "expiryDate" : "",
+      "ledgerId" : "",
+      "nameOnCard" : "",
+      "spentLimit" : "",
+      "type" : "",
+      "enduserId" : ""
+    },
+    "type" : "entry",
+    "isList" : false,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "JS_createManagedCards" : {
+    "_id" : "wm-JS_createManagedCards-wm.ServiceVariable-1625125494774",
+    "name" : "JS_createManagedCards",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "service" : "ManageCardService",
+    "operation" : "createManagedCards",
+    "operationId" : "ManageCardController_createManagedCards",
+    "operationType" : "post",
+    "serviceType" : "JavaService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "onSuccess" : "JS_createManagedCardsonSuccess(variable, data, options)",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "ManageCard"
+  },
+  "Md_CardType" : {
+    "_id" : "wm-Md_CardType-wm.Variable-1626673536640",
+    "name" : "Md_CardType",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "name" : "PREPAID",
+      "dataValue" : "PREPAID_MODE"
+    }, {
+      "name" : "DEBIT",
+      "dataValue" : "DEBIT_MODE"
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "selectedCardType" : {
+    "_id" : "wm-selectedCardType-wm.Variable-1625326713355",
+    "name" : "selectedCardType",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "dataValue" : ""
+    },
+    "type" : "string",
+    "isList" : false,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "supportedLocale" : {
+    "_id" : "wm-wm.Variable1402640443182",
+    "name" : "supportedLocale",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataSet" : {
+      "en" : "English"
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  },
+  "updateManagedCardsToPhysical" : {
+    "_id" : "wm-updateManagedCardsToPhysical-wm.ServiceVariable-1626098105428",
+    "name" : "updateManagedCardsToPhysical",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "service" : "ManageCardService",
+    "operation" : "updateManagedCardsToPhysical",
+    "operationId" : "ManageCardController_updateManagedCardsToPhysical",
+    "operationType" : "put",
+    "serviceType" : "JavaService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "ManageCard"
+  }
+}

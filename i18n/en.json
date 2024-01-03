@@ -1,0 +1,37 @@
+{
+  "messages" : {
+    "LABEL_LOCALIZATION" : "Addons",
+    "LABEL_SETTINGS" : "Settings",
+    "LABEL_WEALTH_GOALS" : "Wealth Goals",
+    "LABEL_SPEND_ANALYSIS" : "Spend Analysis",
+    "LABEL_CARDS" : "Cards",
+    "LABEL_DASHBOARD" : "Dashboard",
+    "LABEL_DEPOSIT" : "DEPOSIT",
+    "LABEL_PERSONAL" : "personal",
+    "LABEL_PAYMENTS" : "PAYMENTS",
+    "LABEL_ACCOUNTS" : "Accounts",
+    "LABEL_ADD_ACCOUNT" : "ADD ACCOUNT",
+    "LABEL_CREATE_ACCOUNT" : "Create Account",
+    "LABEL_GIVE_YOUR_ACCOUNT_NAME" : "Give your account a name",
+    "LABEL_SAVINGS_ACCOUNT" : "Savings Account",
+    "LABEL_SAVINGS_ACCOUNT_PLACEHOLDER" : "Ex: Savings Account",
+    "LABEL_SELECT_CURRENCY" : "Select Currency",
+    "LABEL_PRIMARY_USE" : "Primary Use",
+    "LABEL_CRETAE_PAYMENTS" : "Payments",
+    "LABEL_CRETAE_DEPOSIT" : "Deposit",
+    "LABEL_CRETAE_SETTLEMENT" : "Settlement",
+    "LABEL_BUTTON_CANCEL" : "Cancel",
+    "LABEL_BUTTON_CREATE" : "Create"
+  },
+  "formats" : {
+    "date" : "MMM d, y",
+    "time" : "h:mm:ss a",
+    "currency" : "USD"
+  },
+  "files" : {
+    "angular" : "en",
+    "fullCalendar" : null,
+    "moment" : null
+  },
+  "prefabMessages" : { }
+}

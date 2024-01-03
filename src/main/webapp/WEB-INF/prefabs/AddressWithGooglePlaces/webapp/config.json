@@ -1,0 +1,45 @@
+{
+  "displayName" : "Address Search",
+  "group" : "",
+  "iconUrl" : "/resources/images/imagelists/prefab-icon.png",
+  "resources" : {
+    "styles" : [ "/pages/Main/Main.css" ],
+    "scripts" : [ ]
+  },
+  "properties" : {
+    "addressdata" : {
+      "type" : "object",
+      "displayName" : "Address Data",
+      "description" : "This property has the complete address information.",
+      "bindable" : "out-bound",
+      "value" : "bind:Widgets.AddressDetailsForm1.dataoutput",
+      "widget" : "string",
+      "show" : false,
+      "showAt" : "",
+      "disabled" : true
+    },
+    "apikey" : {
+      "type" : "string",
+      "displayName" : "API KEY",
+      "description" : "API key required to fetch the google places",
+      "bindable" : "in-bound",
+      "widget" : "string",
+      "show" : true,
+      "showAt" : "",
+      "disabled" : false
+    },
+    "streetrequired" : {
+      "type" : "boolean",
+      "displayName" : "Street Required",
+      "description" : "Enable if street is required",
+      "bindable" : "in-bound",
+      "value" : true,
+      "widget" : "checkbox",
+      "show" : true,
+      "showAt" : "Main.street",
+      "disabled" : false
+    }
+  },
+  "events" : { },
+  "methods" : { }
+}

@@ -1,0 +1,132 @@
+<wm-prefab-container name="prefab_container1">
+    <wm-layoutgrid name="layoutgrid5">
+        <wm-gridrow name="gridrow7">
+            <wm-gridcolumn columnwidth="12" name="gridcolumn14">
+                <wm-list listclass="list-group" itemsperrow="xs-1 sm-2 md-3 lg-3" template="true" template-name="Contact Card" class="list-card" statehandler="none" name="wealthGoalsListList" dataset="bind:Variables.jsGetWealthGoalsListForUser.dataSet" navigation="Scroll"
+                    show="bind:containsGoals">
+                    <wm-listtemplate layout="media" name="listtemplate3">
+                        <wm-card name="goalsCard">
+                            <wm-card-content name="goalsCardcard_content">
+                                <wm-container name="containerOuterBody" show="bind:Widgets.wealthGoalsListList.currentItem.goal.id ? true : false">
+                                    <wm-container name="containerCardHeading">
+                                        <wm-layoutgrid name="layoutgrid2" class="spacing-base">
+                                            <wm-gridrow name="gridrow2" class="flex-row flex-vertical-center">
+                                                <wm-gridcolumn columnwidth="6" name="gridcolumn2" class="column-6">
+                                                    <wm-icon name="iconCategory" caption="bind:Widgets.wealthGoalsListList.currentItem.goal.wealthGoalCategory.displayName" iconclass="bind:'text-highlight f-l ' + Widgets.wealthGoalsListList.currentItem.goal.wealthGoalCategory.icon"
+                                                        class="f-sm-2 font-medium text-uppercase"></wm-icon>
+                                                </wm-gridcolumn>
+                                                <wm-gridcolumn columnwidth="6" name="gridcolumn7_1" horizontalalign="right" class="column-6">
+                                                    <wm-label name="labelCreatedOn" caption="Created On" class="font-medium f-xxs-3 text-muted"></wm-label>
+                                                    <wm-label padding="unset unset unset 0.25em" name="labelCreateedDate" caption="bind:Widgets.wealthGoalsListList.currentItem.goal.createdOn  | toDate: 'dd MMM, YYYY'
+" class="font-semibold f-xxs-3"></wm-label>
+                                                </wm-gridcolumn>
+                                            </wm-gridrow>
+                                        </wm-layoutgrid>
+                                    </wm-container>
+                                    <wm-container name="containerBody">
+                                        <wm-layoutgrid name="layoutgrid2_1">
+                                            <wm-gridrow name="gridrow3">
+                                                <wm-gridcolumn columnwidth="12" name="gridcolumn5">
+                                                    <wm-container name="containerDueNote" class="app-container bg-active p-sm" margin="unset unset 12px unset">
+                                                        <wm-layoutgrid name="layoutgrid4" class="spacing-base">
+                                                            <wm-gridrow name="gridrow5" class="flex-row">
+                                                                <wm-gridcolumn columnwidth="4" name="gridcolumn8_2" class="column-4">
+                                                                    <wm-label caption="From" name="labelFrom" class="f-xxs-2 font-medium text-muted" margin="unset unset 4px unset"></wm-label>
+                                                                    <wm-label caption="bind:Widgets.wealthGoalsListList.currentItem.accountDetails.name" name="labeAccountFrom" margin="4px unset" class="f-xxs-2 font-medium text-ellipsis label-highlight"></wm-label>
+                                                                    <wm-label caption="bind:cardHide(Widgets.wealthGoalsListList.currentItem.accountDetails.id)" name="labelAccountNumber" margin="unset unset 0px unset" class="f-xxs-2 font-medium text-muted"></wm-label>
+                                                                </wm-gridcolumn>
+                                                                <wm-gridcolumn columnwidth="4" name="gridcolumn9" class="column-4">
+                                                                    <wm-container name="container10" class="border-seperator">
+                                                                        <wm-label name="labelDueText" caption="Due on" class="f-xxs-2 font-medium text-muted" margin="unset unset 4px unset"></wm-label>
+                                                                        <wm-label name="labelDueDate" caption="bind:Widgets.wealthGoalsListList.currentItem.upcomingDueDate | toDate: 'dd MMM, YYYY'" class="f-xxs-2 font-medium label-highlight"
+                                                                            margin="4px unset"></wm-label>
+                                                                    </wm-container>
+                                                                </wm-gridcolumn>
+                                                                <wm-gridcolumn columnwidth="4" name="gridcolumn12" horizontalalign="right" class="column-4">
+                                                                    <wm-container name="container20">
+                                                                        <wm-label caption="Amount Due" name="labelDue" class="f-xxs-2 font-medium text-muted" margin="unset unset 4px unset"></wm-label>
+                                                                        <wm-label name="labelDueAmount" caption="bind:Widgets.wealthGoalsListList.currentItem.goal.recurringDebitAmount" class="f-xxs-2 font-medium text-ellipsis label-highlight"
+                                                                            margin="4px unset"></wm-label>
+                                                                    </wm-container>
+                                                                </wm-gridcolumn>
+                                                            </wm-gridrow>
+                                                        </wm-layoutgrid>
+                                                    </wm-container>
+                                                </wm-gridcolumn>
+                                            </wm-gridrow>
+                                            <wm-gridrow name="gridrow4" class="flex-row">
+                                                <wm-gridcolumn columnwidth="8" name="gridcolumn7" class="column-8">
+                                                    <wm-container name="containerProgress">
+                                                        <wm-label caption="Amount Saved" name="labelAmountSavedText" class="f-xs font-semibold label-highlight" margin="unset unset 12px unset"></wm-label>
+                                                        <wm-progress-bar datavalue="bind:Widgets.wealthGoalsListList.currentItem.amountSaved" name="progress_barGoal" type="danger" minvalue="0" maxvalue="bind:Widgets.wealthGoalsListList.currentItem.goal.amount"
+                                                            margin="unset unset 8px unset"></wm-progress-bar>
+                                                        <wm-layoutgrid name="layoutgrid3">
+                                                            <wm-gridrow name="gridrow4_1" class="flex-row">
+                                                                <wm-gridcolumn columnwidth="8" name="gridcolumn7_2" class="column-8">
+                                                                    <wm-label caption="bind:(Widgets.wealthGoalsListList.currentItem.amountSaved | toCurrency: '$': '2')+'/'+(Widgets.wealthGoalsListList.currentItem.goal.amount | toCurrency: '$')
+
+
+" name="labelAmountTrnSum" class="f-xxs-2 text-ellipsis" margin="unset unset 0px unset"></wm-label>
+                                                                </wm-gridcolumn>
+                                                                <wm-gridcolumn columnwidth="4" name="gridcolumn8_1" horizontalalign="right" class="column-4">
+                                                                    <wm-label caption="bind:((Widgets.wealthGoalsListList.currentItem.amountSaved/Widgets.wealthGoalsListList.currentItem.goal.amount)*100)  | toCurrency: '': '2'| suffix: '%'" name="labelPercentage"
+                                                                        class="f-xxs-2 font-semibold" margin="unset unset 0px unset"></wm-label>
+                                                                </wm-gridcolumn>
+                                                            </wm-gridrow>
+                                                        </wm-layoutgrid>
+                                                    </wm-container>
+                                                </wm-gridcolumn>
+                                                <wm-gridcolumn columnwidth="4" name="gridcolumn8" horizontalalign="right" class="column-4">
+                                                    <wm-container name="containerMonthsLeft">
+                                                        <wm-label name="labelFrequency" caption="bind:Widgets.wealthGoalsListList.currentItem.timeLeft.unit+ ' left'" class="p font-medium text-muted label-highlight" margin="unset unset 12px unset"></wm-label>
+                                                        <wm-label name="labelMonthsLeft" caption="bind:Widgets.wealthGoalsListList.currentItem.timeLeft.value" class="f-xl font-medium label-highlight" margin="unset unset 0px unset"></wm-label>
+                                                    </wm-container>
+                                                </wm-gridcolumn>
+                                            </wm-gridrow>
+                                        </wm-layoutgrid>
+                                    </wm-container>
+                                </wm-container>
+                                <wm-container name="containerCreateGoal" show="bind:Widgets.wealthGoalsListList.currentItem.goal.id ? false : true" horizontalalign="center" on-click="containerCreateGoalClick($event, widget, item, currentItemWidgets)"
+                                    class="add-goal-panel" showindevice="md,lg">
+                                    <wm-button class="btn-add" caption="Add New Goal" type="button" name="buttonAddNewGoal" iconposition="top" iconurl="resources/images/imagelists/circle-plus_3x.png" iconwidth="28px" showindevice="md,lg" iconclass=""></wm-button>
+                                </wm-container>
+                            </wm-card-content>
+                            <wm-card-footer horizontalalign="right" name="goalsCard_footer" show="bind:Widgets.wealthGoalsListList.currentItem.goal.id ? true : false">
+                                <wm-button class="btn-end" caption="End Goal" type="button" margin="unset 24px unset unset" name="buttonEndGoal" iconclass="wi wi-cancel fa-2x text-warning"></wm-button>
+                                <wm-button class="btn-edit" caption="Modify Goal" type="button" name="buttonModifyGoal" iconclass="wi wi-edit f-l text-highlight"></wm-button>
+                            </wm-card-footer>
+                        </wm-card>
+                    </wm-listtemplate>
+                </wm-list>
+            </wm-gridcolumn>
+        </wm-gridrow>
+        <wm-gridrow name="gridrow8">
+            <wm-gridcolumn columnwidth="2" name="gridcolumn19"></wm-gridcolumn>
+            <wm-gridcolumn columnwidth="8" name="gridcolumn16">
+                <wm-container name="containerNoData" show="bind:containsGoals == false" horizontalalign="center" class="panel" showindevice="md,lg">
+                    <wm-container name="container11" class="no-data-panel" margin="4em unset unset unset">
+                        <wm-picture resizemode="cover" name="pictureNoData" picturesource="resources/images/imagelists/no-wealth-goals.svg" class="no-data-img"></wm-picture>
+                        <wm-label name="label18" caption="bind:'No data available for Wealth Goals'" class="no-data-title"></wm-label>
+                        <wm-label name="label18_1" caption="bind:'You can only see Wealth Goal information after you Create a Wealt Goal'" class="no-data-description"></wm-label>
+                        <wm-button class="btn-add" caption="CREATE  NEW WEALTH GOAL" type="button" name="buttonCreateGoalAccount" iconurl="resources/images/imagelists/circle-plus_3x.png" iconwidth="25px" on-click="buttonCreateGoalAccountClick($event, widget)"
+                            margin="2em unset unset unset" iconclass=""></wm-button>
+                    </wm-container>
+                </wm-container>
+            </wm-gridcolumn>
+            <wm-gridcolumn columnwidth="2" name="gridcolumn20"></wm-gridcolumn>
+        </wm-gridrow>
+        <wm-gridrow name="gridrow8_1">
+            <wm-gridcolumn columnwidth="12" name="gridcolumn15">
+                <wm-container show="bind:containsGoals == false" horizontalalign="center" showindevice="xs,sm" name="containerMobileEmptyState" padding="unset 10px" width="100%">
+                    <wm-linearlayout direction="column" spacing="4" padding="4px" name="linearlayout1" width="100%">
+                        <wm-linearlayoutitem flexgrow="1" name="linearlayoutitem1" horizontalalign="center" width="100%">
+                            <wm-picture resizemode="cover" picturesource="resources/images/imagelists/no-wealth-goals.svg" name="picture3" margin="unset unset 20px unset" width="110" height="110"></wm-picture>
+                            <wm-label padding="unset 0.5em" name="label19" caption="No data available for Wealth Goals" class="no-data-title" width="100%"></wm-label>
+                            <wm-label padding="unset 0.5em" caption="You can only see Wealth Goal information after you Create a Wealth Goal" name="label20" class="no-data-description" width="100%"></wm-label>
+                        </wm-linearlayoutitem>
+                    </wm-linearlayout>
+                </wm-container>
+            </wm-gridcolumn>
+        </wm-gridrow>
+    </wm-layoutgrid>
+</wm-prefab-container>

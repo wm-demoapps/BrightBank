@@ -1,0 +1,138 @@
+{
+  "displayName" : "ApplyManagedCard",
+  "group" : "",
+  "iconUrl" : "/resources/images/imagelists/icon-apply-card.svg",
+  "resources" : {
+    "styles" : [ "/pages/Main/Main.css" ],
+    "scripts" : [ ]
+  },
+  "properties" : {
+    "servicehost" : {
+      "type" : "string",
+      "displayName" : "Servicehost",
+      "description" : "Service to invoke",
+      "bindable" : "in-bound",
+      "value" : "APIVendor(W)",
+      "widget" : "list",
+      "options" : [ "APIVendor(R)", "APIVendor(W)", "APIVendor(B)" ],
+      "show" : true,
+      "showAt" : "",
+      "disabled" : false
+    },
+    "authtoken" : {
+      "type" : "string",
+      "displayName" : "Authtoken",
+      "description" : "Authentication for root user",
+      "bindable" : "in-bound",
+      "widget" : "string",
+      "show" : true,
+      "showAt" : "",
+      "disabled" : false
+    },
+    "enduserid" : {
+      "type" : "string",
+      "displayName" : "Enduser Id",
+      "description" : "id of logged in user to fetch ledgers info of the user",
+      "bindable" : "in-bound",
+      "widget" : "string",
+      "show" : true,
+      "showAt" : "",
+      "disabled" : false
+    },
+    "defaultcardholdername" : {
+      "type" : "string",
+      "displayName" : "Default Card Holder Name",
+      "description" : "provided value will be prefilled in the card holder field while applying for a card",
+      "bindable" : "in-bound",
+      "widget" : "string",
+      "show" : true,
+      "showAt" : "",
+      "disabled" : false
+    },
+    "addedcardid" : {
+      "type" : "string",
+      "displayName" : "Addedcardid",
+      "description" : "Newly Added card Id",
+      "bindable" : "out-bound",
+      "widget" : "string",
+      "show" : false,
+      "showAt" : "",
+      "disabled" : true
+    },
+    "googleplacesapikey" : {
+      "type" : "string",
+      "displayName" : "Googleplacesapikey",
+      "description" : "Google places API key to auto fill the address",
+      "bindable" : "in-bound",
+      "widget" : "string",
+      "show" : true,
+      "showAt" : "",
+      "disabled" : false
+    },
+    "selectedledgercurreny" : {
+      "type" : "string",
+      "displayName" : "Selected Ledger Curreny",
+      "description" : "Selected ledger currency type",
+      "bindable" : "out-bound",
+      "value" : "bind:Widgets.CreateCardRailsBankForm1.formWidgets.ledgerId.datavalue.asset_type",
+      "widget" : "string",
+      "show" : false,
+      "showAt" : "",
+      "disabled" : true
+    },
+    "wizardlayout" : {
+      "type" : "string",
+      "displayName" : "Wizardlayout",
+      "description" : "Wizard Layout to choose:\n1. Horizontal Layout\n2. Vertical Layout",
+      "bindable" : "in-bound",
+      "widget" : "list",
+      "options" : [ "Horizontal Layout", "Vertical Layout" ],
+      "show" : true,
+      "showAt" : "",
+      "disabled" : false
+    },
+    "currencytype" : {
+      "type" : "string",
+      "displayName" : "Currency Type",
+      "description" : "Default currency to set while creating a new card",
+      "bindable" : "in-bound",
+      "widget" : "string",
+      "show" : true,
+      "showAt" : "",
+      "disabled" : false
+    }
+  },
+  "events" : {
+    "onClose" : {
+      "description" : "Close dialog event",
+      "eventData" : "",
+      "displayName" : "Close"
+    },
+    "onCardadd" : {
+      "description" : "Callback action which will be triggered on adding a card",
+      "eventData" : "",
+      "displayName" : "Card Add"
+    },
+    "onFundcard" : {
+      "description" : "Fund the card",
+      "eventData" : "",
+      "displayName" : "Fundcard"
+    },
+    "onCardtypeselect" : {
+      "description" : "Card Type Selection",
+      "eventData" : "",
+      "displayName" : "Cardtypeselect"
+    },
+    "onCardselectmouseenter" : {
+      "description" : "On Mouse hover of the card",
+      "eventData" : "",
+      "displayName" : "CardSelectMouseEnter"
+    },
+    "onCardselectmouseleave" : {
+      "description" : "On Mouse Leave of the card",
+      "eventData" : "",
+      "displayName" : "Cardselectmouseleave"
+    }
+  },
+  "methods" : { }
+}

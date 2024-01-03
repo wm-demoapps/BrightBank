@@ -1,0 +1,36 @@
+{
+  "endpointAddress" : "https://sandbox.weavr.io/simulate/api/cards/{cardId}/purchase",
+  "method" : "POST",
+  "headers" : {
+    "Content-Type" : [ "application/json" ],
+    "programme-key" : [ "vrdO4T5327wBeqOUIIABDQ==" ]
+  },
+  "redirectEnabled" : true,
+  "requestBody" : "{\n\"merchantName\":\"Groceries\",\n\"transactionAmount\":{\n\"currency\":\"GBP\",\n\"amount\":\"100\"\n}}",
+  "queryParams" : { },
+  "authDetails" : null,
+  "contentType" : "application/json",
+  "multiParamInfoList" : null,
+  "sampleHttpResponseDetails" : {
+    "statusCode" : 200,
+    "headers" : {
+      "Date" : [ "Tue, 21 Feb 2023 09:44:35 GMT" ],
+      "Content-Type" : [ "application/json" ],
+      "Content-Length" : [ "24" ],
+      "Connection" : [ "keep-alive" ],
+      "call-ref" : [ "109902080630652942" ],
+      "request-ref" : [ "3057209016056106816" ],
+      "correlation_id" : [ "3057209016056106816" ],
+      "x-request-id" : [ "2a6d6366-fe25-4f40-ae0a-1bf243ec8a31" ],
+      "x-envoy-upstream-service-time" : [ "5861" ],
+      "referrer-policy" : [ "same-origin" ],
+      "strict-transport-security" : [ "max-age=31536000; includeSubDomains" ],
+      "x-content-type-options" : [ "nosniff" ],
+      "x-frame-options" : [ "SAMEORIGIN" ],
+      "x-xss-protection" : [ "1; mode=block" ],
+      "server" : [ "envoy" ]
+    },
+    "responseBody" : "{\"code\":\"APPROVED\"}",
+    "convertedResponse" : null
+  }
+}

@@ -1,0 +1,11 @@
+<wm-partial name="partial1">
+    <wm-layoutgrid name="layoutgrid1" class="profile-header">
+        <wm-gridrow name="gridrow1">
+            <wm-gridcolumn columnwidth="6" name="gridcolumn1"></wm-gridcolumn>
+            <wm-gridcolumn columnwidth="6" name="gridcolumn2" horizontalalign="right">
+                <wm-label padding="unset 0.5em" name="label1" caption="bind:Variables.consumerGet.dataSet.rootUser.name +' '+Variables.consumerGet.dataSet.rootUser.surname" fontweight="bold"></wm-label>
+                <wm-popover popoverheight="100px" margin="unset 0.5em" name="popover1" contentsource="partial" iconurl="resources/images/imagelists/group.svg" iconheight="35px" caption="" content="profileActionsPopup" backgroundrepeat="no-repeat"></wm-popover>
+            </wm-gridcolumn>
+        </wm-gridrow>
+    </wm-layoutgrid>
+</wm-partial>

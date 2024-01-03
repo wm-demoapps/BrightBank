@@ -1,0 +1,268 @@
+{
+  "AddNewLedger" : {
+    "_id" : "wm-AddNewLedger-wm.ServiceVariable-1624452543733",
+    "name" : "AddNewLedger",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "type" : "com.rb_addledgerprefab.RBSwagger.RbswaggerPostV1CustomerLedgersResponse",
+    "service" : "RBSwagger",
+    "operation" : "RBSwagger_POST_v1-customer-ledgers",
+    "operationId" : "RBSwagger_POST_v1-customer-ledgers",
+    "serviceType" : "OpenAPIService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "customer"
+  },
+  "AssetClass" : {
+    "_id" : "wm-AssetClass-wm.Variable-1623667998324",
+    "name" : "AssetClass",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "name" : "Currency",
+      "dataValue" : "currency"
+    }, {
+      "name" : "Commodity",
+      "dataValue" : "commodity"
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "AssetTypeData" : {
+    "_id" : "wm-AssetTypeData-wm.Variable-1624439605545",
+    "name" : "AssetTypeData",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "name" : "EUR €",
+      "type" : "eur"
+    }, {
+      "name" : "GBP £",
+      "type" : "gbp"
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "AssignIbanForEURLedger" : {
+    "_id" : "wm-AssignIbanForEURLedger-wm.ServiceVariable-1625041325432",
+    "name" : "AssignIbanForEURLedger",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "type" : "com.rb_addledgerprefab.RBSwagger.RbswaggerPostV1CustomerLedgersLedgerIdAssignIbanResponse",
+    "service" : "RBSwagger",
+    "operation" : "RBSwagger_POST_v1-customer-ledgers-ledger_id-assign-iban",
+    "operationId" : "RBSwagger_POST_v1-customer-ledgers-ledger_id-assign-iban",
+    "serviceType" : "OpenAPIService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "customer"
+  },
+  "CreateAccountInfo" : {
+    "_id" : "wm-AccountInfo-wm.Variable-1626011717194",
+    "name" : "CreateAccountInfo",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "body" : {
+        "asset_class" : "",
+        "asset_type" : "",
+        "holder_id" : "",
+        "ledger_primary_use_types" : "",
+        "ledger_t_and_cs_country_of_jurisdiction" : "",
+        "ledger_type" : "",
+        "ledger_who_owns_assets" : "",
+        "partner_product" : ""
+      }
+    },
+    "type" : "entry",
+    "isList" : false,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "createManagedAccount" : {
+    "_id" : "wm-createManagedAccount-wm.ServiceVariable-1626011941993",
+    "name" : "createManagedAccount",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "service" : "AddManagedAccountService",
+    "operation" : "createManagedAccount",
+    "operationId" : "AddManagedAccountController_createManagedAccount",
+    "operationType" : "post",
+    "serviceType" : "JavaService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "onBeforeUpdate" : "createManagedAccountonBeforeUpdate(variable, inputData, options)",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "AddManagedAccount"
+  },
+  "ledgerInfo" : {
+    "_id" : "wm-ledgerInfo-wm.Variable-1623926656391",
+    "name" : "ledgerInfo",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "assetType" : "GBP",
+      "partnerProduct" : "PayrNet-GBP-2",
+      "jurisdicton" : "GBR"
+    }, {
+      "assetType" : "USD",
+      "partnerProduct" : "PayrNet-USD-1",
+      "jurisdicton" : "US"
+    }, {
+      "assetType" : "EUR",
+      "partnerProduct" : "PayrNet-EUR-1",
+      "jurisdicton" : "GBR"
+    }, {
+      "assetType" : "AUD",
+      "partnerProduct" : "Banking-AUD-1",
+      "jurisdicton" : "AUS"
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "LedgerMetaData" : {
+    "_id" : "wm-LedgerMetaData-wm.Variable-1624525922596",
+    "name" : "LedgerMetaData",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "ledgerName" : ""
+    },
+    "type" : "entry",
+    "isList" : false,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "LedgerPrimaryUseTypesData" : {
+    "_id" : "wm-LedgerPrimaryUseTypesData-wm.Variable-1623668223589",
+    "name" : "LedgerPrimaryUseTypesData",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "name" : "Payments",
+      "dataValue" : "ledger-primary-use-types-payments"
+    }, {
+      "name" : "Deposit",
+      "dataValue" : "ledger-primary-use-types-deposit"
+    }, {
+      "name" : "Settlement",
+      "dataValue" : "ledger-primary-use-types-settlement"
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "LedgerTypeData" : {
+    "_id" : "wm-LedgerTypeData-wm.Variable-1623670277238",
+    "name" : "LedgerTypeData",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "name" : "Single User",
+      "dataValue" : "ledger-type-single-user"
+    }, {
+      "name" : "Omnibus",
+      "dataValue" : "ledger-type-omnibus"
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "LedgerWhoOwnsAssets" : {
+    "_id" : "wm-LedgerWhoOwnsAssets-wm.Variable-1623670370444",
+    "name" : "LedgerWhoOwnsAssets",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "name" : "Me",
+      "dataValue" : "ledger-assets-owned-by-me"
+    }, {
+      "name" : "Others",
+      "dataValue" : "ledger-assets-owned-by-other"
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "supportedLocale" : {
+    "_id" : "wm-wm.Variable1402640443182",
+    "name" : "supportedLocale",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataSet" : {
+      "en" : "English"
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  },
+  "timerAction1" : {
+    "_id" : "wm-timerAction1-wm.TimerVariable-1625717170532",
+    "name" : "timerAction1",
+    "owner" : "Page",
+    "category" : "wm.TimerVariable",
+    "startUpdate" : false,
+    "repeating" : false,
+    "delay" : 3000,
+    "onTimerFire" : "timerAction1onTimerFire(variable, data, options)"
+  },
+  "updateManagedAccountToIBAN" : {
+    "_id" : "wm-updateManagedAccountToIBAN-wm.ServiceVariable-1626012436779",
+    "name" : "updateManagedAccountToIBAN",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "type" : "com.create_account.managedaccountmodel.ManagedAccountModel",
+    "service" : "AddManagedAccountService",
+    "operation" : "updateManagedAccountToIBAN",
+    "operationId" : "AddManagedAccountController_updateManagedAccountToIBAN",
+    "operationType" : "put",
+    "serviceType" : "JavaService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : true,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "AddManagedAccount"
+  }
+}

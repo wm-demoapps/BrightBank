@@ -1,0 +1,36 @@
+{
+  "jsSendEmailWithSimpleMessage" : {
+    "_id" : "wm-jsSendEmailWithSimpleMessage-wm.ServiceVariable-1678520071369",
+    "name" : "jsSendEmailWithSimpleMessage",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "toEmailAddress",
+      "value" : "bind:'venkateswarlu.kakani@wavemaker.com'",
+      "type" : "string"
+    }, {
+      "target" : "emailSubject",
+      "value" : "bind:'sample'",
+      "type" : "string"
+    }, {
+      "target" : "emailMessage",
+      "value" : "bind:'sample email'",
+      "type" : "string"
+    } ],
+    "type" : "object",
+    "service" : "EmailService",
+    "operation" : "sendMailWithSimpleMessage",
+    "operationId" : "EmailController_sendMailWithSimpleMessage",
+    "operationType" : "get",
+    "serviceType" : "JavaService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "Email"
+  }
+}

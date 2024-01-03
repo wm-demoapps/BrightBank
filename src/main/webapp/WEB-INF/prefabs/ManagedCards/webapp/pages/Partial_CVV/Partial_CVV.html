@@ -1,0 +1,35 @@
+<wm-partial name="partial1">
+    <wm-layoutgrid columns="2" name="layoutgrid3" height="190">
+        <wm-gridrow name="gridrow11">
+            <wm-gridcolumn columnwidth="12" name="gridcolumn24" horizontalalign="right">
+                <wm-button caption="" type="button" margin="-10px -10px unset unset" name="buttonClose" iconclass="wm-sl-r sl-close" on-click="buttonCloseClick($event, widget)" class="btn-transparent" color="rgba(255, 255, 255, 0.8)" fontweight="bold"></wm-button>
+            </wm-gridcolumn>
+        </wm-gridrow>
+        <wm-gridrow name="gridrow10" padding="72px unset unset unset" height="102">
+            <wm-gridcolumn columnwidth="12" horizontalalign="center" name="gridcolumn21">
+                <wm-html name="html2" show="true" deferload="true"><span id="cardNumber"></span></wm-html>
+            </wm-gridcolumn>
+        </wm-gridrow>
+        <wm-gridrow name="gridrow4" padding="18px unset unset unset">
+            <wm-gridcolumn columnwidth="12" name="gridcolumn6">
+                <wm-container name="container1" class="cvv-container">
+                    <wm-container name="container2" class="cvv-data">
+                        <wm-label name="label1" caption="CVV" class="label-cvv"></wm-label>
+                        <wm-html name="html1" class="cvv-code"><span id="cvv"></span></wm-html>
+                    </wm-container>
+                </wm-container>
+            </wm-gridcolumn>
+        </wm-gridrow>
+    </wm-layoutgrid>
+    <!--<wm-layoutgrid name="layoutgrid1">-->
+    <!--    <wm-gridrow name="gridrow1">-->
+    <!--        <wm-gridcolumn columnwidth="8" name="gridcolumn1" class="strippedStyle col-xs-8" height="3.32em"></wm-gridcolumn>-->
+    <!--        <wm-gridcolumn columnwidth="2" name="gridcolumn5" horizontalalign="right" class="col-xs-2">-->
+    <!--            <wm-label padding="unset 0.5em" name="label1" caption="CVV" margin="1em unset unset unset"></wm-label>-->
+    <!--        </wm-gridcolumn>-->
+    <!--        <wm-gridcolumn columnwidth="2" name="gridcolumn2" horizontalalign="left" class="col-xs-2">-->
+    <!--            <wm-html name="html1" horizontalalign="right" margin="1em unset unset unset"><span id="cvv"></span></wm-html>-->
+    <!--        </wm-gridcolumn>-->
+    <!--    </wm-gridrow>-->
+    <!--</wm-layoutgrid>-->
+</wm-partial>

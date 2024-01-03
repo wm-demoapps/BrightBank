@@ -1,0 +1,13 @@
+[ {
+  "name" : "Main",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "WizardHorizontalLayout",
+  "type" : "PARTIAL",
+  "params" : [ ]
+}, {
+  "name" : "WizardVerticalLayout",
+  "type" : "PARTIAL",
+  "params" : [ ]
+} ]

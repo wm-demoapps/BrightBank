@@ -1,0 +1,204 @@
+<wm-page pagetitle="Card Transactions" name="page1">
+    <wm-header content="header" name="header1"></wm-header>
+    <wm-content name="content1">
+        <wm-left-panel columnwidth="2" content="leftnav" name="left_panel1"></wm-left-panel>
+        <wm-page-content columnwidth="10" name="page_content1" class="spacing-large">
+            <wm-layoutgrid name="layoutgrid1" class="spacing-base">
+                <wm-gridrow name="gridrow2">
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn3">
+                        <wm-container name="container2" height="540px" animation="fadeInUp">
+                            <wm-layoutgrid name="layoutgrid2" columns="1">
+                                <wm-gridrow name="gridrow5_1" padding="unset unset 1em unset">
+                                    <wm-gridcolumn columnwidth="12" name="gridcolumn7">
+                                        <wm-label name="label4_1" caption="Card Details" class="f-lg font-medium" animation="fadeInDown"></wm-label>
+                                        <wm-button class="text-primary btn-transparent" caption="" type="button" margin="0.2em 0.5em 1em 1em" name="button3" on-click="Widgets.List_Transactions1.refreshTransactions();Widgets.ManagedCardDetails1.refreshCards()" iconclass="wi wi-refresh fa-lg"
+                                            hint="Refresh Details" animation="fadeInDown"></wm-button>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                                <wm-gridrow name="gridrow5">
+                                    <wm-gridcolumn columnwidth="12" name="gridcolumn9">
+                                        <wm-prefab prefabname="ManagedCardDetails" name="ManagedCardDetails1" uikey="qUhpchEnlRYBeqOUIIAADQ==" showtransfer="true" servicehost="APIVendor(W)" authtoken="bind:Variables.loggedInUser.dataSet.userAttributes.authtoken" managedcardid="bind:pageParams.managedCardId"
+                                            showfund="false" on-fundcardclick="Widgets.dialogFundAccount.open()" on-changespendlimit="Widgets.dialogSpendLimit.open()" animation="zoomIn"></wm-prefab>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                                <wm-gridrow name="gridrow6">
+                                    <wm-gridcolumn columnwidth="12" name="gridcolumn10" horizontalalign="center">
+                                        <wm-picture name="picture3" picturesource="resources/images/imagelists/covid-banner.svg" showindevice="sm,md,lg" animation="zoomIn" height="160" show="false"></wm-picture>
+                                        <wm-container name="container12" horizontalalign="left" class="panel p-md" height="160" padding="36px 120px unset unset" backgroundimage="bind:'resources/images/imagelists/'+Variables.wsGetActiveTheme.dataSet.content[$i].themeId+'/covid-banner.svg'" margin="102px unset unset unset"
+                                            backgroundrepeat="no-repeat" backgroundsize="cover" animation="fadeInUp" backgroundposition="center">
+                                            <wm-label name="label7" class="text-primary f-sm font-semibold" caption="COVID-19"></wm-label>
+                                            <wm-label class="p text-muted f-xxs-2" caption="Get the details on government stimulus payments under the CARES Act" name="label8"></wm-label>
+                                        </wm-container>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                            </wm-layoutgrid>
+                        </wm-container>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="8" name="gridcolumn4">
+                        <wm-tabs type="static" statehandler="URL" name="tabs1" height="636">
+                            <wm-tabpane name="tabpane1" title="Transactions">
+                                <wm-prefab prefabname="List_Transactions" name="List_Transactions1" servicehost="APIVendor(W)" authtoken="bind:Variables.loggedInUser.dataSet.userAttributes.authtoken" transactiontype="CR/DR" id="bind:pageParams.managedCardId" transactionlisttype="Managed Card"
+                                    accountdetails="bind:Widgets.ManagedCardDetails1.selectedcarddetails" itemsperpage="100" animation="fadeInUp"></wm-prefab>
+                                <wm-container name="containerNoTransaction" show="false" horizontalalign="center" class="no-data-panel">
+                                    <wm-picture resizemode="cover" name="pictureNoTransaction" picturesource="resources/images/imagelists/no-transactions.svg" class="no-data-img"></wm-picture>
+                                    <wm-label padding="unset 0.5em" name="labelNoTransaction" caption="No Transactions Found" class="no-data-title"></wm-label>
+                                </wm-container>
+                            </wm-tabpane>
+                            <wm-tabpane name="tabpane2" title="Spend Analysis" on-select="tabpane2Select($event, widget)">
+                                <wm-layoutgrid name="layoutgrid8" class="spacing-base">
+                                    <wm-gridrow name="gridrow18">
+                                        <wm-gridcolumn columnwidth="12" name="gridcolumn31_1" horizontalalign="right">
+                                            <wm-container name="container10" display="inline-block" margin="unset 1em" animation="fadeInDown">
+                                                <wm-select name="selectBaseCurrency" placeholder="Select Currency" dataset="bind:Variables.stvCurrencies.dataSet" datafield="value" displayfield="displayName" datavalue="EUR" class="filter"></wm-select>
+                                            </wm-container>
+                                            <wm-container name="container9" display="inline-block" animation="fadeInDown">
+                                                <wm-select name="selectMonth" placeholder="Select Month" dataset="bind:Variables.stvMonths.dataSet" datafield="value" displayfield="month" datavalue="bind:App.getCurrentMonth()" class="filter"></wm-select>
+                                            </wm-container>
+                                        </wm-gridcolumn>
+                                    </wm-gridrow>
+                                    <wm-gridrow name="gridrow19">
+                                        <wm-gridcolumn columnwidth="12" name="gridcolumn32">
+                                            <wm-prefab prefabname="CardSpendAnalysis" name="CardSpendAnalysis1" page="Dashboard" cardid="bind:pageParams.managedCardId" authtoken="bind:Variables.loggedInUser.dataSet.userAttributes.authtoken" basecurrency="bind:Widgets.selectBaseCurrency.datavalue"
+                                                month="bind:Widgets.selectMonth.datavalue" animation="fadeInUp"></wm-prefab>
+                                        </wm-gridcolumn>
+                                    </wm-gridrow>
+                                </wm-layoutgrid>
+                            </wm-tabpane>
+                        </wm-tabs>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+            </wm-layoutgrid>
+        </wm-page-content>
+    </wm-content>
+    <wm-footer content="footer" name="footer1"></wm-footer>
+    <wm-dialog dialogtype="design-dialog" modal="true" title="Transfer Funds to Card" name="dialog2" closable="false" showheader="true" class="wizard-dialog" iconurl="resources/images/imagelists/group-2_3_3x.png">
+        <wm-prefab prefabname="Transfer_Funds" name="Transfer_Funds1" servicehost="APIVendor(W)" authtoken="bind:Variables.loggedInUser.dataSet.userAttributes.authtoken" selectedbeneficiaryid="bind:Widgets.ManagedCardDetails1.selectedcarddetails.id" on-transactionsuccess="Widgets.dialog2.close();Widgets.List_Transactions1.refreshTransactions();Widgets.ManagedCardDetails1.refreshCards()"
+            on-cancel="Widgets.dialog2.close()" wizardlayout="Vertical Layout" height="100%"></wm-prefab>
+    </wm-dialog>
+    <wm-dialog dialogtype="design-dialog" modal="false" title="Transfer Funds" name="dialogFundAccount" closable="false" class="wizard-dialog" iconurl="resources/images/imagelists/icon-transfer.svg" on-opened="dialogFundAccountOpened($event, widget)">
+        <wm-dialogactions name="dialogactions1" show="false"></wm-dialogactions>
+        <wm-container name="container9_1" height="100%" backgroundimage="resources/images/imagelists/bg-bottom-pattern.svg" backgroundrepeat="no-repeat" backgroundposition="bottom center">
+            <wm-layoutgrid name="layoutgrid9">
+                <wm-gridrow name="gridrow23">
+                    <wm-gridcolumn columnwidth="3" name="gridcolumn38"></wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn42">
+                        <wm-container name="container10_1" class="panel p-lg" margin="60px unset 24px unset">
+                            <wm-layoutgrid name="layoutgrid2" class="spacing-base">
+                                <wm-gridrow name="gridrow3">
+                                    <wm-gridcolumn columnwidth="4" name="gridcolumn5" horizontalalign="center" class="col-xs-12" padding="unset unset 24px unset">
+                                        <wm-container name="container11" horizontalalign="center" display="inline-block" margin="12px unset">
+                                            <wm-prefab prefabname="QRCode" name="QRCode1" width="122px" height="130px"></wm-prefab>
+                                        </wm-container>
+                                        <wm-label name="label5_1" class="p f-xxs text-muted" caption="Scan QR code to pay"></wm-label>
+                                    </wm-gridcolumn>
+                                    <wm-gridcolumn columnwidth="8" name="gridcolumn6" class="col-xs-12">
+                                        <wm-form errormessage="" captionposition="top" title="" enctype="application/x-www-form-urlencoded" method="post" dataset="bind:Variables.Md_CardPurchase.dataSet" captionalign="left" name="Md_CardPurchaseForm2" on-beforesubmit="Md_CardPurchaseForm2Beforesubmit($event, widget, $data)">
+                                            <wm-layoutgrid columns="1" name="layoutgrid5">
+                                                <wm-gridrow name="gridrow7">
+                                                    <wm-gridcolumn columnwidth="12" name="gridcolumn10_1">
+                                                        <wm-form-field name="cardId" key="cardId" type="string" displayname="Card Id" widget="text" show="true" defaultvalue="bind:pageParams.managedCardId" disabled="true" placeholder="Enter CardID" inputtype="text"></wm-form-field>
+                                                    </wm-gridcolumn>
+                                                </wm-gridrow>
+                                                <wm-gridrow name="gridrow16">
+                                                    <wm-gridcolumn columnwidth="12" name="gridcolumn20_1">
+                                                        <wm-form-field name="merchantName" displayname="Merchant Name" type="string" show="true" widget="autocomplete" key="merchantName" required="true" dataset="bind:Variables.LV_MerchantDetails.dataSet" matchmode="startignorecase" match="word" displaylabel="merchantName"
+                                                            datafield="merchantName" groupby="category" placeholder="Search"></wm-form-field>
+                                                    </wm-gridcolumn>
+                                                </wm-gridrow>
+                                                <wm-gridrow name="gridrow17">
+                                                    <wm-gridcolumn columnwidth="4" name="gridcolumn21_1">
+                                                        <wm-form-field name="transactionAmount_currency" readonly="true" displayname="Currency" key="transactionAmount.currency" type="string" show="true" widget="text" inputtype="text" placeholder="Enter Currency" validationmessage="Currency cannot be null"
+                                                            required="true" defaultvalue="bind:Widgets.ManagedCardDetails1.selectedcarddetails.currency"></wm-form-field>
+                                                    </wm-gridcolumn>
+                                                    <wm-gridcolumn columnwidth="8" name="gridcolumn31">
+                                                        <wm-form-field name="transactionAmount_amount" readonly="false" displayname="Amount" key="transactionAmount.amount" type="string" show="true" widget="text" inputtype="text" placeholder="Enter Amount" required="true" validationmessage="Amount cannot be null"></wm-form-field>
+                                                    </wm-gridcolumn>
+                                                </wm-gridrow>
+                                                <wm-gridrow name="gridrow20">
+                                                    <wm-gridcolumn columnwidth="12" name="gridcolumn28">
+                                                        <wm-button class="btn-default" caption="Cancel" on-click="Widgets.dialogFundAccount.close()" name="buttonCancel" margin="24px unset unset unset"></wm-button>
+                                                        <wm-button class="btn-secondary" caption="Make Payment" type="submit" margin="24px unset unset 12px" name="buttonMakePayment"></wm-button>
+                                                    </wm-gridcolumn>
+                                                </wm-gridrow>
+                                            </wm-layoutgrid>
+                                        </wm-form>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                                <wm-gridrow name="gridrow13_1">
+                                    <wm-gridcolumn columnwidth="12" name="gridcolumn23_1">
+                                        <wm-spinner show="false" name="spinnerFundAccount" class="fundSpinnerStyles" caption="Please wait... while we do the heavy lifting" iconclass="fa fa-spinner fa-spin fa-pull-left fa-spin fa-spin" iconsize="3em"></wm-spinner>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                                <wm-gridrow name="gridrow12_1">
+                                    <wm-gridcolumn columnwidth="12" name="gridcolumn21" horizontalalign="center">
+                                        <!-- <wm-button class="btn-default" caption="Cancel" on-click="Widgets.dialogFundAccount.close()" name="button3" margin="24px unset unset unset"></wm-button>
+<wm-button class="btn-secondary" caption="Make Payment" type="button" margin="24px unset unset 12px" name="buttonMakePayment" on-click="buttonMakePaymentClick($event, widget)"></wm-button> --></wm-gridcolumn>
+                                </wm-gridrow>
+                            </wm-layoutgrid>
+                        </wm-container>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="3" name="gridcolumn39"></wm-gridcolumn>
+                </wm-gridrow>
+            </wm-layoutgrid>
+        </wm-container>
+    </wm-dialog>
+    <wm-dialog dialogtype="design-dialog" modal="false" title="Add/Update Spend Limit" name="dialogSpendLimit" closable="false" class="wizard-dialog" iconurl="resources/images/imagelists/group-2_3_3x.png">
+        <wm-container name="container4SpendLimit" height="100%" backgroundimage="resources/images/imagelists/bg-bottom-pattern.svg" backgroundrepeat="no-repeat" backgroundposition="bottom">
+            <wm-layoutgrid name="layoutgrid9_1" columns="3">
+                <wm-gridrow name="gridrow23_1">
+                    <wm-gridcolumn columnwidth="3" name="gridcolumn37"></wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn38_1">
+                        <wm-container name="container5" class="panel p-lg" margin="60px unset 24px unset">
+                            <wm-layoutgrid name="layoutgrid2" class="spacing-base">
+                                <wm-gridrow name="gridrow3">
+                                    <wm-gridcolumn columnwidth="4" name="gridcolumn5" padding="unset unset 24px unset" horizontalalign="center" class="col-xs-12">
+                                        <wm-container name="container13" display="inline-block" margin="12px unset">
+                                            <wm-prefab prefabname="QRCode" name="QRCode1" width="122px" height="130px"></wm-prefab>
+                                        </wm-container>
+                                        <wm-label name="label5_1" class="p f-xxs text-muted" caption="Scan QR code to pay"></wm-label>
+                                    </wm-gridcolumn>
+                                    <wm-gridcolumn columnwidth="8" name="gridcolumn6" class="col-xs-8">
+                                        <wm-container class="app-form" name="container2" show="true">
+                                            <wm-layoutgrid name="layoutgrid2_1" show="true">
+                                                <wm-gridrow name="gridrow4">
+                                                    <wm-gridcolumn columnwidth="12" name="gridcolumn10_1">
+                                                        <wm-container name="container13_1" class="form-group">
+                                                            <wm-label name="label2" caption="Card Number" class="control-label"></wm-label>
+                                                            <wm-text name="textCardId" datavalue="bind:pageParams.managedCardId" show="true" disabled="true" readonly="true" placeholder=""></wm-text>
+                                                            <wm-button class="btn-transparent" caption="copy" type="button" margin="0.5em 0.5em unset 1.5em" name="button2" iconclass="wi wi-content-copy" on-click="button2Click($event, widget, item, currentItemWidgets)" show="false"></wm-button>
+                                                        </wm-container>
+                                                    </wm-gridcolumn>
+                                                </wm-gridrow>
+                                                <wm-gridrow name="gridrow5">
+                                                    <wm-gridcolumn columnwidth="12" name="gridcolumn13">
+                                                        <wm-container name="container14" class="form-group">
+                                                            <wm-label name="label4" caption="Max Amount" class="control-label"></wm-label>
+                                                            <wm-text show="true" disabled="false" readonly="false" name="textAmount" placeholder="" type="text"></wm-text>
+                                                        </wm-container>
+                                                    </wm-gridcolumn>
+                                                </wm-gridrow>
+                                            </wm-layoutgrid>
+                                        </wm-container>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                                <wm-gridrow name="gridrow13_1">
+                                    <wm-gridcolumn columnwidth="12" name="gridcolumn23_1">
+                                        <wm-spinner show="false" name="spinnerSpendLimit" class="fundSpinnerStyles" caption="Please wait... while we do the heavy lifting" iconclass="fa fa-spinner fa-spin fa-pull-left fa-spin fa-spin" iconsize="3em"></wm-spinner>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                                <wm-gridrow name="gridrow12_1">
+                                    <wm-gridcolumn columnwidth="12" name="gridcolumn21" horizontalalign="center">
+                                        <wm-button class="btn-default" caption="Cancel" on-click="Widgets.dialogSpendLimit.close()" name="buttonSpendRulesClose" height="44px" width="100px" margin="24px unset unset unset"></wm-button>
+                                        <wm-button class="btn-secondary" caption="ADD" type="button" margin="24px unset unset 12px" name="buttonSpendLimit" height="44px" on-click="buttonSpendLimitClick($event, widget)"></wm-button>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                            </wm-layoutgrid>
+                        </wm-container>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="3" name="gridcolumn39_1"></wm-gridcolumn>
+                </wm-gridrow>
+            </wm-layoutgrid>
+        </wm-container>
+        <wm-dialogactions name="dialogactions1" show="false"></wm-dialogactions>
+    </wm-dialog>
+</wm-page>

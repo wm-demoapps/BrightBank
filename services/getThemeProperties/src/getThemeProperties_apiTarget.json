@@ -1,0 +1,175 @@
+{
+  "basePath" : "${rest.getThemeProperties.basepath}",
+  "paths" : {
+    "/BrightBankDB/Themedetail" : {
+      "x-WM-BASE_PATH" : "/BrightBankDB/Themedetail",
+      "x-WM-TAG" : "RestServiceVirtualController",
+      "x-WM-RELATIVE_PATH" : "",
+      "get" : {
+        "x-WM-METHOD_NAME" : "invoke",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "produces" : [ "application/json" ],
+        "operationId" : "getThemeProperties_RestServiceVirtualController-invoke",
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "$ref" : "#/definitions/RootResponse"
+            },
+            "description" : "Success"
+          }
+        },
+        "parameters" : [ {
+          "x-WM-VARIABLE_KEY" : "",
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "size",
+          "format" : "string",
+          "description" : "size",
+          "type" : "string",
+          "required" : false,
+          "x-WM-VARIABLE_TYPE" : "PROMPT"
+        } ],
+        "tags" : [ "RestServiceVirtualController" ],
+        "consumes" : [ "application/json" ]
+      },
+      "x-WM-COMPLETE_PATH" : "${rest.getThemeProperties.scheme}://${rest.getThemeProperties.host}${rest.getThemeProperties.basepath}/BrightBankDB/Themedetail"
+    }
+  },
+  "host" : "${rest.getThemeProperties.host}",
+  "schemes" : [ "${rest.getThemeProperties.scheme}" ],
+  "definitions" : {
+    "Response.cssproperty" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "getThemeProperties.Response.cssproperty",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "required" : [ "cssvariable", "id", "name" ],
+      "properties" : {
+        "name" : {
+          "type" : "string"
+        },
+        "id" : {
+          "format" : "int32",
+          "type" : "integer"
+        },
+        "cssvariable" : {
+          "type" : "string"
+        }
+      }
+    },
+    "Response.contentEntryItem" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "getThemeProperties.Response.contentEntryItem",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "required" : [ "cssproperty", "csspropertyId", "cssvalue", "id", "themetype", "themetypeId" ],
+      "properties" : {
+        "csspropertyId" : {
+          "format" : "int32",
+          "type" : "integer"
+        },
+        "cssproperty" : {
+          "$ref" : "#/definitions/Response.cssproperty"
+        },
+        "cssvalue" : {
+          "type" : "string"
+        },
+        "themetype" : {
+          "$ref" : "#/definitions/Response.themetype"
+        },
+        "themetypeId" : {
+          "format" : "int32",
+          "type" : "integer"
+        },
+        "id" : {
+          "format" : "int32",
+          "type" : "integer"
+        }
+      }
+    },
+    "java.lang.Object" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "getThemeProperties.java.lang.Object",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    },
+    "Response.themetype" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "getThemeProperties.Response.themetype",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "required" : [ "id", "isdefault", "name", "thumbnail" ],
+      "properties" : {
+        "thumbnail" : {
+          "type" : "string"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "id" : {
+          "format" : "int32",
+          "type" : "integer"
+        },
+        "isdefault" : {
+          "type" : "boolean"
+        }
+      }
+    },
+    "RootResponse" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "getThemeProperties.RootResponse",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "required" : [ "content", "empty", "first", "last", "number", "numberOfElements", "size", "sort", "totalElements", "totalPages" ],
+      "properties" : {
+        "number" : {
+          "format" : "int32",
+          "type" : "integer"
+        },
+        "last" : {
+          "type" : "boolean"
+        },
+        "size" : {
+          "format" : "int32",
+          "type" : "integer"
+        },
+        "numberOfElements" : {
+          "format" : "int32",
+          "type" : "integer"
+        },
+        "totalPages" : {
+          "format" : "int32",
+          "type" : "integer"
+        },
+        "sort" : {
+          "x-WM-IS_LIST" : true,
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/java.lang.Object"
+          }
+        },
+        "content" : {
+          "x-WM-IS_LIST" : true,
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Response.contentEntryItem"
+          }
+        },
+        "first" : {
+          "type" : "boolean"
+        },
+        "totalElements" : {
+          "format" : "int32",
+          "type" : "integer"
+        },
+        "empty" : {
+          "type" : "boolean"
+        }
+      }
+    }
+  },
+  "swagger" : "2.0",
+  "info" : {
+    "x-WM-USE_PROXY_FOR_WEB" : true,
+    "x-WM-USE_PROXY_FOR_MOBILE" : true,
+    "x-WM-API_ID" : "9de89b90-954a-44d6-ad25-cd19648731c3",
+    "x-WM-SERVICE_ID" : "onwavemaker",
+    "version" : "2.0",
+    "x-WM-SERVICE_TYPE" : "RestService",
+    "x-WM-USE_WITH_CREDENTIALS" : false
+  },
+  "tags" : [ {
+    "name" : "RestServiceVirtualController",
+    "description" : "Rest service swagger documentation"
+  } ]
+}

@@ -1,0 +1,117 @@
+{
+  "stvAssetType" : {
+    "_id" : "wm-stvAssetType-wm.Variable-1699261893969",
+    "name" : "stvAssetType",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "name" : "EUR €",
+      "type" : "eur"
+    }, {
+      "name" : "GBP £",
+      "type" : "gbp"
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "stvCreateAccount" : {
+    "_id" : "wm-stvCreateAccount-wm.Variable-1699261921313",
+    "name" : "stvCreateAccount",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "Saving_Account" : null,
+      "currency" : null,
+      "accountType" : null
+    },
+    "type" : "entry",
+    "isList" : false,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "stvLocalizedDataList" : {
+    "_id" : "wm-stvLocalizedDataList-wm.Variable-1699261950568",
+    "name" : "stvLocalizedDataList",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "tag" : "PAYMENTS",
+      "tagArabic" : "المدفوعات",
+      "accountType" : "Savings Account",
+      "accountNumber" : "xxxxxxxxxxxx-1234",
+      "accountTypeArabic" : "حساب التوفير",
+      "accountNumberArabic" : "xxxxxxxxxxxx-1234",
+      "currency" : "USD",
+      "balance" : "800"
+    }, {
+      "tag" : "DEPOSIT",
+      "tagArabic" : "إيداع",
+      "accountType" : "Loan Account",
+      "accountNumber" : "xxxxxxxxxxxx-2333",
+      "accountTypeArabic" : "حساب القرض",
+      "accountNumberArabic" : "xxxxxxxxxxxx-2333",
+      "currency" : "GBP",
+      "balance" : "1800"
+    }, {
+      "tag" : "PAYMENTS",
+      "tagArabic" : "المدفوعات",
+      "accountType" : "Mortgage Account",
+      "accountNumber" : "xxxxxxxxxxxx-9034",
+      "accountTypeArabic" : "حساب الرهن العقاري",
+      "accountNumberArabic" : "xxxxxxxxxxxx-9034",
+      "currency" : "GBP",
+      "balance" : "3800"
+    }, {
+      "tag" : "DEPOSIT",
+      "tagArabic" : "إيداع",
+      "accountType" : "Current Account",
+      "accountNumber" : "xxxxxxxxxxxx-6041",
+      "accountTypeArabic" : "الحساب الحالي",
+      "accountNumberArabic" : "xxxxxxxxxxxx-6041",
+      "currency" : "GBP",
+      "balance" : "5108"
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "stvPrimaryUsageType" : {
+    "_id" : "wm-stvPrimaryUsageType-wm.Variable-1699261987192",
+    "name" : "stvPrimaryUsageType",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "english" : [ {
+        "name" : "Payments",
+        "dataValue" : "ledger-primary-use-types-payments"
+      }, {
+        "name" : "Deposit",
+        "dataValue" : "ledger-primary-use-types-deposit"
+      }, {
+        "name" : "Settlement",
+        "dataValue" : "ledger-primary-use-types-settlement"
+      } ],
+      "arabic" : [ {
+        "name" : "المدفوعات",
+        "dataValue" : "ledger-primary-use-types-payments"
+      }, {
+        "name" : "إيداع",
+        "dataValue" : "ledger-primary-use-types-deposit"
+      }, {
+        "name" : "مستعمرة",
+        "dataValue" : "ledger-primary-use-types-settlement"
+      } ]
+    },
+    "type" : "entry",
+    "isList" : false,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  }
+}

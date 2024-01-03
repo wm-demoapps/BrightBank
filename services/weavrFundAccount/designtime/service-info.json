@@ -1,0 +1,6 @@
+{
+  "id" : "weavrFundAccount",
+  "type" : "RestService",
+  "title" : "weavrFundAccount",
+  "mockEnabled" : false
+}

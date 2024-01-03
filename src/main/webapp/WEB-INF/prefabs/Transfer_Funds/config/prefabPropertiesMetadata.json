@@ -1,0 +1,9 @@
+{
+  "prefabPropertyList" : [ {
+    "key" : "apikey",
+    "defaultValue" : "NO HASH"
+  }, {
+    "key" : "transfersprofileid",
+    "defaultValue" : "SANDBOX"
+  } ]
+}

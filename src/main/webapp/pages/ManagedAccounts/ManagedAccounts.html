@@ -1,0 +1,103 @@
+<wm-page pagetitle="Managed Accounts" name="page1">
+    <wm-header content="header" name="header1"></wm-header>
+    <wm-content name="content1">
+        <wm-left-panel columnwidth="2" content="leftnav" name="left_panel1"></wm-left-panel>
+        <wm-page-content columnwidth="10" name="page_content1" class="spacing-large">
+            <wm-layoutgrid name="layoutgrid1" class="spacing-base">
+                <wm-gridrow name="gridrow1">
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn1">
+                        <wm-label name="label1" class="f-lg font-medium" caption="Accounts" animation="fadeInDown"></wm-label>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn2" horizontalalign="right">
+                        <wm-container name="container5_1" display="inline-block" margin="-12px 20px unset unset" show="bind:containsAccounts" deferload="true" animation="fadeInDown">
+                            <wm-select name="selectAccountType" dataset="bind:Variables.stvAccountTypes.dataSet" datavalue="All" datafield="dataValue" displayfield="name" class="filter base-height"></wm-select>
+                        </wm-container>
+                        <wm-button class="btn-secondary" caption="ADD ACCOUNT" type="button" name="buttonAddAccount" iconclass="wi wi-plus" on-click="Widgets.dialogAddAccount.open()" show="bind:containsAccounts" deferload="true" margin="-2px unset unset unset"
+                            animation="fadeInDown"></wm-button>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow2">
+                    <wm-gridcolumn columnwidth="12" name="gridcolumn3">
+                        <wm-prefab prefabname="Managed_Accounts" name="Managed_Accounts1" enduserid="bind:Variables.loggedInUser.dataSet.id" authtoken="bind:Variables.loggedInUser.dataSet.userAttributes.authtoken" on-ledgerselect="Actions.goToPage_AccountTransactions.invoke()"
+                            servicehost="APIVendor(W)" show="bind:containsAccounts" on-accountscount="Managed_Accounts1Accountscount($event, $data)" accounttype="bind:Widgets.selectAccountType.datavalue ? Widgets.selectAccountType.datavalue : 'All'" animation="fadeInUp"></wm-prefab>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow10">
+                    <wm-gridcolumn columnwidth="2" name="gridcolumn12"></wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="8" name="gridcolumn13_1">
+                        <wm-container name="containerNoData" show="bind:containsAccounts == false" horizontalalign="center" class="panel" deferload="false" animation="fadeInUp" margin="36px unset unset unset">
+                            <wm-container name="container6" class="no-data-panel">
+                                <wm-picture resizemode="cover" name="pictureNoData" picturesource="resources/images/imagelists/no-accounts.svg" class="no-data-img"></wm-picture>
+                                <wm-label name="labelNoAccounts" caption="No data available for Accounts" class="no-data-title"></wm-label>
+                                <wm-label caption="You can only see Wealth Goal information after you  Create a Wealth Goal" class="no-data-description" name="label7"></wm-label>
+                                <wm-button class="btn-add" caption="Add Account" type="button" margin="24px unset unset unset" name="button4" iconurl="resources/images/imagelists/circle-plus_3x.png" iconwidth="25px" on-click="Widgets.dialogAddAccount.open()"></wm-button>
+                            </wm-container>
+                        </wm-container>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="2" name="gridcolumn14_1"></wm-gridcolumn>
+                </wm-gridrow>
+            </wm-layoutgrid>
+        </wm-page-content>
+    </wm-content>
+    <wm-footer content="footer" name="footer1"></wm-footer>
+    <wm-dialog dialogtype="design-dialog" modal="true" title="Create Account" iconclass="" name="dialogAddAccount" closable="false" showheader="false" class="wizard-dialog">
+        <wm-layoutgrid name="layoutgrid2">
+            <wm-gridrow name="gridrow3">
+                <wm-gridcolumn columnwidth="3" name="gridcolumn5" class="dialog-left-panel">
+                    <wm-layoutgrid name="layoutgrid3" columns="1">
+                        <wm-gridrow name="gridrow7">
+                            <wm-gridcolumn columnwidth="12" name="gridcolumn13">
+                                <wm-picture name="picture1" picturesource="resources/images/imagelists/add-account.svg" class="dialog-left-img"></wm-picture>
+                            </wm-gridcolumn>
+                        </wm-gridrow>
+                        <wm-gridrow name="gridrow8">
+                            <wm-gridcolumn columnwidth="12" name="gridcolumn14">
+                                <wm-label name="label2" caption="Create Account" class="dialog-left-title"></wm-label>
+                            </wm-gridcolumn>
+                        </wm-gridrow>
+                        <wm-gridrow name="gridrow9">
+                            <wm-gridcolumn columnwidth="12" name="gridcolumn15">
+                                <wm-label name="label3" caption="Digital bank accounts can hold single currency only" show="false" class="dialog-left-description"></wm-label>
+                            </wm-gridcolumn>
+                        </wm-gridrow>
+                    </wm-layoutgrid>
+                </wm-gridcolumn>
+                <wm-gridcolumn columnwidth="9" name="gridcolumn6" class="dialog-body-panel">
+                    <wm-label name="label4" caption="Create Account" class="dialog-body-title"></wm-label>
+                    <wm-prefab prefabname="Create_Account" name="Create_Account1" enduserid="bind:Widgets.Managed_Accounts1.accountprofileid" servicehost="APIVendor(W)" authtoken="bind:Variables.loggedInUser.dataSet.userAttributes.authtoken"
+                        on-ledgeradd="Widgets.Managed_Accounts1.refreshLedgers();Widgets.dialogAddAccount.close();Widgets.dialogAccountSuccess.open()" on-cancel="Widgets.dialogAddAccount.close()"></wm-prefab>
+                </wm-gridcolumn>
+            </wm-gridrow>
+        </wm-layoutgrid>
+    </wm-dialog>
+    <wm-dialog dialogtype="design-dialog" modal="true" title="" iconclass="wi wi-file-text" name="dialogAccountSuccess" showheader="false">
+        <wm-container name="container1" class="fullbleed-notification-popup">
+            <wm-container name="container5">
+                <wm-layoutgrid name="layoutgrid4" columns="1" class="spacing-base">
+                    <wm-gridrow name="gridrow13">
+                        <wm-gridcolumn columnwidth="12" name="gridcolumn21" horizontalalign="center">
+                            <wm-container name="container4" width="220px" display="inline-block" backgroundimage="resources/images/imagelists/icon-bg.png" backgroundrepeat="no-repeat" backgroundposition="top center" backgroundsize="contain" padding="20px unset unset unset"
+                                margin="1em unset unset unset">
+                                <wm-picture name="picture2" picturesource="resources/images/imagelists/add-account.svg" height="135px"></wm-picture>
+                                <wm-picture name="picture3" width="30px" height="30" margin="9em 1.75em unset -3.75em" picturesource="resources/images/imagelists/circle-green-tick.png"></wm-picture>
+                            </wm-container>
+                        </wm-gridcolumn>
+                    </wm-gridrow>
+                    <wm-gridrow name="gridrow14">
+                        <wm-gridcolumn columnwidth="12" name="gridcolumn22" horizontalalign="center">
+                            <wm-label name="label9" caption="Account created Succesful!" class="f-l font-medium"></wm-label>
+                        </wm-gridcolumn>
+                    </wm-gridrow>
+                    <wm-gridrow name="gridrow15">
+                        <wm-gridcolumn columnwidth="12" name="gridcolumn23" horizontalalign="center">
+                            <wm-button class="btn-secondary" caption="OKAY" type="button" margin="unset 0.5em 1em 0.5em" name="button3" on-click="Widgets.dialogAccountSuccess.close()" width="113px" height="44px"></wm-button>
+                        </wm-gridcolumn>
+                    </wm-gridrow>
+                </wm-layoutgrid>
+            </wm-container>
+        </wm-container>
+        <wm-dialogactions name="dialogactions1" show="false">
+            <wm-button class="btn-primary" caption="Close" on-click="closeDialog()" name="button2"></wm-button>
+        </wm-dialogactions>
+    </wm-dialog>
+</wm-page>

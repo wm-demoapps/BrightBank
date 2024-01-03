@@ -1,0 +1,6 @@
+{
+  "id" : "weavrLogin",
+  "type" : "OpenAPIService",
+  "title" : "weavrLogin",
+  "mockEnabled" : false
+}

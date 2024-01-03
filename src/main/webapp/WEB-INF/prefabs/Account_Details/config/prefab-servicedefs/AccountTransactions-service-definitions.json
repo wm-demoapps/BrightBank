@@ -1,0 +1,48 @@
+{
+  "AccountTransactionsController_getManagedAccountById" : {
+    "id" : "AccountTransactionsController_getManagedAccountById",
+    "crudOperationId" : null,
+    "service" : "AccountTransactions",
+    "controller" : "AccountTransactionsController",
+    "operationType" : null,
+    "type" : "com.account_details.managedaccountmodel.ManagedAccountModel",
+    "wmServiceOperationInfo" : {
+      "name" : "getManagedAccountById",
+      "methodType" : "get",
+      "relativePath" : "/accountTransactions/managedAccountById",
+      "directPath" : null,
+      "httpMethod" : "get",
+      "parameters" : [ {
+        "name" : "hostName",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "java.lang.String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "authorization",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "java.lang.String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "accountId",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "java.lang.String",
+        "readOnly" : false,
+        "contentType" : null
+      } ],
+      "definitions" : { },
+      "produces" : null,
+      "consumes" : null,
+      "proxySettings" : {
+        "web" : true,
+        "mobile" : true,
+        "withCredentials" : false
+      },
+      "securityDefinitions" : [ ]
+    }
+  }
+}

@@ -1,0 +1,59 @@
+<wm-partial name="CommonPage">
+    <wm-logindialog modal="true" name="CommonLoginDialog" iconclass="wi wi-sign-in" title="Login">
+        <wm-form name="loginform">
+            <wm-message show="false" class="app-login-dialog-message" name="loginmessage"></wm-message>
+            <wm-layoutgrid name="layoutgrid1">
+                <wm-gridrow name="gridrow1">
+                    <wm-gridcolumn name="gridcolumn1">
+                        <wm-composite name="usernamefield">
+                            <wm-label class="col-md-3 control-label" caption="Username" name="usernamelabel"></wm-label>
+                            <wm-container class="col-md-9" name="container1">
+                                <wm-text placeholder="Enter username" class="col-md-8 app-login-dialog-username" name="j_username" autocomplete="off" autocorrect="off" updateon="default" autocapitalize="off" required="true"></wm-text>
+                            </wm-container>
+                        </wm-composite>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow2">
+                    <wm-gridcolumn name="gridcolumn2">
+                        <wm-composite name="passwordfield">
+                            <wm-label class="col-md-3 control-label" caption="Password" name="passwordlabel"></wm-label>
+                            <wm-container class="col-md-9" name="container2">
+                                <wm-text type="password" placeholder="Enter password" class="col-md-8 app-login-dialog-password" name="j_password" autocomplete="off" autocorrect="off" updateon="default" autocapitalize="off" required="true"></wm-text>
+                            </wm-container>
+                        </wm-composite>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+            </wm-layoutgrid>
+        </wm-form>
+        <wm-dialogactions name="dialogactions1">
+            <wm-button class="btn-primary" caption="Sign in" data-role="loginbutton" on-click="doLogin()" name="button1"></wm-button>
+        </wm-dialogactions>
+    </wm-logindialog>
+    <wm-alertdialog name="CommonAlertDialog" controller="NotificationDialogController" notificationdialog="alert" message="bind:notification.text" title="bind:notification.title" oktext="bind:notification.okButtonText" alerttype="bind:notification.alerttype"
+        on-ok="notification.onOk()" on-close="notification.onClose()"></wm-alertdialog>
+    <wm-confirmdialog name="CommonConfirmDialog" controller="NotificationDialogController" notificationdialog="confirm" message="bind:notification.text" title="bind:notification.title" oktext="bind:notification.okButtonText" canceltext="bind:notification.cancelButtonText"
+        on-ok="notification.onOk()" on-cancel="notification.onCancel()"></wm-confirmdialog>
+    <wm-dialog dialogtype="design-dialog" modal="false" title="" iconclass="wi wi-file-text" name="dialogConfirm" showheader="false" closable="false" width="400px" height="300px">
+        <wm-layoutgrid name="layoutgrid1">
+            <wm-gridrow name="gridrow3" padding="48px unset unset unset">
+                <wm-gridcolumn columnwidth="12" name="gridcolumn16" horizontalalign="center" class="col-xs-12">
+                    <wm-picture name="picture1" picturesource="resources/images/logos/icon-logout_3x.png" margin="4em unset unset unset" width="35px" height="30px" show="false"></wm-picture>
+                    <wm-icon name="icon1" iconclass="wi wi-power-off f-xl text-highlight"></wm-icon>
+                </wm-gridcolumn>
+            </wm-gridrow>
+            <wm-gridrow name="gridrow4">
+                <wm-gridcolumn columnwidth="1" name="gridcolumn10"></wm-gridcolumn>
+                <wm-gridcolumn columnwidth="10" name="gridcolumn17" horizontalalign="center" class="col-xs-12">
+                    <wm-label padding="unset 0.5em" name="label5" caption="Are you sure you want to Logout?" fontsize="18" margin="2em unset unset unset"></wm-label>
+                </wm-gridcolumn>
+                <wm-gridcolumn columnwidth="1" name="gridcolumn11"></wm-gridcolumn>
+            </wm-gridrow>
+            <wm-gridrow name="gridrow5" padding="36px unset unset unset">
+                <wm-gridcolumn columnwidth="12" name="gridcolumn18" horizontalalign="center" class="col-xs-6">
+                    <wm-button class="btn-default" caption="CANCEL" type="button" margin="unset 20px unset unset" name="buttonCancel" on-click="Widgets.dialogConfirm.close()" width="120px" height="44px"></wm-button>
+                    <wm-button class="btn-secondary" caption="LOGOUT" type="button" name="buttonConfirm" on-click="Actions.logoutAction.invoke()" width="120px" height="44px"></wm-button>
+                </wm-gridcolumn>
+            </wm-gridrow>
+        </wm-layoutgrid>
+    </wm-dialog>
+</wm-partial>

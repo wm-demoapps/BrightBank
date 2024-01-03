@@ -1,0 +1,258 @@
+{
+  "CurrencyErrorMsg" : {
+    "_id" : "wm-CurrencyErrorMsg-wm.NotificationVariable-1703166169060",
+    "name" : "CurrencyErrorMsg",
+    "owner" : "Page",
+    "category" : "wm.NotificationVariable",
+    "dataBinding" : [ {
+      "target" : "text",
+      "value" : "Please select valid  currency to transfer the funds",
+      "type" : "string"
+    }, {
+      "target" : "title",
+      "value" : "Currency-Error Message",
+      "type" : "string"
+    }, {
+      "target" : "alerttype",
+      "value" : "error",
+      "type" : "string"
+    } ],
+    "operation" : "alert"
+  },
+  "ErrorMessage" : {
+    "_id" : "wm-ErrorMessage-wm.NotificationVariable-1703232514137",
+    "name" : "ErrorMessage",
+    "owner" : "Page",
+    "category" : "wm.NotificationVariable",
+    "dataBinding" : [ {
+      "target" : "content",
+      "value" : "inline",
+      "type" : "string"
+    }, {
+      "target" : "class",
+      "value" : "Error",
+      "type" : "string"
+    } ],
+    "operation" : "toast"
+  },
+  "FundAccountOrCard" : {
+    "_id" : "wm-FundAccountOrCard-wm.Variable-1625136553812",
+    "name" : "FundAccountOrCard",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "amount" : "",
+      "beneficiary_id" : "",
+      "ledger_id" : "",
+      "payment_credit_date" : "",
+      "payment_type" : "",
+      "transaction_meta" : {
+        "Notes" : "",
+        "assetType" : ""
+      },
+      "enduserid" : "",
+      "currency" : ""
+    },
+    "type" : "entry",
+    "isList" : false,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "FundManagedCards" : {
+    "_id" : "wm-FundManagedCards-wm.ServiceVariable-1625156889369",
+    "name" : "FundManagedCards",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "isList" : false,
+      "target" : "Map",
+      "value" : "bind:Widgets.customerForm1.dataoutput",
+      "type" : "java.util.Map"
+    } ],
+    "service" : "FundCardOrAccount",
+    "operation" : "fundManagedCards",
+    "operationId" : "FundCardOrAccountController_fundManagedCards",
+    "operationType" : "post",
+    "serviceType" : "JavaService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "onSuccess" : "FundManagedCardsonSuccess(variable, data, options)",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "FundCardOrAccount"
+  },
+  "getAllManagedAccountsOrLedgers" : {
+    "_id" : "wm-getAllManagedAccountsOrLedgers-wm.ServiceVariable-1625142743886",
+    "name" : "getAllManagedAccountsOrLedgers",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "hostName",
+      "value" : "bind:servicehost",
+      "type" : "string"
+    }, {
+      "target" : "authorization",
+      "value" : "bind:authtoken",
+      "type" : "string"
+    }, {
+      "target" : "profileOrUserId",
+      "value" : "bind:enduserid",
+      "type" : "string"
+    } ],
+    "service" : "FundCardOrAccount",
+    "operation" : "getAllManagedAccountsOrLedgers",
+    "operationId" : "FundCardOrAccountController_getAllManagedAccountsOrLedgers",
+    "operationType" : "get",
+    "serviceType" : "JavaService",
+    "dataSet" : [ ],
+    "isList" : true,
+    "maxResults" : 20,
+    "onSuccess" : "getAllManagedAccountsOrLedgersonSuccess(variable, data, options)",
+    "startUpdate" : false,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "FundCardOrAccount"
+  },
+  "getAllManagedCardsOrBeneficiaries" : {
+    "_id" : "wm-getAllManagedCardsOrBeneficiaries-wm.ServiceVariable-1625141189653",
+    "name" : "getAllManagedCardsOrBeneficiaries",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "hostName",
+      "value" : "bind:servicehost",
+      "type" : "string"
+    }, {
+      "target" : "authorization",
+      "value" : "bind:authtoken",
+      "type" : "string"
+    }, {
+      "target" : "profileOrUserId",
+      "value" : "bind:enduserid",
+      "type" : "string"
+    } ],
+    "service" : "FundCardOrAccount",
+    "operation" : "getAllManagedCardsOrBeneficiaries",
+    "operationId" : "FundCardOrAccountController_getAllManagedCardsOrBeneficiaries",
+    "operationType" : "get",
+    "serviceType" : "JavaService",
+    "dataSet" : [ ],
+    "isList" : true,
+    "maxResults" : 20,
+    "onSuccess" : "getAllManagedCardsOrBeneficiariesonSuccess(variable, data, options)",
+    "startUpdate" : false,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "FundCardOrAccount"
+  },
+  "getManagedAccountDetailsById" : {
+    "_id" : "wm-getManagedAccountDetailsById-wm.ServiceVariable-1625144403944",
+    "name" : "getManagedAccountDetailsById",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "hostName",
+      "value" : "bind:servicehost",
+      "type" : "string"
+    }, {
+      "target" : "authorization",
+      "value" : "bind:authtoken",
+      "type" : "string"
+    }, {
+      "target" : "managedAccountId",
+      "value" : "bind:Widgets.customerForm1.formWidgets.ledger_id.datavalue",
+      "type" : "string"
+    } ],
+    "service" : "FundCardOrAccount",
+    "operation" : "getManagedAccountDetailsById",
+    "operationId" : "FundCardOrAccountController_getManagedAccountDetailsById",
+    "operationType" : "get",
+    "serviceType" : "JavaService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "FundCardOrAccount"
+  },
+  "PaymentTypeInfo" : {
+    "_id" : "wm-PaymentTypeInfo-wm.Variable-1623905440258",
+    "name" : "PaymentTypeInfo",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "name" : "GBP",
+      "paymentType" : "payment-type-UK-FasterPayments"
+    }, {
+      "name" : "EUR",
+      "paymentType" : "payment-type-EU-SEPA-Step2"
+    }, {
+      "name" : "USD",
+      "paymentType" : "payment-type-US-ACH"
+    }, {
+      "name" : "EUR-3",
+      "paymentType" : "payment-type-EU-SEPA-Instant"
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "TransactionMeta" : {
+    "_id" : "wm-TransactionMeta-wm.Variable-1623904907794",
+    "name" : "TransactionMeta",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "assetType" : "",
+      "Notes" : ""
+    },
+    "type" : "entry",
+    "isList" : false,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "transferFormOutput" : {
+    "_id" : "wm-transferFormOutput-wm.Variable-1624873724514",
+    "name" : "transferFormOutput",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ {
+      "target" : "ledgerName",
+      "value" : "bind:Widgets.customerForm1.formWidgets.ledger_id.displayValue\n"
+    }, {
+      "target" : "beneficiaryName",
+      "value" : "bind:Widgets.customerForm1.formWidgets.beneficiary_id.displayValue"
+    }, {
+      "target" : "amount",
+      "value" : "bind:Widgets.customerForm1.formWidgets.amount.datavalue"
+    }, {
+      "target" : "notes",
+      "value" : "bind:Widgets.customerForm1.formWidgets.transaction_meta.formWidgets.Notes.datavalue"
+    } ],
+    "dataSet" : {
+      "ledgerName" : "",
+      "beneficiaryName" : "",
+      "amount" : "",
+      "notes" : ""
+    },
+    "type" : "entry",
+    "isList" : false,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  }
+}

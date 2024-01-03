@@ -1,0 +1,141 @@
+{
+  "JS_getManagedAccountById" : {
+    "_id" : "wm-JS_getManagedAccountById-wm.ServiceVariable-1625049506583",
+    "name" : "JS_getManagedAccountById",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "hostName",
+      "value" : "bind:servicehost",
+      "type" : "string"
+    }, {
+      "target" : "authorization",
+      "value" : "bind:authtoken",
+      "type" : "string"
+    }, {
+      "target" : "accountId",
+      "value" : "bind:ledgerid",
+      "type" : "string"
+    } ],
+    "service" : "AccountTransactions",
+    "operation" : "getManagedAccountById",
+    "operationId" : "AccountTransactionsController_getManagedAccountById",
+    "operationType" : "get",
+    "serviceType" : "JavaService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "AccountTransactions"
+  },
+  "PaymentTypeInfo" : {
+    "_id" : "wm-PaymentTypeInfo-wm.Variable-1623905440258",
+    "name" : "PaymentTypeInfo",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "name" : "GBP",
+      "paymentType" : "payment-type-UK-FasterPayments"
+    }, {
+      "name" : "EUR",
+      "paymentType" : "payment-type-EU-SEPA-Step2"
+    }, {
+      "name" : "USD",
+      "paymentType" : "payment-type-US-ACH"
+    }, {
+      "name" : "EUR-3",
+      "paymentType" : "payment-type-EU-SEPA-Instant"
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "selectedLedgerData" : {
+    "_id" : "wm-selectedLedgerData-wm.Variable-1625162513207",
+    "name" : "selectedLedgerData",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ {
+      "target" : "dataBinding",
+      "value" : "bind:Variables.JS_getManagedAccountById.dataSet"
+    } ],
+    "dataSet" : {
+      "ledgerName" : "",
+      "assetType" : "",
+      "amount" : "",
+      "accountNumber" : "",
+      "iban" : ""
+    },
+    "type" : "entry",
+    "isList" : false,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "TransactionMeta" : {
+    "_id" : "wm-TransactionMeta-wm.Variable-1623904907794",
+    "name" : "TransactionMeta",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "assetType" : "",
+      "Notes" : ""
+    },
+    "type" : "entry",
+    "isList" : false,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "TransactionsData" : {
+    "_id" : "wm-TransactionsData-wm.Variable-1625050488062",
+    "name" : "TransactionsData",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ {
+      "target" : "dataBinding",
+      "value" : "bind:servicehost==\"Railsbank\"?(Variables.JS_getAccountTransactions.dataSet):(Variables.JS_getAccountTransactions.dataSet[0].entry)"
+    } ],
+    "dataSet" : [ {
+      "data" : ""
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "transferFormOutput" : {
+    "_id" : "wm-transferFormOutput-wm.Variable-1624873724514",
+    "name" : "transferFormOutput",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ {
+      "target" : "ledgerName",
+      "value" : "bind:Variables.getLedgerDataById.dataSet.ledger_meta.ledgerName"
+    }, {
+      "target" : "beneficiaryName",
+      "value" : "bind:Widgets.customerForm1.formWidgets.beneficiary_id.displayValue"
+    }, {
+      "target" : "amount",
+      "value" : "bind:Widgets.customerForm1.formWidgets.amount.datavalue"
+    }, {
+      "target" : "notes",
+      "value" : "bind:Widgets.customerForm1.formWidgets.transaction_meta.formWidgets.Notes.datavalue"
+    } ],
+    "dataSet" : {
+      "ledgerName" : "",
+      "beneficiaryName" : "",
+      "amount" : "",
+      "notes" : ""
+    },
+    "type" : "entry",
+    "isList" : false,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  }
+}

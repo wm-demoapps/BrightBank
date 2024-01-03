@@ -1,0 +1,279 @@
+{
+  "BreadCrumbData" : {
+    "_id" : "wm-BreadCrumbData-wm.Variable-1625583559305",
+    "name" : "BreadCrumbData",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "label" : "Cards",
+      "icon" : "glyphicon glyphicon-home",
+      "link" : "#/ManagedCards",
+      "id" : "ManagedCards",
+      "children" : [ {
+        "label" : " Cards Details",
+        "id" : "ManagedCardTransactions",
+        "icon" : "",
+        "link" : "#/ManagedCardTransactions"
+      } ]
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "LV_MerchantDetails" : {
+    "_id" : "wm-LV_MerchantDetails-wm.LiveVariable-1677473970439",
+    "name" : "LV_MerchantDetails",
+    "owner" : "Page",
+    "category" : "wm.LiveVariable",
+    "dataBinding" : [ ],
+    "operation" : "read",
+    "dataSet" : [ ],
+    "type" : "MerchantDetails",
+    "isList" : false,
+    "saveInPhonegap" : false,
+    "maxResults" : 20,
+    "designMaxResults" : 10,
+    "inFlightBehavior" : "executeLast",
+    "startUpdate" : true,
+    "autoUpdate" : true,
+    "transformationRequired" : false,
+    "liveSource" : "BrightBankDB",
+    "ignoreCase" : true,
+    "matchMode" : "startignorecase",
+    "orderBy" : "merchantId asc",
+    "propertiesMap" : {
+      "columns" : [ {
+        "fieldName" : "merchantId",
+        "type" : "integer",
+        "fullyQualifiedType" : "integer",
+        "columnName" : "MERCHANT_ID",
+        "isPrimaryKey" : true,
+        "notNull" : true,
+        "length" : 0,
+        "precision" : 10,
+        "generator" : "identity",
+        "isRelated" : false,
+        "defaultValue" : "",
+        "scale" : 0
+      }, {
+        "fieldName" : "merchantName",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "MERCHANT_NAME",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 255,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "defaultValue" : "",
+        "scale" : 0
+      }, {
+        "fieldName" : "category",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "CATEGORY",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 255,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "defaultValue" : "",
+        "scale" : 0
+      } ],
+      "entityName" : "MerchantDetails",
+      "fullyQualifiedName" : "com.weavrbank.brightbankdb.MerchantDetails",
+      "tableType" : "TABLE",
+      "primaryFields" : [ "merchantId" ]
+    },
+    "bindCount" : 1,
+    "tableName" : "MERCHANT_DETAILS",
+    "tableType" : "TABLE",
+    "properties" : [ ],
+    "relatedTables" : [ ],
+    "filterFields" : { },
+    "filterExpressions" : { },
+    "package" : "com.weavrbank.brightbankdb.MerchantDetails"
+  },
+  "Md_CardPurchase" : {
+    "_id" : "wm-Md_CardPurchase-wm.Variable-1676973044244",
+    "name" : "Md_CardPurchase",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "cardId" : "",
+      "category" : "",
+      "merchantName" : "",
+      "transactionAmount" : {
+        "currency" : "",
+        "amount" : ""
+      }
+    },
+    "type" : "entry",
+    "isList" : false,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "SV_AddSpendRules" : {
+    "_id" : "wm-SV_AddSpendRules-wm.ServiceVariable-1677084292658",
+    "name" : "SV_AddSpendRules",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "id",
+      "value" : "bind:pageParams.managedCardId",
+      "type" : "string"
+    }, {
+      "target" : "body.maxTransactionAmount",
+      "value" : "bind:Widgets.textAmount.datavalue"
+    } ],
+    "type" : "void",
+    "service" : "weavrLogin",
+    "operation" : "weavrLogin_managedCardSpendRulesCreate",
+    "operationId" : "weavrLogin_managedCardSpendRulesCreate",
+    "serviceType" : "OpenAPIService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "onSuccess" : "Widgets.dialogSpendLimit.close()",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "Managed Cards"
+  },
+  "SV_GetCardSpendRules" : {
+    "_id" : "wm-SV_GetCardSpendRules-wm.ServiceVariable-1692956114619",
+    "name" : "SV_GetCardSpendRules",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "id",
+      "value" : "bind:pageParams.managedCardId",
+      "type" : "string"
+    } ],
+    "type" : "void",
+    "service" : "weavrLogin",
+    "operation" : "weavrLogin_managedCardSpendRulesGet",
+    "operationId" : "weavrLogin_managedCardSpendRulesGet",
+    "serviceType" : "OpenAPIService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "onSuccess" : "SV_GetCardSpendRulesonSuccess(variable, data, options)",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "Managed Cards"
+  },
+  "SV_ManagedCardGET" : {
+    "_id" : "wm-SV_ManagedCardGET-wm.ServiceVariable-1675748324287",
+    "name" : "SV_ManagedCardGET",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "id",
+      "value" : "bind:pageParams.managedCardId",
+      "type" : "string"
+    } ],
+    "type" : "com.weavrbank.weavrLogin.ManagedCard",
+    "service" : "weavrLogin",
+    "operation" : "weavrLogin_managedCardGet",
+    "operationId" : "weavrLogin_managedCardGet",
+    "serviceType" : "OpenAPIService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "Managed Cards"
+  },
+  "SV_UpdateCardSpendRules" : {
+    "_id" : "wm-SV_UpdateCardSpendRules-wm.ServiceVariable-1692956214854",
+    "name" : "SV_UpdateCardSpendRules",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "id",
+      "value" : "bind:pageParams.managedCardId",
+      "type" : "string"
+    }, {
+      "target" : "body.maxTransactionAmount",
+      "value" : "bind:Widgets.textAmount.datavalue"
+    } ],
+    "type" : "void",
+    "service" : "weavrLogin",
+    "operation" : "weavrLogin_managedCardSpendRulesUpdate",
+    "operationId" : "weavrLogin_managedCardSpendRulesUpdate",
+    "serviceType" : "OpenAPIService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "Managed Cards"
+  },
+  "SV_wvrCardPurchaseAtMerchant" : {
+    "_id" : "wm-SV_wvrCardPurchaseAtMerchant-wm.ServiceVariable-1676986084514",
+    "name" : "SV_wvrCardPurchaseAtMerchant",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "Content-Type",
+      "value" : [ "application/json" ],
+      "type" : "string"
+    }, {
+      "target" : "programme-key",
+      "value" : [ "vrdO4T5327wBeqOUIIABDQ==" ],
+      "type" : "string"
+    }, {
+      "isList" : false,
+      "target" : "RequestBody",
+      "value" : "{\n\"merchantName\":\"Groceries\",\n\"transactionAmount\":{\n\"currency\":\"GBP\",\n\"amount\":\"100\"\n}}",
+      "type" : "wvrCardPurchaseAtMerchant.RootRequest"
+    }, {
+      "target" : "cardId",
+      "value" : "bind:Widgets.Md_CardPurchaseForm2.formWidgets.cardId.datavalue",
+      "type" : "string"
+    }, {
+      "target" : "RequestBody.merchantName",
+      "value" : "bind:Widgets.Md_CardPurchaseForm2.formWidgets.merchantName.datavalue"
+    }, {
+      "target" : "RequestBody.transactionAmount.amount",
+      "value" : "bind:Widgets.Md_CardPurchaseForm2.formWidgets.transactionAmount_amount.datavalue"
+    }, {
+      "target" : "RequestBody.transactionAmount.currency",
+      "value" : "bind:Widgets.Md_CardPurchaseForm2.formWidgets.transactionAmount_currency.datavalue"
+    } ],
+    "type" : "wvrCardPurchaseAtMerchant.RootResponse",
+    "service" : "wvrCardPurchaseAtMerchant",
+    "operation" : "invoke",
+    "operationId" : "wvrCardPurchaseAtMerchant_invoke",
+    "operationType" : "post",
+    "serviceType" : "RestService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "onSuccess" : "Widgets.dialogFundAccount.close();Widgets.List_Transactions1.refreshTransactions();Widgets.ManagedCardDetails1.refreshCards()",
+    "onError" : "SV_wvrCardPurchaseAtMerchantonError(variable, data, options)",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "wvrCardPurchaseAtMerchant"
+  }
+}

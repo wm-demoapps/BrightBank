@@ -1,0 +1,71 @@
+{
+  "consumerRootUserEmailVerificationCodeSend" : {
+    "_id" : "wm-consumerRootUserEmailVerificationCodeSend-wm.ServiceVariable-1626263055301",
+    "name" : "consumerRootUserEmailVerificationCodeSend",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "type" : "void",
+    "service" : "weavrLogin",
+    "operation" : "weavrLogin_consumerRootUserEmailVerificationCodeSend",
+    "operationId" : "weavrLogin_consumerRootUserEmailVerificationCodeSend",
+    "serviceType" : "OpenAPIService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "Consumers"
+  },
+  "consumerRootUserEmailVerify" : {
+    "_id" : "wm-consumerRootUserEmailVerify-wm.ServiceVariable-1626263170417",
+    "name" : "consumerRootUserEmailVerify",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "body.email",
+      "value" : "bind:Variables.AddedConsumerInfo.dataSet.email"
+    }, {
+      "target" : "body.verificationCode",
+      "value" : "bind:Widgets.text1.datavalue + Widgets.text2.datavalue + Widgets.text3.datavalue + Widgets.text4.datavalue + Widgets.text5.datavalue + Widgets.text6.datavalue"
+    } ],
+    "type" : "void",
+    "service" : "weavrLogin",
+    "operation" : "weavrLogin_consumerRootUserEmailVerify",
+    "operationId" : "weavrLogin_consumerRootUserEmailVerify",
+    "serviceType" : "OpenAPIService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "onSuccess" : "Widgets.dialogOTPVerify.close();Widgets.dialogVerificationSuccess.open()",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "Consumers"
+  },
+  "userType" : {
+    "_id" : "wm-Md_UserType-wm.Variable-1625810569268",
+    "name" : "userType",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "name" : "Consumer",
+      "initialPicture" : "resources/images/imagelists/img-individual-normal.png",
+      "selectedPicture" : "resources/images/imagelists/img-individual-active.png"
+    }, {
+      "name" : "Corporate",
+      "initialPicture" : "resources/images/imagelists/img-company-normal.png",
+      "selectedPicture" : "resources/images/imagelists/img-company-active.png"
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  }
+}

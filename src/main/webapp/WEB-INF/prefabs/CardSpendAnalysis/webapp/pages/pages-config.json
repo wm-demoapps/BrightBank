@@ -1,0 +1,13 @@
+[ {
+  "name" : "FullSpendAnalysis",
+  "type" : "PARTIAL",
+  "params" : [ ]
+}, {
+  "name" : "Main",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "SpendAnalysisDashboard",
+  "type" : "PARTIAL",
+  "params" : [ ]
+} ]

@@ -1,0 +1,124 @@
+[ {
+  "name" : "AccountTransactions",
+  "type" : "PAGE",
+  "params" : [ {
+    "name" : "accountId",
+    "type" : "string"
+  } ]
+}, {
+  "name" : "Common",
+  "type" : "PARTIAL",
+  "params" : [ ]
+}, {
+  "name" : "CreateGoal",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "CreateLoginCredentials",
+  "type" : "PAGE",
+  "params" : [ {
+    "name" : "identityId",
+    "type" : "string"
+  } ]
+}, {
+  "name" : "Dashboard",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "Localization",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "Login",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "LoginOrSignup",
+  "type" : "PAGE",
+  "params" : [ {
+    "name" : "persona",
+    "type" : "string"
+  } ]
+}, {
+  "name" : "Main",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "ManagedAccounts",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "ManagedCardTransactions",
+  "type" : "PAGE",
+  "params" : [ {
+    "name" : "managedCardId",
+    "type" : "string"
+  }, {
+    "name" : "managedCardBalance",
+    "type" : "string"
+  } ]
+}, {
+  "name" : "ManagedCards",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "PartialExistingUserDashboardNew",
+  "type" : "PARTIAL",
+  "params" : [ ]
+}, {
+  "name" : "PartialNewUserDashboard",
+  "type" : "PARTIAL",
+  "params" : [ ]
+}, {
+  "name" : "RegisterUser",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "Settings",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "SpendAnalysis",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "WealthGoals",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "footer",
+  "type" : "FOOTER",
+  "params" : [ ]
+}, {
+  "name" : "header",
+  "type" : "HEADER",
+  "params" : [ ]
+}, {
+  "name" : "leftnav",
+  "type" : "LEFTNAV",
+  "params" : [ ]
+}, {
+  "name" : "partial_NoData",
+  "type" : "PARTIAL",
+  "params" : [ ]
+}, {
+  "name" : "popover_userprofile",
+  "type" : "POPOVER",
+  "params" : [ ]
+}, {
+  "name" : "profileActionsPopup",
+  "type" : "POPOVER",
+  "params" : [ ]
+}, {
+  "name" : "profileHeader",
+  "type" : "PARTIAL",
+  "params" : [ ]
+}, {
+  "name" : "rightnav",
+  "type" : "RIGHTNAV",
+  "params" : [ ]
+}, {
+  "name" : "topnav",
+  "type" : "TOPNAV",
+  "params" : [ ]
+} ]

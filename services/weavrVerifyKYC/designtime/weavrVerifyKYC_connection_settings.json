@@ -1,0 +1,28 @@
+{
+  "endpointAddress" : "https://sandbox.weavr.io/simulate/api/consumers/{consumer_id}/verify",
+  "method" : "POST",
+  "headers" : {
+    "programme-key" : [ "BpoPo5uKbrIBekKIoTMBCA==" ]
+  },
+  "redirectEnabled" : true,
+  "requestBody" : "",
+  "queryParams" : { },
+  "authDetails" : null,
+  "contentType" : "application/json",
+  "multiParamInfoList" : null,
+  "sampleHttpResponseDetails" : {
+    "statusCode" : 204,
+    "headers" : {
+      "Date" : [ "Tue, 13 Jul 2021 09:51:09 GMT" ],
+      "Connection" : [ "keep-alive" ],
+      "call-ref" : [ "106572668255338506" ],
+      "Strict-Transport-Security" : [ "max-age=15724800; includeSubDomains" ],
+      "X-Frame-Options" : [ "SAMEORIGIN" ],
+      "X-Content-Type-Options" : [ "nosniff" ],
+      "X-XSS-Protection" : [ "1; mode=block" ],
+      "Referrer-Policy" : [ "same-origin" ]
+    },
+    "responseBody" : "",
+    "convertedResponse" : null
+  }
+}

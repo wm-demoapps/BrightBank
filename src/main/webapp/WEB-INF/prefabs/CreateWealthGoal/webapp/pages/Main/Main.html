@@ -1,0 +1,285 @@
+<wm-prefab-container name="prefab_container1">
+    <wm-dialog dialogtype="design-dialog" modal="true" title="Information" iconclass="wi wi-file-text" name="dialogOTPVerify" showheader="false" closable="false" class="wizard-dialog">
+        <wm-container name="containerOTPVerify" show="true" backgroundimage="resources/images/imagelists/bg-bottom-pattern.svg" backgroundrepeat="no-repeat" backgroundposition="bottom center" height="100%">
+            <wm-layoutgrid name="layoutgrid18" height="100%">
+                <wm-gridrow name="gridrow40_1">
+                    <wm-gridcolumn columnwidth="2" name="gridcolumn75_1"></wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="8" name="gridcolumn76" horizontalalign="center">
+                        <wm-container name="container17" class="panel p-md otp-panel" margin="unset unset 0px unset" width="480">
+                            <wm-layoutgrid name="layoutgrid19" columns="1" class="spacing-base">
+                                <wm-gridrow name="gridrow43">
+                                    <wm-gridcolumn columnwidth="12" name="gridcolumn82_1" horizontalalign="center">
+                                        <wm-picture name="picture2" picturesource="resources/images/imagelists/otp-verification.svg" height="160" margin="24px unset"></wm-picture>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                                <wm-gridrow name="gridrow44">
+                                    <wm-gridcolumn columnwidth="12" name="gridcolumn83_1" horizontalalign="center">
+                                        <wm-label name="label5" class="f-lg font-semibold" caption="Complete OTP Verification" margin="unset unset 0px unset"></wm-label>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                                <wm-gridrow name="gridrow45">
+                                    <wm-gridcolumn columnwidth="12" name="gridcolumn84_1" horizontalalign="center">
+                                        <wm-label name="label6" caption="Please enter the OTP sent to" fontunit="em" class="f-sm-2" margin="unset unset 0px unset"></wm-label>
+                                        <wm-label caption="+91 XXXX-XX-XX65" fontunit="em" name="label21" class="p f-sm-2 font-semibold"></wm-label>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                                <wm-gridrow name="gridrow31">
+                                    <wm-gridcolumn columnwidth="12" name="gridcolumn59">
+                                        <wm-container name="container18" class="otp-container">
+                                            <wm-container name="container8">
+                                                <wm-text name="text1" placeholder="" on-change="text1Change($event, widget, newVal, oldVal)" updateon="default" maxchars="1"></wm-text>
+                                            </wm-container>
+                                            <wm-container name="container9">
+                                                <wm-text name="text2" placeholder="" on-change="text2Change($event, widget, newVal, oldVal)" updateon="default" maxchars="1"></wm-text>
+                                            </wm-container>
+                                            <wm-container name="container10">
+                                                <wm-text name="text3" placeholder="" updateon="default" maxchars="1" on-change="text3Change($event, widget, newVal, oldVal)"></wm-text>
+                                            </wm-container>
+                                            <wm-container name="container11">
+                                                <wm-text name="text4" placeholder="" updateon="default" maxchars="1" on-change="text4Change($event, widget, newVal, oldVal)"></wm-text>
+                                            </wm-container>
+                                            <wm-container name="container12">
+                                                <wm-text placeholder="" name="text5" updateon="default" maxchars="1" on-change="text5Change($event, widget, newVal, oldVal)"></wm-text>
+                                            </wm-container>
+                                            <wm-container name="container13">
+                                                <wm-text placeholder="" name="text6" updateon="default" maxchars="1"></wm-text>
+                                            </wm-container>
+                                        </wm-container>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                                <wm-gridrow name="gridrow47">
+                                    <wm-gridcolumn columnwidth="12" name="gridcolumn93" horizontalalign="center">
+                                        <wm-anchor name="anchor1" caption="Resend OTP" fontunit="em" class="f-xs" textdecoration="underline"></wm-anchor>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                                <wm-gridrow name="gridrow34_1">
+                                    <wm-gridcolumn columnwidth="12" name="gridcolumn64" horizontalalign="center">
+                                        <wm-button class="btn-secondary" caption="Verify" type="button" margin="24px unset" name="buttonVerify" on-click="Widgets.dialogOTPVerify.close();Widgets.dialogVerificationSuccess.open()"></wm-button>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                            </wm-layoutgrid>
+                        </wm-container>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="2" name="gridcolumn77"></wm-gridcolumn>
+                </wm-gridrow>
+            </wm-layoutgrid>
+        </wm-container>
+    </wm-dialog>
+    <wm-dialog dialogtype="design-dialog" modal="true" title="Information" iconclass="wi wi-file-text" name="dialogVerificationSuccess" showheader="false" closable="false" width="400px">
+        <wm-container name="containerVerificationSuccess" show="true" backgroundcolor="#ffffff">
+            <wm-layoutgrid name="layoutgrid20">
+                <wm-gridrow name="gridrow49">
+                    <wm-gridcolumn columnwidth="2" name="gridcolumn100"></wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="8" name="gridcolumn101">
+                        <wm-layoutgrid columns="1" name="layoutgrid21">
+                            <wm-gridrow name="gridrow50">
+                                <wm-gridcolumn columnwidth="12" horizontalalign="center" name="gridcolumn102">
+                                    <wm-container name="container17_1" display="inline-block" margin="24px unset 12px unset">
+                                        <wm-picture picturesource="resources/images/imagelists/otp-verification.svg" height="160" name="picture3"></wm-picture>
+                                        <wm-picture resizemode="cover" name="picture4" picturesource="resources/images/imagelists/circle-green-tick.svg" margin="-50px 80px unset unset" class="pull-right"></wm-picture>
+                                    </wm-container>
+                                </wm-gridcolumn>
+                            </wm-gridrow>
+                            <wm-gridrow name="gridrow51" padding="12px unset unset unset">
+                                <wm-gridcolumn columnwidth="12" horizontalalign="center" name="gridcolumn103">
+                                    <wm-label class="f-l font-semibold text-success" caption="OTP Verification Successful!" name="label8"></wm-label>
+                                </wm-gridcolumn>
+                            </wm-gridrow>
+                            <wm-gridrow name="gridrow52" padding="12px unset unset unset">
+                                <wm-gridcolumn columnwidth="12" horizontalalign="center" name="gridcolumn104">
+                                    <wm-label caption="An Email has been sent with the link to create login credentials" name="label9" fontunit="em" class="text-muted"></wm-label>
+                                </wm-gridcolumn>
+                            </wm-gridrow>
+                            <wm-gridrow name="gridrow55">
+                                <wm-gridcolumn columnwidth="12" horizontalalign="center" name="gridcolumn113">
+                                    <wm-button class="btn-secondary" caption="Continue" type="button" margin="24px unset" name="buttonSucessOTPContinue" on-click="buttonSucessOTPContinueClick($event, widget)"></wm-button>
+                                </wm-gridcolumn>
+                            </wm-gridrow>
+                        </wm-layoutgrid>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="2" name="gridcolumn115"></wm-gridcolumn>
+                </wm-gridrow>
+            </wm-layoutgrid>
+        </wm-container>
+    </wm-dialog>
+    <wm-dialog dialogtype="design-dialog" modal="true" title="" iconclass="" name="dialogSuccessGoal" width="400px" closable="false" showheader="false">
+        <wm-layoutgrid name="layoutgrid10" class="spacing-base">
+            <wm-gridrow name="gridrow33">
+                <wm-gridcolumn columnwidth="12" name="gridcolumn52" horizontalalign="center">
+                    <wm-picture resizemode="cover" name="picture3_1" height="160" picturesource="resources/images/imagelists/wealth-goal-success.svg" margin="24px unset 12px unset"></wm-picture>
+                </wm-gridcolumn>
+            </wm-gridrow>
+            <wm-gridrow name="gridrow30_1">
+                <wm-gridcolumn columnwidth="12" name="gridcolumn46_1" horizontalalign="center">
+                    <wm-label caption="bind:'You have successfully created a new Wealth Goal for'" name="labelTextMsg1" class="f-sm-2 inline"></wm-label>
+                    <wm-label caption="bind:Variables.stvCreateNewGoal.dataSet.goalDetails.goalName+'. '" name="labelGoalName" class="f-sm-2 font-semibold inline" margin="unset unset unset 5px"></wm-label>
+                    <wm-label padding="unset 0.5em" caption="bind:'Below are the deatils of your Goal requirements'" name="labelTextMsg2" class="f-sm-2 inline"></wm-label>
+                </wm-gridcolumn>
+            </wm-gridrow>
+            <wm-gridrow name="gridrow31_1" padding="12px unset unset unset">
+                <wm-gridcolumn columnwidth="12" name="gridcolumn48_1" horizontalalign="center">
+                    <wm-label caption="bind:Variables.stvCreateNewGoal.dataSet.goalDepoiteDeatils.recurringDebitAmount + '/'" name="labelRecurringDebitAmount" class="f-xl font-semibold" margin="unset unset 0px unset"></wm-label>
+                    <wm-label caption="bind:Variables.stvCreateNewGoal.dataSet.goalDepoiteDeatils.selectedSavingFrequency.displayName" name="labelFrequency" class="f-sm-2 font-semibold" margin="unset unset 0px unset"></wm-label>
+                </wm-gridcolumn>
+            </wm-gridrow>
+            <wm-gridrow name="gridrow32">
+                <wm-gridcolumn columnwidth="12" name="gridcolumn50" horizontalalign="center">
+                    <wm-label caption="bind:Variables.stvCreateNewGoal.dataSet.goalDepoiteDeatils.recurringDebitAccount.currency+' '+Variables.stvCreateNewGoal.dataSet.goalDepoiteDeatils.recurringDebitAccount.name+' Account '+cardHide(Variables.stvCreateNewGoal.dataSet.goalDepoiteDeatils.recurringDebitAccount.id)"
+                        name="labelAccountInfo" class="f-sm-2" margin="unset unset 0px unset"></wm-label>
+                </wm-gridcolumn>
+            </wm-gridrow>
+            <wm-gridrow name="gridrow34">
+                <wm-gridcolumn columnwidth="12" name="gridcolumn53" horizontalalign="center">
+                    <wm-button class="btn-secondary" caption="FINISH" type="button" margin="24px unset" name="buttonOkay" on-click="buttonOkayClick($event, widget)"></wm-button>
+                </wm-gridcolumn>
+            </wm-gridrow>
+        </wm-layoutgrid>
+    </wm-dialog>
+    <wm-container name="container22" class="app-dialog wizard-dialog">
+        <wm-container name="container23" class="modal-content">
+            <wm-container name="container21" class="modal-body">
+                <wm-container name="container18_1" class="modal-header">
+                    <wm-container name="container20" class="modal-title">
+                        <wm-picture resizemode="cover" name="picture5" picturesource="resources/images/imagelists/wealth-goal.svg"></wm-picture>
+                        <wm-label name="label22" caption="Create New Goal"></wm-label>
+                    </wm-container>
+                </wm-container>
+                <wm-container name="container19" class="modal-body">
+                    <wm-wizard stepstyle="justified" class="number vertical m-0" name="wizardCreateGoal" actionsalignment="right" defaultstep="wizardstepGoalCategory" on-done="wizardCreateGoalDone(widget, steps)" on-cancel="wizardCreateGoalCancel(widget, steps)">
+                        <wm-wizardstep name="wizardstepGoalCategory" iconclass="" title="Choose a Goal Category">
+                            <wm-label name="labelGoalCategory" textalign="left" caption="Choose a Goal Category" class="wizard-step-title"></wm-label>
+                            <wm-list listclass="list-group" template="true" template-name="Business Card" itemsperrow="xs-1 sm-2 md-3 lg-3" class="list-card check-list" statehandler="none" dataset="bind:Variables.svGetWealthGoalCategories.dataSet"
+                                navigation="None" name="listGoalCategory" on-render="listGoalCategoryRender(widget, $data)" itemclass="pointer">
+                                <wm-listtemplate layout="media" name="listtemplate2">
+                                    <wm-card name="cardGoalCategory" imageheight="200px">
+                                        <wm-card-content name="card_contentGoalCategory" show="true">
+                                            <wm-container show="bind:Widgets.listGoalCategory.currentItem.id ? true : false" name="containerBody" horizontalalign="center" deferload="true">
+                                                <wm-button class="btn-transparent" caption="bind:Variables.svGetWealthGoalCategories.dataSet[$i].displayName" type="button" name="buttonCategory" iconclass="bind:'f-xl ' + Widgets.listGoalCategory.currentItem.icon"
+                                                    iconposition="top"></wm-button>
+                                            </wm-container>
+                                            <wm-container name="containerCreateCategeory" show="bind:Widgets.listGoalCategory.currentItem.id ? false : true" class="add-category-panel pointer-none" deferload="true" horizontalalign="center">
+                                                <wm-button class="btn-transparent" caption="Add Custom Goal" type="button" iconclass="" iconposition="top" name="buttonAddCategory" iconurl="resources/images/imagelists/circle-plus.svg" iconheight="32"></wm-button>
+                                            </wm-container>
+                                        </wm-card-content>
+                                    </wm-card>
+                                </wm-listtemplate>
+                            </wm-list>
+                        </wm-wizardstep>
+                        <wm-wizardstep name="wizardstepGoalDetails" iconclass="" title="Saving Goals">
+                            <wm-label textalign="left" caption="Set your Saving Goals" class="wizard-step-title" name="label18"></wm-label>
+                            <wm-form errormessage="" captionposition="top" title="" enctype="application/x-www-form-urlencoded" method="get" dataset="bind:Variables.svGetWealthGoalCategories.dataSet" captionalign="left" name="formCreateGoal">
+                                <wm-layoutgrid name="layoutgrid4">
+                                    <wm-gridrow name="gridrow6_1">
+                                        <wm-gridcolumn columnwidth="6" name="gridcolumn6_1">
+                                            <wm-form-field name="goalName" key="goalName" displayname="Goal Name" show="true" type="string" widget="text" inputtype="text" placeholder="Enter value" required="true"></wm-form-field>
+                                        </wm-gridcolumn>
+                                        <wm-gridcolumn columnwidth="6" name="gridcolumn51"></wm-gridcolumn>
+                                    </wm-gridrow>
+                                    <wm-gridrow name="gridrow27">
+                                        <wm-gridcolumn columnwidth="6" name="gridcolumn45_1">
+                                            <wm-container name="container14" class="form-group range-panel">
+                                                <wm-layoutgrid name="layoutgrid8">
+                                                    <wm-gridrow name="gridrow28">
+                                                        <wm-gridcolumn columnwidth="6" name="gridcolumn47">
+                                                            <wm-label name="label19_1" caption="Goal Amount" class="f-m font-semibold"></wm-label>
+                                                        </wm-gridcolumn>
+                                                        <wm-gridcolumn columnwidth="6" name="gridcolumn48_2">
+                                                            <wm-form-field name="goalAmount" key="goalAmount" show="true" type="double" widget="currency" placeholder="Enter value" on-change="goalAmountChange($event, widget, newVal, oldVal)" minvalue="0" maxvalue="500000"
+                                                                validationmessage="Enter valid amount" defaultvalue="bind:Widgets.formCreateGoal.formWidgets.RangeSliderGoalAmount.end"></wm-form-field>
+                                                        </wm-gridcolumn>
+                                                    </wm-gridrow>
+                                                </wm-layoutgrid>
+                                                <wm-prefab prefabname="RangeSlider" name="RangeSliderGoalAmount" start="0" end="0" max="800000" step="0" showgaolcontainer="true" showgaolamountcontainer="true" pipmode="steps" pipdensity="10" values="1000"></wm-prefab>
+                                            </wm-container>
+                                        </wm-gridcolumn>
+                                        <wm-gridcolumn columnwidth="6" name="gridcolumn46_2">
+                                            <wm-container class="form-group range-panel" name="container16">
+                                                <wm-layoutgrid name="layoutgrid9">
+                                                    <wm-gridrow name="gridrow30">
+                                                        <wm-gridcolumn columnwidth="6" name="gridcolumn52_1">
+                                                            <wm-label caption="Goal Time (Yrs)" class="f-m font-semibold" name="label20"></wm-label>
+                                                        </wm-gridcolumn>
+                                                        <wm-gridcolumn columnwidth="6" name="gridcolumn53_2">
+                                                            <wm-form-field name="goalTime" key="goalTime" show="true" type="double" widget="number" on-change="goalTimeChange($event, widget, newVal, oldVal)" minvalue="0" maxvalue="5" validationmessage="Enter valid time"
+                                                                defaultvalue="bind:Widgets.formCreateGoal.formWidgets.RangeSliderGoalTime.end"></wm-form-field>
+                                                        </wm-gridcolumn>
+                                                    </wm-gridrow>
+                                                </wm-layoutgrid>
+                                                <wm-prefab prefabname="RangeSlider" name="RangeSliderGoalTime" showgaolamountcontainer="false" start="0" end="0" max="5" step="1"></wm-prefab>
+                                            </wm-container>
+                                        </wm-gridcolumn>
+                                    </wm-gridrow>
+                                    <wm-gridrow name="gridrow11">
+                                        <wm-gridcolumn columnwidth="6" name="gridcolumn15">
+                                            <wm-form-field name="savingFrequency" key="savingFrequency" displayname="Saving Frequency" show="true" type="string" widget="switch" dataset="bind:Variables.svGetSavingFrequencies.dataSet" datafield="All Fields"
+                                                displayfield="displayName" required="true" on-change="savingFrequencyChange($event, widget, newVal, oldVal)"></wm-form-field>
+                                        </wm-gridcolumn>
+                                        <wm-gridcolumn columnwidth="6" name="gridcolumn49"></wm-gridcolumn>
+                                    </wm-gridrow>
+                                    <wm-gridrow name="gridrow18_1">
+                                        <wm-gridcolumn columnwidth="12" name="gridcolumn18_1">
+                                            <wm-container name="container13_1" class="value-status-banner">
+                                                <wm-label name="label3" caption="bind:'To meet your wealth goals you need to save'" class="f-sm"></wm-label>
+                                                <wm-label name="labelAmountToBeSaved" caption="bind:getAmountToBeSaved() | toCurrency: '$': '2'" class="f-lg font-medium" margin="unset 5px"></wm-label>
+                                                <wm-label name="label5" caption="bind:'per '+Widgets.formCreateGoal.formWidgets.savingFrequency.datavalue.displayName" class="f-sm"></wm-label>
+                                            </wm-container>
+                                        </wm-gridcolumn>
+                                    </wm-gridrow>
+                                </wm-layoutgrid>
+                            </wm-form>
+                        </wm-wizardstep>
+                        <wm-wizardstep name="wizardstepRecDepInfo" iconclass="" title="Recurring Deposit Details" on-next="wizardstepRecDepInfoNext(widget, currentStep, stepIndex)">
+                            <wm-label textalign="left" caption="Set your Recurring Deposit Details" class="wizard-step-title" name="label19"></wm-label>
+                            <wm-form errormessage="" captionposition="top" title="" enctype="application/x-www-form-urlencoded" method="get" dataset="bind:Variables.svGetWealthGoalCategories.dataSet" captionalign="left" name="formRecurringDepositDetails">
+                                <wm-layoutgrid columns="1" name="layoutgrid5_1">
+                                    <wm-gridrow name="gridrow18_2">
+                                        <wm-gridcolumn columnwidth="6" name="gridcolumn18_2">
+                                            <wm-form-field name="selectedSavingFrequency" displayname="Saving Frequency" show="true" type="string" widget="switch" dataset="bind:Variables.svGetSavingFrequencies.dataSet" datafield="All Fields" displayfield="displayName"
+                                                defaultvalue="bind:Widgets.formCreateGoal.formWidgets.savingFrequency.datavalue" disabled="false" key="selectedSavingFrequency" placeholder="" on-change="selectedSavingFrequencyChange($event, widget, newVal, oldVal)"></wm-form-field>
+                                        </wm-gridcolumn>
+                                        <wm-gridcolumn columnwidth="6" name="gridcolumn45">
+                                            <wm-form-field name="recurringDebitDay" key="recurringDebitDay" displayname="Recurring Debit Day" show="bind:Widgets.formRecurringDepositDetails.formWidgets.selectedSavingFrequency.datavalue.name =='Monthly'? true : false"
+                                                type="string" widget="select" placeholder="Select value" dataset="bind:Variables.stvDayOfMonth.dataSet" datafield="All Fields" displayfield="dataValue" required="true"></wm-form-field>
+                                            <wm-form-field name="recurringWeek" key="recurringWeek" show="bind:Widgets.formRecurringDepositDetails.formWidgets.selectedSavingFrequency.datavalue.name =='Weekly'? true : false" type="string"
+                                                widget="radioset" dataset="bind:Variables.stvDays.dataSet" datafield="All Fields" displayfield="dataValue" displayexpression="bind:$[dataValue].charAt(0)" itemsperrow="xs-1 sm-1 md-1 lg-1" placeholder="" displayname="Recurring Debit Day"
+                                                required="true" class="inline-list"></wm-form-field>
+                                        </wm-gridcolumn>
+                                    </wm-gridrow>
+                                    <wm-gridrow name="gridrow1">
+                                        <wm-gridcolumn columnwidth="6" name="gridcolumn46">
+                                            <wm-form-field name="recurringDebitAmount" key="recurringDebitAmount" displayname="bind:'Recurring Debit Amount - '+Widgets.formRecurringDepositDetails.formWidgets.selectedSavingFrequency.datavalue.displayName"
+                                                show="true" type="double" widget="currency" defaultvalue="bind:getAmountToBeSaved()" readonly="true" disabled="true" placeholder="Enter value"></wm-form-field>
+                                        </wm-gridcolumn>
+                                        <wm-gridcolumn name="gridcolumn1" columnwidth="6">
+                                            <wm-form-field name="recurringDebitAccount" key="recurringDebitAccount" displayname="Recurring Debit Account" show="true" type="number" widget="select" placeholder="Select value" dataset="bind:Variables.jsGetManagedAccounts.dataSet"
+                                                datafield="All Fields" displayfield="id" displayexpression="bind:$[currency]+' '+$[name]+' - '+cardHide($[id])" required="true"></wm-form-field>
+                                        </wm-gridcolumn>
+                                    </wm-gridrow>
+                                    <wm-gridrow name="gridrow1">
+                                        <wm-gridcolumn columnwidth="6" name="gridcolumn44">
+                                            <wm-form-field name="Description" key="Description" displayname="bind:Variables.svGetGoalFormFields.dataSet[0].name" show="bind:Variables.svGetGoalFormFields.dataSet.length > 7 ? true : false" type="string" widget="textarea"></wm-form-field>
+                                        </wm-gridcolumn>
+                                        <wm-gridcolumn name="gridcolumn1" columnwidth="6" horizontalalign="right">
+                                            <wm-form-field name="enableAutoDebit" key="enableAutoDebit" show="true" type="boolean" widget="checkbox" placeholder="" caption="Auto-debit from account"></wm-form-field>
+                                        </wm-gridcolumn>
+                                    </wm-gridrow>
+                                    <wm-gridrow name="gridrow36">
+                                        <wm-gridcolumn columnwidth="12" name="gridcolumn53_1">
+                                            <wm-container name="containerDebitInfo" horizontalalign="center" class="value-status-banner">
+                                                <wm-label name="labelAmount" caption="bind:getAmountToBeSaved() | toCurrency: '$': '2'" margin="unset 5px" class="p f-lg font-medium"></wm-label>
+                                                <wm-label caption="bind:'per '+Widgets.formRecurringDepositDetails.formWidgets.selectedSavingFrequency.datavalue.displayName" name="labelFrequencyName" class="f-sm"></wm-label>
+                                            </wm-container>
+                                        </wm-gridcolumn>
+                                    </wm-gridrow>
+                                    <wm-gridrow name="gridrow1">
+                                        <wm-gridcolumn name="gridcolumn1" columnwidth="12"></wm-gridcolumn>
+                                    </wm-gridrow>
+                                </wm-layoutgrid>
+                            </wm-form>
+                        </wm-wizardstep>
+                    </wm-wizard>
+                </wm-container>
+            </wm-container>
+        </wm-container>
+    </wm-container>
+</wm-prefab-container>

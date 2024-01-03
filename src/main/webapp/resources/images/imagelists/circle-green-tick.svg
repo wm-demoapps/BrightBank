@@ -1,0 +1,12 @@
+<svg width="33" height="33" viewBox="0 0 33 33" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient x1="76.991%" y1="90.043%" x2="28.053%" y2="6.936%" id="z5saggajpa">
+            <stop stop-color="#84D155" offset="0%"/>
+            <stop stop-color="#37BBB2" offset="100%"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <circle fill="url(#z5saggajpa)" transform="matrix(-1 0 0 1 33 0)" cx="16.5" cy="16.5" r="16.5"/>
+        <path d="M10.84 15.587a1 1 0 0 1 1.328-.06l.086.078 3.18 3.266 6.168-6.503a1 1 0 0 1 1.325-.113l.089.075a1 1 0 0 1 .113 1.325l-.076.09-6.884 7.257a1 1 0 0 1-1.36.086l-.082-.076L10.821 17a1 1 0 0 1 .019-1.414z" fill="#FFF" fill-rule="nonzero"/>
+    </g>
+</svg>

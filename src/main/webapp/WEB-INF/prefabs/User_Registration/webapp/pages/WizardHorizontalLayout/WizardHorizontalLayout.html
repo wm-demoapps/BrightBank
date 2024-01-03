@@ -1,0 +1,401 @@
+<wm-partial name="partial1">
+    <wm-form errormessage="" captionposition="top" title="" enctype="application/x-www-form-urlencoded" method="post" dataset="bind:Variables.UserInfo.dataSet" captionalign="left" name="customerForm1" show="true" class="content-center-align form-no-padding">
+        <wm-layoutgrid columns="2" name="layoutgrid2">
+            <wm-gridrow name="gridrow22">
+                <wm-gridcolumn columnwidth="12" name="gridcolumn37">
+                    <wm-form errormessage="" captionposition="top" title="" enctype="application/x-www-form-urlencoded" method="post" dataset="bind:Variables.PersonData.dataSet" captionalign="left" name="person1" show="true" deferload="true">
+                        <wm-wizard stepstyle="justified" class="number" name="wizardperson" on-cancel="wizardpersonCancel(widget, steps)" on-done="wizardpersonDone(widget, steps)">
+                            <wm-wizardstep name="wizardstep4" title="Personal Details">
+                                <wm-layoutgrid name="layoutgrid5">
+                                    <wm-gridrow name="gridrow14">
+                                        <wm-gridcolumn columnwidth="12" name="gridcolumn19" class="col-xs-12">
+                                            <wm-form errormessage="" captionposition="top" title="" enctype="application/x-www-form-urlencoded" method="post" dataset="bind:Variables.PersonData.dataSet" captionalign="left" name="full_name" margin="unset unset -1em unset">
+                                                <wm-layoutgrid columns="3" name="layoutgrid14_1">
+                                                    <wm-gridrow name="gridrow32_1">
+                                                        <wm-gridcolumn columnwidth="4" name="gridcolumn60" class="col-xs-12">
+                                                            <wm-form-field readonly="false" name="first_name" displayname="First Name" key="first_name" type="string" show="true" widget="text" required="bind:Prefab.endusertype == &quot;Individual&quot; ? true : false"
+                                                                placeholder="First Name"></wm-form-field>
+                                                        </wm-gridcolumn>
+                                                        <wm-gridcolumn columnwidth="4" name="gridcolumn61_1" class="col-xs-12">
+                                                            <wm-form-field readonly="false" name="middle_name" displayname="Middle Name" key="middle_name" type="string" show="true" widget="text" placeholder="Middle Name"></wm-form-field>
+                                                        </wm-gridcolumn>
+                                                        <wm-gridcolumn columnwidth="4" name="gridcolumn62_1" class="col-xs-12">
+                                                            <wm-form-field readonly="false" name="last_name" displayname="Last Name" key="last_name" type="string" show="true" widget="text" required="bind:Prefab.endusertype == &quot;Individual&quot; ? true : false"
+                                                                placeholder="Last Name" margin="unset -1em unset unset"></wm-form-field>
+                                                        </wm-gridcolumn>
+                                                    </wm-gridrow>
+                                                </wm-layoutgrid>
+                                            </wm-form>
+                                        </wm-gridcolumn>
+                                    </wm-gridrow>
+                                    <wm-gridrow name="gridrow15">
+                                        <wm-gridcolumn columnwidth="6" name="gridcolumn21" class="col-xs-12">
+                                            <wm-form-field name="date_of_birth" readonly="false" displayname="Date of Birth" key="date_of_birth" type="string" show="true" widget="date" placeholder="Ex: Feb 9, 1984" required="bind:Prefab.endusertype == 'Individual'"
+                                                maxdate="CURRENT_DATE"></wm-form-field>
+                                        </wm-gridcolumn>
+                                        <wm-gridcolumn columnwidth="6" name="gridcolumn47"></wm-gridcolumn>
+                                    </wm-gridrow>
+                                    <wm-gridrow name="gridrow28_4">
+                                        <wm-gridcolumn columnwidth="6" name="gridcolumn63" class="col-xs-12">
+                                            <wm-form-field name="nationality" displayname="Nationality" key="nationality" type="string" show="true" widget="switch" dataset="American,British" defaultvalue="bind:'British'"></wm-form-field>
+                                        </wm-gridcolumn>
+                                        <wm-gridcolumn columnwidth="6" name="gridcolumn64">
+                                            <wm-form-field name="country_of_residence" displayname="Country of Residence" key="country_of_residence" type="string" show="bind:Prefab.servicehost==&quot;APIVendor(R)&quot;" widget="switch" dataset="US, GB,GBR"
+                                                defaultvalue="bind:'GB'" on-change="country_of_residenceChange($event, widget, newVal, oldVal)" class="col-xs-12"></wm-form-field>
+                                        </wm-gridcolumn>
+                                    </wm-gridrow>
+                                    <wm-gridrow name="gridrow13">
+                                        <wm-gridcolumn columnwidth="6" name="gridcolumn17">
+                                            <wm-form-field name="email" readonly="false" displayname="Email Address" key="email" type="string" show="true" widget="text" inputtype="text" placeholder="Ex: harry.jones@example.com" required="bind:Prefab.endusertype == 'Individual'"
+                                                updateon="default" class="col-xs-12"></wm-form-field>
+                                        </wm-gridcolumn>
+                                        <wm-gridcolumn columnwidth="6" name="gridcolumn18">
+                                            <wm-layoutgrid name="layoutgrid17">
+                                                <wm-gridrow name="gridrow33_1">
+                                                    <wm-gridcolumn columnwidth="12" name="gridcolumn59_2" class="col-xs-12">
+                                                        <wm-label padding="unset 0.5em" name="label3" caption="Mobile/Telephone Number" required="true"></wm-label>
+                                                    </wm-gridcolumn>
+                                                </wm-gridrow>
+                                                <wm-gridrow name="gridrow43_1">
+                                                    <wm-gridcolumn columnwidth="4" name="gridcolumn79_2">
+                                                        <wm-form-field widget="select" show="true" type="custom" name="personCountryCode" dataset="+1, +44" defaultvalue="bind:Widgets.customerForm1.formWidgets.person1.formWidgets.nationality.datavalue==&quot;American&quot;?&quot;+1&quot;:&quot;+44&quot;"
+                                                            placeholder="CC" margin="-0.4em unset unset unset"></wm-form-field>
+                                                    </wm-gridcolumn>
+                                                    <wm-gridcolumn columnwidth="8" name="gridcolumn80">
+                                                        <wm-form-field name="telephone" readonly="false" key="telephone" type="string" show="true" widget="text" inputtype="text" placeholder="bind:Prefab.servicehost==&quot;APIVendor(R)&quot;?(Widgets.customerForm1.formWidgets.person1.formWidgets.country_of_residence.datavalue == 'US' ? '(999) 999-9999' : '99999 999999'):(Widgets.customerForm1.formWidgets.person1.formWidgets.nationality.datavalue == 'American' ? '(999) 999-9999' : '99999 999999')"
+                                                            required="true" displayformat="bind:Prefab.servicehost==&quot;APIVendor(R)&quot;?(Widgets.customerForm1.formWidgets.person1.formWidgets.country_of_residence.datavalue == 'US' ? '(999) 999-9999' : '99999 999999'):(Widgets.customerForm1.formWidgets.person1.formWidgets.nationality.datavalue == 'American' ? '(999) 999-9999' : '99999 999999')"
+                                                            updateon="default" margin="-0.4em unset unset unset"></wm-form-field>
+                                                    </wm-gridcolumn>
+                                                </wm-gridrow>
+                                            </wm-layoutgrid>
+                                        </wm-gridcolumn>
+                                    </wm-gridrow>
+                                    <wm-gridrow name="gridrow16">
+                                        <wm-gridcolumn columnwidth="6" name="gridcolumn23">
+                                            <wm-form-field name="name" readonly="false" displayname="Name" key="name" type="string" show="false" widget="text" inputtype="text" placeholder="Enter value" defaultvalue="bind:Widgets.customerForm1.formWidgets.person1.formWidgets.full_name.formWidgets.first_name.datavalue+ &quot; &quot;+Widgets.customerForm1.formWidgets.person1.formWidgets.full_name.formWidgets.middle_name.datavalue+&quot; &quot;+Widgets.customerForm1.formWidgets.person1.formWidgets.full_name.formWidgets.last_name.datavalue"></wm-form-field>
+                                        </wm-gridcolumn>
+                                        <wm-gridcolumn columnwidth="6" name="gridcolumn24">
+                                            <wm-form-field name="date_onboarded" readonly="false" displayname="Date Onboarded" key="date_onboarded" type="string" show="false" widget="date" placeholder="Enter value" defaultvalue="CURRENT_DATE"></wm-form-field>
+                                        </wm-gridcolumn>
+                                    </wm-gridrow>
+                                </wm-layoutgrid>
+                            </wm-wizardstep>
+                            <wm-wizardstep name="wizardstep6" title="Address Details">
+                                <wm-prefab prefabname="AddressWithGooglePlaces" name="address" apikey="bind:Prefab.googleplacesapikey" streetrequired="true"></wm-prefab>
+                            </wm-wizardstep>
+                        </wm-wizard>
+                    </wm-form>
+                </wm-gridcolumn>
+            </wm-gridrow>
+            <wm-gridrow name="gridrow17">
+                <wm-gridcolumn columnwidth="12" name="gridcolumn27">
+                    <wm-form errormessage="" captionposition="top" title="" enctype="application/x-www-form-urlencoded" method="post" dataset="bind:Variables.CompanyData.dataSet" captionalign="left" name="company" show="bind:Prefab.endusertype == 'Company'"
+                        deferload="true">
+                        <wm-layoutgrid columns="2" name="layoutgrid7">
+                            <wm-gridrow name="gridrow30_2">
+                                <wm-gridcolumn columnwidth="12" name="gridcolumn54_1">
+                                    <wm-wizard stepstyle="justified" class="number" name="wizard2_1" on-cancel="wizard2_1Cancel(widget, steps)" on-done="wizard2_1Done(widget, steps)">
+                                        <wm-wizardstep name="wizardstep4_1" title="Company Details">
+                                            <wm-layoutgrid name="layoutgrid8" columns="2">
+                                                <wm-gridrow name="gridrow32">
+                                                    <wm-gridcolumn columnwidth="6" name="gridcolumn72" class="col-xs-12">
+                                                        <wm-form-field name="name" readonly="false" displayname="Company Name" key="name" type="string" show="true" widget="text" inputtype="text" placeholder="Company Name" required="bind:Prefab.endusertype == &quot;Company&quot; ? true : false"
+                                                            validationmessage="Name can't be empty" updateon="default"></wm-form-field>
+                                                    </wm-gridcolumn>
+                                                    <wm-gridcolumn columnwidth="6" name="gridcolumn73" class="col-xs-12">
+                                                        <wm-form-field name="trading_name" readonly="false" displayname="Trading Name" key="trading_name" type="string" show="true" widget="text" inputtype="text" placeholder="Ex : abc pvt ltd" required="false"
+                                                            validationmessage="Please enter company Trading Name"></wm-form-field>
+                                                    </wm-gridcolumn>
+                                                </wm-gridrow>
+                                                <wm-gridrow name="gridrow33">
+                                                    <wm-gridcolumn columnwidth="6" name="gridcolumn74" class="col-xs-12">
+                                                        <wm-form-field name="web_site" readonly="false" displayname="Web Site" key="web_site" type="string" show="true" widget="text" inputtype="text" placeholder="www.abc.com"></wm-form-field>
+                                                    </wm-gridcolumn>
+                                                </wm-gridrow>
+                                                <wm-gridrow name="gridrow37">
+                                                    <wm-gridcolumn columnwidth="6" name="gridcolumn82" class="col-xs-12">
+                                                        <wm-form-field name="industry" readonly="false" displayname="Company Industry" key="industry" type="string" show="true" widget="autocomplete" placeholder="Select Industry" dataset="bind:Variables.IndustryList.dataSet"
+                                                            searchkey="name" displaylabel="name" datafield="name" required="false"></wm-form-field>
+                                                    </wm-gridcolumn>
+                                                    <wm-gridcolumn columnwidth="6" name="gridcolumn83" class="col-xs-12">
+                                                        <wm-form-field name="registration_number" readonly="false" displayname="Registration Number" key="registration_number" type="string" show="true" widget="text" inputtype="text" placeholder="Ex: UK999999"
+                                                            required="false" validationmessage="Please enter Registration number" displayformat="AA999999"></wm-form-field>
+                                                    </wm-gridcolumn>
+                                                </wm-gridrow>
+                                                <wm-gridrow name="gridrow35">
+                                                    <wm-gridcolumn columnwidth="6" name="gridcolumn78" class="col-xs-12">
+                                                        <wm-form-field readonly="false" name="email" displayname="Email Address" key="email" type="string" show="true" widget="text" required="false" validationmessage="Please enter Email address" placeholder="Ex: harry.jones@example.com"></wm-form-field>
+                                                    </wm-gridcolumn>
+                                                    <wm-gridcolumn columnwidth="6" name="gridcolumn79_1" class="col-xs-12">
+                                                        <wm-layoutgrid name="layoutgrid18_1">
+                                                            <wm-gridrow name="gridrow29">
+                                                                <wm-gridcolumn columnwidth="12" name="gridcolumn50">
+                                                                    <wm-label padding="unset 0.5em" caption="Mobile/Telephone Number" required="true" name="label5"></wm-label>
+                                                                </wm-gridcolumn>
+                                                            </wm-gridrow>
+                                                            <wm-gridrow name="gridrow44_1">
+                                                                <wm-gridcolumn columnwidth="4" name="gridcolumn81">
+                                                                    <wm-form-field widget="select" show="true" type="custom" margin="-0.3em unset unset unset" dataset="+1, +44" name="companyCountryCode" placeholder="CC" defaultvalue="+1"></wm-form-field>
+                                                                </wm-gridcolumn>
+                                                                <wm-gridcolumn columnwidth="8" name="gridcolumn82_2">
+                                                                    <wm-form-field readonly="false" name="telephone" key="telephone" type="string" show="true" widget="text" placeholder="Ex: 9999-999999" displayformat="9999-999999" updateon="default" margin="-0.3em unset unset unset"></wm-form-field>
+                                                                </wm-gridcolumn>
+                                                            </wm-gridrow>
+                                                        </wm-layoutgrid>
+                                                    </wm-gridcolumn>
+                                                </wm-gridrow>
+                                            </wm-layoutgrid>
+                                        </wm-wizardstep>
+                                        <wm-wizardstep name="wizardstep5" title="Director Details" on-load="wizardstep5Load(widget, stepIndex)">
+                                            <wm-layoutgrid name="layoutgrid12">
+                                                <wm-gridrow name="gridrow24">
+                                                    <wm-gridcolumn columnwidth="12" name="gridcolumn53_2">
+                                                        <wm-list listclass="list-group" itemclass="list-group-item" template="true" template-name="Contact List" itemsperrow="xs-1 sm-1 md-1 lg-1" class="media-list company-details-list" datafield="All Fields"
+                                                            statehandler="none" name="DirectorsListList1" dataset="bind:Variables.DirectorsList.dataSet" navigation="None" nodatamessage="" show="false">
+                                                            <wm-listtemplate layout="inline" name="listtemplate2_1">
+                                                                <wm-container class="media-body" name="container3">
+                                                                    <wm-layoutgrid name="layoutgrid12_1">
+                                                                        <wm-gridrow name="gridrow25_1">
+                                                                            <wm-gridcolumn columnwidth="2" name="gridcolumn54">
+                                                                                <wm-label class="p media-heading" name="Name" caption="bind:Variables.DirectorsList.dataSet[$i].person.name" fontunit="em" padding="0px unset unset unset" margin="0px"></wm-label>
+                                                                                <wm-label padding="0em unset unset unset" name="label2" caption="bind:Variables.DirectorsList.dataSet[$i].job_title" margin="0px"></wm-label>
+                                                                            </wm-gridcolumn>
+                                                                            <wm-gridcolumn columnwidth="4" name="gridcolumn58_1">
+                                                                                <wm-icon caption="bind:Variables.DirectorsList.dataSet[$i].person.email" name="icon2" iconclass="wi wi-mail-outline"></wm-icon>
+                                                                            </wm-gridcolumn>
+                                                                            <wm-gridcolumn columnwidth="4" name="gridcolumn55">
+                                                                                <wm-icon name="icon1" caption="bind:Variables.DirectorsList.dataSet[$i].person.telephone" iconclass="wi wi-phone"></wm-icon>
+                                                                            </wm-gridcolumn>
+                                                                            <wm-gridcolumn columnwidth="2" name="gridcolumn59_1">
+                                                                                <wm-button class="btn-transparent" caption="" type="button" name="editDirector" iconclass="wi wi-mode-edit" on-click="editDirectorClick($event, widget, item, currentItemWidgets)"
+                                                                                    fontsize="18"></wm-button>
+                                                                                <wm-button class="btn-transparent" caption="" type="button" name="deleteDirector" iconclass="wi wi-delete" on-click="deleteDirectorClick($event, widget, item, currentItemWidgets)"
+                                                                                    fontsize="18"></wm-button>
+                                                                            </wm-gridcolumn>
+                                                                        </wm-gridrow>
+                                                                    </wm-layoutgrid>
+                                                                </wm-container>
+                                                            </wm-listtemplate>
+                                                        </wm-list>
+                                                    </wm-gridcolumn>
+                                                </wm-gridrow>
+                                                <wm-gridrow name="gridrow27_3">
+                                                    <wm-gridcolumn columnwidth="12" name="gridcolumn60_1">
+                                                        <wm-form errormessage="" captionposition="top" title="" enctype="application/x-www-form-urlencoded" method="post" dataset="bind:Variables.CompanyData.dataSet.directors" captionalign="left" name="directors"
+                                                            show="true">
+                                                            <wm-layoutgrid columns="2" name="layoutgrid13">
+                                                                <wm-gridrow name="gridrow29_2">
+                                                                    <wm-gridcolumn name="gridcolumn68">
+                                                                        <wm-form errormessage="" captionposition="top" title="" enctype="application/x-www-form-urlencoded" method="post" dataset="bind:Variables.CompanyData.dataSet" captionalign="left" name="person">
+                                                                            <wm-layoutgrid columns="3" name="layoutgrid14">
+                                                                                <wm-gridrow name="gridrow27_2">
+                                                                                    <wm-gridcolumn columnwidth="6" name="gridcolumn58" class="col-xs-12">
+                                                                                        <wm-form-field readonly="false" name="name" displayname="Director Name" key="name" type="string" show="true" widget="text" required="bind:Prefab.endusertype == 'Company'"
+                                                                                            validationmessage="Please enter Director Name" updateon="default" placeholder="Name"></wm-form-field>
+                                                                                    </wm-gridcolumn>
+                                                                                    <wm-gridcolumn columnwidth="6" name="gridcolumn59" class="col-xs-12">
+                                                                                        <wm-form-field readonly="false" name="date_of_birth" displayname="Date Of Birth" key="date_of_birth" type="string" show="true" widget="date" required="bind:Prefab.endusertype == 'Company'"
+                                                                                            maxdate="CURRENT_DATE" validationmessage="Please enter Date Of Birth" placeholder="Ex: Feb 9, 1984"></wm-form-field>
+                                                                                    </wm-gridcolumn>
+                                                                                </wm-gridrow>
+                                                                                <wm-gridrow name="gridrow38">
+                                                                                    <wm-gridcolumn columnwidth="6" name="gridcolumn84" class="col-xs-12">
+                                                                                        <wm-form-field readonly="false" name="country_of_residence" displayname="Country Of Residence" key="country_of_residence" type="string" show="true" widget="switch" dataset="US,GB,GBR"
+                                                                                            defaultvalue="bind:'US'"></wm-form-field>
+                                                                                    </wm-gridcolumn>
+                                                                                </wm-gridrow>
+                                                                                <wm-gridrow name="gridrow28_1">
+                                                                                    <wm-gridcolumn columnwidth="6" name="gridcolumn61" class="col-xs-12">
+                                                                                        <wm-form-field readonly="false" name="email" displayname="Email Address" key="email" type="string" show="true" widget="text" required="true" validationmessage="Please enter Email address"
+                                                                                            updateon="default" placeholder="Ex: harry.jones@example.com"></wm-form-field>
+                                                                                    </wm-gridcolumn>
+                                                                                    <wm-gridcolumn columnwidth="6" name="gridcolumn62" class="col-xs-12">
+                                                                                        <wm-layoutgrid name="layoutgrid19_1">
+                                                                                            <wm-gridrow name="gridrow28">
+                                                                                                <wm-gridcolumn columnwidth="12" name="gridcolumn49">
+                                                                                                    <wm-label padding="unset 0.5em" caption="Mobile/Telephone Number" required="false" name="label4"></wm-label>
+                                                                                                </wm-gridcolumn>
+                                                                                            </wm-gridrow>
+                                                                                            <wm-gridrow name="gridrow45_1">
+                                                                                                <wm-gridcolumn columnwidth="4" name="gridcolumn83_2">
+                                                                                                    <wm-form-field widget="select" show="true" type="custom" margin="-0.3em unset unset unset" dataset="+1, +44" defaultvalue="bind:Widgets.customerForm1.formWidgets.company.dataoutput.directors.person.country_of_residence == &quot;US&quot;?&quot;+1&quot;:&quot;+44&quot;"
+                                                                                                        name="directoryPersonCountryCode" placeholder="CC"></wm-form-field>
+                                                                                                </wm-gridcolumn>
+                                                                                                <wm-gridcolumn columnwidth="8" name="gridcolumn84_2">
+                                                                                                    <wm-form-field readonly="false" name="telephone" key="telephone" type="string" show="true" widget="text" placeholder="bind:Widgets.customerForm1.formWidgets.company.dataoutput.directors.person.country_of_residence  == 'US' ? '(999) 999-9999' : '99999 999999'"
+                                                                                                        displayformat="bind:Widgets.customerForm1.formWidgets.company.dataoutput.directors.person.country_of_residence == 'US' ? '(999) 999-9999' : '99999 999999'"
+                                                                                                        class="col-xs-12" margin="-0.3em unset unset unset"></wm-form-field>
+                                                                                                </wm-gridcolumn>
+                                                                                            </wm-gridrow>
+                                                                                        </wm-layoutgrid>
+                                                                                    </wm-gridcolumn>
+                                                                                </wm-gridrow>
+                                                                            </wm-layoutgrid>
+                                                                            <!--<wm-form-action key="reset" class="form-reset btn-default" iconclass="wi wi-refresh" display-name="Reset" type="reset"></wm-form-action>-->
+                                                                            <!--<wm-form-action key="save" class="form-save btn-success" iconclass="wi wi-save" display-name="Save" type="submit"></wm-form-action>--></wm-form>
+                                                                    </wm-gridcolumn>
+                                                                </wm-gridrow>
+                                                                <wm-gridrow name="gridrow28_3">
+                                                                    <wm-gridcolumn columnwidth="6" name="gridcolumn66" class="col-xs-12">
+                                                                        <wm-form-field readonly="false" name="date_appointed" displayname="Date Appointed" key="date_appointed" type="string" show="true" widget="date" placeholder="Ex: Feb 9, 1984"></wm-form-field>
+                                                                    </wm-gridcolumn>
+                                                                    <wm-gridcolumn columnwidth="6" name="gridcolumn67" class="col-xs-12">
+                                                                        <wm-form-field readonly="false" name="job_title" displayname="Job Title" key="job_title" type="string" show="true" widget="text" required="bind:Prefab.endusertype == 'Company'" validationmessage="Please enter Job Title"
+                                                                            updateon="default" placeholder="Ex: CEO"></wm-form-field>
+                                                                    </wm-gridcolumn>
+                                                                </wm-gridrow>
+                                                            </wm-layoutgrid>
+                                                            <!--<wm-form-action key="reset" class="form-reset btn-default" iconclass="wi wi-refresh" display-name="Reset" type="reset"></wm-form-action><wm-form-action key="save" class="form-save btn-success" iconclass="wi wi-save" display-name="Save" type="submit"></wm-form-action>--></wm-form>
+                                                    </wm-gridcolumn>
+                                                </wm-gridrow>
+                                                <wm-gridrow name="gridrow46">
+                                                    <wm-gridcolumn columnwidth="4" name="gridcolumn79" class="col-xs-4">
+                                                        <wm-button class="btn-secondary" caption="Add Director" type="button" margin="unset 0.5em" name="button1" iconclass="wi wi-add" on-click="button1Click($event, widget)" show="bind:Prefab.servicehost==&quot;APIVendor(R)&quot;"></wm-button>
+                                                        <wm-button class="btn-tertiary" caption="Add Another Director" type="button" margin="unset 0.5em" name="addAnotherDirectorButton" iconclass="wi wi-plus" show="false" on-click="addAnotherDirectorButtonClick($event, widget)"></wm-button>
+                                                        <wm-button class="btn-tertiary" caption="Save Changes" type="button" margin="unset 0.5em" name="saveChangesButton" show="false" on-click="saveChangesButtonClick($event, widget)"></wm-button>
+                                                    </wm-gridcolumn>
+                                                    <wm-gridcolumn columnwidth="4" name="gridcolumn53_5"></wm-gridcolumn>
+                                                    <wm-gridcolumn columnwidth="4" name="gridcolumn54_3"></wm-gridcolumn>
+                                                </wm-gridrow>
+                                            </wm-layoutgrid>
+                                        </wm-wizardstep>
+                                        <wm-wizardstep name="wizardstep6_1" title="Company Address">
+                                            <wm-prefab prefabname="AddressWithGooglePlaces" name="registration_address" apikey="bind:Prefab.googleplacesapikey"></wm-prefab>
+                                        </wm-wizardstep>
+                                    </wm-wizard>
+                                </wm-gridcolumn>
+                            </wm-gridrow>
+                        </wm-layoutgrid>
+                    </wm-form>
+                </wm-gridcolumn>
+            </wm-gridrow>
+            <wm-gridrow name="gridrow35_2">
+                <wm-gridcolumn columnwidth="12" name="gridcolumn58_2">
+                    <wm-form-field displayname="Enduser Id" widget="text" key="enduser_id" show="false" type="string" name="enduser_id"></wm-form-field>
+                </wm-gridcolumn>
+            </wm-gridrow>
+        </wm-layoutgrid>
+        <!--<wm-form-action key="reset" class="form-reset btn-default" iconclass="wi wi-refresh" display-name="Reset" type="reset"></wm-form-action><wm-form-action key="save" class="form-save btn-success" iconclass="wi wi-save" display-name="Save" type="submit"></wm-form-action><wm-form-action key="custom" class="btn-secondary" show="true" iconclass="wi wi-cancel" display-name="Cancel" action="Widgets.enduserdataDialog.close()" disabled="false" widget-type="button" type="button"></wm-form-action>--></wm-form>
+    <wm-spinner show="false" name="spinner1" class="spinnerStyles" caption="Please wait... while we do the heavy lifting" iconclass="fa fa-spinner fa-spin fa-pull-left fa-spin"></wm-spinner>
+    <wm-dialog dialogtype="design-dialog" modal="true" title="Information" iconclass="wi wi-file-text" name="dialogOTPVerify" showheader="false" closable="false" width="400px">
+        <wm-container name="containerOTPVerify" show="true" backgroundcolor="#ffffff">
+            <wm-layoutgrid name="layoutgrid18">
+                <wm-gridrow name="gridrow40_1">
+                    <wm-gridcolumn columnwidth="2" name="gridcolumn75_1"></wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="8" name="gridcolumn76">
+                        <wm-layoutgrid name="layoutgrid19" columns="1">
+                            <wm-gridrow name="gridrow43">
+                                <wm-gridcolumn columnwidth="12" name="gridcolumn82_1" horizontalalign="center">
+                                    <wm-picture name="picture2" picturesource="resources/images/imagelists/img-mob-verification.png" width="120px" height="120px" margin="3em unset unset unset"></wm-picture>
+                                </wm-gridcolumn>
+                            </wm-gridrow>
+                            <wm-gridrow name="gridrow44">
+                                <wm-gridcolumn columnwidth="12" name="gridcolumn83_1" horizontalalign="center">
+                                    <wm-label padding="unset 0.5em" name="label5" class="h2" fontweight="bold" caption="OTP Verification" margin="2em unset unset unset"></wm-label>
+                                </wm-gridcolumn>
+                            </wm-gridrow>
+                            <wm-gridrow name="gridrow45">
+                                <wm-gridcolumn columnwidth="12" name="gridcolumn84_1" horizontalalign="center">
+                                    <wm-label padding="unset 0.5em" name="label6" caption="Enter the OTP sent to your email address and mobile device" margin="2em unset unset unset" fontsize="0.9" fontunit="em" class="text-muted"></wm-label>
+                                </wm-gridcolumn>
+                            </wm-gridrow>
+                            <wm-gridrow name="gridrow46_1">
+                                <wm-gridcolumn columnwidth="2" name="gridcolumn85">
+                                    <wm-composite name="composite5" margin="2em unset unset unset">
+                                        <wm-container class="col-md-9" name="container8">
+                                            <wm-text name="text1" placeholder="" on-change="text1Change($event, widget, newVal, oldVal)" updateon="default" maxchars="1"></wm-text>
+                                        </wm-container>
+                                    </wm-composite>
+                                </wm-gridcolumn>
+                                <wm-gridcolumn columnwidth="2" name="gridcolumn86_1">
+                                    <wm-composite name="composite6" margin="2em unset unset unset">
+                                        <wm-container class="col-md-9" name="container9">
+                                            <wm-text name="text2" placeholder="" on-change="text2Change($event, widget, newVal, oldVal)" updateon="default" maxchars="1"></wm-text>
+                                        </wm-container>
+                                    </wm-composite>
+                                </wm-gridcolumn>
+                                <wm-gridcolumn columnwidth="2" name="gridcolumn87_1">
+                                    <wm-composite name="composite7" margin="2em unset unset unset">
+                                        <wm-container class="col-md-9" name="container10">
+                                            <wm-text name="text3" placeholder="" updateon="default" maxchars="1" on-change="text3Change($event, widget, newVal, oldVal)"></wm-text>
+                                        </wm-container>
+                                    </wm-composite>
+                                </wm-gridcolumn>
+                                <wm-gridcolumn columnwidth="2" name="gridcolumn88_1">
+                                    <wm-composite name="composite8" margin="2em unset unset unset">
+                                        <wm-container class="col-md-9" name="container11">
+                                            <wm-text name="text4" placeholder="" updateon="default" maxchars="1" on-change="text4Change($event, widget, newVal, oldVal)"></wm-text>
+                                        </wm-container>
+                                    </wm-composite>
+                                </wm-gridcolumn>
+                                <wm-gridcolumn columnwidth="2" name="gridcolumn85_1">
+                                    <wm-composite name="composite9" margin="2em unset unset unset">
+                                        <wm-container class="col-md-9" name="container12">
+                                            <wm-text placeholder="" name="text5" updateon="default" maxchars="1" on-change="text5Change($event, widget, newVal, oldVal)"></wm-text>
+                                        </wm-container>
+                                    </wm-composite>
+                                </wm-gridcolumn>
+                                <wm-gridcolumn columnwidth="2" name="gridcolumn86">
+                                    <wm-composite name="composite10" margin="2em unset unset unset">
+                                        <wm-container class="col-md-9" name="container13">
+                                            <wm-text placeholder="" name="text6" updateon="default" maxchars="1"></wm-text>
+                                        </wm-container>
+                                    </wm-composite>
+                                </wm-gridcolumn>
+                            </wm-gridrow>
+                            <wm-gridrow name="gridrow47">
+                                <wm-gridcolumn columnwidth="2" name="gridcolumn89_1"></wm-gridcolumn>
+                                <wm-gridcolumn columnwidth="8" name="gridcolumn93" horizontalalign="center">
+                                    <wm-anchor margin="1.5em 0.5em unset 0.5em" name="anchor1" caption="Resend OTP" width="119px" height="16px" fontsize="1.2" fontunit="em"></wm-anchor>
+                                </wm-gridcolumn>
+                                <wm-gridcolumn columnwidth="2" name="gridcolumn94"></wm-gridcolumn>
+                            </wm-gridrow>
+                            <wm-gridrow name="gridrow48">
+                                <wm-gridcolumn columnwidth="2" name="gridcolumn95"></wm-gridcolumn>
+                                <wm-gridcolumn columnwidth="8" name="gridcolumn98" horizontalalign="center">
+                                    <wm-button class="btn-secondary" caption="Verify" type="button" margin="2em 0.5em" name="buttonVerify" on-click="Variables.verifyOTPForEndUserEmail.invoke()" width="140px" height="44px"></wm-button>
+                                </wm-gridcolumn>
+                                <wm-gridcolumn columnwidth="2" name="gridcolumn99"></wm-gridcolumn>
+                            </wm-gridrow>
+                        </wm-layoutgrid>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="2" name="gridcolumn77"></wm-gridcolumn>
+                </wm-gridrow>
+            </wm-layoutgrid>
+        </wm-container>
+    </wm-dialog>
+    <wm-dialog dialogtype="design-dialog" modal="true" title="Information" iconclass="wi wi-file-text" name="dialogVerificationSuccess" showheader="false" closable="false" width="400px">
+        <wm-container name="containerVerificationSuccess" show="true" backgroundcolor="#ffffff">
+            <wm-layoutgrid name="layoutgrid20">
+                <wm-gridrow name="gridrow49">
+                    <wm-gridcolumn columnwidth="2" name="gridcolumn100"></wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="8" name="gridcolumn101">
+                        <wm-layoutgrid columns="1" name="layoutgrid21">
+                            <wm-gridrow name="gridrow50">
+                                <wm-gridcolumn columnwidth="12" horizontalalign="center" name="gridcolumn102">
+                                    <wm-picture picturesource="resources/images/imagelists/img-mob-verification-success.png" width="120px" height="120px" name="picture3" margin="3em unset unset unset"></wm-picture>
+                                </wm-gridcolumn>
+                            </wm-gridrow>
+                            <wm-gridrow name="gridrow51">
+                                <wm-gridcolumn columnwidth="12" horizontalalign="center" name="gridcolumn103">
+                                    <wm-label padding="unset 0.5em" class="h2" fontweight="bold" caption="OTP Verification Successful!" name="label8" color="#00af64" margin="2em unset unset unset"></wm-label>
+                                </wm-gridcolumn>
+                            </wm-gridrow>
+                            <wm-gridrow name="gridrow52">
+                                <wm-gridcolumn columnwidth="12" horizontalalign="center" name="gridcolumn104">
+                                    <wm-label padding="unset 0.5em" caption="An Email has been sent with the link to create login credentials" name="label9" margin="1.5em unset unset unset" fontsize="0.9" fontunit="em" class="text-muted"></wm-label>
+                                </wm-gridcolumn>
+                            </wm-gridrow>
+                            <wm-gridrow name="gridrow55">
+                                <wm-gridcolumn columnwidth="12" horizontalalign="center" name="gridcolumn113">
+                                    <wm-button class="btn-secondary" caption="Continue" type="button" margin="2.5em 0.5em 2em 0.5em" name="buttonContinue" on-click="buttonContinueClick($event, widget)" width="140px" height="44px"></wm-button>
+                                </wm-gridcolumn>
+                            </wm-gridrow>
+                        </wm-layoutgrid>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="2" name="gridcolumn115"></wm-gridcolumn>
+                </wm-gridrow>
+            </wm-layoutgrid>
+        </wm-container>
+    </wm-dialog>
+</wm-partial>

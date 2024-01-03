@@ -1,0 +1,48 @@
+{
+  "googleAddressByPlaceId_RestServiceVirtualController-invoke" : {
+    "id" : "googleAddressByPlaceId_RestServiceVirtualController-invoke",
+    "crudOperationId" : null,
+    "service" : "googleapis",
+    "controller" : "RestServiceVirtualController",
+    "operationType" : null,
+    "type" : "googleAddressByPlaceId.RootResponse",
+    "wmServiceOperationInfo" : {
+      "name" : "invoke",
+      "methodType" : "get",
+      "relativePath" : "/googleAddressByPlaceId/api/place/details/json",
+      "directPath" : null,
+      "httpMethod" : "get",
+      "parameters" : [ {
+        "name" : "fields",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "place_id",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "key",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "String",
+        "readOnly" : false,
+        "contentType" : null
+      } ],
+      "definitions" : { },
+      "produces" : [ "application/json" ],
+      "consumes" : [ "application/json" ],
+      "proxySettings" : {
+        "web" : true,
+        "mobile" : true,
+        "withCredentials" : false
+      },
+      "securityDefinitions" : [ ]
+    }
+  }
+}

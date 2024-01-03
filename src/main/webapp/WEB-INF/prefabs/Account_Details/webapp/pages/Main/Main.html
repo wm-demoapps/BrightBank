@@ -1,0 +1,44 @@
+<wm-prefab-container name="prefab_container1" caption="bind:Variables.TransactionData.dataSet[$i].transaction_status == 'transaction-status-accepted' ? Variables.TransactionData.dataSet[$i].transaction_info.receiver.name : Variables.TransactionData.dataSet[$i].transaction_printout.beneficiaryname">
+    <wm-layoutgrid name="layoutgrid7_1" class="spacing-base">
+        <wm-gridrow name="gridrow15">
+            <wm-gridcolumn columnwidth="12" name="gridcolumn30">
+                <wm-container name="container4" class="app-card bg-watermark" height="220px">
+                    <wm-layoutgrid name="layoutgrid8">
+                        <wm-gridrow name="gridrow17_1">
+                            <wm-gridcolumn columnwidth="8" name="gridcolumn32_1" class="col-xs-8">
+                                <wm-label name="label8" caption="bind:Variables.JS_getManagedAccountById.dataSet.tag" class="text-muted f-xxs-2"></wm-label>
+                                <wm-label caption="bind:servicehost==&quot;APIVendor(R)&quot;?(Variables.JS_getManagedAccountById.dataSet.ledger_meta.ledgerName):(servicehost==&quot;APIVendor(W)&quot;?(Variables.JS_getManagedAccountById.dataSet.friendlyName):(Variables.JS_getManagedAccountById.dataSet.virtual_account_name))"
+                                    class="p f-sm font-semibold text-ellipsis" name="label11" fontunit="em"></wm-label>
+                                <wm-label name="label17" caption="bind:maskAccountNumber(Variables.JS_getManagedAccountById.dataSet.id)" class="f-xs font-medium text-muted"></wm-label>
+                            </wm-gridcolumn>
+                            <wm-gridcolumn columnwidth="4" name="gridcolumn33_1" class="col-xs-4" horizontalalign="right">
+                                <wm-label padding="unset 0.5em" name="label16" class="pull-right account-currency" caption="bind:Variables.JS_getManagedAccountById.dataSet.currency == 'GBP' ? '£' : Variables.JS_getManagedAccountById.dataSet.currency == 'USD' ? '$': '€'"
+                                    fontsize="13" show="false"></wm-label>
+                                <wm-icon name="icon2" iconclass="bind:&quot;fa &quot; + (Variables.JS_getManagedAccountById.dataSet.currency==&quot;GBP&quot;?&quot;fa-gbp&quot;:Variables.JS_getManagedAccountById.dataSet.currency==&quot;USD?&quot;?&quot;fa-usd&quot;: &quot;fa-euro&quot;)"
+                                    class="icon-lg" conditionalclass="bind:Variables.JS_getManagedAccountById.dataSet.currency==&quot;GBP&quot;?&quot;label-success&quot;:Variables.JS_getManagedAccountById.dataSet.currency==&quot;USD?&quot;?&quot;label-info&quot;: &quot;label-danger&quot;"></wm-icon>
+                            </wm-gridcolumn>
+                        </wm-gridrow>
+                        <wm-gridrow name="gridrow20" padding="60px unset unset unset">
+                            <wm-gridcolumn columnwidth="12" name="gridcolumn37">
+                                <wm-label name="JobTitles" caption="bind:Variables.JS_getManagedAccountById.dataSet.currency == 'GBP' ? '£ '+ Variables.JS_getManagedAccountById.dataSet.availableBalance+&quot;.00&quot; : Variables.JS_getManagedAccountById.dataSet.currency == 'USD' ? '$ '+ Variables.JS_getManagedAccountById.dataSet.availableBalance+&quot;.00&quot;: '€ '+ Variables.JS_getManagedAccountById.dataSet.availableBalance+&quot;.00&quot;"
+                                    fontunit="px" show="false" class="f-xl"></wm-label>
+                                <wm-icon name="icon1" iconclass="bind:&quot;fa f-lg &quot; + (Variables.JS_getManagedAccountById.dataSet.currency==&quot;GBP&quot;?&quot;fa-gbp&quot;:Variables.JS_getManagedAccountById.dataSet.currency==&quot;USD?&quot;?&quot;fa-usd&quot;: &quot;fa-euro&quot;)"
+                                    caption="bind:Variables.JS_getManagedAccountById.dataSet.currency == 'GBP' ? Variables.JS_getManagedAccountById.dataSet.availableBalance+&quot;.00&quot; : Variables.JS_getManagedAccountById.dataSet.currency == 'USD' ? Variables.JS_getManagedAccountById.dataSet.availableBalance+&quot;.00&quot;: Variables.JS_getManagedAccountById.dataSet.availableBalance+&quot;.00&quot;"
+                                    show="bind:Widgets.label11.caption!=&quot;&quot; &amp;&amp; Widgets.label11.caption!=undefined" class="f-xl"></wm-icon>
+                            </wm-gridcolumn>
+                        </wm-gridrow>
+                    </wm-layoutgrid>
+                </wm-container>
+            </wm-gridcolumn>
+        </wm-gridrow>
+        <wm-gridrow name="gridrow12">
+            <wm-gridcolumn columnwidth="6" name="gridcolumn25" class="col-xs-6" horizontalalign="left">
+                <wm-button class="btn-secondary btn-block" caption="Transfer Funds" type="button" name="buttonTransferFunds" iconclass="" on-click="buttonTransferFundsClick($event, widget)" iconposition="right" show="bind:showtransferfundsbutton" deferload="true"></wm-button>
+            </wm-gridcolumn>
+            <wm-gridcolumn columnwidth="6" name="gridcolumn24_1" class="col-xs-6" horizontalalign="right">
+                <wm-button class="btn-tertiary btn-block" caption="bind:servicehost==&quot;APIVendor(R)&quot;?&quot;Fund Ledger&quot;:&quot;ADD MONEY&quot;" type="button" name="buttonFundAccount" on-click="buttonFundAccountClick($event, widget)" show="bind:showfundaccountbutton"
+                    deferload="true"></wm-button>
+            </wm-gridcolumn>
+        </wm-gridrow>
+    </wm-layoutgrid>
+</wm-prefab-container>

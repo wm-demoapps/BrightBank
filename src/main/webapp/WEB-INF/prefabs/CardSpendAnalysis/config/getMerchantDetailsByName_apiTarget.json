@@ -1,0 +1,146 @@
+{
+  "basePath" : "${rest.getMerchantDetailsByName.basepath}",
+  "paths" : {
+    "/BrightBankDB/MerchantDetails" : {
+      "x-WM-BASE_PATH" : "/BrightBankDB/MerchantDetails",
+      "x-WM-TAG" : "getMerchantDetailsByName",
+      "x-WM-RELATIVE_PATH" : "",
+      "get" : {
+        "x-WM-METHOD_NAME" : "invoke",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "produces" : [ "application/json" ],
+        "operationId" : "getMerchantDetailsByName_invoke",
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "$ref" : "#/definitions/RootResponse"
+            },
+            "description" : "Success"
+          }
+        },
+        "parameters" : [ {
+          "x-WM-VARIABLE_KEY" : "",
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "q",
+          "format" : "string",
+          "description" : "q",
+          "type" : "string",
+          "required" : false,
+          "x-WM-VARIABLE_TYPE" : "PROMPT"
+        }, {
+          "x-WM-VARIABLE_KEY" : "",
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "size",
+          "format" : "int32",
+          "description" : "size",
+          "type" : "integer",
+          "required" : false,
+          "x-WM-VARIABLE_TYPE" : "PROMPT"
+        }, {
+          "x-WM-VARIABLE_KEY" : "",
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "page",
+          "format" : "int32",
+          "description" : "page",
+          "type" : "integer",
+          "required" : false,
+          "x-WM-VARIABLE_TYPE" : "PROMPT"
+        } ],
+        "tags" : [ "getMerchantDetailsByName" ],
+        "consumes" : [ "application/json" ]
+      },
+      "x-WM-COMPLETE_PATH" : "${rest.getMerchantDetailsByName.scheme}://${rest.getMerchantDetailsByName.host}${rest.getMerchantDetailsByName.basepath}/BrightBankDB/MerchantDetails"
+    }
+  },
+  "host" : "${rest.getMerchantDetailsByName.host}",
+  "schemes" : [ "${rest.getMerchantDetailsByName.scheme}" ],
+  "definitions" : {
+    "Response.contentEntryItem" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "getMerchantDetailsByName.Response.contentEntryItem",
+      "x-WM-TAGS" : [ "getMerchantDetailsByName" ],
+      "required" : [ "category", "merchantId", "merchantName" ],
+      "properties" : {
+        "merchantId" : {
+          "format" : "int32",
+          "type" : "integer"
+        },
+        "category" : {
+          "type" : "string"
+        },
+        "merchantName" : {
+          "type" : "string"
+        }
+      }
+    },
+    "java.lang.Object" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "getMerchantDetailsByName.java.lang.Object",
+      "x-WM-TAGS" : [ "getMerchantDetailsByName" ]
+    },
+    "RootResponse" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "getMerchantDetailsByName.RootResponse",
+      "x-WM-TAGS" : [ "getMerchantDetailsByName" ],
+      "required" : [ "content", "empty", "first", "last", "number", "numberOfElements", "size", "sort", "totalElements", "totalPages" ],
+      "properties" : {
+        "number" : {
+          "format" : "int32",
+          "type" : "integer"
+        },
+        "last" : {
+          "type" : "boolean"
+        },
+        "size" : {
+          "format" : "int32",
+          "type" : "integer"
+        },
+        "numberOfElements" : {
+          "format" : "int32",
+          "type" : "integer"
+        },
+        "totalPages" : {
+          "format" : "int32",
+          "type" : "integer"
+        },
+        "sort" : {
+          "x-WM-IS_LIST" : true,
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/java.lang.Object"
+          }
+        },
+        "content" : {
+          "x-WM-IS_LIST" : true,
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Response.contentEntryItem"
+          }
+        },
+        "first" : {
+          "type" : "boolean"
+        },
+        "totalElements" : {
+          "format" : "int32",
+          "type" : "integer"
+        },
+        "empty" : {
+          "type" : "boolean"
+        }
+      }
+    }
+  },
+  "swagger" : "2.0",
+  "info" : {
+    "x-WM-USE_PROXY_FOR_WEB" : true,
+    "x-WM-USE_PROXY_FOR_MOBILE" : true,
+    "x-WM-API_ID" : "6d587c66-c9e5-44ce-beb7-68816513d236",
+    "x-WM-SERVICE_ID" : "onwavemaker",
+    "version" : "2.0",
+    "x-WM-SERVICE_TYPE" : "RestService",
+    "x-WM-USE_WITH_CREDENTIALS" : false
+  },
+  "tags" : [ {
+    "name" : "getMerchantDetailsByName"
+  } ]
+}

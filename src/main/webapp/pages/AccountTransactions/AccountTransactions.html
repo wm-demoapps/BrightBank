@@ -1,0 +1,134 @@
+<wm-page pagetitle="Account Transactions" name="page1">
+    <wm-header content="header" name="header1"></wm-header>
+    <wm-content name="content1">
+        <wm-left-panel columnwidth="2" content="leftnav" name="left_panel1"></wm-left-panel>
+        <wm-page-content columnwidth="10" name="page_content1" class="spacing-large section-page">
+            <wm-container name="container2" content="profileHeader" show="false"></wm-container>
+            <wm-layoutgrid name="layoutgrid3" class="spacing-base">
+                <wm-gridrow name="gridrow7">
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn17">
+                        <wm-container name="container3" class="ledger-card">
+                            <wm-layoutgrid name="layoutgrid4" columns="1">
+                                <wm-gridrow name="gridrow12" padding="unset unset 1em unset">
+                                    <wm-gridcolumn columnwidth="12" name="gridcolumn25">
+                                        <wm-label name="label4_1" caption="Account Details" class="f-lg font-medium" animation="fadeInDown"></wm-label>
+                                        <wm-button class="text-primary btn-transparent" caption="" type="button" margin="0.2em 0.5em 1em 1em" name="button3" on-click="Widgets.Account_Details1.refreshLedgerInfo();Widgets.List_Transactions1.refreshTransactions()"
+                                            iconclass="wi wi-refresh fa-lg" hint="Refresh Details" show="true" animation="rotateIn"></wm-button>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                                <wm-gridrow name="gridrow10">
+                                    <wm-gridcolumn columnwidth="12" name="gridcolumn23">
+                                        <wm-prefab prefabname="Account_Details" name="Account_Details1" ledgerid="bind:pageParams.accountId" servicehost="APIVendor(W)" authtoken="bind:Variables.loggedInUser.dataSet.userAttributes.authtoken" transactiontype="+/-"
+                                            detailstype="Managed Account" enduserid="bind:Variables.consumerGet.dataSet.profileId" on-fundaccountclick="Widgets.dialogFundAccount.open()" on-transferfundsclick="Widgets.transactiondataDialog.open()" showtransferfundsbutton="true"
+                                            showfundaccountbutton="true" animation="zoomIn"></wm-prefab>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                                <wm-gridrow name="gridrow13">
+                                    <wm-gridcolumn columnwidth="12" name="gridcolumn26" horizontalalign="center">
+                                        <wm-picture name="picture3" picturesource="resources/images/imagelists/covid-banner.svg" margin="132px unset unset unset" showindevice="sm,md,lg" animation="zoomIn" height="160" resizemode="contain" show="false"></wm-picture>
+                                        <wm-container name="container12" horizontalalign="left" class="panel p-md" height="160" padding="36px 120px unset unset" backgroundimage="bind:'resources/images/imagelists/'+Variables.wsGetActiveTheme.dataSet.content[$i].themeId+'/covid-banner.svg'"
+                                            margin="102px unset unset unset" backgroundrepeat="no-repeat" backgroundsize="cover" animation="fadeInUp" backgroundposition="center">
+                                            <wm-label name="label7" class="text-primary f-sm font-semibold" caption="COVID-19"></wm-label>
+                                            <wm-label class="p text-muted f-xxs-2" caption="Get the details on government stimulus payments under the CARES Act" name="label8"></wm-label>
+                                        </wm-container>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                            </wm-layoutgrid>
+                        </wm-container>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="8" name="gridcolumn18" class="page-separator-left">
+                        <wm-container name="container7" class="panel p-md" height="620" animation="fadeInUp">
+                            <wm-layoutgrid name="layoutgrid5" class="spacing-base">
+                                <wm-gridrow name="gridrow12_2">
+                                    <wm-gridcolumn columnwidth="6" name="gridcolumn20_1">
+                                        <wm-label caption="Transactions" class="f-m font-medium" name="labelTransactions" animation="fadeInDown"></wm-label>
+                                    </wm-gridcolumn>
+                                    <wm-gridcolumn columnwidth="6" name="gridcolumn21_1"></wm-gridcolumn>
+                                </wm-gridrow>
+                                <wm-gridrow name="gridrow13_2">
+                                    <wm-gridcolumn columnwidth="12" name="gridcolumn22">
+                                        <wm-prefab prefabname="List_Transactions" name="List_Transactions1" authtoken="bind:Variables.loggedInUser.dataSet.userAttributes.authtoken" transactionlisttype="Managed Account" id="bind:pageParams.accountId" transactiontype="CR/DR"
+                                            itemsperpage="10" showdate="true" on-load="List_Transactions1Load($event, $data)" on-transactioncount="List_Transactions1Transactioncount($event, $data)" show="bind:containsTransaction" animation="fadeInUp"></wm-prefab>
+                                        <wm-container name="containerNoTransaction" show="bind:containsTransaction == false" horizontalalign="center" class="no-data-panel" margin="60px unset unset unset" animation="fadeInUp">
+                                            <wm-picture resizemode="cover" name="pictureNoTransaction" picturesource="resources/images/imagelists/no-transactions.svg" class="no-data-img"></wm-picture>
+                                            <wm-label name="labelNoTransaction" caption="No data available for Transactions" class="no-data-title"></wm-label>
+                                            <wm-label caption="You can only see Transaction information after you  make transactions on your account" class="no-data-description" name="label7"></wm-label>
+                                        </wm-container>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                            </wm-layoutgrid>
+                        </wm-container>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+            </wm-layoutgrid>
+        </wm-page-content>
+    </wm-content>
+    <wm-footer content="footer" name="footer1"></wm-footer>
+    <wm-dialog dialogtype="design-dialog" modal="false" title="Add Money" name="dialogFundAccount" closable="false" class="wizard-dialog" on-opened="Variables.GetAccountDetailsById.invoke()" iconurl="resources/images/imagelists/group-2_2_3x.png">
+        <wm-container name="container4" height="100%" backgroundimage="resources/images/imagelists/bg-bottom-pattern.svg" backgroundrepeat="no-repeat" backgroundposition="bottom">
+            <wm-layoutgrid name="layoutgrid6" columns="3">
+                <wm-gridrow name="gridrow16">
+                    <wm-gridcolumn columnwidth="3" name="gridcolumn27"></wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn28">
+                        <wm-container name="container5" class="panel p-lg" margin="60px unset 24px unset">
+                            <wm-message name="message1" caption="Account Is not active. Please try again after some time..." type="info" show="bind:Variables.GetAccountDetailsById.dataSet.state.state!=&quot;ACTIVE&quot;" deferload="true"></wm-message>
+                            <wm-layoutgrid name="layoutgrid2">
+                                <wm-gridrow name="gridrow3">
+                                    <wm-gridcolumn columnwidth="4" name="gridcolumn5" padding="unset unset 24px unset" horizontalalign="center" class="col-xs-12">
+                                        <wm-container name="container9" margin="12px unset" display="inline-block">
+                                            <wm-prefab prefabname="QRCode" name="QRCode1" width="122px" height="130px"></wm-prefab>
+                                        </wm-container>
+                                        <wm-label name="label5_1" class="p f-xxs text-muted" caption="Scan QR code to pay"></wm-label>
+                                    </wm-gridcolumn>
+                                    <wm-gridcolumn columnwidth="8" name="gridcolumn6" class="col-xs-8">
+                                        <wm-container class="app-form" name="container2" show="true">
+                                            <wm-layoutgrid name="layoutgrid2_1" show="true">
+                                                <wm-gridrow name="gridrow4">
+                                                    <wm-gridcolumn columnwidth="12" name="gridcolumn10_1">
+                                                        <wm-container name="container10" class="form-group">
+                                                            <wm-label name="label2" caption="Account Number" class="control-label"></wm-label>
+                                                            <wm-text name="text1" datavalue="bind:pageParams.accountId" show="true" disabled="false" readonly="true" placeholder=""></wm-text>
+                                                            <wm-button class="btn-transparent" caption="copy" type="button" margin="0.5em 0.5em unset 1.5em" name="button2" iconclass="wi wi-content-copy" on-click="button2Click($event, widget, item, currentItemWidgets)"
+                                                                show="false"></wm-button>
+                                                        </wm-container>
+                                                    </wm-gridcolumn>
+                                                </wm-gridrow>
+                                                <wm-gridrow name="gridrow2">
+                                                    <wm-gridcolumn columnwidth="12" name="gridcolumn4">
+                                                        <wm-container class="form-group" name="container11">
+                                                            <wm-label caption="Amount" class="control-label" name="label10"></wm-label>
+                                                            <wm-button class="btn-transparent" caption="copy" type="button" margin="0.5em 0.5em unset 1.5em" iconclass="wi wi-content-copy" on-click="button2Click($event, widget, item, currentItemWidgets)"
+                                                                show="false" name="button5"></wm-button>
+                                                            <wm-text show="true" disabled="false" readonly="false" name="text2" placeholder=""></wm-text>
+                                                        </wm-container>
+                                                    </wm-gridcolumn>
+                                                </wm-gridrow>
+                                            </wm-layoutgrid>
+                                        </wm-container>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                                <wm-gridrow name="gridrow13_1">
+                                    <wm-gridcolumn columnwidth="12" name="gridcolumn23_1">
+                                        <wm-spinner show="false" name="spinnerFundAccount" class="fundSpinnerStyles" caption="Please wait... while we do the heavy lifting" iconclass="fa fa-spinner fa-spin fa-pull-left fa-spin fa-spin" iconsize="3em"></wm-spinner>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                                <wm-gridrow name="gridrow12_1">
+                                    <wm-gridcolumn columnwidth="12" name="gridcolumn21" horizontalalign="center">
+                                        <wm-button class="btn-default" caption="Cancel" on-click="Widgets.dialogFundAccount.close()" name="button3" height="44px" width="100px" margin="24px unset unset unset"></wm-button>
+                                        <wm-button class="btn-secondary" caption="ADD" type="button" margin="24px unset unset 12px" name="button4_1" height="44px" on-click="button4_1Click($event, widget)"></wm-button>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                            </wm-layoutgrid>
+                        </wm-container>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="3" name="gridcolumn29"></wm-gridcolumn>
+                </wm-gridrow>
+            </wm-layoutgrid>
+        </wm-container>
+        <wm-dialogactions name="dialogactions1" show="false"></wm-dialogactions>
+    </wm-dialog>
+    <wm-dialog dialogtype="design-dialog" modal="true" title="Transfer Funds" iconclass="wi wi-file-text" name="transactiondataDialog" closable="false" showheader="true" class="wizard-dialog" iconurl="resources/images/imagelists/icon-transfer.svg">
+        <wm-prefab prefabname="Transfer_Funds" name="Transfer_Funds1" ledgerid="bind:Widgets.Account_Details1.selectedledgerdetails.id" servicehost="APIVendor(W)" authtoken="bind:Variables.loggedInUser.dataSet.userAttributes.authtoken" selectedledgerid="bind:Widgets.Account_Details1.selectedledgerdetails.id"
+            on-transactionsuccess="Widgets.Account_Details1.refreshLedgerInfo();Widgets.List_Transactions1.refreshTransactions()" on-cancel="Widgets.transactiondataDialog.close()" wizardlayout="Vertical Layout" height="100%"></wm-prefab>
+    </wm-dialog>
+</wm-page>

@@ -1,0 +1,93 @@
+{
+  "supportedLocale" : {
+    "_id" : "wm-wm.Variable1402640443182",
+    "name" : "supportedLocale",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataSet" : {
+      "en" : "English"
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  },
+  "svGetAllAccounts" : {
+    "_id" : "wm-svGetAllAccounts-wm.ServiceVariable-1677993230582",
+    "name" : "svGetAllAccounts",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "type" : "com.wavemaker.networthdashboard.weavrAPI.WeavrApiManagedAccountsGetResponse",
+    "service" : "weavrAPI",
+    "operation" : "weavrAPI_managedAccountsGet",
+    "operationId" : "weavrAPI_managedAccountsGet",
+    "serviceType" : "OpenAPIService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "onSuccess" : "Variables.svGetAllCards.invoke();svGetAllAccountsonSuccess(variable, data, options)",
+    "startUpdate" : true,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "Managed Accounts"
+  },
+  "svGetAllCards" : {
+    "_id" : "wm-svGetAllCards-wm.ServiceVariable-1677993259793",
+    "name" : "svGetAllCards",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "type" : "com.wavemaker.networthdashboard.weavrAPI.WeavrApiManagedCardsGetResponse",
+    "service" : "weavrAPI",
+    "operation" : "weavrAPI_managedCardsGet",
+    "operationId" : "weavrAPI_managedCardsGet",
+    "serviceType" : "OpenAPIService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "onSuccess" : "svGetAllCardsonSuccess(variable, data, options)",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "Managed Cards"
+  },
+  "svGetGoalsForUser" : {
+    "_id" : "wm-svGetGoalsForUser-wm.ServiceVariable-1677994227931",
+    "name" : "svGetGoalsForUser",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "userId",
+      "value" : "bind:userid",
+      "type" : "string"
+    }, {
+      "target" : "authtoken",
+      "value" : "bind:authtoken",
+      "type" : "string"
+    }, {
+      "target" : "apikey",
+      "value" : "vrdO4T5327wBeqOUIIABDQ==",
+      "type" : "string"
+    } ],
+    "type" : "com.wavemaker.networthdashboard.CustomWealthGoalAPI.WealthGoalsListModel",
+    "service" : "CustomWealthGoalAPI",
+    "operation" : "CustomWealthGoalAPI_CustomWealthGoalController_getWealthGoalsListForUser",
+    "operationId" : "CustomWealthGoalAPI_CustomWealthGoalController_getWealthGoalsListForUser",
+    "operationType" : "list",
+    "serviceType" : "OpenAPIService",
+    "dataSet" : [ ],
+    "isList" : true,
+    "maxResults" : 20,
+    "onSuccess" : "svGetGoalsForUseronSuccess(variable, data, options)",
+    "startUpdate" : false,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "CustomWealthGoal"
+  }
+}

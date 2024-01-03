@@ -1,0 +1,50 @@
+{
+  "displayName" : "ListWealthGoals",
+  "group" : "",
+  "iconUrl" : "/resources/images/imagelists/prefab-icon.png",
+  "resources" : {
+    "styles" : [ "/pages/Main/Main.css" ],
+    "scripts" : [ ]
+  },
+  "properties" : {
+    "userid" : {
+      "type" : "string",
+      "displayName" : "user Id",
+      "description" : "user Id",
+      "bindable" : "in-bound",
+      "widget" : "string",
+      "show" : true,
+      "showAt" : "",
+      "disabled" : false
+    },
+    "authtoken" : {
+      "type" : "string",
+      "displayName" : "Authtoken",
+      "description" : "Authorisation needed for root user",
+      "bindable" : "in-bound",
+      "widget" : "string",
+      "show" : true,
+      "showAt" : "",
+      "disabled" : false
+    },
+    "viewtype" : {
+      "type" : "string",
+      "displayName" : "Viewtype",
+      "description" : "Viewtype",
+      "bindable" : "in-bound",
+      "value" : "Web",
+      "widget" : "list",
+      "options" : [ "Web", "Mobile" ],
+      "show" : true,
+      "disabled" : false
+    }
+  },
+  "events" : {
+    "onAddnewgoal" : {
+      "description" : "to add new goals",
+      "eventData" : "",
+      "displayName" : "Addnewgoal"
+    }
+  },
+  "methods" : { }
+}

@@ -1,0 +1,148 @@
+{
+  "basePath" : "${rest.GoalFormFields.basepath}",
+  "paths" : {
+    "/BrightBankDB/GoalFormFields" : {
+      "x-WM-BASE_PATH" : "/BrightBankDB/GoalFormFields",
+      "x-WM-TAG" : "RestServiceVirtualController",
+      "x-WM-RELATIVE_PATH" : "",
+      "get" : {
+        "x-WM-METHOD_NAME" : "invoke",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "produces" : [ "application/json" ],
+        "operationId" : "GoalFormFields_RestServiceVirtualController-invoke",
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "$ref" : "#/definitions/RootResponse"
+            },
+            "description" : "Success"
+          }
+        },
+        "parameters" : [ {
+          "x-WM-VARIABLE_KEY" : "",
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "sort",
+          "format" : "string",
+          "description" : "sort",
+          "type" : "string",
+          "required" : false,
+          "x-WM-VARIABLE_TYPE" : "PROMPT"
+        } ],
+        "tags" : [ "RestServiceVirtualController" ],
+        "consumes" : [ "application/json" ]
+      },
+      "x-WM-COMPLETE_PATH" : "${rest.GoalFormFields.scheme}://${rest.GoalFormFields.host}${rest.GoalFormFields.basepath}/BrightBankDB/GoalFormFields"
+    }
+  },
+  "host" : "${rest.GoalFormFields.host}",
+  "schemes" : [ "${rest.GoalFormFields.scheme}" ],
+  "definitions" : {
+    "Response.sortEntryItem" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "GoalFormFields.Response.sortEntryItem",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "required" : [ "ascending", "direction", "ignoreCase", "nullHandling", "property" ],
+      "properties" : {
+        "nullHandling" : {
+          "type" : "string"
+        },
+        "ignoreCase" : {
+          "type" : "boolean"
+        },
+        "property" : {
+          "type" : "string"
+        },
+        "ascending" : {
+          "type" : "boolean"
+        },
+        "direction" : {
+          "type" : "string"
+        }
+      }
+    },
+    "Response.contentEntryItem" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "GoalFormFields.Response.contentEntryItem",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "required" : [ "id", "isActive", "name", "type" ],
+      "properties" : {
+        "name" : {
+          "type" : "string"
+        },
+        "id" : {
+          "format" : "int32",
+          "type" : "integer"
+        },
+        "type" : {
+          "type" : "string"
+        },
+        "isActive" : {
+          "type" : "string"
+        }
+      }
+    },
+    "RootResponse" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "GoalFormFields.RootResponse",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "required" : [ "content", "empty", "first", "last", "number", "numberOfElements", "size", "sort", "totalElements", "totalPages" ],
+      "properties" : {
+        "number" : {
+          "format" : "int32",
+          "type" : "integer"
+        },
+        "last" : {
+          "type" : "boolean"
+        },
+        "size" : {
+          "format" : "int32",
+          "type" : "integer"
+        },
+        "numberOfElements" : {
+          "format" : "int32",
+          "type" : "integer"
+        },
+        "totalPages" : {
+          "format" : "int32",
+          "type" : "integer"
+        },
+        "sort" : {
+          "x-WM-IS_LIST" : true,
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Response.sortEntryItem"
+          }
+        },
+        "content" : {
+          "x-WM-IS_LIST" : true,
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Response.contentEntryItem"
+          }
+        },
+        "first" : {
+          "type" : "boolean"
+        },
+        "totalElements" : {
+          "format" : "int32",
+          "type" : "integer"
+        },
+        "empty" : {
+          "type" : "boolean"
+        }
+      }
+    }
+  },
+  "swagger" : "2.0",
+  "info" : {
+    "x-WM-USE_PROXY_FOR_WEB" : true,
+    "x-WM-USE_PROXY_FOR_MOBILE" : true,
+    "x-WM-API_ID" : "22665551-e496-4e37-8b84-4a0d486c1fea",
+    "x-WM-SERVICE_ID" : "onwavemaker",
+    "version" : "2.0",
+    "x-WM-SERVICE_TYPE" : "RestService",
+    "x-WM-USE_WITH_CREDENTIALS" : false
+  },
+  "tags" : [ {
+    "name" : "RestServiceVirtualController",
+    "description" : "Rest service swagger documentation"
+  } ]
+}

@@ -1,0 +1,153 @@
+{
+  "basePath" : "${rest.svCreateNewGoal.basepath}",
+  "paths" : {
+    "/BrightBankDB/WealthGoals" : {
+      "post" : {
+        "x-WM-METHOD_NAME" : "invoke",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "produces" : [ "application/json" ],
+        "operationId" : "svCreateNewGoal_RestServiceVirtualController-invoke",
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "$ref" : "#/definitions/RootResponse"
+            },
+            "description" : "Success"
+          }
+        },
+        "parameters" : [ {
+          "schema" : {
+            "$ref" : "#/definitions/RootRequest"
+          },
+          "x-WM-VARIABLE_KEY" : "",
+          "in" : "body",
+          "name" : "RequestBody",
+          "description" : "RequestBody",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Object",
+          "required" : false,
+          "x-WM-VARIABLE_TYPE" : "PROMPT"
+        } ],
+        "tags" : [ "RestServiceVirtualController" ],
+        "consumes" : [ "application/json" ]
+      },
+      "x-WM-BASE_PATH" : "/BrightBankDB/WealthGoals",
+      "x-WM-TAG" : "RestServiceVirtualController",
+      "x-WM-RELATIVE_PATH" : "",
+      "x-WM-COMPLETE_PATH" : "${rest.svCreateNewGoal.scheme}://${rest.svCreateNewGoal.host}${rest.svCreateNewGoal.basepath}/BrightBankDB/WealthGoals"
+    }
+  },
+  "host" : "${rest.svCreateNewGoal.host}",
+  "schemes" : [ "${rest.svCreateNewGoal.scheme}" ],
+  "definitions" : {
+    "RootRequest" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "svCreateNewGoal.RootRequest",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "required" : [ "amount", "createdOn", "goalCategoryId", "isActive", "isAutoDebitEnabled", "name", "recuringDebitAccountId", "recurringDay", "recurringDebitAmount", "savingFrequencyId", "timeToGoal", "userId" ],
+      "properties" : {
+        "isAutoDebitEnabled" : {
+          "type" : "string"
+        },
+        "amount" : {
+          "type" : "string"
+        },
+        "recurringDay" : {
+          "type" : "string"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "timeToGoal" : {
+          "type" : "string"
+        },
+        "savingFrequencyId" : {
+          "type" : "string"
+        },
+        "goalCategoryId" : {
+          "type" : "string"
+        },
+        "isActive" : {
+          "type" : "string"
+        },
+        "createdOn" : {
+          "type" : "string"
+        },
+        "userId" : {
+          "type" : "string"
+        },
+        "recuringDebitAccountId" : {
+          "type" : "string"
+        },
+        "recurringDebitAmount" : {
+          "type" : "string"
+        }
+      }
+    },
+    "RootResponse" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "svCreateNewGoal.RootResponse",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "required" : [ "amount", "createdOn", "goalCategoryId", "id", "isActive", "isAutoDebitEnabled", "name", "recuringDebitAccountId", "recurringDay", "recurringDebitAmount", "savingFrequency", "savingFrequencyId", "timeToGoal", "userId", "wealthGoalCategory" ],
+      "properties" : {
+        "isAutoDebitEnabled" : {
+          "type" : "string"
+        },
+        "amount" : {
+          "type" : "string"
+        },
+        "recurringDay" : {
+          "type" : "string"
+        },
+        "isActive" : {
+          "type" : "string"
+        },
+        "createdOn" : {
+          "type" : "string"
+        },
+        "userId" : {
+          "type" : "string"
+        },
+        "savingFrequency" : {
+          "type" : "string"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "timeToGoal" : {
+          "type" : "string"
+        },
+        "id" : {
+          "format" : "int32",
+          "type" : "integer"
+        },
+        "savingFrequencyId" : {
+          "type" : "string"
+        },
+        "goalCategoryId" : {
+          "type" : "string"
+        },
+        "wealthGoalCategory" : {
+          "type" : "string"
+        },
+        "recuringDebitAccountId" : {
+          "type" : "string"
+        },
+        "recurringDebitAmount" : {
+          "type" : "string"
+        }
+      }
+    }
+  },
+  "swagger" : "2.0",
+  "info" : {
+    "x-WM-USE_PROXY_FOR_WEB" : true,
+    "x-WM-USE_PROXY_FOR_MOBILE" : true,
+    "x-WM-API_ID" : "f8435236-63b1-4296-9a28-a0d87d720b10",
+    "x-WM-SERVICE_ID" : "onwavemaker",
+    "version" : "2.0",
+    "x-WM-SERVICE_TYPE" : "RestService",
+    "x-WM-USE_WITH_CREDENTIALS" : false
+  },
+  "tags" : [ {
+    "name" : "RestServiceVirtualController",
+    "description" : "Rest service swagger documentation"
+  } ]
+}

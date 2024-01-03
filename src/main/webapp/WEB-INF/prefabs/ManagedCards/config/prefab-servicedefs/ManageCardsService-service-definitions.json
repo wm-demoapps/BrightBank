@@ -1,0 +1,48 @@
+{
+  "ManageCardsController_getAllManagedCards" : {
+    "id" : "ManageCardsController_getAllManagedCards",
+    "crudOperationId" : null,
+    "service" : "ManageCardsService",
+    "controller" : "ManageCardsController",
+    "operationType" : null,
+    "type" : "array",
+    "wmServiceOperationInfo" : {
+      "name" : "getAllManagedCards",
+      "methodType" : "get",
+      "relativePath" : "/manageCards/allManagedCards",
+      "directPath" : null,
+      "httpMethod" : "get",
+      "parameters" : [ {
+        "name" : "hostName",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "java.lang.String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "authorization",
+        "parameterType" : "header",
+        "required" : false,
+        "type" : "java.lang.String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "endUserId",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "java.lang.String",
+        "readOnly" : false,
+        "contentType" : null
+      } ],
+      "definitions" : { },
+      "produces" : null,
+      "consumes" : null,
+      "proxySettings" : {
+        "web" : true,
+        "mobile" : true,
+        "withCredentials" : false
+      },
+      "securityDefinitions" : [ ]
+    }
+  }
+}

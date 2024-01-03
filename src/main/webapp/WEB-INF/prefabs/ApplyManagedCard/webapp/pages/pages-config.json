@@ -1,0 +1,19 @@
+[ {
+  "name" : "HorizontalLayout",
+  "type" : "PARTIAL",
+  "params" : [ {
+    "name" : "selectedCardType",
+    "type" : "string"
+  } ]
+}, {
+  "name" : "Main",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "VerticalLayout",
+  "type" : "PARTIAL",
+  "params" : [ {
+    "name" : "selectedCardType",
+    "type" : "string"
+  } ]
+} ]

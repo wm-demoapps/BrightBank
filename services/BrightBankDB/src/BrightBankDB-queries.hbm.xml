@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <sql-query name="qrGoalTransactionSummryByGoal">
+        <![CDATA[
+        select 
+SUM(amount) as total_amount_paid
+from
+goal_transactions gr
+
+where gr.goal_id=:goal_id
+        ]]>
+    <query-param name="goal_id" type="java.lang.Integer"/>
+    </sql-query>
+
+    <sql-query name="qrGoalTransactionSummryByGoal__count">
+        <![CDATA[
+        select count(*) from (select 
+SUM(amount) as total_amount_paid
+from
+goal_transactions gr
+
+where gr.goal_id=:goal_id) wmTempTable
+        ]]>
+    <query-param name="goal_id" type="java.lang.Integer"/>
+    </sql-query>
+
+    <sql-query name="qrWealthGoalsList">
+        <![CDATA[
+        select 
+wg.*,
+DATE_ADD(DATE(wg.created_on), INTERVAL wg.time_to_goal YEAR) AS goal_end_date,
+abs(timestampdiff(MONTH,DATE_ADD(DATE(wg.created_on), INTERVAL wg.time_to_goal YEAR),CURDATE())) as months_left,
+CASE
+    WHEN DATE(wg.created_on) = CURDATE() THEN 'true'
+    ELSE 'false'
+END AS is_created_today,
+
+(select SUM(amount) from goal_transactions gr where gr.goal_id=wg.id)  as total_amount_paid
+
+from 
+wealth_goals wg where user_id=:user_id
+        ]]>
+    <query-param name="user_id" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="qrWealthGoalsList__count">
+        <![CDATA[
+        select count(*) from (select 
+wg.*,
+DATE_ADD(DATE(wg.created_on), INTERVAL wg.time_to_goal YEAR) AS goal_end_date,
+abs(timestampdiff(MONTH,DATE_ADD(DATE(wg.created_on), INTERVAL wg.time_to_goal YEAR),CURDATE())) as months_left,
+CASE
+    WHEN DATE(wg.created_on) = CURDATE() THEN 'true'
+    ELSE 'false'
+END AS is_created_today,
+
+(select SUM(amount) from goal_transactions gr where gr.goal_id=wg.id)  as total_amount_paid
+
+from 
+wealth_goals wg where user_id=:user_id) wmTempTable
+        ]]>
+    <query-param name="user_id" type="java.lang.String"/>
+    </sql-query>
+</hibernate-mapping>

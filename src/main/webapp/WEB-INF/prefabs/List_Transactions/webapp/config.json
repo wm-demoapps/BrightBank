@@ -1,0 +1,133 @@
+{
+  "displayName" : "List Transactions",
+  "group" : "",
+  "iconUrl" : "/resources/images/imagelists/icon-transaction-details.png",
+  "resources" : {
+    "styles" : [ "/pages/Main/Main.css" ],
+    "scripts" : [ ]
+  },
+  "properties" : {
+    "servicehost" : {
+      "type" : "string",
+      "displayName" : "ServiceHost",
+      "description" : "Service to invoke",
+      "bindable" : "in-bound",
+      "value" : "APIVendor(W)",
+      "widget" : "list",
+      "options" : [ "APIVendor(R)", "APIVendor(W)", "APIVendor(B)" ],
+      "show" : true,
+      "showAt" : "",
+      "disabled" : false
+    },
+    "authtoken" : {
+      "type" : "string",
+      "displayName" : "AuthToken",
+      "description" : "Authorisation token value needed for the service",
+      "bindable" : "in-bound",
+      "widget" : "string",
+      "show" : true,
+      "showAt" : "",
+      "disabled" : false
+    },
+    "transactionlisttype" : {
+      "type" : "string",
+      "displayName" : "Transaction List(Either Account Or Card)",
+      "description" : "Which list of transactions are displayed is based on this property",
+      "bindable" : "in-bound",
+      "value" : "",
+      "widget" : "list",
+      "options" : [ "Managed Account", "Managed Card" ],
+      "show" : true,
+      "showAt" : "",
+      "disabled" : false
+    },
+    "id" : {
+      "type" : "string",
+      "displayName" : "AccountID or CardID",
+      "description" : "AccountId or CardID for which the transactions are to be displayed",
+      "bindable" : "in-bound",
+      "widget" : "string",
+      "show" : true,
+      "showAt" : "",
+      "disabled" : false
+    },
+    "transactiontype" : {
+      "type" : "string",
+      "displayName" : "Transaction Type",
+      "description" : "Display the amount as CR/DR or either +/-",
+      "bindable" : "in-bound",
+      "widget" : "list",
+      "options" : [ "CR/DR", "+/-" ],
+      "show" : true,
+      "showAt" : "",
+      "disabled" : false
+    },
+    "showsearch" : {
+      "type" : "boolean",
+      "displayName" : "Show Search Box",
+      "description" : "Enable or disable the search box",
+      "bindable" : "in-bound",
+      "value" : true,
+      "widget" : "checkbox",
+      "show" : true,
+      "showAt" : null,
+      "disabled" : false
+    },
+    "accountdetails" : {
+      "type" : "object",
+      "displayName" : "Account /Card Details",
+      "description" : "Account or Card Details on which the transactions are made to other accounts or cards",
+      "bindable" : "in-bound",
+      "widget" : "string",
+      "show" : true,
+      "showAt" : "",
+      "disabled" : false
+    },
+    "itemsperpage" : {
+      "type" : "number",
+      "displayName" : "Itemsperpage",
+      "description" : "Items Per Page",
+      "bindable" : "in-bound",
+      "widget" : "string",
+      "show" : true,
+      "showAt" : "",
+      "disabled" : false
+    },
+    "showdate" : {
+      "type" : "boolean",
+      "displayName" : "Show date Filter",
+      "description" : "Show date filter",
+      "bindable" : "in-bound",
+      "value" : true,
+      "widget" : "checkbox",
+      "show" : true,
+      "showAt" : "",
+      "disabled" : false
+    }
+  },
+  "events" : {
+    "onTransactioncount" : {
+      "description" : "Transactioncount",
+      "eventData" : "",
+      "displayName" : "Transactioncount"
+    }
+  },
+  "methods" : {
+    "refreshTransactions" : {
+      "description" : "Refresh the transactions list when invoked when any transactions made on card or account",
+      "parameters" : [ ],
+      "returnType" : "void",
+      "example" : ""
+    },
+    "setFilter" : {
+      "description" : "Filter transactions by date",
+      "parameters" : [ {
+        "name" : "dateinput",
+        "type" : "date",
+        "description" : "initial date for transactions"
+      } ],
+      "returnType" : "void",
+      "example" : ""
+    }
+  }
+}

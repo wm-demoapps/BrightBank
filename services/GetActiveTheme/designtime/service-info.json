@@ -1,0 +1,6 @@
+{
+  "id" : "GetActiveTheme",
+  "type" : "RestService",
+  "title" : "GetActiveTheme",
+  "mockEnabled" : false
+}

@@ -1,0 +1,91 @@
+{
+  "displayName" : "User Registration",
+  "group" : "",
+  "iconUrl" : "/resources/images/imagelists/icon-new-enduser.svg",
+  "resources" : {
+    "styles" : [ "/pages/Main/Main.css" ],
+    "scripts" : [ ]
+  },
+  "properties" : {
+    "endusertype" : {
+      "type" : "string",
+      "displayName" : "End User Type",
+      "description" : "Set end user type you want to create",
+      "bindable" : "in-bound",
+      "value" : "Individual",
+      "widget" : "list",
+      "options" : [ "Company", "Individual" ],
+      "show" : true,
+      "showAt" : "",
+      "disabled" : false
+    },
+    "countryofresidence" : {
+      "type" : "string",
+      "displayName" : "Country Of Residence Data",
+      "description" : "provide iso country code values",
+      "bindable" : "in-bound",
+      "isList" : true,
+      "widget" : "string",
+      "show" : true,
+      "showAt" : "",
+      "disabled" : false
+    },
+    "servicehost" : {
+      "type" : "string",
+      "displayName" : "Servicehost",
+      "description" : "Service to invoke",
+      "bindable" : "in-bound",
+      "value" : "APIVendor(W)",
+      "widget" : "list",
+      "options" : [ "APIVendor(R)", "APIVendor(W)", "APIVendor(B)" ],
+      "show" : true,
+      "showAt" : "",
+      "disabled" : false
+    },
+    "userdata" : {
+      "type" : "object",
+      "displayName" : "Userdata",
+      "description" : "Created user data",
+      "bindable" : "out-bound",
+      "widget" : "string",
+      "show" : false,
+      "showAt" : "",
+      "disabled" : true
+    },
+    "googleplacesapikey" : {
+      "type" : "string",
+      "displayName" : "Google Places API Key",
+      "description" : "Provide Google places API key to search the places for address details",
+      "bindable" : "in-bound",
+      "widget" : "string",
+      "show" : true,
+      "showAt" : "",
+      "disabled" : false
+    },
+    "wizardlayout" : {
+      "type" : "string",
+      "displayName" : "Wizard Layout",
+      "description" : "Choose Wizard layout",
+      "bindable" : "in-bound",
+      "value" : "Horizontal Layout",
+      "widget" : "list",
+      "options" : [ "Horizontal Layout", "Vertical Layout" ],
+      "show" : true,
+      "showAt" : "",
+      "disabled" : false
+    }
+  },
+  "events" : {
+    "onEnduseradd" : {
+      "description" : "Callback action which will be triggered on adding an end user",
+      "eventData" : "",
+      "displayName" : "End User Add"
+    },
+    "onWizardcancel" : {
+      "description" : "Callback action which will be triggered on click of Cancel button in Registration Form wizard",
+      "eventData" : "",
+      "displayName" : "Wizard Cancel"
+    }
+  },
+  "methods" : { }
+}

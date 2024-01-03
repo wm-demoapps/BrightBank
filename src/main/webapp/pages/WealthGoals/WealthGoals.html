@@ -1,0 +1,22 @@
+<wm-page pagetitle="Wealth Goals" name="page1">
+    <wm-header content="header" name="header1"></wm-header>
+    <wm-content name="content1">
+        <wm-left-panel columnwidth="2" content="leftnav" name="left_panel1"></wm-left-panel>
+        <wm-page-content columnwidth="10" name="page_content1" class="spacing-large">
+            <wm-layoutgrid name="layoutgrid1" columns="1" class="spacing-base">
+                <wm-gridrow name="gridrow3">
+                    <wm-gridcolumn columnwidth="12" name="gridcolumn5">
+                        <wm-label name="label1" class="f-lg font-medium" caption="Wealth Goal" animation="fadeInDown"></wm-label>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow4">
+                    <wm-gridcolumn columnwidth="12" name="gridcolumn6">
+                        <wm-prefab prefabname="ListWealthGoals" name="ListWealthGoals1" userid="bind:Variables.consumerGet.dataSet.rootUser.email" on-addnewgoal="Actions.goToPage_CreateGoal.invoke()" authtoken="bind:Variables.loggedInUser.dataSet.userAttributes.authtoken"
+                            animation="fadeInUp"></wm-prefab>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+            </wm-layoutgrid>
+        </wm-page-content>
+    </wm-content>
+    <wm-footer content="footer" name="footer1"></wm-footer>
+</wm-page>

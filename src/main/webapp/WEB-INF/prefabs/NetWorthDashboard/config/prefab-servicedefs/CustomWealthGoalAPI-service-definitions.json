@@ -1,0 +1,48 @@
+{
+  "CustomWealthGoalAPI_CustomWealthGoalController_getWealthGoalsListForUser" : {
+    "id" : "CustomWealthGoalAPI_CustomWealthGoalController_getWealthGoalsListForUser",
+    "crudOperationId" : "CustomWealthGoalAPI.CustomWealthGoalController",
+    "service" : "CustomWealthGoalAPI",
+    "controller" : "CustomWealthGoalController",
+    "operationType" : "list",
+    "type" : "array",
+    "wmServiceOperationInfo" : {
+      "name" : "CustomWealthGoalAPI_CustomWealthGoalController_getWealthGoalsListForUser",
+      "methodType" : "get",
+      "relativePath" : "/CustomWealthGoalAPI/customWealthGoal/wealthGoalsListForUser",
+      "directPath" : null,
+      "httpMethod" : "get",
+      "parameters" : [ {
+        "name" : "userId",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "java.lang.String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "authtoken",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "java.lang.String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "apikey",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "java.lang.String",
+        "readOnly" : false,
+        "contentType" : null
+      } ],
+      "definitions" : { },
+      "produces" : null,
+      "consumes" : null,
+      "proxySettings" : {
+        "web" : true,
+        "mobile" : true,
+        "withCredentials" : false
+      },
+      "securityDefinitions" : [ ]
+    }
+  }
+}

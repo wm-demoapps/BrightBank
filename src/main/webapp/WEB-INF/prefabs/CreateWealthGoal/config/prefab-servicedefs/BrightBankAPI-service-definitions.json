@@ -1,0 +1,161 @@
+{
+  "BrightBankAPI_WealthGoalCategoryController_findWealthGoalCategories" : {
+    "id" : "BrightBankAPI_WealthGoalCategoryController_findWealthGoalCategories",
+    "crudOperationId" : "BrightBankAPI.WealthGoalCategoryController",
+    "service" : "BrightBankAPI",
+    "controller" : "WealthGoalCategoryController",
+    "operationType" : "list",
+    "type" : "com.wavemaker.createwealthgoal.BrightBankAPI.Page",
+    "wmServiceOperationInfo" : {
+      "name" : "BrightBankAPI_WealthGoalCategoryController_findWealthGoalCategories",
+      "methodType" : "get",
+      "relativePath" : "/BrightBankAPI/BrightBankDB/WealthGoalCategory",
+      "directPath" : null,
+      "httpMethod" : "get",
+      "parameters" : [ {
+        "name" : "q",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "java.lang.String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "page",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "size",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "sort",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "String",
+        "readOnly" : false,
+        "contentType" : null
+      } ],
+      "definitions" : { },
+      "produces" : null,
+      "consumes" : null,
+      "proxySettings" : {
+        "web" : true,
+        "mobile" : true,
+        "withCredentials" : false
+      },
+      "securityDefinitions" : [ ]
+    }
+  },
+  "BrightBankAPI_SavingFrequencyController_findSavingFrequencies" : {
+    "id" : "BrightBankAPI_SavingFrequencyController_findSavingFrequencies",
+    "crudOperationId" : "BrightBankAPI.SavingFrequencyController",
+    "service" : "BrightBankAPI",
+    "controller" : "SavingFrequencyController",
+    "operationType" : "list",
+    "type" : "com.wavemaker.createwealthgoal.BrightBankAPI.Page",
+    "wmServiceOperationInfo" : {
+      "name" : "BrightBankAPI_SavingFrequencyController_findSavingFrequencies",
+      "methodType" : "get",
+      "relativePath" : "/BrightBankAPI/BrightBankDB/SavingFrequency",
+      "directPath" : null,
+      "httpMethod" : "get",
+      "parameters" : [ {
+        "name" : "q",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "java.lang.String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "page",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "size",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "sort",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "String",
+        "readOnly" : false,
+        "contentType" : null
+      } ],
+      "definitions" : { },
+      "produces" : null,
+      "consumes" : null,
+      "proxySettings" : {
+        "web" : true,
+        "mobile" : true,
+        "withCredentials" : false
+      },
+      "securityDefinitions" : [ ]
+    }
+  },
+  "BrightBankAPI_GoalFormFieldsController_findGoalFormFields" : {
+    "id" : "BrightBankAPI_GoalFormFieldsController_findGoalFormFields",
+    "crudOperationId" : "BrightBankAPI.GoalFormFieldsController",
+    "service" : "BrightBankAPI",
+    "controller" : "GoalFormFieldsController",
+    "operationType" : "list",
+    "type" : "com.wavemaker.createwealthgoal.BrightBankAPI.Page",
+    "wmServiceOperationInfo" : {
+      "name" : "BrightBankAPI_GoalFormFieldsController_findGoalFormFields",
+      "methodType" : "get",
+      "relativePath" : "/BrightBankAPI/BrightBankDB/GoalFormFields",
+      "directPath" : null,
+      "httpMethod" : "get",
+      "parameters" : [ {
+        "name" : "q",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "java.lang.String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "page",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "size",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "sort",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "String",
+        "readOnly" : false,
+        "contentType" : null
+      } ],
+      "definitions" : { },
+      "produces" : null,
+      "consumes" : null,
+      "proxySettings" : {
+        "web" : true,
+        "mobile" : true,
+        "withCredentials" : false
+      },
+      "securityDefinitions" : [ ]
+    }
+  }
+}

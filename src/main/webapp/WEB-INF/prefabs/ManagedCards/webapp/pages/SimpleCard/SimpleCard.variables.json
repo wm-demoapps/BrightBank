@@ -1,0 +1,24 @@
+{
+  "managedCardsGet" : {
+    "_id" : "wm-managedCardsGet-wm.ServiceVariable-1663586465164",
+    "name" : "managedCardsGet",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "type" : "com.managedcards.WVRCards.WvrcardsManagedCardsGetResponse",
+    "service" : "WVRCards",
+    "operation" : "WVRCards_managedCardsGet",
+    "operationId" : "WVRCards_managedCardsGet",
+    "serviceType" : "OpenAPIService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "onSuccess" : "managedCardsGetonSuccess(variable, data, options)",
+    "startUpdate" : true,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "Managed Cards"
+  }
+}

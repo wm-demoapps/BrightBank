@@ -1,0 +1,148 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "2.0",
+    "x-WM-USE_PROXY_FOR_WEB" : true,
+    "x-WM-USE_PROXY_FOR_MOBILE" : true,
+    "x-WM-API_ID" : "22665551-e496-4e37-8b84-4a0d486c1fea",
+    "x-WM-SERVICE_ID" : "onwavemaker",
+    "x-WM-SERVICE_TYPE" : "RestService",
+    "x-WM-USE_WITH_CREDENTIALS" : false
+  },
+  "host" : "dev-brightbankdb.onwavemaker.com",
+  "basePath" : "/services",
+  "tags" : [ {
+    "name" : "RestServiceVirtualController",
+    "description" : "Rest service swagger documentation"
+  } ],
+  "schemes" : [ "https" ],
+  "paths" : {
+    "/BrightBankDB/GoalFormFields" : {
+      "get" : {
+        "tags" : [ "RestServiceVirtualController" ],
+        "operationId" : "GoalFormFields_RestServiceVirtualController-invoke",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "sort",
+          "in" : "query",
+          "description" : "sort",
+          "required" : false,
+          "type" : "string",
+          "format" : "string",
+          "x-WM-VARIABLE_KEY" : "",
+          "x-WM-EDITABLE" : false,
+          "x-WM-VARIABLE_TYPE" : "PROMPT"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/RootResponse"
+            }
+          }
+        },
+        "x-WM-METHOD_NAME" : "invoke",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
+      },
+      "x-WM-BASE_PATH" : "/BrightBankDB/GoalFormFields",
+      "x-WM-TAG" : "RestServiceVirtualController",
+      "x-WM-RELATIVE_PATH" : "",
+      "x-WM-COMPLETE_PATH" : "${rest.GoalFormFields.scheme}://${rest.GoalFormFields.host}${rest.GoalFormFields.basepath}/BrightBankDB/GoalFormFields"
+    }
+  },
+  "definitions" : {
+    "Response.sortEntryItem" : {
+      "required" : [ "ascending", "direction", "ignoreCase", "nullHandling", "property" ],
+      "properties" : {
+        "nullHandling" : {
+          "type" : "string"
+        },
+        "ignoreCase" : {
+          "type" : "boolean"
+        },
+        "property" : {
+          "type" : "string"
+        },
+        "ascending" : {
+          "type" : "boolean"
+        },
+        "direction" : {
+          "type" : "string"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "GoalFormFields.Response.sortEntryItem",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    },
+    "Response.contentEntryItem" : {
+      "required" : [ "id", "isActive", "name", "type" ],
+      "properties" : {
+        "name" : {
+          "type" : "string"
+        },
+        "id" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "type" : {
+          "type" : "string"
+        },
+        "isActive" : {
+          "type" : "string"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "GoalFormFields.Response.contentEntryItem",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    },
+    "RootResponse" : {
+      "required" : [ "content", "empty", "first", "last", "number", "numberOfElements", "size", "sort", "totalElements", "totalPages" ],
+      "properties" : {
+        "number" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "last" : {
+          "type" : "boolean"
+        },
+        "size" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "numberOfElements" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "totalPages" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "sort" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Response.sortEntryItem"
+          },
+          "x-WM-IS_LIST" : true
+        },
+        "content" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Response.contentEntryItem"
+          },
+          "x-WM-IS_LIST" : true
+        },
+        "first" : {
+          "type" : "boolean"
+        },
+        "totalElements" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "empty" : {
+          "type" : "boolean"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "GoalFormFields.RootResponse",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    }
+  }
+}

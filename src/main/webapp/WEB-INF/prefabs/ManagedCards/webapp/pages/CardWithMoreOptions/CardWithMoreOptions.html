@@ -1,0 +1,50 @@
+<wm-partial name="partial1">
+    <wm-list listclass="list-group" template="true" template-name="Business Card" itemsperrow="xs-1 sm-2 md-3 lg-3" class="list-card card-listing" statehandler="none" name="list1" dataset="bind:Variables.JS_getAllManagedCards.dataSet" navigation="Scroll"
+        itemclass="bind:item.type == 'VIRTUAL' ?  'virtual-card':'physical-card'" nodatamessage="No Cards found." on-render="list1Render(widget, $data)">
+        <wm-listtemplate layout="media" name="listtemplate1">
+            <wm-card name="card1">
+                <wm-card-content fontsize="0.8" fontunit="em" name="card_content1" backgroundrepeat="no-repeat" backgroundsize="220">
+                    <wm-layoutgrid columns="2" name="layoutgrid2">
+                        <wm-gridrow name="gridrow5">
+                            <wm-gridcolumn columnwidth="4" name="gridcolumn10"></wm-gridcolumn>
+                            <wm-gridcolumn columnwidth="4" name="gridcolumn9"></wm-gridcolumn>
+                            <wm-gridcolumn columnwidth="4" name="CardAmount" horizontalalign="center">
+                                <wm-label caption="bind:Prefab.servicehost==&quot;APIVendor(W)&quot;?((Widgets.list1.currentItem.currency==&quot;GBP&quot;?&quot;£ &quot;:(Widgets.list1.currentItem.currency==&quot;USD&quot;?&quot;$ &quot;:&quot;€ &quot;))+((Widgets.list1.currentItem.balance / 100) | numberToString: '2')):('')"
+                                    class="cardAmountLabel" margin="2px unset unset unset" name="label7" fontsize="16"></wm-label>
+                            </wm-gridcolumn>
+                        </wm-gridrow>
+                        <wm-gridrow name="gridrow6">
+                            <wm-gridcolumn columnwidth="12" name="CardType">
+                                <wm-label caption="bind:Widgets.list1.currentItem.tag" on-click="label9Click($event, widget, item, currentItemWidgets)" margin="0px unset" class="cusorStyle h4" name="label7_1" padding="0px unset unset unset"></wm-label>
+                            </wm-gridcolumn>
+                        </wm-gridrow>
+                        <wm-gridrow name="gridrow7">
+                            <wm-gridcolumn columnwidth="12" name="CardNumber" horizontalalign="left">
+                                <wm-label caption="XXXX" on-click="label9Click($event, widget, item, currentItemWidgets)" name="label10_1" class="cusorStyle"></wm-label>
+                                <wm-label name="label9" caption="bind:Widgets.list1.currentItem.cardNumberLastFourDigits" on-click="label9Click($event, widget, item, currentItemWidgets)" fontsize="14" margin="unset unset unset 0.2em" class="cusorStyle"></wm-label>
+                            </wm-gridcolumn>
+                        </wm-gridrow>
+                        <wm-gridrow name="gridrow9">
+                            <wm-gridcolumn columnwidth="6" name="CardName" class="col-xs-6">
+                                <wm-label caption="bind:Prefab.servicehost==&quot;APIVendor(W)&quot;?(Widgets.list1.currentItem.name):('')" margin="1em unset 0em unset" whitespace="nowrap" name="label12" class="h4"></wm-label>
+                            </wm-gridcolumn>
+                            <wm-gridcolumn columnwidth="4" name="CardExpiry" horizontalalign="left" padding="-1.2em unset unset unset" class="col-xs-4">
+                                <wm-label caption="EXP" name="label11" fontsize="11" margin="unset unset 0px unset"></wm-label>
+                                <wm-label caption="bind:Prefab.servicehost==&quot;APIVendor(W)&quot;?(Prefab.calculateExpiryDate(Widgets.list1.currentItem.cardExpiry)):('')" margin="0em unset" whitespace="nowrap" name="label13" class="h4" padding="0px unset unset unset"></wm-label>
+                            </wm-gridcolumn>
+                            <wm-gridcolumn columnwidth="2" name="CardImage" horizontalalign="right" class="col-xs-2">
+                                <wm-picture name="picture1" width="71px" height="46px" picturesource="resources/images/imagelists/mastercard-png-6948.png"></wm-picture>
+                            </wm-gridcolumn>
+                        </wm-gridrow>
+                        <wm-gridrow name="gridrow6_1">
+                            <wm-gridcolumn columnwidth="12" name="CardActions" horizontalalign="right">
+                                <wm-menu caption="" autoclose="outsideClick" name="menu1" iconclass="wi wi-more-vert" dataset="bind:Variables.MoreActions.dataSet" itemlabel="label" itemlink="link" itemicon="icon" menuposition="down,left" menulayout="vertical"
+                                    container="body"></wm-menu>
+                            </wm-gridcolumn>
+                        </wm-gridrow>
+                    </wm-layoutgrid>
+                </wm-card-content>
+            </wm-card>
+        </wm-listtemplate>
+    </wm-list>
+</wm-partial>

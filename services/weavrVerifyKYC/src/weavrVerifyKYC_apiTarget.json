@@ -1,0 +1,71 @@
+{
+  "basePath" : "${rest.weavrVerifyKYC.basepath}",
+  "paths" : {
+    "/api/consumers/{consumer_id}/verify" : {
+      "post" : {
+        "x-WM-METHOD_NAME" : "invoke",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "operationId" : "weavrVerifyKYC_RestServiceVirtualController-invoke",
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "$ref" : "#/definitions/RootResponse"
+            },
+            "description" : "Success"
+          }
+        },
+        "parameters" : [ {
+          "x-WM-VARIABLE_KEY" : "apikey",
+          "x-WM-EDITABLE" : true,
+          "in" : "header",
+          "name" : "programme-key",
+          "format" : "__APP_ENV__apikey",
+          "description" : "programme-key",
+          "type" : "string",
+          "items" : {
+            "type" : "__APP_ENV__apikey"
+          },
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.String",
+          "required" : false,
+          "x-WM-VARIABLE_TYPE" : "APP_ENVIRONMENT"
+        }, {
+          "x-WM-VARIABLE_KEY" : "",
+          "in" : "path",
+          "name" : "consumer_id",
+          "format" : "string",
+          "type" : "string",
+          "required" : true,
+          "x-WM-VARIABLE_TYPE" : "PROMPT"
+        } ],
+        "tags" : [ "RestServiceVirtualController" ],
+        "consumes" : [ "application/json" ]
+      },
+      "x-WM-BASE_PATH" : "/api/consumers/{consumer_id}/verify",
+      "x-WM-TAG" : "RestServiceVirtualController",
+      "x-WM-RELATIVE_PATH" : "",
+      "x-WM-COMPLETE_PATH" : "${rest.weavrVerifyKYC.scheme}://${rest.weavrVerifyKYC.host}${rest.weavrVerifyKYC.basepath}/api/consumers/{consumer_id}/verify"
+    }
+  },
+  "host" : "${rest.weavrVerifyKYC.host}",
+  "schemes" : [ "${rest.weavrVerifyKYC.scheme}" ],
+  "definitions" : {
+    "RootResponse" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "weavrVerifyKYC.RootResponse",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    }
+  },
+  "swagger" : "2.0",
+  "info" : {
+    "x-WM-USE_PROXY_FOR_WEB" : true,
+    "x-WM-USE_PROXY_FOR_MOBILE" : true,
+    "x-WM-API_ID" : "87511bef-3b68-4136-b849-b90f5bf4e985",
+    "x-WM-SERVICE_ID" : "weavr",
+    "version" : "2.0",
+    "x-WM-SERVICE_TYPE" : "RestService",
+    "x-WM-USE_WITH_CREDENTIALS" : false
+  },
+  "tags" : [ {
+    "name" : "RestServiceVirtualController",
+    "description" : "Rest service swagger documentation"
+  } ]
+}

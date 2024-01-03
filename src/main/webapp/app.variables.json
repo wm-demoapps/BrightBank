@@ -1,0 +1,648 @@
+{
+  "AddedConsumerInfo" : {
+    "_id" : "wm-AddedConsumerInfo-wm.Variable-1626074385857",
+    "name" : "AddedConsumerInfo",
+    "owner" : "App",
+    "category" : "wm.Variable",
+    "dataBinding" : [ {
+      "target" : "data",
+      "value" : "bind:Widgets.User_Registration1.userdata"
+    } ],
+    "dataSet" : {
+      "data" : ""
+    },
+    "type" : "entry",
+    "isList" : false,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "appNotification" : {
+    "_id" : "wm-appErrorHandler-wm.NotificationVariable-1454664620943",
+    "name" : "appNotification",
+    "owner" : "App",
+    "category" : "wm.NotificationVariable",
+    "dataBinding" : [ {
+      "target" : "class",
+      "value" : "Error",
+      "type" : "list"
+    }, {
+      "target" : "toasterPosition",
+      "value" : "bottom right",
+      "type" : "list"
+    } ],
+    "operation" : "toast"
+  },
+  "consumerGet" : {
+    "_id" : "wm-consumerGet-wm.ServiceVariable-1625837102364",
+    "name" : "consumerGet",
+    "owner" : "App",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "type" : "com.weavrbank.weavrLogin.Consumer",
+    "service" : "weavrLogin",
+    "operation" : "weavrLogin_consumerGet",
+    "operationId" : "weavrLogin_consumerGet",
+    "serviceType" : "OpenAPIService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "Consumers"
+  },
+  "consumerRootUserMobileVerificationCodeSend" : {
+    "_id" : "wm-consumerRootUserMobileVerificationCodeSend1-wm.ServiceVariable-1678262404955",
+    "name" : "consumerRootUserMobileVerificationCodeSend",
+    "owner" : "App",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "channel",
+      "value" : "SMS"
+    } ],
+    "type" : "void",
+    "service" : "weavrLogin",
+    "operation" : "weavrLogin_enrolDeviceUsingOtpStepOne",
+    "operationId" : "weavrLogin_enrolDeviceUsingOtpStepOne",
+    "serviceType" : "OpenAPIService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "onSuccess" : "Variables.consumerRootUserMobileVerify.invoke()",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "Additional Factors"
+  },
+  "consumerRootUserMobileVerify" : {
+    "_id" : "wm-consumerRootUserMobileVerify1-wm.ServiceVariable-1678266006878",
+    "name" : "consumerRootUserMobileVerify",
+    "owner" : "App",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "channel",
+      "value" : "SMS"
+    }, {
+      "target" : "body.verificationCode",
+      "value" : "bind:'123456'"
+    } ],
+    "type" : "void",
+    "service" : "weavrLogin",
+    "operation" : "weavrLogin_enrolDeviceUsingOtpStepTwo",
+    "operationId" : "weavrLogin_enrolDeviceUsingOtpStepTwo",
+    "operationType" : "create",
+    "serviceType" : "OpenAPIService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "onSuccess" : "Variables.StartConsumerKyc.invoke()",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "Additional Factors"
+  },
+  "GetConsumerKyc" : {
+    "_id" : "wm-GetConsumerKyc-wm.ServiceVariable-1626066925509",
+    "name" : "GetConsumerKyc",
+    "owner" : "App",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "type" : "com.weavrbank.weavrLogin.WeavrLoginConsumerKycGetResponse",
+    "service" : "weavrLogin",
+    "operation" : "weavrLogin_consumerKycGet",
+    "operationId" : "weavrLogin_consumerKycGet",
+    "serviceType" : "OpenAPIService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "onSuccess" : "GetConsumerKyconSuccess(variable, data, options)",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "Consumers"
+  },
+  "getSecurityInfo" : {
+    "_id" : "wm-getSecurityInfo-wm.ServiceVariable-1629892919768",
+    "name" : "getSecurityInfo",
+    "owner" : "App",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "type" : "com.wavemaker.runtime.security.model.SecurityInfo",
+    "service" : "securityService",
+    "operation" : "getSecurityInfo",
+    "operationId" : "SecurityController_getSecurityInfo",
+    "operationType" : "get",
+    "serviceType" : "SecurityServiceType",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "Security"
+  },
+  "goToPage_AccountTransactions" : {
+    "_id" : "wm-goToPage_AccountTransactions_Copy-wm.NavigationVariable-1626850993086",
+    "name" : "goToPage_AccountTransactions",
+    "owner" : "App",
+    "category" : "wm.NavigationVariable",
+    "dataBinding" : [ {
+      "target" : "pageName",
+      "value" : "AccountTransactions",
+      "type" : "string"
+    } ],
+    "operation" : "gotoPage",
+    "pageName" : "AccountTransactions",
+    "dataSet" : [ {
+      "type" : "string",
+      "target" : "accountId",
+      "value" : "bind:Widgets.Managed_Accounts1.selectedledgerid"
+    } ],
+    "pageTransitions" : "none"
+  },
+  "goToPage_CreateGoal" : {
+    "_id" : "wm-goToPage_CreateGoal-wm.NavigationVariable-1678438511719",
+    "name" : "goToPage_CreateGoal",
+    "owner" : "App",
+    "category" : "wm.NavigationVariable",
+    "dataBinding" : [ ],
+    "operation" : "gotoPage",
+    "pageName" : "CreateGoal",
+    "dataSet" : [ ],
+    "pageTransitions" : "none"
+  },
+  "goToPage_CreateLoginCredentials" : {
+    "_id" : "wm-goToPage_CreateLoginCredentials-wm.NavigationVariable-1625811318607",
+    "name" : "goToPage_CreateLoginCredentials",
+    "owner" : "App",
+    "category" : "wm.NavigationVariable",
+    "dataBinding" : [ {
+      "target" : "pageName",
+      "value" : "CreateLoginCredentials",
+      "type" : "string"
+    } ],
+    "operation" : "gotoPage",
+    "pageName" : "CreateLoginCredentials",
+    "dataSet" : [ {
+      "type" : "string",
+      "target" : "identityId",
+      "value" : "bind:Widgets.User_Registration1.userdata.id.id"
+    } ],
+    "pageTransitions" : "none"
+  },
+  "goToPage_Dashboard" : {
+    "_id" : "wm-goToPage_Dashboard-wm.NavigationVariable-1625823322847",
+    "name" : "goToPage_Dashboard",
+    "owner" : "App",
+    "category" : "wm.NavigationVariable",
+    "dataBinding" : [ ],
+    "operation" : "gotoPage",
+    "pageName" : "Dashboard",
+    "dataSet" : [ ],
+    "pageTransitions" : "none"
+  },
+  "goToPage_Localization" : {
+    "_id" : "wm-goToPage_Localization-wm.NavigationVariable-1699260750362",
+    "name" : "goToPage_Localization",
+    "owner" : "App",
+    "category" : "wm.NavigationVariable",
+    "dataBinding" : [ ],
+    "operation" : "gotoPage",
+    "pageName" : "Localization",
+    "dataSet" : [ ],
+    "pageTransitions" : "none"
+  },
+  "goToPage_LoginOrSignup" : {
+    "_id" : "wm-goToPage_LoginOrSignup1-wm.NavigationVariable-1625804787657",
+    "name" : "goToPage_LoginOrSignup",
+    "owner" : "App",
+    "category" : "wm.NavigationVariable",
+    "dataBinding" : [ ],
+    "operation" : "gotoPage",
+    "pageName" : "LoginOrSignup",
+    "dataSet" : [ ],
+    "pageTransitions" : "none"
+  },
+  "goToPage_Main" : {
+    "_id" : "wm-wm.NavigationVariable1389180517517",
+    "name" : "goToPage_Main",
+    "owner" : "App",
+    "category" : "wm.NavigationVariable",
+    "operation" : "gotoPage",
+    "pageName" : "Main"
+  },
+  "goToPage_ManagedAccounts" : {
+    "_id" : "wm-goToPage_ManagedAccounts-wm.NavigationVariable-1625232303063",
+    "name" : "goToPage_ManagedAccounts",
+    "owner" : "App",
+    "category" : "wm.NavigationVariable",
+    "dataBinding" : [ ],
+    "operation" : "gotoPage",
+    "pageName" : "ManagedAccounts",
+    "dataSet" : [ ],
+    "pageTransitions" : "none"
+  },
+  "goToPage_ManagedCards" : {
+    "_id" : "wm-goToPage_ManagedCards-wm.NavigationVariable-1631099816770",
+    "name" : "goToPage_ManagedCards",
+    "owner" : "App",
+    "category" : "wm.NavigationVariable",
+    "dataBinding" : [ ],
+    "operation" : "gotoPage",
+    "pageName" : "ManagedCards",
+    "dataSet" : [ ],
+    "pageTransitions" : "none"
+  },
+  "goToPage_ManagedCardTransactions" : {
+    "_id" : "wm-goToPage_CardTransactions-wm.NavigationVariable-1625219415511",
+    "name" : "goToPage_ManagedCardTransactions",
+    "owner" : "App",
+    "category" : "wm.NavigationVariable",
+    "dataBinding" : [ {
+      "target" : "pageName",
+      "value" : "ManagedCardTransactions",
+      "type" : "string"
+    } ],
+    "operation" : "gotoPage",
+    "pageName" : "ManagedCardTransactions",
+    "dataSet" : [ {
+      "type" : "string",
+      "target" : "managedCardId",
+      "value" : "bind:Widgets.ManagedCards1.selectedcardid"
+    }, {
+      "type" : "string",
+      "target" : "managedCardBalance",
+      "value" : "bind:Widgets.ManagedCards1.selectedcard.balance"
+    } ],
+    "pageTransitions" : "none"
+  },
+  "goToPage_RegisterUser" : {
+    "_id" : "wm-goToPage_RegisterUser-wm.NavigationVariable-1625633821913",
+    "name" : "goToPage_RegisterUser",
+    "owner" : "App",
+    "category" : "wm.NavigationVariable",
+    "dataBinding" : [ ],
+    "operation" : "gotoPage",
+    "pageName" : "RegisterUser",
+    "dataSet" : [ ],
+    "pageTransitions" : "none"
+  },
+  "goToPage_Settings" : {
+    "_id" : "wm-goToPage_ManageTheme-wm.NavigationVariable-1678598708924",
+    "name" : "goToPage_Settings",
+    "owner" : "App",
+    "category" : "wm.NavigationVariable",
+    "dataBinding" : [ ],
+    "operation" : "gotoPage",
+    "pageName" : "Settings",
+    "dataSet" : [ ],
+    "pageTransitions" : "none"
+  },
+  "goToPage_SpendAnalysis" : {
+    "_id" : "wm-goToPage_SpendAnalysis-wm.NavigationVariable-1677752036275",
+    "name" : "goToPage_SpendAnalysis",
+    "owner" : "App",
+    "category" : "wm.NavigationVariable",
+    "dataBinding" : [ ],
+    "operation" : "gotoPage",
+    "pageName" : "SpendAnalysis",
+    "dataSet" : [ ],
+    "pageTransitions" : "none"
+  },
+  "goToPage_WealthGoals" : {
+    "_id" : "wm-goToPage_WealthGoals-wm.NavigationVariable-1677740202979",
+    "name" : "goToPage_WealthGoals",
+    "owner" : "App",
+    "category" : "wm.NavigationVariable",
+    "dataBinding" : [ ],
+    "operation" : "gotoPage",
+    "pageName" : "WealthGoals",
+    "dataSet" : [ ],
+    "pageTransitions" : "none"
+  },
+  "loggedInUser" : {
+    "_id" : "wm-loggedInUser-wm.Variable-1625459713519",
+    "name" : "loggedInUser",
+    "owner" : "App",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "name" : "",
+      "id" : "",
+      "tenantId" : "",
+      "isAuthenticated" : false,
+      "isSecurityEnabled" : true,
+      "roles" : [ ],
+      "userAttributes" : {
+        "authtoken" : ""
+      }
+    },
+    "type" : "string",
+    "isList" : false,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "loginAction" : {
+    "_id" : "wm-loginAction-wm.LoginVariable-1625459713518",
+    "name" : "loginAction",
+    "owner" : "App",
+    "category" : "wm.LoginVariable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "j_username" : "",
+      "j_password" : "",
+      "j_rememberme" : false
+    },
+    "type" : "string",
+    "saveInPhonegap" : false,
+    "onSuccess" : "loginActiononSuccess(variable, data, options)",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "useDefaultSuccessHandler" : false
+  },
+  "logoutAction" : {
+    "_id" : "wm-logoutAction-wm.LogoutVariable-1625459713519",
+    "name" : "logoutAction",
+    "owner" : "App",
+    "category" : "wm.LogoutVariable",
+    "type" : "string",
+    "saveInPhonegap" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "redirectTo" : "LoginOrSignup",
+    "useDefaultSuccessHandler" : true
+  },
+  "managedAccountsGet" : {
+    "_id" : "wm-managedAccountsGet-wm.ServiceVariable-1626084790312",
+    "name" : "managedAccountsGet",
+    "owner" : "App",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "type" : "void",
+    "service" : "weavrLogin",
+    "operation" : "weavrLogin_managedAccountsGet",
+    "operationId" : "weavrLogin_managedAccountsGet",
+    "serviceType" : "OpenAPIService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "onSuccess" : "managedAccountsGetonSuccess(variable, data, options)",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "Managed Accounts"
+  },
+  "StartConsumerKyc" : {
+    "_id" : "wm-StartConsumerKyc-wm.ServiceVariable-1626066631045",
+    "name" : "StartConsumerKyc",
+    "owner" : "App",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "type" : "com.weavrbank.weavrLogin.WeavrLoginConsumerKycStartResponse",
+    "service" : "weavrLogin",
+    "operation" : "weavrLogin_consumerKycStart",
+    "operationId" : "weavrLogin_consumerKycStart",
+    "serviceType" : "OpenAPIService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "onSuccess" : "Variables.weavrVerifyKYC.invoke()",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "Consumers"
+  },
+  "stvCurrencies" : {
+    "_id" : "wm-stvCurrencies-wm.Variable-1677838737810",
+    "name" : "stvCurrencies",
+    "owner" : "App",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "value" : "USD",
+      "displayName" : "Base Currency - USD"
+    }, {
+      "value" : "EUR",
+      "displayName" : "Base Currency - EUR"
+    }, {
+      "value" : "GBP",
+      "displayName" : "Base Currency - GBP"
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "stvMonths" : {
+    "_id" : "wm-stvMonths-wm.Variable-1677838878823",
+    "name" : "stvMonths",
+    "owner" : "App",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "value" : 1,
+      "month" : "January - 2023"
+    }, {
+      "value" : 2,
+      "month" : "February - 2023"
+    }, {
+      "value" : 3,
+      "month" : "March - 2023"
+    }, {
+      "value" : 4,
+      "month" : "April - 2023"
+    }, {
+      "value" : 5,
+      "month" : "May - 2023"
+    }, {
+      "value" : 6,
+      "month" : "June - 2023"
+    }, {
+      "value" : 7,
+      "month" : "July - 2023"
+    }, {
+      "value" : 8,
+      "month" : "August - 2023"
+    }, {
+      "value" : 9,
+      "month" : "September - 2023"
+    }, {
+      "value" : 10,
+      "month" : "October - 2023"
+    }, {
+      "value" : 11,
+      "month" : "November - 2023"
+    }, {
+      "value" : 12,
+      "month" : "December - 2023"
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "supportedLocale" : {
+    "_id" : "wm-wm.Variable1402640443182",
+    "name" : "supportedLocale",
+    "owner" : "App",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "ar" : "العربية",
+      "en" : "English",
+      "ar-om" : "(عمان) العربية "
+    },
+    "type" : "string",
+    "isList" : false,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "svGetThemeProperty" : {
+    "_id" : "wm-svGetThemeProperty-wm.ServiceVariable-1678426061385",
+    "name" : "svGetThemeProperty",
+    "owner" : "App",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "size",
+      "value" : "1000",
+      "type" : "string"
+    } ],
+    "type" : "getThemeProperties.RootResponse",
+    "service" : "getThemeProperties",
+    "operation" : "invoke",
+    "operationId" : "getThemeProperties_RestServiceVirtualController-invoke",
+    "serviceType" : "RestService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "onSuccess" : "svGetThemePropertyonSuccess(variable, data, options)",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false
+  },
+  "svGetThemeType" : {
+    "_id" : "wm-svGetThemeType-wm.ServiceVariable-1678426042890",
+    "name" : "svGetThemeType",
+    "owner" : "App",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "size",
+      "value" : "1000",
+      "type" : "string"
+    } ],
+    "type" : "getThemeType.RootResponse",
+    "service" : "getThemeType",
+    "operation" : "invoke",
+    "operationId" : "getThemeType_RestServiceVirtualController-invoke",
+    "serviceType" : "RestService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "onSuccess" : "svGetThemeTypeonSuccess(variable, data, options)",
+    "startUpdate" : true,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false
+  },
+  "UserCredentials" : {
+    "_id" : "wm-UserCredentials-wm.Variable-1625811528153",
+    "name" : "UserCredentials",
+    "owner" : "App",
+    "category" : "wm.Variable",
+    "dataBinding" : [ {
+      "target" : "email",
+      "value" : "bind:Widgets.RB_NewEndUser_Prefab1.userdata.rootUser.email"
+    }, {
+      "target" : "identityId.id",
+      "value" : "bind:Widgets.RB_NewEndUser_Prefab1.userdata.id"
+    } ],
+    "dataSet" : {
+      "credentialType" : "ROOT",
+      "identityId" : {
+        "type" : "CONSUMER",
+        "id" : ""
+      },
+      "password" : {
+        "value" : ""
+      },
+      "email" : ""
+    },
+    "type" : "entry",
+    "isList" : false,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "weavrVerifyKYC" : {
+    "_id" : "wm-weavrVerifyKYC-wm.ServiceVariable-1626169907537",
+    "name" : "weavrVerifyKYC",
+    "owner" : "App",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "programme-key",
+      "value" : [ "BpoPo5uKbrIBekKIoTMBCA==" ],
+      "type" : "string"
+    }, {
+      "target" : "consumer_id",
+      "value" : "bind:Variables.loggedInUser.dataSet.id",
+      "type" : "string"
+    } ],
+    "type" : "weavrVerifyKYC.RootResponse",
+    "service" : "weavrVerifyKYC",
+    "operation" : "invoke",
+    "operationId" : "weavrVerifyKYC_RestServiceVirtualController-invoke",
+    "operationType" : "post",
+    "serviceType" : "RestService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "onSuccess" : "Variables.GetConsumerKyc.invoke()",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "RestServiceVirtual"
+  },
+  "wsGetActiveTheme" : {
+    "_id" : "wm-wsGetActiveTheme1-wm.ServiceVariable-1692708006181",
+    "name" : "wsGetActiveTheme",
+    "owner" : "App",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "type" : "GetActiveTheme.RootResponse",
+    "service" : "GetActiveTheme",
+    "operation" : "invoke",
+    "operationId" : "GetActiveTheme_RestServiceVirtualController-invoke",
+    "operationType" : "get",
+    "serviceType" : "RestService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "onSuccess" : "Variables.svGetThemeProperty.invoke()",
+    "startUpdate" : true,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "RestServiceVirtual"
+  }
+}

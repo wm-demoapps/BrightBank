@@ -1,0 +1,6 @@
+{
+  "id" : "DeleteGoalField",
+  "type" : "RestService",
+  "title" : "DeleteGoalField",
+  "mockEnabled" : false
+}

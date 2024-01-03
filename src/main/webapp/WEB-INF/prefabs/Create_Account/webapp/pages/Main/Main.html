@@ -1,0 +1,48 @@
+<wm-prefab-container name="prefab_container1" show="true">
+    <wm-form errormessage="" captionposition="top" title="" enctype="application/x-www-form-urlencoded" method="post" dataset="bind:Variables.CreateAccountInfo.dataSet" captionalign="left" name="createLedgerForm" messagelayout="Inline" postmessage="" on-success="createLedgerFormSuccess($event, widget, $data)">
+        <wm-layoutgrid columns="1" name="layoutgrid2">
+            <wm-gridrow name="gridrow1">
+                <wm-gridcolumn name="gridcolumn1" columnwidth="6" class="col-xs-12">
+                    <wm-form errormessage="" captionposition="top" title="" enctype="application/x-www-form-urlencoded" method="post" dataset="bind:Variables.LedgerMetaData.dataSet" captionalign="left" name="body_ledger_meta">
+                        <wm-layoutgrid columns="1" name="layoutgrid4">
+                            <wm-gridrow name="gridrow13_1">
+                                <wm-gridcolumn columnwidth="12" name="gridcolumn13_1" class="col-xs-12">
+                                    <wm-form-field name="ledgerName" readonly="false" displayname="bind:servicehost==&quot;APIVendor(R)&quot;?&quot;Give name to your ledger&quot;:&quot;Give your account a name&quot;" key="ledgerName" type="string" show="true"
+                                        widget="text" inputtype="text" placeholder="Ex: Savings Account" required="true" validationmessage="Please provide a name for the ledger" viewmodewidget="default"></wm-form-field>
+                                </wm-gridcolumn>
+                            </wm-gridrow>
+                        </wm-layoutgrid>
+                    </wm-form>
+                </wm-gridcolumn>
+                <wm-gridcolumn columnwidth="6" name="gridcolumn5"></wm-gridcolumn>
+            </wm-gridrow>
+            <wm-gridrow name="gridrow11">
+                <wm-gridcolumn columnwidth="9" name="gridcolumn9" class="col-xs-12">
+                    <wm-form-field name="body_asset_type" readonly="false" displayname="Select Currency" key="body.asset_type" type="string" show="true" widget="switch" dataset="bind:Variables.AssetTypeData.dataSet" datafield="type" displayfield="name" placeholder=""
+                        defaultvalue="bind:'gbp'"></wm-form-field>
+                </wm-gridcolumn>
+                <wm-gridcolumn columnwidth="3" name="gridcolumn7"></wm-gridcolumn>
+            </wm-gridrow>
+            <wm-gridrow name="gridrow12">
+                <wm-gridcolumn columnwidth="6" name="gridcolumn10" class="col-xs-12">
+                    <wm-form-field name="body_ledger_primary_use_types" displayname="bind:servicehost==&quot;APIVendor(R)&quot;?&quot;Ledger Primary Use&quot;:&quot;Primary Use&quot;" key="body.ledger_primary_use_types" type="string" show="true" widget="switch"
+                        dataset="bind:Variables.LedgerPrimaryUseTypesData.dataSet" datafield="dataValue" displayfield="name" defaultvalue="bind:'ledger-primary-use-types-payments'" placeholder="" required="false"></wm-form-field>
+                </wm-gridcolumn>
+                <wm-gridcolumn columnwidth="6" name="gridcolumn6"></wm-gridcolumn>
+            </wm-gridrow>
+        </wm-layoutgrid>
+        <wm-form-field name="body_partner_product" readonly="false" displayname="Partner Product" key="body.partner_product" type="string" show="false" widget="text" inputtype="text" placeholder="Enter value" defaultvalue="bind:Widgets.createLedgerForm.formWidgets.body_asset_type.datavalue  == 'gbp' ? 'ExampleBank-GBP-2' : 'ExampleBank-EUR-1'"></wm-form-field>
+        <wm-form-field name="body_ledger_who_owns_assets" readonly="false" displayname="Ledger Who Owns Assets" key="body.ledger_who_owns_assets" type="string" show="false" widget="text" inputtype="text" required="true" placeholder="Enter value"
+            defaultvalue="ledger-assets-owned-by-me"></wm-form-field>
+        <wm-form-field name="body_ledger_type" readonly="false" displayname="Ledger Type" key="body.ledger_type" type="string" show="false" widget="text" inputtype="text" required="true" placeholder="Enter value" defaultvalue="ledger-type-single-user"></wm-form-field>
+        <wm-form-field name="body_ledger_t_and_cs_country_of_jurisdiction" readonly="true" displayname="Ledger T And Cs Country Of Jurisdiction" key="body.ledger_t_and_cs_country_of_jurisdiction" type="string" show="false" widget="text"
+            inputtype="text" placeholder="Enter value" defaultvalue="GBR"></wm-form-field>
+        <wm-form-field name="body_holder_id" readonly="false" displayname="Holder Id" key="body.holder_id" type="string" show="false" widget="text" inputtype="text" required="true" placeholder="Enter value" defaultvalue="bind:enduserid"></wm-form-field>
+        <wm-form-field name="body_asset_class" readonly="false" displayname="Asset Class" key="body.asset_class" type="string" show="false" widget="text" defaultvalue="currency" inputtype="text" placeholder="Enter value"></wm-form-field>
+        <wm-form-action key="reset" display-name="Cancel" show="true" class="form-reset btn-default" iconclass="" title="Cancel" action="createLedgerForm_resetAction($event)" shortcutkey="" disabled="false" widget-type="button" type="button"
+            update-mode="true"></wm-form-action>
+        <wm-form-action key="save" display-name="Create" show="true" class="form-save  btn-secondary" iconclass="" title="Create" action="createLedgerForm_saveAction($event)" shortcutkey="" disabled="false" widget-type="button" type="submit"
+            update-mode="true"></wm-form-action>
+    </wm-form>
+    <wm-spinner show="false" name="spinner1" iconclass="fa fa-spinner fa-spin fa-pull-left" type="icon" caption="Please wait... while we do the heavy lifting" class="spinnerStyles railsSpinner"></wm-spinner>
+</wm-prefab-container>

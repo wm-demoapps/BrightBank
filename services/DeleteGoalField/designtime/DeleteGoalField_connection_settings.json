@@ -1,0 +1,32 @@
+{
+  "endpointAddress" : "https://dev-brightbankdb.onwavemaker.com/services/BrightBankDB/GoalFormFields/{goal_id}",
+  "method" : "DELETE",
+  "headers" : { },
+  "redirectEnabled" : true,
+  "requestBody" : "",
+  "queryParams" : { },
+  "authDetails" : null,
+  "contentType" : "application/json",
+  "multiParamInfoList" : null,
+  "sampleHttpResponseDetails" : {
+    "statusCode" : 200,
+    "headers" : {
+      "Server" : [ "nginx/1.18.0 (Ubuntu)" ],
+      "Date" : [ "Wed, 23 Aug 2023 05:12:50 GMT" ],
+      "Content-Type" : [ "application/json;charset=UTF-8" ],
+      "Transfer-Encoding" : [ "chunked" ],
+      "Connection" : [ "keep-alive" ],
+      "X-WM-Request-Track-Id" : [ "app.dtkyC66T" ],
+      "Cache-Control" : [ "no-cache, no-store, must-revalidate" ],
+      "Pragma" : [ "no-cache" ],
+      "Expires" : [ "Thu, 01 Jan 1970 00:00:00 GMT" ],
+      "X-XSS-Protection" : [ "1; mode=block" ],
+      "Content-Security-Policy" : [ "frame-ancestors 'self'" ],
+      "X-Content-Type-Options" : [ "nosniff" ],
+      "Vary" : [ "Origin", "Access-Control-Request-Method", "Access-Control-Request-Headers" ],
+      "Server-Timing" : [ "server;dur=92" ]
+    },
+    "responseBody" : "true",
+    "convertedResponse" : null
+  }
+}

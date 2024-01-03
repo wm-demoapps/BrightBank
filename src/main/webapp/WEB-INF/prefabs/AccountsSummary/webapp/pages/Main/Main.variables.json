@@ -1,0 +1,36 @@
+{
+  "supportedLocale" : {
+    "_id" : "wm-wm.Variable1402640443182",
+    "name" : "supportedLocale",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataSet" : {
+      "en" : "English"
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  },
+  "svGetAllAccounts" : {
+    "_id" : "wm-svGetAllAccounts-wm.ServiceVariable-1677917709974",
+    "name" : "svGetAllAccounts",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "type" : "com.wavemaker.accountssummary.weavrAPI.WeavrApiManagedAccountsGetResponse",
+    "service" : "weavrAPI",
+    "operation" : "weavrAPI_managedAccountsGet",
+    "operationId" : "weavrAPI_managedAccountsGet",
+    "serviceType" : "OpenAPIService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "onSuccess" : "svGetAllAccountsonSuccess(variable, data, options)",
+    "startUpdate" : true,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "Managed Accounts"
+  }
+}

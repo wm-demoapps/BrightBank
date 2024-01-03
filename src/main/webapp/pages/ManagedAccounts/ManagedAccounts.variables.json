@@ -1,0 +1,36 @@
+{
+  "managedAccountActiveStateTimer" : {
+    "_id" : "wm-managedAccountActiveStateTimer-wm.TimerVariable-1675413456841",
+    "name" : "managedAccountActiveStateTimer",
+    "owner" : "Page",
+    "category" : "wm.TimerVariable",
+    "startUpdate" : false,
+    "repeating" : false,
+    "delay" : 2000,
+    "onTimerFire" : "managedAccountActiveStateTimeronTimerFire(variable, data, options)"
+  },
+  "stvAccountTypes" : {
+    "_id" : "wm-stvAccountTypes-wm.Variable-1678642753555",
+    "name" : "stvAccountTypes",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "name" : "All",
+      "dataValue" : "All"
+    }, {
+      "name" : "Payments",
+      "dataValue" : "PAYMENTS"
+    }, {
+      "name" : "Deposit",
+      "dataValue" : "DEPOSIT"
+    }, {
+      "name" : "Settlement",
+      "dataValue" : "SETTLEMENT"
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  }
+}

@@ -1,0 +1,244 @@
+<wm-partial name="partial1">
+    <wm-layoutgrid name="layoutgrid2">
+        <wm-layoutgrid name="layoutgrid1" class="spacing-base">
+            <wm-gridrow name="gridrow7_1">
+                <wm-gridcolumn columnwidth="8" name="gridcolumn10" class="col-xs-6">
+                    <wm-label name="label2" caption="Dashboard" class="f-xl font-semibold" margin="unset unset 0px unset" animation="fadeInDown"></wm-label>
+                </wm-gridcolumn>
+                <wm-gridcolumn columnwidth="4" name="gridcolumn12" horizontalalign="right" class="col-xs-6">
+                    <wm-container name="container1" display="inline-block" animation="fadeInDown">
+                        <wm-select placeholder="Select Currency" dataset="bind:Variables.stvCurrencies.dataSet" datafield="value" displayfield="displayName" datavalue="USD" name="selectaseCurrency" class="filter"></wm-select>
+                    </wm-container>
+                </wm-gridcolumn>
+            </wm-gridrow>
+            <wm-gridrow name="gridrow8">
+                <wm-gridcolumn columnwidth="7" name="gridcolumn12_1">
+                    <wm-layoutgrid name="layoutgrid2" class="spacing-base">
+                        <wm-gridrow name="gridrow3">
+                            <wm-gridcolumn columnwidth="6" name="gridcolumn7">
+                                <wm-tile name="tile1" class="panel" height="330px" animation="fadeInLeft">
+                                    <wm-layoutgrid name="layoutgrid11">
+                                        <wm-gridrow name="gridrow19">
+                                            <wm-gridcolumn columnwidth="12" name="gridcolumn25">
+                                                <wm-label caption="NET WORTH" class="f-sm-2 font-medium" name="labelNetWorth"></wm-label>
+                                            </wm-gridcolumn>
+                                        </wm-gridrow>
+                                        <wm-gridrow name="gridrow20">
+                                            <wm-gridcolumn columnwidth="12" name="gridcolumn26" horizontalalign="center">
+                                                <wm-container name="container10" class="no-data-panel" margin="2em unset unset unset" padding="unset 1em">
+                                                    <wm-picture picturesource="resources/images/imagelists/no-user-balance.svg" class="no-data-img img-sm" on-click="Widgets.dialogAddAccount.open()" name="pictureNetWorth" resizemode="cover"></wm-picture>
+                                                    <wm-label name="labelText" caption="bind:'Your net worth and investment information can be found here...'" class="no-data-description"></wm-label>
+                                                </wm-container>
+                                            </wm-gridcolumn>
+                                        </wm-gridrow>
+                                    </wm-layoutgrid>
+                                </wm-tile>
+                            </wm-gridcolumn>
+                            <wm-gridcolumn columnwidth="6" name="gridcolumn8">
+                                <wm-tile class="panel" name="tile2" height="156px" animation="fadeInDown">
+                                    <wm-layoutgrid name="layoutgrid10">
+                                        <wm-gridrow name="gridrow16_1">
+                                            <wm-gridcolumn columnwidth="12" name="gridcolumn22_1">
+                                                <wm-label caption="ACCOUNT SUMMARY" class="f-sm-2 font-medium" name="labelAccountSummary"></wm-label>
+                                            </wm-gridcolumn>
+                                        </wm-gridrow>
+                                        <wm-gridrow name="gridrow17" padding="1em unset unset unset">
+                                            <wm-gridcolumn columnwidth="12" name="gridcolumn24_1" horizontalalign="left">
+                                                <wm-container name="container11">
+                                                    <wm-layoutgrid name="layoutgrid14">
+                                                        <wm-gridrow name="gridrow31_1">
+                                                            <wm-gridcolumn columnwidth="4" name="gridcolumn37_1">
+                                                                <wm-picture picturesource="resources/images/imagelists/add-account.svg" margin="unset 1em unset unset" class="img-sm" name="pictureAccountSummary"></wm-picture>
+                                                            </wm-gridcolumn>
+                                                            <wm-gridcolumn columnwidth="8" name="gridcolumn38" padding="0.5em unset unset unset">
+                                                                <wm-label caption="View your Account summary here…" name="labelAccountText" class="no-data-description text-ellipsis"></wm-label>
+                                                                <wm-button class="btn-add" caption="ADD NEW ACCOUNT" type="button" name="button4" iconurl="resources/images/imagelists/circle-plus_3x.png" iconwidth="25px" on-click="Widgets.dialogAddAccount.open()"></wm-button>
+                                                            </wm-gridcolumn>
+                                                        </wm-gridrow>
+                                                    </wm-layoutgrid>
+                                                </wm-container>
+                                            </wm-gridcolumn>
+                                        </wm-gridrow>
+                                    </wm-layoutgrid>
+                                </wm-tile>
+                                <wm-tile class="panel" name="tile3" height="156px" animation="fadeInUp">
+                                    <wm-layoutgrid name="layoutgrid15">
+                                        <wm-gridrow name="gridrow33">
+                                            <wm-gridcolumn columnwidth="12" name="gridcolumn41">
+                                                <wm-label caption="Cards Summary" class="f-sm-2 font-medium text-uppercase" name="label20"></wm-label>
+                                            </wm-gridcolumn>
+                                        </wm-gridrow>
+                                        <wm-gridrow padding="1em unset unset unset" name="gridrow34">
+                                            <wm-gridcolumn columnwidth="12" horizontalalign="left" name="gridcolumn42">
+                                                <wm-container name="container14">
+                                                    <wm-layoutgrid name="layoutgrid16">
+                                                        <wm-gridrow name="gridrow35">
+                                                            <wm-gridcolumn columnwidth="4" name="gridcolumn43">
+                                                                <wm-picture picturesource="resources/images/imagelists/no-cards-found.svg" margin="unset 1em unset unset" class="img-sm" name="picture12"></wm-picture>
+                                                            </wm-gridcolumn>
+                                                            <wm-gridcolumn columnwidth="8" padding="0.5em unset unset unset" name="gridcolumn44">
+                                                                <wm-label caption="View your Card summary here…" class="no-data-description text-ellipsis" name="label21"></wm-label>
+                                                                <wm-button class="btn-add" caption="Add New Card" type="button" iconurl="resources/images/imagelists/circle-plus_3x.png" iconwidth="25px" on-click="Widgets.dialogApplyCard.open()" name="button5"></wm-button>
+                                                            </wm-gridcolumn>
+                                                        </wm-gridrow>
+                                                    </wm-layoutgrid>
+                                                </wm-container>
+                                            </wm-gridcolumn>
+                                        </wm-gridrow>
+                                    </wm-layoutgrid>
+                                </wm-tile>
+                            </wm-gridcolumn>
+                        </wm-gridrow>
+                        <wm-gridrow name="gridrow7">
+                            <wm-gridcolumn columnwidth="12" name="gridcolumn15">
+                                <wm-container name="container4" class="panel p-lg" height="364px" animation="fadeInUp" margin="unset unset 0px unset">
+                                    <wm-layoutgrid name="layoutgrid13">
+                                        <wm-gridrow name="gridrow27">
+                                            <wm-gridcolumn columnwidth="12" name="gridcolumn33">
+                                                <wm-label caption="UPCOMING TRANSACTIONS" class="f-sm-2 font-medium text-uppercase" name="labelUpcomingPayments"></wm-label>
+                                            </wm-gridcolumn>
+                                        </wm-gridrow>
+                                        <wm-gridrow name="gridrow28">
+                                            <wm-gridcolumn columnwidth="12" horizontalalign="center" name="gridcolumn34">
+                                                <wm-container name="container16" class="no-data-panel">
+                                                    <wm-picture picturesource="resources/images/imagelists/no-payments.svg" margin="unset 1em unset unset" class="no-data-img img-sm" name="pictureUpcomingPayments"></wm-picture>
+                                                    <wm-label padding="unset 0.5em" caption="bind:'View all your upcoming Wealth Goals payments here...'" name="labelUpcomingPaymentsText" class="no-data-description"></wm-label>
+                                                    <wm-button class="btn-add" caption="Add New wealth goal" type="button" iconurl="resources/images/imagelists/circle-plus_3x.png" iconwidth="25px" on-click="Widgets.dialogAddAccount.open()" name="button6"></wm-button>
+                                                </wm-container>
+                                            </wm-gridcolumn>
+                                        </wm-gridrow>
+                                    </wm-layoutgrid>
+                                </wm-container>
+                            </wm-gridcolumn>
+                        </wm-gridrow>
+                    </wm-layoutgrid>
+                </wm-gridcolumn>
+                <wm-gridcolumn columnwidth="5" name="gridcolumn13_1">
+                    <wm-container name="container3" class="panel p-lg" height="713px" animation="fadeInRight" margin="unset unset 0px unset">
+                        <wm-layoutgrid name="layoutgrid4" class="spacing-base">
+                            <wm-gridrow name="gridrow6_1">
+                                <wm-gridcolumn columnwidth="6" name="gridcolumn8_1" class="col-xs-6">
+                                    <wm-label name="labelSpendAnalysis" class="f-sm-2 font-medium text-uppercase" caption="Spend Analysis"></wm-label>
+                                </wm-gridcolumn>
+                                <wm-gridcolumn columnwidth="6" name="gridcolumn9" horizontalalign="right" class="col-xs-6"></wm-gridcolumn>
+                            </wm-gridrow>
+                            <wm-gridrow name="gridrow7_2">
+                                <wm-gridcolumn columnwidth="12" name="gridcolumn12_2" horizontalalign="center">
+                                    <wm-container name="container15" class="no-data-panel" margin="40% unset unset unset">
+                                        <wm-picture picturesource="resources/images/imagelists/group-2_3_3x.png" class="no-data-img img-sm" on-click="Widgets.dialogAddAccount.open()" name="pictureSpendAnalysis"></wm-picture>
+                                        <wm-label caption="bind:'Spend analysis from all of your cards will appear here, along with your most recent transaction.'" name="labelSpendAnalysisText" class="no-data-description"></wm-label>
+                                    </wm-container>
+                                </wm-gridcolumn>
+                            </wm-gridrow>
+                        </wm-layoutgrid>
+                    </wm-container>
+                </wm-gridcolumn>
+            </wm-gridrow>
+        </wm-layoutgrid>
+    </wm-layoutgrid>
+    <!--<wm-layoutgrid name="layoutgrid1"><wm-gridrow name="gridrow1"><wm-gridcolumn columnwidth="6" name="gridcolumn1" padding="1em .5em unset 1em"><wm-container name="container1" on-click="Widgets.dialogCreateAccount.open()" height="200px" backgroundcolor="#ffffff" on-mouseenter="container1Mouseenter($event, widget)" on-mouseleave="container1Mouseleave($event, widget)" cursor="pointer"
+                    class="account-container" margin="2.5em unset unset unset"></wm-container></wm-gridcolumn><wm-gridcolumn columnwidth="6" name="gridcolumn2" padding="1em 1em unset .5em"><wm-container name="container2" on-click="Widgets.NewBeneficiaryDialog.open()" height="200px" backgroundcolor="#ffffff" cursor="default" class="account-container" margin="2.5em unset unset unset"><wm-container name="container5_1" class="col-md-offset-2  col-md-8 panel-default col-xs-offset-1" cursor="default"><wm-picture name="picture2" width="120px" height="120px" picturesource="resources/images/imagelists/img-add-card.png" margin="unset 1em unset unset" cursor="pointer" hint="Create Account To Apply For Card."></wm-picture><wm-layoutgrid name="layoutgrid4"><wm-gridrow name="gridrow6"><wm-gridcolumn columnwidth="12" name="gridcolumn7_1"><wm-label padding="unset 0.5em unset unset" caption="Apply For Card" name="label3" class="h3" margin="unset unset 0px unset" fontweight="bold" color="#a3a3a3" hint="Create Account To Apply For Card." fontsize="18"></wm-label></wm-gridcolumn></wm-gridrow><wm-gridrow name="gridrow7"><wm-gridcolumn columnwidth="12" name="gridcolumn9"><wm-label padding="unset 0.5em unset unset" name="label5_1" caption="You can Apply for Card from GBP or EUR Ledger" fontsize="13" fontunit="px" hint="Create Account To Apply For Card." show="false"></wm-label></wm-gridcolumn></wm-gridrow></wm-layoutgrid></wm-container></wm-container></wm-gridcolumn></wm-gridrow><wm-gridrow name="gridrow2"><wm-gridcolumn columnwidth="12" name="gridcolumn3" horizontalalign="center" padding="1em 1em unset .5em"></wm-gridcolumn></wm-gridrow></wm-layoutgrid>-->
+    <wm-dialog dialogtype="design-dialog" modal="true" title="Create Account" iconclass="" name="dialogAddAccount" closable="false" showheader="false" class="wizard-dialog">
+        <wm-layoutgrid name="layoutgrid2">
+            <wm-gridrow name="gridrow3">
+                <wm-gridcolumn columnwidth="3" name="gridcolumn5" class="dialog-left-panel">
+                    <wm-layoutgrid name="layoutgrid3" columns="1">
+                        <wm-gridrow name="gridrow7">
+                            <wm-gridcolumn columnwidth="12" name="gridcolumn13">
+                                <wm-picture name="picture1" picturesource="resources/images/imagelists/add-account.svg" class="dialog-left-img"></wm-picture>
+                            </wm-gridcolumn>
+                        </wm-gridrow>
+                        <wm-gridrow name="gridrow8">
+                            <wm-gridcolumn columnwidth="12" name="gridcolumn14">
+                                <wm-label name="label2" caption="Create Account" class="dialog-left-title"></wm-label>
+                            </wm-gridcolumn>
+                        </wm-gridrow>
+                        <wm-gridrow name="gridrow9">
+                            <wm-gridcolumn columnwidth="12" name="gridcolumn15">
+                                <wm-label padding="unset 0.5em" name="label3" caption="Digital bank accounts can hold single currency only" show="false"></wm-label>
+                            </wm-gridcolumn>
+                        </wm-gridrow>
+                    </wm-layoutgrid>
+                </wm-gridcolumn>
+                <wm-gridcolumn columnwidth="9" name="gridcolumn6" class="dialog-body-panel">
+                    <wm-label name="label4" caption="Create Account" class="dialog-body-title"></wm-label>
+                    <wm-prefab prefabname="Create_Account" name="Create_Account1" authtoken="bind:Variables.loggedInUser.dataSet.userAttributes.authtoken" on-ledgeradd="Widgets.dialogAddAccount.close();Widgets.dialogAccountSuccess.open()" on-cancel="Widgets.dialogAddAccount.close()"
+                        servicehost="APIVendor(W)"></wm-prefab>
+                </wm-gridcolumn>
+            </wm-gridrow>
+        </wm-layoutgrid>
+    </wm-dialog>
+    <wm-dialog dialogtype="design-dialog" modal="true" title="" iconclass="wi wi-file-text" name="dialogAccountSuccess" showheader="false">
+        <wm-container name="container1" class="fullbleed-notification-popup">
+            <wm-container name="container5">
+                <wm-layoutgrid name="layoutgrid4" columns="1" class="spacing-base">
+                    <wm-gridrow name="gridrow13">
+                        <wm-gridcolumn columnwidth="12" name="gridcolumn21" horizontalalign="center">
+                            <wm-container name="container4" width="220px" display="inline-block" backgroundimage="resources/images/imagelists/icon-bg.png" backgroundrepeat="no-repeat" backgroundposition="top center" backgroundsize="contain" padding="20px unset unset unset" margin="1em unset unset unset">
+                                <wm-picture name="picture2" picturesource="resources/images/imagelists/add-account.svg" height="135px"></wm-picture>
+                                <wm-picture name="picture3" width="30px" height="30" margin="9em 1.75em unset -3.75em" picturesource="resources/images/imagelists/circle-green-tick.png"></wm-picture>
+                            </wm-container>
+                        </wm-gridcolumn>
+                    </wm-gridrow>
+                    <wm-gridrow name="gridrow14">
+                        <wm-gridcolumn columnwidth="12" name="gridcolumn22" horizontalalign="center">
+                            <wm-label name="label9" caption="Account created Succesful!" class="f-l font-medium"></wm-label>
+                        </wm-gridcolumn>
+                    </wm-gridrow>
+                    <wm-gridrow name="gridrow15">
+                        <wm-gridcolumn columnwidth="12" name="gridcolumn23" horizontalalign="center">
+                            <wm-button class="btn-secondary" caption="OKAY" type="button" margin="unset 0.5em 1em 0.5em" name="button3" on-click="Widgets.dialogAccountSuccess.close();Actions.goToPage_ManagedAccounts.invoke()" width="113px" height="44px"></wm-button>
+                        </wm-gridcolumn>
+                    </wm-gridrow>
+                </wm-layoutgrid>
+            </wm-container>
+        </wm-container>
+        <wm-dialogactions name="dialogactions1" show="false">
+            <wm-button class="btn-primary" caption="Close" on-click="Actions.goToPage_ManagedAccounts.invoke()" name="button2"></wm-button>
+        </wm-dialogactions>
+    </wm-dialog>
+    <!--<wm-dialog dialogtype="design-dialog" modal="true" title="" iconclass="wi wi-file-text" name="dialogAccountSuccess2" showheader="false" class="wizard-dialog">-->
+    <!--    <wm-container name="container1" class="fullbleed-notification-popup">-->
+    <!--        <wm-container name="container5">-->
+    <!--            <wm-layoutgrid name="layoutgrid4" columns="1">-->
+    <!--                <wm-gridrow name="gridrow13">-->
+    <!--                    <wm-gridcolumn columnwidth="12" name="gridcolumn21" horizontalalign="center">-->
+    <!--                        <wm-picture name="picture2" backgroundimage="resources/images/imagelists/icon-bg.png" picturesource="resources/images/imagelists/add-account.svg"></wm-picture>-->
+    <!--                        <wm-picture name="picture3" width="30px" height="30" margin="7em unset unset -2em" picturesource="resources/images/imagelists/circle-green-tick.png"></wm-picture>-->
+    <!--                    </wm-gridcolumn>-->
+    <!--                </wm-gridrow>-->
+    <!--                <wm-gridrow name="gridrow14">-->
+    <!--                    <wm-gridcolumn columnwidth="12" name="gridcolumn22" horizontalalign="center">-->
+    <!--                        <wm-label padding="unset 0.5em" name="label9" caption="Account created Succesful!" class="h2"></wm-label>-->
+    <!--                    </wm-gridcolumn>-->
+    <!--                </wm-gridrow>-->
+    <!--                <wm-gridrow name="gridrow15">-->
+    <!--                    <wm-gridcolumn columnwidth="12" name="gridcolumn23" horizontalalign="center">-->
+    <!--                        <wm-button class="btn-secondary" caption="OKAY" type="button" margin="unset 0.5em" name="button3" on-click="Widgets.dialogAccountSuccess.close();Actions.goToPage_ManagedAccounts.invoke()" width="113px" height="44px"></wm-button>-->
+    <!--                    </wm-gridcolumn>-->
+    <!--                </wm-gridrow>-->
+    <!--                <wm-gridrow name="gridrow16">-->
+    <!--                    <wm-gridcolumn columnwidth="12" name="gridcolumn24"></wm-gridcolumn>-->
+    <!--                </wm-gridrow>-->
+    <!--            </wm-layoutgrid>-->
+    <!--        </wm-container>-->
+    <!--    </wm-container>-->
+    <!--    <wm-dialogactions name="dialogactions1" show="false">-->
+    <!--        <wm-button class="btn-primary" caption="Close" on-click="Actions.goToPage_ManagedAccounts.invoke()" name="button2"></wm-button>-->
+    <!--    </wm-dialogactions>-->
+    <!--</wm-dialog>-->
+    <wm-dialog dialogtype="design-dialog" modal="true" title="Create Card" name="dialogApplyCard" closable="false" showheader="false" class="wizard-dialog">
+        <wm-container name="container12" height="100%">
+            <wm-container name="container13" display="inline-block" class="pull-right p-xl" zindex="1" show="false">
+                <wm-button class="btn-transparent" caption="" type="button" margin="unset 0.5em" name="buttonCloseApplyCardDilog" on-click="Widgets.dialogApplyCard.close()" iconclass="wm-sl-r sl-close f-l"></wm-button>
+            </wm-container>
+            <wm-prefab prefabname="ApplyManagedCard" name="ApplyManagedCard1" servicehost="APIVendor(W)" on-close="Widgets.dialogApplyCard.close()" authtoken="bind:Variables.loggedInUser.dataSet.userAttributes.authtoken" on-cardadd="Actions.goToPage_ManagedCards.invoke()"
+                on-fundcard="Widgets.dialogApplyCard.close();Widgets.dialogTransfer.open()" on-cardtypeselect="ApplyManagedCard1Cardtypeselect($event, $data)" googleplacesapikey="AIzaSyBDL0LKxMcBXvgdUrCFhw50GemjXmnmghw" wizardlayout="Vertical Layout" currencytype="GBP"
+                height="100%"></wm-prefab>
+        </wm-container>
+    </wm-dialog>
+    <wm-dialog dialogtype="design-dialog" modal="true" title="Transfer Funds to Card" name="dialogTransfer" closable="false" class="wizard-dialog" showheader="false">
+        <wm-prefab prefabname="Transfer_Funds" name="Transfer_Funds1" servicehost="APIVendor(W)" authtoken="bind:Variables.loggedInUser.dataSet.userAttributes.authtoken" selectedbeneficiaryid="bind:Widgets.ApplyManagedCard1.addedcardid" on-transactionsuccess="Widgets.dialogTransfer.close();Actions.goToPage_ManagedCards.invoke()"
+            on-cancel="Widgets.dialogTransfer.close()" wizardlayout="Vertical Layout"></wm-prefab>
+    </wm-dialog>
+</wm-partial>

@@ -1,0 +1,49 @@
+{
+  "managedAccountsGet" : {
+    "_id" : "wm-managedAccountsGet-wm.ServiceVariable-1678271012779",
+    "name" : "managedAccountsGet",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "type" : "void",
+    "service" : "weavrLogin",
+    "operation" : "weavrLogin_managedAccountsGet",
+    "operationId" : "weavrLogin_managedAccountsGet",
+    "serviceType" : "OpenAPIService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "Managed Accounts"
+  },
+  "svGetAllCards" : {
+    "_id" : "wm-svGetAllCards-wm.ServiceVariable-1678271090890",
+    "name" : "svGetAllCards",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "isList" : true,
+      "target" : "state",
+      "value" : "ACTIVE",
+      "type" : "integer"
+    } ],
+    "type" : "void",
+    "service" : "weavrLogin",
+    "operation" : "weavrLogin_managedCardsGet",
+    "operationId" : "weavrLogin_managedCardsGet",
+    "serviceType" : "OpenAPIService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : true,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "Managed Cards"
+  }
+}

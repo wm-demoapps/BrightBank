@@ -1,0 +1,121 @@
+<wm-partial name="partial1">
+    <wm-container name="container3" show="true">
+        <wm-form errormessage="" captionposition="top" title="" enctype="application/x-www-form-urlencoded" method="post" dataset="bind:Variables.CreateManagedCard.dataSet" captionalign="left" name="CreateManagedCardForm1" show="true" on-success="CreateManagedCardForm1Success($event, widget, $data)">
+            <wm-layoutgrid columns="1" name="layoutgrid4">
+                <wm-gridrow name="gridrow19">
+                    <wm-gridcolumn columnwidth="12" name="gridcolumn29">
+                        <wm-wizard stepstyle="justified" class="number" name="wizardVerticalCard1" on-done="wizardVerticalCard1Done(widget, steps)" on-cancel="wizardVerticalCard1Cancel(widget, steps)">
+                            <wm-wizardstep name="wizardstep1" title="Card Details">
+                                <wm-layoutgrid name="layoutgrid5" columns="1">
+                                    <wm-gridrow name="gridrow22">
+                                        <wm-gridcolumn columnwidth="12" name="gridcolumn34" class="col-xs-12">
+                                            <wm-form-field name="mode" displayname="Select Card Type" key="mode" type="string" show="true" widget="switch" dataset="bind:Variables.Md_CardType.dataSet" defaultvalue="bind:Variables.Md_CardType.dataSet[0].dataValue"
+                                                placeholder="" datafield="dataValue" displayfield="name"></wm-form-field>
+                                        </wm-gridcolumn>
+                                    </wm-gridrow>
+                                    <wm-gridrow name="gridrow31_1">
+                                        <wm-gridcolumn columnwidth="12" name="gridcolumn44_1" class="col-xs-12">
+                                            <wm-form-field name="currency" displayname="Select Currency" key="currency" type="string" show="bind:Prefab.servicehost == 'APIVendor(W)'" widget="switch" dataset="GBP,USD,EUR" placeholder="" defaultvalue="bind:Prefab.currencytype"
+                                                on-change="currencyChange($event, widget, newVal, oldVal)"></wm-form-field>
+                                        </wm-gridcolumn>
+                                    </wm-gridrow>
+                                    <wm-gridrow name="gridrow28_1">
+                                        <wm-gridcolumn columnwidth="12" name="gridcolumn38_1" class="col-xs-12">
+                                            <wm-form-field name="tag" readonly="false" displayname="Card Purpose" key="tag" type="string" show="bind:Prefab.servicehost == 'APIVendor(W)'||Prefab.servicehost==&quot;APIVendor(B)&quot;" widget="text" inputtype="text"
+                                                placeholder="Personal Card" autotrim="true" updateon="default"></wm-form-field>
+                                        </wm-gridcolumn>
+                                    </wm-gridrow>
+                                    <wm-gridrow name="gridrow26_2">
+                                        <wm-gridcolumn columnwidth="12" name="gridcolumn42_3" class="col-xs-12">
+                                            <wm-form-field name="ledgerId" key="ledgerId" type="string" displayname="Select Ledger" widget="select" show="bind:Prefab.servicehost == 'APIVendor(R)' || Prefab.servicehost == 'APIVendor(B)'" required="true" dataset="bind:Variables.getLedgersOfEndUser.dataSet"
+                                                datafield="All Fields" displayexpression="bind:$[servicehost]==&quot;APIVendor(R)&quot;?$[ledger_meta.ledgerName]:$[virtual_account_name]" validationmessage="Please select ledger" placeholder="Select Ledger"
+                                                on-change="ledgerIdChange($event, widget, newVal, oldVal)" deferload="true"></wm-form-field>
+                                        </wm-gridcolumn>
+                                    </wm-gridrow>
+                                    <wm-gridrow name="gridrow29_1">
+                                        <wm-gridcolumn columnwidth="6" name="gridcolumn39_1" class="col-xs-12">
+                                            <wm-form-field name="nameOnCard" readonly="false" displayname="bind:Prefab.servicehost==&quot;APIVendor(W)&quot;?&quot;Card Holder Name&quot;:&quot;Name On Card&quot;" key="nameOnCard" type="string" show="true"
+                                                widget="text" inputtype="text" placeholder="Ex: Harry Jones" required="true" validationmessage="Please enter name on card" defaultvalue="bind:defaultcardholdername"></wm-form-field>
+                                        </wm-gridcolumn>
+                                        <wm-gridcolumn columnwidth="6" name="gridcolumn31">
+                                            <wm-form-field name="cardholderMobileNumber" readonly="false" displayname="Mobile Number" key="cardholderMobileNumber" type="string" show="bind:Prefab.servicehost == 'APIVendor(W)'" widget="text" inputtype="text"
+                                                placeholder="bind:Widgets.CreateManagedCardForm1.formWidgets.currency.datavalue== 'USD $' ? '(999) 999-9999' : '99999 999999'" displayformat="bind:Widgets.CreateManagedCardForm1.formWidgets.currency.datavalue== 'USD $' ? '(999) 999-9999' : '99999 999999'"
+                                                updateon="default" class="col-xs-12"></wm-form-field>
+                                        </wm-gridcolumn>
+                                    </wm-gridrow>
+                                    <wm-gridrow name="gridrow32_1">
+                                        <wm-gridcolumn columnwidth="12" name="gridcolumn46" class="col-xs-12">
+                                            <wm-form-field name="isSpendLimit" key="isSpendLimit" show="true" type="string" widget="checkbox" placeholder="" checkedvalue="true" uncheckedvalue="false" defaultvalue="false" caption="Spend Limit"></wm-form-field>
+                                        </wm-gridcolumn>
+                                    </wm-gridrow>
+                                    <wm-gridrow name="gridrow24_1">
+                                        <wm-gridcolumn columnwidth="5" name="gridcolumn40_3" class="col-xs-12">
+                                            <wm-form-field name="spentLimit" key="spentLimit" show="bind:Widgets.CreateManagedCardForm1.formWidgets.isSpendLimit.datavalue" type="string" widget="currency" placeholder="Ex: 1000" currency="GBP"></wm-form-field>
+                                        </wm-gridcolumn>
+                                        <wm-gridcolumn columnwidth="3" name="gridcolumn32"></wm-gridcolumn>
+                                        <wm-gridcolumn columnwidth="4" name="gridcolumn33"></wm-gridcolumn>
+                                    </wm-gridrow>
+                                </wm-layoutgrid>
+                            </wm-wizardstep>
+                            <wm-wizardstep name="wizardstep2" title="Card Holder Details" enableskip="bind:Prefab.servicehost!=&quot;APIVendor(B)&quot;" show="true">
+                                <wm-form errormessage="" captionposition="top" title="" enctype="application/x-www-form-urlencoded" method="post" dataset="bind:Variables.CreateManagedCard.dataSet.card_holder" captionalign="left" name="card_holder">
+                                    <wm-layoutgrid columns="2" name="layoutgrid3">
+                                        <wm-gridrow name="gridrow10">
+                                            <wm-gridcolumn columnwidth="6" name="gridcolumn13">
+                                                <wm-form-field name="first_name" readonly="false" displayname="First Name" key="first_name" type="string" show="true" widget="text" inputtype="text" placeholder="Enter" required="true"></wm-form-field>
+                                            </wm-gridcolumn>
+                                            <wm-gridcolumn columnwidth="6" name="gridcolumn14">
+                                                <wm-form-field name="last_name" readonly="false" displayname="Last Name" key="last_name" type="string" show="true" widget="text" inputtype="text" placeholder="Enter" required="true"></wm-form-field>
+                                            </wm-gridcolumn>
+                                        </wm-gridrow>
+                                        <wm-gridrow name="gridrow11">
+                                            <wm-gridcolumn columnwidth="6" name="gridcolumn15">
+                                                <wm-form-field name="gender" displayname="Gender" key="gender" type="string" show="true" widget="select" placeholder="Select" dataset="Male, Female, Other" required="true"></wm-form-field>
+                                            </wm-gridcolumn>
+                                            <wm-gridcolumn columnwidth="6" name="gridcolumn16">
+                                                <wm-form-field name="email" readonly="false" displayname="Email" key="email" type="string" show="true" widget="text" inputtype="text" placeholder="Enter" required="true"></wm-form-field>
+                                            </wm-gridcolumn>
+                                        </wm-gridrow>
+                                        <wm-gridrow name="gridrow12">
+                                            <wm-gridcolumn columnwidth="6" name="gridcolumn17">
+                                                <wm-form-field name="date_of_birth" displayname="Date Of Birth" key="date_of_birth" type="string" show="true" widget="date" datepattern="MMM d, yyyy" placeholder="Select DOB"></wm-form-field>
+                                            </wm-gridcolumn>
+                                            <wm-gridcolumn columnwidth="6" name="gridcolumn18">
+                                                <wm-layoutgrid name="layoutgrid4_1" show="bind:Prefab.servicehost==&quot;APIVendor(B)&quot;">
+                                                    <wm-gridrow name="gridrow14">
+                                                        <wm-gridcolumn columnwidth="5" name="gridcolumn20">
+                                                            <wm-form-field name="mobile_ext" readonly="false" displayname="Mobile Ext" key="mobile_ext" type="string" show="true" widget="text" inputtype="text" placeholder="Enter" defaultvalue="bind:(Widgets.CreateManagedCardForm1.formWidgets.currency.datavalue==&quot;GBP&quot;||Widgets.CreateManagedCardForm1.formWidgets.currency.datavalue==&quot;EUR&quot;)?&quot;+44&quot;:&quot;+1&quot;"></wm-form-field>
+                                                        </wm-gridcolumn>
+                                                        <wm-gridcolumn columnwidth="7" name="gridcolumn21">
+                                                            <wm-form-field name="mobile_no" readonly="false" displayname="Mobile Number" key="mobile_no" type="string" show="true" widget="text" inputtype="text" placeholder="bind:Widgets.CreateManagedCardForm1.formWidgets.currency.datavalue== 'USD $' ? '(999) 999-9999' : '99999 999999'"
+                                                                displayformat="bind:Widgets.CreateManagedCardForm1.formWidgets.currency.datavalue== 'USD $' ? '(999) 999-9999' : '99999 999999'" updateon="default"></wm-form-field>
+                                                        </wm-gridcolumn>
+                                                    </wm-gridrow>
+                                                </wm-layoutgrid>
+                                            </wm-gridcolumn>
+                                        </wm-gridrow>
+                                        <wm-gridrow name="gridrow13">
+                                            <wm-gridcolumn columnwidth="6" name="gridcolumn19"></wm-gridcolumn>
+                                        </wm-gridrow>
+                                    </wm-layoutgrid>
+                                </wm-form>
+                            </wm-wizardstep>
+                            <wm-wizardstep name="wizardstep3" title="bind:Prefab.servicehost == 'APIVendor(R)' ? 'Delivery Address' : 'Billing Address'">
+                                <wm-prefab prefabname="AddressWithGooglePlaces" name="billingAddress" apikey="bind:Prefab.googleplacesapikey"></wm-prefab>
+                            </wm-wizardstep>
+                        </wm-wizard>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow2">
+                    <wm-gridcolumn name="gridcolumn2" columnwidth="12">
+                        <wm-form-field name="enduserId" key="enduserId" type="string" displayname="Enduser Id" widget="text" show="false" defaultvalue="bind:Prefab.enduserid"></wm-form-field>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+            </wm-layoutgrid>
+            <wm-form-field name="cardType" key="cardType" type="string" displayname="Card Type" widget="text" show="false" defaultvalue="bind:pageParams.selectedCardType" inputtype="text" placeholder="Enter value"></wm-form-field>
+            <wm-form-field name="expiryDate" key="expiryDate" type="string" displayname="Expiry Date" widget="date" show="false" datepattern="MMM d, yyyy" placeholder="Select date" defaultvalue="bind:Prefab.servicehost == 'APIVendor(R)' ? getExpiryDate() : ''"></wm-form-field>
+            <wm-form-field name="profileId" readonly="false" displayname="Select Profile Account" key="profileId" type="string" show="false" widget="text" inputtype="text" placeholder="Enter value"></wm-form-field>
+            <wm-form-field name="friendlyName" readonly="false" displayname="Friendly Name" key="friendlyName" type="string" show="false" widget="text" inputtype="text" placeholder="Enter value" defaultvalue="bind:Widgets.CreateManagedCardForm1.formWidgets.nameOnCard.datavalue"></wm-form-field>
+        </wm-form>
+    </wm-container>
+</wm-partial>

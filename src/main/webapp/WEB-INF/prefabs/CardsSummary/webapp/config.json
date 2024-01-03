@@ -1,0 +1,22 @@
+{
+  "displayName" : "CardsSummary",
+  "group" : "",
+  "iconUrl" : "/resources/images/imagelists/prefab-icon.png",
+  "resources" : {
+    "styles" : [ "/pages/Main/Main.css" ],
+    "scripts" : [ ]
+  },
+  "properties" : {
+    "basecurrency" : {
+      "type" : "string",
+      "displayName" : "Basecurrency",
+      "description" : "Basecurrency",
+      "bindable" : "in-bound",
+      "widget" : "string",
+      "show" : true,
+      "disabled" : false
+    }
+  },
+  "events" : { },
+  "methods" : { }
+}

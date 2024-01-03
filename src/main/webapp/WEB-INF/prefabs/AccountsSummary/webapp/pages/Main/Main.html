@@ -1,0 +1,19 @@
+<wm-prefab-container name="prefab_container1">
+    <wm-layoutgrid name="layoutgrid1">
+        <wm-gridrow name="gridrow1" padding="unset unset 1.33em unset">
+            <wm-gridcolumn columnwidth="12" name="gridcolumn1" horizontalalign="left">
+                <wm-label name="label1" class="text-uppercase font-medium f-sm-2" caption="Accounts Summary"></wm-label>
+            </wm-gridcolumn>
+        </wm-gridrow>
+        <wm-gridrow name="gridrow2" class="flex-row">
+            <wm-gridcolumn columnwidth="6" name="gridcolumn3" padding="unset 1em unset unset" class="col-xs-6 column-6">
+                <wm-label name="label2" caption="Total Balance" class="p f-xxs"></wm-label>
+                <wm-label name="label3" class="font-semibold f-l text-ellipsis" caption="bind:balance | toCurrency: basecurrency: '2'" fontsize="1.84" fontunit="em"></wm-label>
+            </wm-gridcolumn>
+            <wm-gridcolumn columnwidth="6" name="gridcolumn4" class="col-xs-6 border-left column-6" padding="unset unset unset 1.75em">
+                <wm-label name="label4" caption="No. of Accounts" class="p f-xxs"></wm-label>
+                <wm-label name="label5" class="font-medium f-l text-muted" caption="bind:Variables.svGetAllAccounts.dataSet.accounts.length > 0 ? Variables.svGetAllAccounts.dataSet.accounts.length : 0" fontsize="1.84" fontunit="em"></wm-label>
+            </wm-gridcolumn>
+        </wm-gridrow>
+    </wm-layoutgrid>
+</wm-prefab-container>

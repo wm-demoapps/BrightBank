@@ -1,0 +1,55 @@
+{
+  "SpendAnalysisController_getCardSpendAnalysisData" : {
+    "id" : "SpendAnalysisController_getCardSpendAnalysisData",
+    "crudOperationId" : null,
+    "service" : "SpendAnalysisService",
+    "controller" : "SpendAnalysisController",
+    "operationType" : null,
+    "type" : "com.wavemaker.spendanalysis.spendanalysisservice.model.CardSpendsModel",
+    "wmServiceOperationInfo" : {
+      "name" : "getCardSpendAnalysisData",
+      "methodType" : "get",
+      "relativePath" : "/spendAnalysis/cardSpendAnalysisData",
+      "directPath" : null,
+      "httpMethod" : "get",
+      "parameters" : [ {
+        "name" : "cardId",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "java.lang.String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "authToken",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "java.lang.String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "baseCurrency",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "java.lang.String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "month",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "java.lang.Integer",
+        "readOnly" : false,
+        "contentType" : null
+      } ],
+      "definitions" : { },
+      "produces" : null,
+      "consumes" : null,
+      "proxySettings" : {
+        "web" : true,
+        "mobile" : true,
+        "withCredentials" : false
+      },
+      "securityDefinitions" : [ ]
+    }
+  }
+}

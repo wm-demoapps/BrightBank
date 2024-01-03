@@ -1,0 +1,94 @@
+{
+  "AddressDetails" : {
+    "_id" : "wm-AddressDetails-wm.Variable-1626950602167",
+    "name" : "AddressDetails",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "street" : "",
+      "buildingOrAddressLine2" : "",
+      "city" : "",
+      "state" : "",
+      "postalCode" : "",
+      "country" : ""
+    },
+    "type" : "entry",
+    "isList" : false,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "supportedLocale" : {
+    "_id" : "wm-wm.Variable1402640443182",
+    "name" : "supportedLocale",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataSet" : {
+      "en" : "English"
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  },
+  "svGetPlaceById" : {
+    "_id" : "wm-svGetPlaceById-wm.ServiceVariable-1678104378307",
+    "name" : "svGetPlaceById",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "fields",
+      "value" : "address_components",
+      "type" : "string"
+    }, {
+      "target" : "key",
+      "value" : "bind:apikey",
+      "type" : "string"
+    } ],
+    "type" : "googleAddressByPlaceId.RootResponse",
+    "service" : "googleAddressByPlaceId",
+    "operation" : "invoke",
+    "operationId" : "googleAddressByPlaceId_RestServiceVirtualController-invoke",
+    "operationType" : "get",
+    "serviceType" : "RestService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "onSuccess" : "svGetPlaceByIdonSuccess(variable, data, options)",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "RestServiceVirtual"
+  },
+  "svGoogleAutoComplete" : {
+    "_id" : "wm-svGoogleAutoComplete-wm.ServiceVariable-1678104361913",
+    "name" : "svGoogleAutoComplete",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "types",
+      "value" : "geocode",
+      "type" : "string"
+    }, {
+      "target" : "key",
+      "value" : "bind:apikey",
+      "type" : "string"
+    } ],
+    "type" : "googleAutoComplete.RootResponse",
+    "service" : "googleAutoComplete",
+    "operation" : "invoke",
+    "operationId" : "googleAutoComplete_invoke",
+    "operationType" : "get",
+    "serviceType" : "RestService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "googleAutoComplete"
+  }
+}

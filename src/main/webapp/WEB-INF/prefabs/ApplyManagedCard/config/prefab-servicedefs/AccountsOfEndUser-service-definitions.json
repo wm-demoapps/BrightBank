@@ -1,0 +1,48 @@
+{
+  "AccountsOfEndUserController_getManagedAccount" : {
+    "id" : "AccountsOfEndUserController_getManagedAccount",
+    "crudOperationId" : null,
+    "service" : "AccountsOfEndUser",
+    "controller" : "AccountsOfEndUserController",
+    "operationType" : null,
+    "type" : "array",
+    "wmServiceOperationInfo" : {
+      "name" : "getManagedAccount",
+      "methodType" : "get",
+      "relativePath" : "/accountsOfEndUser/managedAccount",
+      "directPath" : null,
+      "httpMethod" : "get",
+      "parameters" : [ {
+        "name" : "hostName",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "java.lang.String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "authorization",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "java.lang.String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "endUserId",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "java.lang.String",
+        "readOnly" : false,
+        "contentType" : null
+      } ],
+      "definitions" : { },
+      "produces" : null,
+      "consumes" : null,
+      "proxySettings" : {
+        "web" : true,
+        "mobile" : true,
+        "withCredentials" : false
+      },
+      "securityDefinitions" : [ ]
+    }
+  }
+}

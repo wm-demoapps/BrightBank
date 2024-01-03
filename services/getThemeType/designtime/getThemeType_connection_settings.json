@@ -1,0 +1,33 @@
+{
+  "endpointAddress" : "https://dev-brightbankdb.onwavemaker.com/services/BrightBankDB/Themetype",
+  "method" : "GET",
+  "headers" : { },
+  "redirectEnabled" : true,
+  "requestBody" : "",
+  "queryParams" : {
+    "size" : "50"
+  },
+  "authDetails" : null,
+  "contentType" : "application/json",
+  "multiParamInfoList" : null,
+  "sampleHttpResponseDetails" : {
+    "statusCode" : 200,
+    "headers" : {
+      "Server" : [ "nginx/1.18.0 (Ubuntu)" ],
+      "Date" : [ "Wed, 23 Aug 2023 05:13:28 GMT" ],
+      "Content-Type" : [ "application/json;charset=UTF-8" ],
+      "Transfer-Encoding" : [ "chunked" ],
+      "Connection" : [ "keep-alive" ],
+      "X-WM-Request-Track-Id" : [ "app.tcedSErq" ],
+      "Cache-Control" : [ "max-age=0" ],
+      "X-XSS-Protection" : [ "1; mode=block" ],
+      "Content-Security-Policy" : [ "frame-ancestors 'self'" ],
+      "X-Content-Type-Options" : [ "nosniff" ],
+      "Vary" : [ "Origin", "Access-Control-Request-Method", "Access-Control-Request-Headers" ],
+      "Server-Timing" : [ "server;dur=22" ],
+      "ETag" : [ "\"08174c0dce2e46a724927c472e4e87e1b\"" ]
+    },
+    "responseBody" : "{\"content\":[{\"id\":1,\"isdefault\":null,\"name\":\"Blue(Gradient)\",\"thumbnail\":null}],\"last\":true,\"totalPages\":1,\"totalElements\":3,\"sort\":[],\"number\":0,\"size\":50,\"first\":true,\"numberOfElements\":3,\"empty\":false}",
+    "convertedResponse" : null
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "id" : "weavrVerifyKYC",
+  "type" : "RestService",
+  "title" : "weavrVerifyKYC",
+  "mockEnabled" : false
+}

@@ -1,0 +1,258 @@
+{
+  "basePath" : "${rest.getWealthGoals.basepath}",
+  "paths" : {
+    "/BrightBankDB/WealthGoals" : {
+      "x-WM-BASE_PATH" : "/BrightBankDB/WealthGoals",
+      "x-WM-TAG" : "getWealthGoals",
+      "x-WM-RELATIVE_PATH" : "",
+      "get" : {
+        "x-WM-METHOD_NAME" : "invoke",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "produces" : [ "application/json" ],
+        "operationId" : "getWealthGoals_invoke",
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "$ref" : "#/definitions/RootResponse"
+            },
+            "description" : "Success"
+          }
+        },
+        "parameters" : [ {
+          "x-WM-VARIABLE_KEY" : "",
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "q",
+          "format" : "string",
+          "description" : "q",
+          "type" : "string",
+          "required" : false,
+          "x-WM-VARIABLE_TYPE" : "PROMPT"
+        }, {
+          "x-WM-VARIABLE_KEY" : "",
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "size",
+          "format" : "int32",
+          "description" : "size",
+          "type" : "integer",
+          "required" : false,
+          "x-WM-VARIABLE_TYPE" : "PROMPT"
+        }, {
+          "x-WM-VARIABLE_KEY" : "",
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "page",
+          "format" : "int32",
+          "description" : "page",
+          "type" : "integer",
+          "required" : false,
+          "x-WM-VARIABLE_TYPE" : "PROMPT"
+        }, {
+          "x-WM-VARIABLE_KEY" : "",
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "sort",
+          "format" : "string",
+          "description" : "sort",
+          "type" : "string",
+          "required" : false,
+          "x-WM-VARIABLE_TYPE" : "PROMPT"
+        } ],
+        "tags" : [ "getWealthGoals" ],
+        "consumes" : [ "application/json" ]
+      },
+      "x-WM-COMPLETE_PATH" : "${rest.getWealthGoals.scheme}://${rest.getWealthGoals.host}${rest.getWealthGoals.basepath}/BrightBankDB/WealthGoals"
+    }
+  },
+  "host" : "${rest.getWealthGoals.host}",
+  "schemes" : [ "${rest.getWealthGoals.scheme}" ],
+  "definitions" : {
+    "Response.savingFrequency" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "getWealthGoals.Response.savingFrequency",
+      "x-WM-TAGS" : [ "getWealthGoals" ],
+      "required" : [ "displayName", "id", "isActive", "name" ],
+      "properties" : {
+        "displayName" : {
+          "type" : "string"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "id" : {
+          "format" : "int32",
+          "type" : "integer"
+        },
+        "isActive" : {
+          "type" : "boolean"
+        }
+      }
+    },
+    "Response.sortEntryItem" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "getWealthGoals.Response.sortEntryItem",
+      "x-WM-TAGS" : [ "getWealthGoals" ],
+      "required" : [ "ascending", "direction", "ignoreCase", "nullHandling", "property" ],
+      "properties" : {
+        "nullHandling" : {
+          "type" : "string"
+        },
+        "ignoreCase" : {
+          "type" : "boolean"
+        },
+        "property" : {
+          "type" : "string"
+        },
+        "ascending" : {
+          "type" : "boolean"
+        },
+        "direction" : {
+          "type" : "string"
+        }
+      }
+    },
+    "Response.wealthGoalCategory" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "getWealthGoals.Response.wealthGoalCategory",
+      "x-WM-TAGS" : [ "getWealthGoals" ],
+      "required" : [ "displayName", "icon", "id", "isActive", "name" ],
+      "properties" : {
+        "displayName" : {
+          "type" : "string"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "icon" : {
+          "type" : "string"
+        },
+        "id" : {
+          "format" : "int32",
+          "type" : "integer"
+        },
+        "isActive" : {
+          "type" : "boolean"
+        }
+      }
+    },
+    "Response.contentEntryItem" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "getWealthGoals.Response.contentEntryItem",
+      "x-WM-TAGS" : [ "getWealthGoals" ],
+      "required" : [ "amount", "createdOn", "goalCategoryId", "id", "isActive", "isAutoDebitEnabled", "name", "recuringDebitAccountId", "recurringDay", "recurringDebitAmount", "savingFrequency", "savingFrequencyId", "timeToGoal", "userId", "wealthGoalCategory" ],
+      "properties" : {
+        "isAutoDebitEnabled" : {
+          "type" : "string"
+        },
+        "amount" : {
+          "format" : "int32",
+          "type" : "integer"
+        },
+        "recurringDay" : {
+          "type" : "string"
+        },
+        "isActive" : {
+          "type" : "string"
+        },
+        "createdOn" : {
+          "type" : "string"
+        },
+        "userId" : {
+          "type" : "string"
+        },
+        "savingFrequency" : {
+          "$ref" : "#/definitions/Response.savingFrequency"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "timeToGoal" : {
+          "format" : "int32",
+          "type" : "integer"
+        },
+        "id" : {
+          "format" : "int32",
+          "type" : "integer"
+        },
+        "savingFrequencyId" : {
+          "format" : "int32",
+          "type" : "integer"
+        },
+        "goalCategoryId" : {
+          "format" : "int32",
+          "type" : "integer"
+        },
+        "wealthGoalCategory" : {
+          "$ref" : "#/definitions/Response.wealthGoalCategory"
+        },
+        "recuringDebitAccountId" : {
+          "type" : "string"
+        },
+        "recurringDebitAmount" : {
+          "format" : "int32",
+          "type" : "integer"
+        }
+      }
+    },
+    "RootResponse" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "getWealthGoals.RootResponse",
+      "x-WM-TAGS" : [ "getWealthGoals" ],
+      "required" : [ "content", "empty", "first", "last", "number", "numberOfElements", "size", "sort", "totalElements", "totalPages" ],
+      "properties" : {
+        "number" : {
+          "format" : "int32",
+          "type" : "integer"
+        },
+        "last" : {
+          "type" : "boolean"
+        },
+        "size" : {
+          "format" : "int32",
+          "type" : "integer"
+        },
+        "numberOfElements" : {
+          "format" : "int32",
+          "type" : "integer"
+        },
+        "totalPages" : {
+          "format" : "int32",
+          "type" : "integer"
+        },
+        "sort" : {
+          "x-WM-IS_LIST" : true,
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Response.sortEntryItem"
+          }
+        },
+        "content" : {
+          "x-WM-IS_LIST" : true,
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Response.contentEntryItem"
+          }
+        },
+        "first" : {
+          "type" : "boolean"
+        },
+        "totalElements" : {
+          "format" : "int32",
+          "type" : "integer"
+        },
+        "empty" : {
+          "type" : "boolean"
+        }
+      }
+    }
+  },
+  "swagger" : "2.0",
+  "info" : {
+    "x-WM-USE_PROXY_FOR_WEB" : true,
+    "x-WM-USE_PROXY_FOR_MOBILE" : true,
+    "x-WM-API_ID" : "50a5867c-432d-4566-94e8-9bfff39a919b",
+    "x-WM-SERVICE_ID" : "onwavemaker",
+    "version" : "2.0",
+    "x-WM-SERVICE_TYPE" : "RestService",
+    "x-WM-USE_WITH_CREDENTIALS" : false
+  },
+  "tags" : [ {
+    "name" : "getWealthGoals"
+  } ]
+}

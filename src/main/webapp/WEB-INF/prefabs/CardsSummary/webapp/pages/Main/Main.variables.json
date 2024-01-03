@@ -1,0 +1,36 @@
+{
+  "supportedLocale" : {
+    "_id" : "wm-wm.Variable1402640443182",
+    "name" : "supportedLocale",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataSet" : {
+      "en" : "English"
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  },
+  "svGetAllCards" : {
+    "_id" : "wm-svGetAllCards-wm.ServiceVariable-1677919577342",
+    "name" : "svGetAllCards",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "type" : "com.wavemaker.cardssummary.weavrAPI.WeavrApiManagedCardsGetResponse",
+    "service" : "weavrAPI",
+    "operation" : "weavrAPI_managedCardsGet",
+    "operationId" : "weavrAPI_managedCardsGet",
+    "serviceType" : "OpenAPIService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "onSuccess" : "svGetAllCardsonSuccess(variable, data, options)",
+    "startUpdate" : true,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "Managed Cards"
+  }
+}

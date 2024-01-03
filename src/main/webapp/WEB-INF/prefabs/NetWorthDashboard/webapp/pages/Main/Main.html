@@ -1,0 +1,17 @@
+<wm-prefab-container name="prefab_container1">
+    <wm-layoutgrid name="layoutgrid1">
+        <wm-gridrow name="gridrow1" padding="unset unset 2.5em unset">
+            <wm-gridcolumn columnwidth="12" name="gridcolumn1">
+                <wm-label name="label1" caption="Net Worth" class="f-sm-2 font-medium"></wm-label>
+                <wm-label name="label2" caption="bind:netWorth | toCurrency: basecurrency: '2'" class="p f-xxl font-semibold  text-ellipsis" fontunit="em" margin="0.5em unset unset unset"></wm-label>
+                <wm-icon name="icon1" iconclass="wm-sl-r sl-graph-ascend" caption="7.5 % from last month" class="label-primary font-semibold"></wm-icon>
+            </wm-gridcolumn>
+        </wm-gridrow>
+        <wm-gridrow name="gridrow2" class="border-top dashed" padding="2.5em unset 0.5em unset">
+            <wm-gridcolumn columnwidth="12" name="gridcolumn3">
+                <wm-label name="label3" class="f-xxs font-medium text-muted" caption="Total Investments"></wm-label>
+                <wm-label name="label4" class="p f-xl font-semibold text-ellipsis" caption="bind:totalInvestment | toCurrency: basecurrency: '2'"></wm-label>
+            </wm-gridcolumn>
+        </wm-gridrow>
+    </wm-layoutgrid>
+</wm-prefab-container>

@@ -1,0 +1,239 @@
+<wm-prefab-container name="prefab_container1" caption="bind:Variables.TransactionData.dataSet[$i].transaction_status == 'transaction-status-accepted' ? Variables.TransactionData.dataSet[$i].transaction_info.receiver.name : Variables.TransactionData.dataSet[$i].transaction_printout.beneficiaryname">
+    <wm-container name="container2" height="100%">
+        <wm-wizard stepstyle="justified" class="number vertical" name="wizardTransfer" nextbtnlabel="Transfer" donebtnlabel="Confirm" on-cancel="wizardTransferCancel(widget, steps)" on-done="wizardTransferDone(widget, steps)">
+            <wm-wizardstep name="wizardstep1" title="Transfer Details" iconclass="">
+                <wm-label name="label14" caption="Transfer Details" class="wizard-step-title" show="bind:wizardlayout==&quot;Vertical Layout&quot;"></wm-label>
+                <wm-form errormessage="" captionposition="top" title="" enctype="application/x-www-form-urlencoded" method="post" dataset="bind:Variables.FundAccountOrCard.dataSet" captionalign="left" name="customerForm1" class="transfer-form">
+                    <wm-layoutgrid columns="1" name="layoutgrid1">
+                        <wm-gridrow name="gridrow26_2">
+                            <wm-gridcolumn columnwidth="7" name="gridcolumn35" class="col-xs-12">
+                                <wm-container name="container9" class="form-group transfer-formfield">
+                                    <wm-layoutgrid name="layoutgrid10_1">
+                                        <wm-gridrow name="gridrow27_3">
+                                            <wm-gridcolumn columnwidth="2" name="gridcolumn37" class="col-xs-2">
+                                                <wm-label name="label8_1" caption="From" class="icon-label label-primary"></wm-label>
+                                            </wm-gridcolumn>
+                                            <wm-gridcolumn columnwidth="10" name="gridcolumn38" class="col-xs-10">
+                                                <wm-form-field name="ledger_id" readonly="false" displayname="bind:servicehost==&quot;APIVendor(R)&quot;?&quot;Select Ledger&quot;:&quot;Select Account&quot;" key="ledger_id" type="string" show="true" widget="select" placeholder="bind:servicehost==&quot;APIVendor(R)&quot;?&quot;Select Ledger&quot;:&quot;Select Account&quot;"
+                                                    required="true" dataset="bind:Variables.getAllManagedAccountsOrLedgers.dataSet" on-change="ledger_idChange($event, widget, newVal, oldVal)" displayexpression="bind:$[name]+&quot; - &quot;+$[currency]" validationmessage="Please select Ledger"
+                                                    defaultvalue="bind:selectedledgerid" datafield="id"></wm-form-field>
+                                            </wm-gridcolumn>
+                                        </wm-gridrow>
+                                    </wm-layoutgrid>
+                                </wm-container>
+                            </wm-gridcolumn>
+                            <wm-gridcolumn columnwidth="5" name="gridcolumn36_1" class="col-xs-12"></wm-gridcolumn>
+                        </wm-gridrow>
+                        <wm-gridrow name="gridrow17">
+                            <wm-gridcolumn columnwidth="7" name="gridcolumn27_1" class="col-xs-12">
+                                <wm-container class="form-group transfer-formfield" name="container10">
+                                    <wm-layoutgrid name="layoutgrid11_1">
+                                        <wm-gridrow name="gridrow29_1">
+                                            <wm-gridcolumn columnwidth="2" name="gridcolumn41" class="col-xs-2">
+                                                <wm-label name="label7" caption="To" class="icon-label label-warning"></wm-label>
+                                            </wm-gridcolumn>
+                                            <wm-gridcolumn columnwidth="10" name="gridcolumn42_1" class="col-xs-10">
+                                                <wm-form-field name="beneficiary_id" displayname="bind:servicehost==&quot;APIVendor(R)&quot;?&quot;Select Beneficiary&quot;:&quot;Select Beneficiary/Card&quot;" key="beneficiary_id" type="string" show="true" widget="select" dataset="bind:Variables.getAllManagedCardsOrBeneficiaries.dataSet"
+                                                    placeholder="bind:servicehost==&quot;APIVendor(R)&quot;?&quot;Select Beneficiary&quot;:&quot;Select Beneficiary/Card&quot;" displayexpression="bind:servicehost==&quot;APIVendor(W)&quot;?($[tag]+' - '+$[name]+' - '+$[currency]):($[name]+' - '+$[accountNumber])"
+                                                    required="true" validationmessage="Please select Beneficiary" defaultvalue="bind:selectedbeneficiaryid" datafield="id"></wm-form-field>
+                                            </wm-gridcolumn>
+                                        </wm-gridrow>
+                                    </wm-layoutgrid>
+                                </wm-container>
+                            </wm-gridcolumn>
+                            <wm-gridcolumn columnwidth="5" name="gridcolumn29" class="col-xs-12"></wm-gridcolumn>
+                        </wm-gridrow>
+                        <wm-gridrow name="gridrow9">
+                            <wm-gridcolumn columnwidth="7" name="gridcolumn28" class="col-xs-12">
+                                <wm-container class="form-group transfer-formfield" name="container11">
+                                    <wm-layoutgrid name="layoutgrid12_1">
+                                        <wm-gridrow name="gridrow30">
+                                            <wm-gridcolumn columnwidth="2" class="col-xs-2" name="gridcolumn43_2"></wm-gridcolumn>
+                                            <wm-gridcolumn columnwidth="6" class="col-xs-6" name="gridcolumn44_1">
+                                                <wm-form-field name="amount" displayname="Amount" key="amount" type="list" show="true" widget="currency" placeholder="0" required="true" validationmessage="Please enter amount" updateon="default"></wm-form-field>
+                                            </wm-gridcolumn>
+                                            <wm-gridcolumn columnwidth="4" name="gridcolumn45" class="col-xs-4"></wm-gridcolumn>
+                                        </wm-gridrow>
+                                    </wm-layoutgrid>
+                                </wm-container>
+                            </wm-gridcolumn>
+                            <wm-gridcolumn columnwidth="5" name="gridcolumn11" class="col-xs-12"></wm-gridcolumn>
+                        </wm-gridrow>
+                        <wm-gridrow name="gridrow8">
+                            <wm-gridcolumn columnwidth="7" name="gridcolumn31_1">
+                                <wm-container class="form-group transfer-formfield" name="container12">
+                                    <wm-layoutgrid name="layoutgrid13">
+                                        <wm-gridrow name="gridrow31">
+                                            <wm-gridcolumn columnwidth="2" class="col-xs-2" name="gridcolumn46"></wm-gridcolumn>
+                                            <wm-gridcolumn columnwidth="10" class="col-xs-10" name="gridcolumn47">
+                                                <wm-form errormessage="" captionposition="top" title="" enctype="application/x-www-form-urlencoded" method="post" dataset="bind:Variables.TransactionMeta.dataSet" captionalign="left" name="transaction_meta">
+                                                    <wm-layoutgrid columns="1" name="layoutgrid3">
+                                                        <wm-gridrow name="gridrow14_1">
+                                                            <wm-gridcolumn columnwidth="12" name="gridcolumn28_1" class="col-xs-10">
+                                                                <wm-form-field name="Notes" readonly="false" displayname="Remarks" key="Notes" type="string" show="true" widget="textarea" placeholder="" updateon="default"></wm-form-field>
+                                                            </wm-gridcolumn>
+                                                        </wm-gridrow>
+                                                        <wm-gridrow name="gridrow13_1">
+                                                            <wm-gridcolumn columnwidth="12" name="gridcolumn15_1">
+                                                                <wm-form-field name="assetType" displayname="Transaction Asset Type" key="assetType" type="string" show="false" widget="select" dataset="bind:Variables.PaymentTypeInfo.dataSet" datafield="paymentType" displayfield="name" defaultvalue="payment-type-UK-FasterPayments"></wm-form-field>
+                                                            </wm-gridcolumn>
+                                                        </wm-gridrow>
+                                                    </wm-layoutgrid>
+                                                </wm-form>
+                                            </wm-gridcolumn>
+                                        </wm-gridrow>
+                                    </wm-layoutgrid>
+                                </wm-container>
+                            </wm-gridcolumn>
+                            <wm-gridcolumn columnwidth="5" name="gridcolumn27_2" class="col-xs-10"></wm-gridcolumn>
+                        </wm-gridrow>
+                        <wm-gridrow name="gridrow12_1">
+                            <wm-gridcolumn columnwidth="2" name="gridcolumn32_2"></wm-gridcolumn>
+                            <wm-gridcolumn columnwidth="10" name="gridcolumn14_1" class="col-xs-12"></wm-gridcolumn>
+                        </wm-gridrow>
+                    </wm-layoutgrid>
+                    <wm-form-field name="enduserid" key="enduserid" type="string" displayname="Enduserid" widget="text" show="false" inputtype="text" placeholder="Enter value" defaultvalue="bind:enduserid"></wm-form-field>
+                    <wm-form-field name="payment_type" displayname="Payment Type" key="payment_type" type="string" show="false" widget="text" inputtype="text" placeholder="Enter value" defaultvalue="bind:Variables.getManagedAccountDetailsById.dataSet.asset_type == 'gbp' ? 'payment-type-UK-FasterPayments' : 'payment-type-EU-SEPA-Step2'"
+                        required="false"></wm-form-field>
+                    <wm-form-field name="payment_credit_date" readonly="false" displayname="Payment Credit Date" key="payment_credit_date" type="date" show="false" widget="date" datepattern="MMM d, yyyy" placeholder="Select date" defaultvalue="CURRENT_DATE"></wm-form-field>
+                    <wm-form-field name="currency" key="currency" type="string" displayname="Currency" widget="text" show="false" defaultvalue="bind:Variables.getManagedAccountDetailsById.dataSet.currency" inputtype="text" placeholder="Enter value"></wm-form-field>
+                </wm-form>
+            </wm-wizardstep>
+            <wm-wizardstep name="wizardstep2" title="Payment Confirmation" iconclass="">
+                <wm-container name="container7" class="tranfer-success" show="true">
+                    <wm-layoutgrid name="layoutgrid8">
+                        <wm-gridrow name="gridrow24_1">
+                            <wm-gridcolumn columnwidth="12" name="gridcolumn30">
+                                <wm-label name="label16" caption="Payment Confirmation" class="wizard-step-title" show="bind:wizardlayout==&quot;Vertical Layout&quot;"></wm-label>
+                            </wm-gridcolumn>
+                        </wm-gridrow>
+                        <wm-gridrow name="gridrow23_1">
+                            <wm-gridcolumn columnwidth="12" name="gridcolumn32_1">
+                                <wm-container name="containerPayments" show="true">
+                                    <wm-layoutgrid name="layoutgrid10">
+                                        <wm-gridrow name="gridrow25_1">
+                                            <wm-gridcolumn columnwidth="12" name="gridcolumn33_1">
+                                                <wm-container name="containerPayable" class="amount-payable">
+                                                    <wm-layoutgrid name="layoutgrid9">
+                                                        <wm-gridrow name="gridrow26_1">
+                                                            <wm-gridcolumn columnwidth="12" name="gridcolumn34" horizontalalign="center">
+                                                                <wm-label padding="unset 0.5em" caption="Payable Amount" fontsize="18" margin="1em unset unset unset" name="label16_1"></wm-label>
+                                                            </wm-gridcolumn>
+                                                        </wm-gridrow>
+                                                        <wm-gridrow name="gridrow27_2">
+                                                            <wm-gridcolumn columnwidth="12" name="gridcolumn36" horizontalalign="center">
+                                                                <wm-label padding="unset 0.5em" name="label18" caption="bind:servicehost==&quot;APIVendor(R)&quot;?(Variables.getManagedAccountDetailsById.dataSet.asset_type == 'gbp' ? '£ '+Variables.transferFormOutput.dataSet.amount : '€ '+Variables.transferFormOutput.dataSet.amount):(Variables.getManagedAccountDetailsById.dataSet.currency == 'GBP' ? '£ '+Variables.transferFormOutput.dataSet.amount : (Variables.getManagedAccountDetailsById.dataSet.currency==&quot;USD&quot;?&quot;$ &quot;+Variables.transferFormOutput.dataSet.amount: '€ '+Variables.transferFormOutput.dataSet.amount))"
+                                                                    fontsize="64" class="text-default"></wm-label>
+                                                            </wm-gridcolumn>
+                                                        </wm-gridrow>
+                                                    </wm-layoutgrid>
+                                                </wm-container>
+                                            </wm-gridcolumn>
+                                        </wm-gridrow>
+                                        <wm-gridrow name="gridrow25">
+                                            <wm-gridcolumn columnwidth="12" name="gridcolumn35_1">
+                                                <wm-layoutgrid name="layoutgrid11">
+                                                    <wm-gridrow name="gridrow24">
+                                                        <wm-gridcolumn columnwidth="5" name="gridcolumn42">
+                                                            <wm-container name="container5" borderwidth="1px" borderstyle="solid" height="100px" backgroundcolor="#ffffff" class="containerBorder" margin="unset unset unset 0.8em">
+                                                                <wm-layoutgrid name="layoutgrid6" columns="1">
+                                                                    <wm-gridrow name="gridrow20">
+                                                                        <wm-gridcolumn columnwidth="9" name="gridcolumn31" class="col-xs-9">
+                                                                            <wm-label padding="unset 0.5em unset unset" name="label21" caption="From" fontsize="16" class="text-primary" margin="0.5em unset unset 0.8em"></wm-label>
+                                                                        </wm-gridcolumn>
+                                                                        <wm-gridcolumn columnwidth="3" name="gridcolumn43_1" horizontalalign="right" class="col-xs-3">
+                                                                            <wm-picture name="picture2_1" width="27px" height="26px" picturesource="resources/images/imagelists/icon-bank.png" margin="0.5em 0.5em unset unset"></wm-picture>
+                                                                        </wm-gridcolumn>
+                                                                    </wm-gridrow>
+                                                                    <wm-gridrow name="gridrow21_1">
+                                                                        <wm-gridcolumn columnwidth="12" name="gridcolumn32">
+                                                                            <wm-label class="p media-heading" name="Name" caption="bind:getSenderName(Variables.transferFormOutput.dataSet.ledgerName)" fontunit="px" fontsize="16" margin="0.5em unset unset 0.8em"></wm-label>
+                                                                        </wm-gridcolumn>
+                                                                    </wm-gridrow>
+                                                                    <wm-gridrow name="gridrow22_1">
+                                                                        <wm-gridcolumn columnwidth="12" name="gridcolumn33">
+                                                                            <wm-label padding="unset 0.5em unset unset" name="label12" caption="bind:getAccountNumber(servicehost==&quot;APIVendor(R)&quot;?Variables.getManagedAccountDetailsById.dataSet.iban:Variables.getManagedAccountDetailsById.dataSet.id)" fontsize="13" class="text-muted"
+                                                                                margin="0.2em unset unset 0.8em"></wm-label>
+                                                                        </wm-gridcolumn>
+                                                                    </wm-gridrow>
+                                                                </wm-layoutgrid>
+                                                            </wm-container>
+                                                        </wm-gridcolumn>
+                                                        <wm-gridcolumn columnwidth="2" name="gridcolumn22" horizontalalign="center" padding="2em unset unset unset">
+                                                            <wm-icon name="icon1" iconclass="wi wi-long-arrow-right fa-3x" class="text-primary filled-arrow"></wm-icon>
+                                                        </wm-gridcolumn>
+                                                        <wm-gridcolumn columnwidth="5" name="gridcolumn43">
+                                                            <wm-container name="container6" borderwidth="1px" borderstyle="solid" height="100px" backgroundcolor="#ffffff" class="containerBorder" margin="unset 0.8em unset unset">
+                                                                <wm-layoutgrid name="layoutgrid7" columns="1">
+                                                                    <wm-gridrow name="gridrow26">
+                                                                        <wm-gridcolumn columnwidth="9" name="gridcolumn39_1" class="col-xs-9">
+                                                                            <wm-label padding="unset 0.5em unset unset" name="label22" caption="To" fontsize="16" class="text-primary" margin="0.5em unset unset 0.8em"></wm-label>
+                                                                        </wm-gridcolumn>
+                                                                        <wm-gridcolumn columnwidth="3" name="gridcolumn44" horizontalalign="right" class="col-xs-3">
+                                                                            <wm-picture width="27px" height="26px" name="picture3" picturesource="resources/images/imagelists/icon-card.png" margin="0.5em 0.5em unset unset"></wm-picture>
+                                                                        </wm-gridcolumn>
+                                                                    </wm-gridrow>
+                                                                    <wm-gridrow name="gridrow27_1">
+                                                                        <wm-gridcolumn columnwidth="12" name="gridcolumn40">
+                                                                            <wm-label class="p media-heading" caption="bind:getReceiverName(Variables.transferFormOutput.dataSet.beneficiaryName)" fontunit="px" name="label20" fontsize="16" margin="0.5em unset unset 0.8em"></wm-label>
+                                                                        </wm-gridcolumn>
+                                                                    </wm-gridrow>
+                                                                    <wm-gridrow name="gridrow28_1">
+                                                                        <wm-gridcolumn columnwidth="12" name="gridcolumn41_1">
+                                                                            <wm-label padding="unset 0.5em unset unset" name="label13" caption="bind:getReceiverAccount(servicehost==&quot;APIVendor(R)&quot;?Variables.transferFormOutput.dataSet.beneficiaryName:Widgets.customerForm1.formWidgets.beneficiary_id.datavalue)" fontsize="13"
+                                                                                class="text-muted" margin="0.2em unset unset 0.8em"></wm-label>
+                                                                        </wm-gridcolumn>
+                                                                    </wm-gridrow>
+                                                                </wm-layoutgrid>
+                                                            </wm-container>
+                                                        </wm-gridcolumn>
+                                                    </wm-gridrow>
+                                                </wm-layoutgrid>
+                                            </wm-gridcolumn>
+                                        </wm-gridrow>
+                                        <wm-gridrow name="gridrow16">
+                                            <wm-gridcolumn columnwidth="12" name="gridcolumn24">
+                                                <wm-label padding="unset 0.5em unset 1.5em" caption="Remarks" name="label11" fontsize="13" show="bind:Variables.transferFormOutput.dataSet.notes"></wm-label>
+                                            </wm-gridcolumn>
+                                        </wm-gridrow>
+                                        <wm-gridrow name="gridrow15">
+                                            <wm-gridcolumn columnwidth="12" name="gridcolumn23">
+                                                <wm-label padding="unset 0.5em unset 1.5em" name="label10" caption="bind:Variables.transferFormOutput.dataSet.notes" fontsize="14"></wm-label>
+                                            </wm-gridcolumn>
+                                        </wm-gridrow>
+                                        <wm-gridrow name="gridrow18">
+                                            <wm-gridcolumn columnwidth="12" name="gridcolumn27">
+                                                <wm-spinner show="false" name="spinnerPaymentConfirm" caption="Please wait... while we do the heavy lifting" iconclass="fa fa-spinner fa-spin fa-pull-left fa-spin" class="spinnerStyles"></wm-spinner>
+                                            </wm-gridcolumn>
+                                        </wm-gridrow>
+                                    </wm-layoutgrid>
+                                </wm-container>
+                            </wm-gridcolumn>
+                        </wm-gridrow>
+                    </wm-layoutgrid>
+                </wm-container>
+            </wm-wizardstep>
+        </wm-wizard>
+    </wm-container>
+    <wm-container name="container4_1" show="false" class="fullbleed-notification-popup">
+        <wm-container name="container4">
+            <wm-layoutgrid name="layoutgrid12">
+                <wm-gridrow name="gridrow27">
+                    <wm-gridcolumn columnwidth="12" name="gridcolumn49" horizontalalign="center">
+                        <wm-picture name="picture2" shape="circle" width="221px" height="170px" picturesource="resources/images/imagelists/img-funds-transfer-successful.png"></wm-picture>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow28">
+                    <wm-gridcolumn columnwidth="12" name="gridcolumn50" horizontalalign="center">
+                        <wm-label padding="unset 0.5em" name="label27" caption="Funds Transfer Successful!" fontweight="bold" fontunit="px" fontsize="24" color="#00af64" margin="1em unset unset unset"></wm-label>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow29">
+                    <wm-gridcolumn columnwidth="12" name="gridcolumn51" horizontalalign="center" padding="19px unset 40px unset">
+                        <wm-button class="btn-secondary" caption="Okay" on-click="button4Click($event, widget)" name="button4" width="140px" height="44px"></wm-button>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+            </wm-layoutgrid>
+        </wm-container>
+    </wm-container>
+</wm-prefab-container>

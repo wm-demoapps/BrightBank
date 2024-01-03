@@ -1,0 +1,66 @@
+<wm-prefab-container name="prefab_container1">
+    <wm-list listclass="list-group" itemclass="list-group-item p-0" template="true" template-name="Contact List" itemsperrow="xs-1 sm-1 md-1 lg-1" class="media-list separated-list" datafield="All Fields" statehandler="URL" dataset="bind:Variables.getGoalsWithUpcomingDates.dataSet"
+        navigation="None" name="list1" nodatamessage="" showindevice="md,lg">
+        <wm-listtemplate layout="inline" name="listtemplate1">
+            <wm-container name="container2" horizontalalign="center" class="media-left media-middle border-right" padding="0.75em 1.25em">
+                <wm-container name="container4" width="108px">
+                    <wm-icon name="icon1" class="label-danger icon-md" iconclass="bind:Widgets.list1.currentItem.goal.wealthGoalCategory.icon"></wm-icon>
+                    <wm-label name="label2" caption="bind:Variables.getGoalsWithUpcomingDates.dataSet[$i].goal.name" class="p f-xs font-semibold" margin="0.5em unset 0em unset"></wm-label>
+                </wm-container>
+            </wm-container>
+            <wm-container name="container3" class="media-body" padding="0.3em 0.5em 0em 0.5em">
+                <wm-layoutgrid name="layoutgrid1">
+                    <wm-gridrow name="gridrow1" class="flex-row">
+                        <wm-gridcolumn columnwidth="4" name="gridcolumn2" padding="1em 1.5em" class="col-xs-12 column-4">
+                            <wm-label name="label3" caption="From" class="font-medium text-muted" margin="unset unset 0.62em unset"></wm-label>
+                            <wm-label name="label6" class="p font-medium text-ellipsis" caption="bind:Variables.getGoalsWithUpcomingDates.dataSet[$i].accountDetails.name" margin="unset unset 0.2em unset"></wm-label>
+                            <wm-label class="text-muted font-medium f-xxs-3" caption="bind:accountHide(Variables.getGoalsWithUpcomingDates.dataSet[$i].accountDetails.id)" name="label8_1" margin="unset unset 0px unset"></wm-label>
+                        </wm-gridcolumn>
+                        <wm-gridcolumn columnwidth="4" name="gridcolumn5" padding="1em unset" class="col-xs-6 column-4">
+                            <wm-container name="container1" class="border-vert" bordercolor="var(--list-border-color)" borderstyle="solid" borderwidth="0px 1px" padding="unset 1.5em unset 2em">
+                                <wm-label name="label4" caption="Due On" class="font-medium text-muted" margin="unset unset 1.12em unset"></wm-label>
+                                <wm-label class="p font-medium pull-left" name="label7" caption="bind:Variables.getGoalsWithUpcomingDates.dataSet[$i].upcomingDueDate | toDate: 'dd MMM, yyyy'" margin="-0.5em unset unset unset"></wm-label>
+                            </wm-container>
+                        </wm-gridcolumn>
+                        <wm-gridcolumn columnwidth="4" name="gridcolumn6" padding="1em 1.5em 1em 2em" class="col-xs-6 column-4">
+                            <wm-label name="label5" caption="Amount Due" class="font-medium text-muted" margin="unset unset 0.25em unset"></wm-label>
+                            <wm-label class="p f-m font-medium  text-ellipsis" name="label8" caption="bind:convertCurrency(Variables.getGoalsWithUpcomingDates.dataSet[$i].accountDetails.currency, basecurrency, Variables.getGoalsWithUpcomingDates.dataSet[$i].goal.recurringDebitAmount)  | toCurrency: basecurrency: '2'"
+                                margin="unset unset 0px unset"></wm-label>
+                        </wm-gridcolumn>
+                    </wm-gridrow>
+                </wm-layoutgrid>
+            </wm-container>
+        </wm-listtemplate>
+    </wm-list>
+    <wm-list listclass="list-group" itemclass="list-group-item" template="true" template-name="Contact List" itemsperrow="xs-1 sm-1 md-1 lg-1" class="media-list" datafield="All Fields" statehandler="URL" dataset="bind:Variables.getGoalsWithUpcomingDates.dataSet"
+        navigation="None" name="list2" showindevice="xs,sm">
+        <wm-listtemplate layout="inline" name="listtemplate2">
+            <wm-layoutgrid name="layoutgrid2">
+                <wm-gridrow name="gridrow2" class="flex-row flex-vertical-center" padding="unset unset 15px unset">
+                    <wm-gridcolumn columnwidth="2" name="gridcolumn4" class="column-2">
+                        <wm-icon class="label-danger icon-md app-danger-icon" iconclass="bind:Widgets.list1.currentItem.goal.wealthGoalCategory.icon" name="icon2"></wm-icon>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="10" name="gridcolumn5_1" class="column-10">
+                        <wm-label class="p f-m font-medium  text-ellipsis label-highlight" caption="bind:convertCurrency(Variables.getGoalsWithUpcomingDates.dataSet[$i].accountDetails.currency, basecurrency, Variables.getGoalsWithUpcomingDates.dataSet[$i].goal.recurringDebitAmount)  | toCurrency: basecurrency: '2'"
+                            margin="unset unset 0px unset" name="label16"></wm-label>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow3" class="flex-row">
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn6_1" class="column-4">
+                        <wm-label caption="From" class="font-medium text-muted f-xxs-2" margin="unset unset 0.62em unset" name="label10"></wm-label>
+                        <wm-label class="p font-medium text-ellipsis f-xxs label-highlight" caption="bind:Variables.getGoalsWithUpcomingDates.dataSet[$i].accountDetails.name" margin="unset unset 0.2em unset" name="label11"></wm-label>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn7" class="column-4">
+                        <wm-label caption="Due On" class="font-medium text-muted f-xxs-2" margin="unset unset 1.12em unset" name="label12"></wm-label>
+                        <wm-label class="p font-medium pull-left f-xxs label-highlight" caption="bind:Variables.getGoalsWithUpcomingDates.dataSet[$i].upcomingDueDate | toDate: 'dd MMM, yyyy'" margin="-0.5em unset unset unset" name="label13"></wm-label>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn8" class="column-4">
+                        <wm-label caption="Amount Due" class="font-medium text-muted f-xxs-2" margin="unset unset 1.12em unset" name="label14"></wm-label>
+                        <wm-label class="p f-m font-medium  text-ellipsis f-xxs label-highlight" caption="bind:convertCurrency(Variables.getGoalsWithUpcomingDates.dataSet[$i].accountDetails.currency, basecurrency, Variables.getGoalsWithUpcomingDates.dataSet[$i].goal.recurringDebitAmount)  | toCurrency: basecurrency: '2'"
+                            margin="-0.5em unset 0em unset" name="label15"></wm-label>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+            </wm-layoutgrid>
+        </wm-listtemplate>
+    </wm-list>
+</wm-prefab-container>

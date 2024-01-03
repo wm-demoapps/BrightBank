@@ -1,0 +1,34 @@
+{
+  "ManagedAccountsController_getManagedAccount" : {
+    "id" : "ManagedAccountsController_getManagedAccount",
+    "crudOperationId" : null,
+    "service" : "ManagedAccounts",
+    "controller" : "ManagedAccountsController",
+    "operationType" : null,
+    "type" : "array",
+    "wmServiceOperationInfo" : {
+      "name" : "getManagedAccount",
+      "methodType" : "get",
+      "relativePath" : "/managedAccounts/managedAccount",
+      "directPath" : null,
+      "httpMethod" : "get",
+      "parameters" : [ {
+        "name" : "authorization",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "java.lang.String",
+        "readOnly" : false,
+        "contentType" : null
+      } ],
+      "definitions" : { },
+      "produces" : null,
+      "consumes" : null,
+      "proxySettings" : {
+        "web" : true,
+        "mobile" : true,
+        "withCredentials" : false
+      },
+      "securityDefinitions" : [ ]
+    }
+  }
+}

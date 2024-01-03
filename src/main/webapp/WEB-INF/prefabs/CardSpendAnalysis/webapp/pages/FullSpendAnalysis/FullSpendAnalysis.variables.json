@@ -1,0 +1,101 @@
+{
+  "getCardSpendAnalysis" : {
+    "_id" : "wm-getCardSpendAnalysis-wm.ServiceVariable-1677757425368",
+    "name" : "getCardSpendAnalysis",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "cardId",
+      "value" : "bind:Prefab.cardid",
+      "type" : "string"
+    }, {
+      "target" : "authToken",
+      "value" : "bind:Prefab.authtoken",
+      "type" : "string"
+    }, {
+      "target" : "baseCurrency",
+      "value" : "bind:Prefab.basecurrency ? Prefab.basecurrency : 'USD'",
+      "type" : "string"
+    }, {
+      "target" : "month",
+      "value" : "bind:Prefab.month ? Prefab.month : 3",
+      "type" : "integer"
+    } ],
+    "type" : "com.wavemaker.spendanalysis.spendanalysisservice.model.CardSpendsModel",
+    "service" : "SpendAnalysisService",
+    "operation" : "getCardSpendAnalysisData",
+    "operationId" : "SpendAnalysisController_getCardSpendAnalysisData",
+    "operationType" : "get",
+    "serviceType" : "JavaService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "onSuccess" : "getCardSpendAnalysisonSuccess(variable, data, options)",
+    "startUpdate" : false,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "SpendAnalysis"
+  },
+  "stvMobileIcons" : {
+    "_id" : "wm-stvMobileIcons-wm.Variable-1678556287547",
+    "name" : "stvMobileIcons",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "Household" : "wm-sl-l sl-home-1",
+      "Personal" : "wm-sl-l sl-user",
+      "Transportation" : "fa fa-automobile",
+      "Loans" : "fa fa-dollar",
+      "Savings" : "wm-sl-l sl-bank",
+      "Entertainment" : "fa fa-ticket",
+      "Clothing" : "fa fa-briefcase"
+    },
+    "type" : "entry",
+    "isList" : false,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "stvMobileIconStyles" : {
+    "_id" : "wm-stvMobileIconStyles-wm.Variable-1678555068308",
+    "name" : "stvMobileIconStyles",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "Household" : "app-success-icon",
+      "Personal" : "app-warning-icon",
+      "Transportation" : "app-danger-icon",
+      "Loans" : "app-secondary-icon",
+      "Savings" : "app-terinary-icon",
+      "Entertainment" : "app-primary-icon",
+      "Clothing" : "app-success-icon"
+    },
+    "type" : "entry",
+    "isList" : false,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "stvProgressbarStyles" : {
+    "_id" : "wm-stvProgressbarStyles-wm.Variable-1678817812706",
+    "name" : "stvProgressbarStyles",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "Household" : "bar-success",
+      "Personal" : "bar-warning",
+      "Transportation" : "bar-danger",
+      "Loans" : "bar-secondary",
+      "Savings" : "bar-terinary",
+      "Entertainment" : "bar-primary",
+      "Clothing" : "bar-success"
+    },
+    "type" : "entry",
+    "isList" : false,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  }
+}

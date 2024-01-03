@@ -1,0 +1,39 @@
+<wm-page pagetitle="Spend Analysis" name="page1">
+    <wm-header content="header" name="header1"></wm-header>
+    <wm-content name="content1">
+        <wm-left-panel columnwidth="2" content="leftnav" name="left_panel1"></wm-left-panel>
+        <wm-page-content columnwidth="10" name="page_content1" class="spacing-large">
+            <wm-layoutgrid name="layoutgrid1" class="spacing-base">
+                <wm-gridrow name="gridrow1">
+                    <wm-gridcolumn columnwidth="5" name="gridcolumn1">
+                        <wm-label name="label1" class="f-lg font-medium" caption="Spend Analysis" margin="unset unset 0em unset" animation="fadeInDown"></wm-label>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="7" name="gridcolumn5" horizontalalign="right">
+                        <wm-container name="container3" display="inline-block" animation="fadeInDown">
+                            <wm-select name="selectCard" dataset="bind:Variables.svGetAllCards.dataSet.cards" datafield="id" displayfield="friendlyName" datavalue="bind:Variables.svGetAllCards.dataSet.cards[0].id" placeholder="Select Card" displayexpression="bind:$[friendlyName] + &quot; - **** &quot; + $[cardNumberLastFour]"
+                                class="filter"></wm-select>
+                        </wm-container>
+                        <wm-container name="container2" display="inline-block" margin="unset 1em" animation="fadeInDown">
+                            <wm-select name="selectBaseCurrency" placeholder="Select Currency" dataset="bind:Variables.stvCurrencies.dataSet" datafield="value" displayfield="displayName" datavalue="USD" class="filter"></wm-select>
+                        </wm-container>
+                        <wm-container name="container1" display="inline-block" animation="fadeInDown">
+                            <wm-select name="selectMonth" placeholder="Select Month" dataset="bind:Variables.stvMonths.dataSet" datafield="value" displayfield="month" datavalue="bind:App.getCurrentMonth()" class="filter"></wm-select>
+                        </wm-container>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow2">
+                    <wm-gridcolumn columnwidth="12" name="gridcolumn3">
+                        <wm-prefab prefabname="CardSpendAnalysis" name="CardSpendAnalysis1" page="FullSpendAnalysis" cardid="bind:Widgets.selectCard.datavalue" authtoken="bind:Variables.loggedInUser.dataSet.userAttributes.authtoken" basecurrency="bind:Widgets.selectBaseCurrency.datavalue"
+                            month="bind:Widgets.selectMonth.datavalue" show="true" on-spendtarnasactionscount="CardSpendAnalysis1Spendtarnasactionscount($event, $data)" animation="fadeInUp"></wm-prefab>
+                        <wm-container name="containerNoSpendTransation" show="bind:containsSpendingTrns == false" horizontalalign="center" class="no-data-panel" animation="fadeInUp">
+                            <wm-picture resizemode="cover" name="pictureNoData" picturesource="resources/images/imagelists/no-chart-data.svg" class="no-data-img"></wm-picture>
+                            <wm-label name="labelNoSpendTransation" caption="No data available for Spend Analysis" class="no-data-title"></wm-label>
+                            <wm-label caption="You can only see Spend Analysis information  after you make transactions on your cards" class="no-data-description" name="label3"></wm-label>
+                        </wm-container>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+            </wm-layoutgrid>
+        </wm-page-content>
+    </wm-content>
+    <wm-footer content="footer" name="footer1"></wm-footer>
+</wm-page>

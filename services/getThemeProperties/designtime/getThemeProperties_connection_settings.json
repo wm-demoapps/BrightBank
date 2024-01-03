@@ -1,0 +1,33 @@
+{
+  "endpointAddress" : "https://dev-brightbankdb.onwavemaker.com/services/BrightBankDB/Themedetail",
+  "method" : "GET",
+  "headers" : { },
+  "redirectEnabled" : true,
+  "requestBody" : "",
+  "queryParams" : {
+    "size" : "50"
+  },
+  "authDetails" : null,
+  "contentType" : "application/json",
+  "multiParamInfoList" : null,
+  "sampleHttpResponseDetails" : {
+    "statusCode" : 200,
+    "headers" : {
+      "Server" : [ "nginx/1.18.0 (Ubuntu)" ],
+      "Date" : [ "Wed, 23 Aug 2023 05:13:10 GMT" ],
+      "Content-Type" : [ "application/json;charset=UTF-8" ],
+      "Transfer-Encoding" : [ "chunked" ],
+      "Connection" : [ "keep-alive" ],
+      "X-WM-Request-Track-Id" : [ "app.lIbifasJ" ],
+      "Cache-Control" : [ "max-age=0" ],
+      "X-XSS-Protection" : [ "1; mode=block" ],
+      "Content-Security-Policy" : [ "frame-ancestors 'self'" ],
+      "X-Content-Type-Options" : [ "nosniff" ],
+      "Vary" : [ "Origin", "Access-Control-Request-Method", "Access-Control-Request-Headers" ],
+      "Server-Timing" : [ "server;dur=83" ],
+      "ETag" : [ "\"0529a60aabe6139c306d3732e43258147\"" ]
+    },
+    "responseBody" : "{\"content\":[{\"id\":1,\"csspropertyId\":1,\"cssvalue\":null,\"themetypeId\":2,\"cssproperty\":{\"id\":1,\"cssvariable\":\"--brand-primary\",\"name\":\"Primary\"},\"themetype\":{\"id\":2,\"isdefault\":false,\"name\":\"Green\",\"thumbnail\":null}}],\"last\":false,\"totalPages\":3,\"totalElements\":116,\"sort\":[],\"number\":0,\"size\":50,\"first\":true,\"numberOfElements\":50,\"empty\":false}",
+    "convertedResponse" : null
+  }
+}

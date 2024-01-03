@@ -1,0 +1,37 @@
+{
+  "messages" : {
+    "LABEL_LOCALIZATION" : "إضافات",
+    "LABEL_SETTINGS" : "إعدادات",
+    "LABEL_WEALTH_GOALS" : "أهداف الثروة",
+    "LABEL_SPEND_ANALYSIS" : "تحليل الإنفاق",
+    "LABEL_CARDS" : "بطاقات",
+    "LABEL_DASHBOARD" : "لوحة القيادة",
+    "LABEL_DEPOSIT" : "إيداع",
+    "LABEL_PERSONAL" : "شخصي",
+    "LABEL_PAYMENTS" : "المدفوعات",
+    "LABEL_ACCOUNTS" : "حسابات",
+    "LABEL_ADD_ACCOUNT" : "إضافة حساب",
+    "LABEL_CREATE_ACCOUNT" : "إنشاء حساب",
+    "LABEL_GIVE_YOUR_ACCOUNT_NAME" : "قم بتسمية حسابك",
+    "LABEL_SAVINGS_ACCOUNT" : "حساب التوفير",
+    "LABEL_SAVINGS_ACCOUNT_PLACEHOLDER" : "على سبيل المثال: حساب التوفير",
+    "LABEL_SELECT_CURRENCY" : "اختر العملة",
+    "LABEL_PRIMARY_USE" : "الاستخدام الأساسي",
+    "LABEL_CRETAE_PAYMENTS" : "المدفوعات",
+    "LABEL_CRETAE_DEPOSIT" : "إيداع",
+    "LABEL_CRETAE_SETTLEMENT" : "مستعمرة",
+    "LABEL_BUTTON_CANCEL" : "يلغي",
+    "LABEL_BUTTON_CREATE" : "يخلق"
+  },
+  "formats" : {
+    "date" : "dd‏/MM‏/y",
+    "time" : "h:mm:ss a",
+    "currency" : "USD"
+  },
+  "files" : {
+    "angular" : "ar",
+    "fullCalendar" : "ar",
+    "moment" : "ar"
+  },
+  "prefabMessages" : { }
+}

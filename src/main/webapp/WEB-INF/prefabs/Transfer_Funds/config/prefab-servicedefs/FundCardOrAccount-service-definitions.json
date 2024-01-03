@@ -1,0 +1,186 @@
+{
+  "FundCardOrAccountController_getAllManagedCardsOrBeneficiaries" : {
+    "id" : "FundCardOrAccountController_getAllManagedCardsOrBeneficiaries",
+    "crudOperationId" : null,
+    "service" : "FundCardOrAccount",
+    "controller" : "FundCardOrAccountController",
+    "operationType" : null,
+    "type" : "array",
+    "wmServiceOperationInfo" : {
+      "name" : "getAllManagedCardsOrBeneficiaries",
+      "methodType" : "get",
+      "relativePath" : "/fundCardOrAccount/allManagedCardsOrBeneficiaries",
+      "directPath" : null,
+      "httpMethod" : "get",
+      "parameters" : [ {
+        "name" : "hostName",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "java.lang.String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "authorization",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "java.lang.String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "profileOrUserId",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "java.lang.String",
+        "readOnly" : false,
+        "contentType" : null
+      } ],
+      "definitions" : { },
+      "produces" : null,
+      "consumes" : null,
+      "proxySettings" : {
+        "web" : true,
+        "mobile" : true,
+        "withCredentials" : false
+      },
+      "securityDefinitions" : [ ]
+    }
+  },
+  "FundCardOrAccountController_getAllManagedAccountsOrLedgers" : {
+    "id" : "FundCardOrAccountController_getAllManagedAccountsOrLedgers",
+    "crudOperationId" : null,
+    "service" : "FundCardOrAccount",
+    "controller" : "FundCardOrAccountController",
+    "operationType" : null,
+    "type" : "array",
+    "wmServiceOperationInfo" : {
+      "name" : "getAllManagedAccountsOrLedgers",
+      "methodType" : "get",
+      "relativePath" : "/fundCardOrAccount/allManagedaccountsOrLedgers",
+      "directPath" : null,
+      "httpMethod" : "get",
+      "parameters" : [ {
+        "name" : "hostName",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "java.lang.String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "authorization",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "java.lang.String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "profileOrUserId",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "java.lang.String",
+        "readOnly" : false,
+        "contentType" : null
+      } ],
+      "definitions" : { },
+      "produces" : null,
+      "consumes" : null,
+      "proxySettings" : {
+        "web" : true,
+        "mobile" : true,
+        "withCredentials" : false
+      },
+      "securityDefinitions" : [ ]
+    }
+  },
+  "FundCardOrAccountController_fundManagedCards" : {
+    "id" : "FundCardOrAccountController_fundManagedCards",
+    "crudOperationId" : null,
+    "service" : "FundCardOrAccount",
+    "controller" : "FundCardOrAccountController",
+    "operationType" : null,
+    "type" : "com.transfer_funds.transactionmodel.TransactionModel",
+    "wmServiceOperationInfo" : {
+      "name" : "fundManagedCards",
+      "methodType" : "post",
+      "relativePath" : "/fundCardOrAccount/fundManagedCards",
+      "directPath" : null,
+      "httpMethod" : "post",
+      "parameters" : [ {
+        "name" : "hostName",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "java.lang.String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "authorization",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "java.lang.String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "Map",
+        "parameterType" : "body",
+        "required" : true,
+        "type" : "java.util.Map",
+        "readOnly" : false,
+        "contentType" : null
+      } ],
+      "definitions" : { },
+      "produces" : null,
+      "consumes" : null,
+      "proxySettings" : {
+        "web" : true,
+        "mobile" : true,
+        "withCredentials" : false
+      },
+      "securityDefinitions" : [ ]
+    }
+  },
+  "FundCardOrAccountController_getManagedAccountDetailsById" : {
+    "id" : "FundCardOrAccountController_getManagedAccountDetailsById",
+    "crudOperationId" : null,
+    "service" : "FundCardOrAccount",
+    "controller" : "FundCardOrAccountController",
+    "operationType" : null,
+    "type" : "com.transfer_funds.sourceaccountmodel.SourceAccountModel",
+    "wmServiceOperationInfo" : {
+      "name" : "getManagedAccountDetailsById",
+      "methodType" : "get",
+      "relativePath" : "/fundCardOrAccount/managedAccountDetailsById",
+      "directPath" : null,
+      "httpMethod" : "get",
+      "parameters" : [ {
+        "name" : "hostName",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "java.lang.String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "authorization",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "java.lang.String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "managedAccountId",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "java.lang.String",
+        "readOnly" : false,
+        "contentType" : null
+      } ],
+      "definitions" : { },
+      "produces" : null,
+      "consumes" : null,
+      "proxySettings" : {
+        "web" : true,
+        "mobile" : true,
+        "withCredentials" : false
+      },
+      "securityDefinitions" : [ ]
+    }
+  }
+}

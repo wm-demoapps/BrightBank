@@ -1,0 +1,72 @@
+<wm-prefab-container name="prefab_container1">
+    <wm-layoutgrid name="layoutgrid5">
+        <wm-gridrow name="gridrow9" padding="unset unset 1em unset">
+            <wm-gridcolumn columnwidth="5" name="gridcolumn22" padding="unset unset 1em unset" class="col-xs-6">
+                <wm-search name="search1" searchon="typing" show="bind:Prefab.showsearch" deferload="true" matchmode="startignorecase"></wm-search>
+            </wm-gridcolumn>
+            <wm-gridcolumn columnwidth="2" name="gridcolumn23" horizontalalign="right" padding="unset unset unset 1em" class="col-xs-6">
+                <wm-composite name="composite1" show="false">
+                    <wm-container class="col-md-9" name="container5" show="false">
+                        <wm-date name="dateTo" datavalue="CURRENT_DATE" outputformat="timestamp"></wm-date>
+                    </wm-container>
+                </wm-composite>
+            </wm-gridcolumn>
+            <wm-gridcolumn columnwidth="5" name="gridcolumn10" class="custom-date" horizontalalign="left">
+                <wm-container class="col-md-9" name="container6">
+                    <wm-date name="dateFrom" show="bind:Prefab.showdate" deferload="true"></wm-date>
+                </wm-container>
+            </wm-gridcolumn>
+        </wm-gridrow>
+        <wm-gridrow name="gridrow10">
+            <wm-gridcolumn columnwidth="12" name="gridcolumn24">
+                <wm-list listclass="list-group" template="true" template-name="Contact List" itemsperrow="xs-1 sm-1 md-1 lg-1" class="media-list" datafield="All Fields" statehandler="none" name="customerList1" dataset="bind:Variables.JS_getAccountTransactions.dataSet"
+                    navigation="Scroll" nodatamessage="No Transactions" show="bind:Prefab.servicehost==&quot;APIVendor(W)&quot;?(Variables.JS_getAccountTransactions.dataSet[0].count != 0 || Variables.JS_getAccountTransactions.dataSet[0].count != &quot;0&quot;):true"
+                    deferload="true">
+                    <wm-listtemplate layout="inline" name="listtemplate1">
+                        <wm-container class="media-body" name="container2">
+                            <wm-layoutgrid name="layoutgrid2" class="details-list">
+                                <wm-gridrow name="gridrow10_1">
+                                    <wm-gridcolumn columnwidth="1" name="gridcolumn20_1" class="col-xs-12" horizontalalign="left">
+                                        <wm-container name="containerAvatar" horizontalalign="left">
+                                            <wm-anchor name="anchor1" caption="bind:transactionlisttype==&quot;Managed Account&quot;?getNameInitials(Widgets.customerList1.currentItem.destinationName,Widgets.customerList1.currentItemWidgets.anchor1):getNameInitials(Widgets.customerList1.currentItem.sourceName,Widgets.customerList1.currentItemWidgets.anchor1)"
+                                                width="32px" height="32px" class="text-center" fontweight="bold" textalign="center" padding="2px unset unset unset"></wm-anchor>
+                                        </wm-container>
+                                    </wm-gridcolumn>
+                                    <wm-gridcolumn columnwidth="9" name="gridcolumn19_2" class="col-xs-9">
+                                        <wm-layoutgrid name="layoutgrid9" show="true" deferload="false">
+                                            <wm-gridrow class="transfer-details" name="gridrow18">
+                                                <wm-gridcolumn columnwidth="6" name="gridcolumn34" class="col-xs-4">
+                                                    <wm-container class="from-details account-divider" name="container12" margin="0.2em unset unset unset">
+                                                        <wm-label caption="bind:transactionlisttype==&quot;Managed Account&quot;?(Widgets.customerList1.currentItem.transactionType==&quot;TRANSFER&quot;?&quot;Payment To&quot;:&quot;Received From&quot;):(Widgets.customerList1.currentItem.transactionType==&quot;DEPOSIT&quot;?&quot;Received From&quot;:&quot;Payment To&quot;)"
+                                                            fontunit="px" name="label25" fontsize="12" class="p text-muted"></wm-label>
+                                                        <wm-label class="p" caption="bind:transactionlisttype==&quot;Managed Account&quot;?camelize(Widgets.customerList1.currentItem.transactionType==&quot;DEPOSIT&quot;?Widgets.customerList1.currentItem.transactionType:Widgets.customerList1.currentItem.destinationName):Widgets.customerList1.currentItem.sourceName"
+                                                            fontsize="13" name="label26" fontweight="bold"></wm-label>
+                                                    </wm-container>
+                                                </wm-gridcolumn>
+                                                <wm-gridcolumn columnwidth="6" name="gridcolumn35" class="col-xs-5">
+                                                    <wm-container class="to-details" name="container13" margin="0.2em unset unset unset">
+                                                        <wm-label padding="unset 0.5em unset unset" caption="Transaction ID" show="true" name="label28_1" fontsize="12" class="p text-muted"></wm-label>
+                                                        <wm-label class="p" caption="bind:getTransactionId(Widgets.customerList1.currentItem.id)" fontsize="13" name="label29_1" fontweight="bold"></wm-label>
+                                                    </wm-container>
+                                                </wm-gridcolumn>
+                                            </wm-gridrow>
+                                        </wm-layoutgrid>
+                                    </wm-gridcolumn>
+                                    <wm-gridcolumn columnwidth="2" name="gridcolumn21_2" horizontalalign="center" class="col-xs-3">
+                                        <wm-label name="label3" caption="bind:getCurrencyAmount(Widgets.customerList1.currentItem)" fontweight="bold" fontunit="px" fontsize="14" class="pull-right p" conditionalclass="bind:transactionlisttype==&quot;Managed Account&quot;?(Widgets.customerList1.currentItem.transactionType==&quot;TRANSFER&quot;?&quot;text-danger&quot;:&quot;text-success&quot;):(Widgets.customerList1.currentItem.transactionType==&quot;SETTLEMENT&quot;?&quot;text-danger&quot;:&quot;text-success&quot;)"></wm-label>
+                                        <wm-label name="label7" caption="bind:Widgets.customerList1.currentItem.processedTimestamp | timeFromNow" fontsize="12" class="text-muted p"></wm-label>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                            </wm-layoutgrid>
+                        </wm-container>
+                    </wm-listtemplate>
+                </wm-list>
+            </wm-gridcolumn>
+        </wm-gridrow>
+        <wm-gridrow name="gridrow6">
+            <wm-gridcolumn columnwidth="12" name="gridcolumn12" horizontalalign="center">
+                <wm-label padding="unset 0.5em" name="label13" fontsize="14" show="bind:Prefab.servicehost==&quot;APIVendor(W)&quot;?(Variables.JS_getAccountTransactions.dataSet.length==0):false" caption="No Transactions"></wm-label>
+            </wm-gridcolumn>
+        </wm-gridrow>
+    </wm-layoutgrid>
+</wm-prefab-container>

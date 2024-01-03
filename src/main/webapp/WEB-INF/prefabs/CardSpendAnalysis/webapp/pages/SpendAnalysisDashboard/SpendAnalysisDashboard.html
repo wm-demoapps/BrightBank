@@ -1,0 +1,84 @@
+<wm-partial name="partial1">
+    <wm-container name="containerWithData" animation="fadeInUp" show="bind:Variables.svGetSpendAnalysisForDashboard.dataSet.spendTransactions .length > 0 ? true : false">
+        <wm-layoutgrid name="layoutgrid1">
+            <wm-gridrow name="gridrow3">
+                <wm-gridcolumn columnwidth="12" name="gridcolumn3_1">
+                    <wm-container name="container1" horizontalalign="center" class="bg-highlight">
+                        <wm-label padding="unset 0.5em" name="label1" class="f-xs p" caption="Total Expenses"></wm-label>
+                        <wm-label name="label2" class="f-l font-semibold text-highlight" caption="bind:&quot;-&quot; + Variables.svGetSpendAnalysisForDashboard.dataSet.totalExpense | toCurrency: Prefab.basecurrency: '2'" fontsize="1.84" fontunit="em"
+                            margin="unset unset 0px unset"></wm-label>
+                    </wm-container>
+                </wm-gridcolumn>
+            </wm-gridrow>
+            <wm-gridrow name="gridrow1">
+                <wm-gridcolumn columnwidth="12" name="gridcolumn1" horizontalalign="center">
+                    <wm-chart type="Donut" title="" height="300px" iconclass="wi wi-pie-chart" name="chartSpendsOnCategory" dataset="bind:Variables.svGetSpendAnalysisForDashboard.dataSet.spendsByCategory" showlegend="right" legendtype="classic" showlabels="inside"
+                        nodatamessage="No Spend Transactions" offsettop="0" xaxisdatakey="category" yaxisdatakey="amount" ynumberformat=".2f" customcolors="#5176f2, #d083ff, #37bbb2, #ff6f51, #48bae8, #e3487b"></wm-chart>
+                </wm-gridcolumn>
+            </wm-gridrow>
+            <wm-gridrow name="gridrow2">
+                <wm-gridcolumn columnwidth="12" name="gridcolumn3">
+                    <wm-container name="container2" bordercolor="var(--border-color)" borderstyle="solid" borderwidth="1px 0px 0px 0px" padding="0.5em unset unset unset" margin="0.5em unset unset unset">
+                        <wm-table statehandler="none" name="getCardSpendAnalysisDataTable1" title="Recent Transactions" dataset="bind:Variables.svGetSpendAnalysisForDashboard.dataSet.spendTransactions" navigation="Classic" showindevice="md,lg" showrecordcount="true"
+                            navigationalign="right">
+                            <wm-table-column binding="toName" caption="To" widget-type="label" edit-widget-type="text" type="string" show="true" readonly="false">
+                                <wm-label caption="bind:row.getProperty('toName')" class="font-semibold text-normal" conditionalclass="" condtionalstyle="" conditionalstyle=""></wm-label>
+                            </wm-table-column>
+                            <wm-table-column binding="category" caption="Category" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                            <wm-table-column binding="processedTimestamp" caption="Date" widget-type="label" edit-widget-type="text" type="string" searchable="false" show="true" readonly="false">
+                                <wm-label caption="bind:row.getProperty('processedTimestamp') | toDate: 'dd/MM/yyyy'" class="" conditionalclass="" condtionalstyle="" conditionalstyle=""></wm-label>
+                                <wm-label caption="bind:row.getProperty('processedTimestamp') | toDate: 'hh:mm'" class="p f-xxs-3 text-muted" conditionalclass="" condtionalstyle="" conditionalstyle=""></wm-label>
+                            </wm-table-column>
+                            <wm-table-column binding="amount" caption="Amount" widget-type="label" textalignment="right" edit-widget-type="text" type="string" show="true" readonly="false">
+                                <wm-label caption="bind:row.getProperty('amount') | toCurrency: Prefab.basecurrency : '2'" class="text-danger" conditionalclass="" condtionalstyle="" conditionalstyle=""></wm-label>
+                            </wm-table-column>
+                        </wm-table>
+                    </wm-container>
+                </wm-gridcolumn>
+            </wm-gridrow>
+            <wm-gridrow name="gridrow4">
+                <wm-gridcolumn columnwidth="12" name="gridcolumn4">
+                    <wm-list listclass="list-group" itemclass="list-group-item" template="true" template-name="Contact List" itemsperrow="xs-1 sm-1 md-1 lg-1" class="media-list spend-tranx-dashboard" datafield="All Fields" statehandler="URL" dataset="bind:Variables.svGetSpendAnalysisForDashboard.dataSet.spendTransactions"
+                        navigation="None" name="listSpendTransactionsMobile" showindevice="xs,sm" title="Recent Transactions">
+                        <wm-listtemplate layout="inline" name="listtemplate1">
+                            <wm-layoutgrid name="layoutgrid2">
+                                <wm-gridrow name="gridrow5" class="flex-row">
+                                    <wm-gridcolumn columnwidth="3" name="gridcolumn5" class="col-xs-3 column-3">
+                                        <wm-label padding="unset 0.5em" name="label4" caption="To" class="f-xxs-3 font-medium text-muted"></wm-label>
+                                    </wm-gridcolumn>
+                                    <wm-gridcolumn columnwidth="3" name="gridcolumn6" class="col-xs-3 column-3">
+                                        <wm-label padding="unset 0.5em" name="label5" caption="From" class="f-xxs-3 font-medium text-muted"></wm-label>
+                                    </wm-gridcolumn>
+                                    <wm-gridcolumn columnwidth="3" name="gridcolumn9" class="col-xs-3 column-3">
+                                        <wm-label padding="unset 0.5em" name="label6" caption="Category" class="f-xxs-3 font-medium text-muted"></wm-label>
+                                    </wm-gridcolumn>
+                                    <wm-gridcolumn columnwidth="3" name="gridcolumn10" class="col-xs-3 column-3">
+                                        <wm-label padding="unset 0.5em" name="label7" caption="Amount" class="f-xxs-3 font-medium text-muted"></wm-label>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                                <wm-gridrow name="gridrow6" class="flex-row">
+                                    <wm-gridcolumn columnwidth="3" name="gridcolumn7" class="col-xs-3 column-3">
+                                        <wm-label padding="unset 0.5em" name="label8" caption="bind:Widgets.listSpendTransactionsMobile.currentItem.toName" class="f-sm-2 font-semibold"></wm-label>
+                                    </wm-gridcolumn>
+                                    <wm-gridcolumn columnwidth="3" name="gridcolumn8" class="col-xs-3 column-3">
+                                        <wm-label padding="unset 0.5em" caption="bind:Widgets.listSpendTransactionsMobile.currentItem.fromName" name="label9" class="f-sm-2 font-semibold"></wm-label>
+                                    </wm-gridcolumn>
+                                    <wm-gridcolumn columnwidth="3" name="gridcolumn11" class="col-xs-3 column-3">
+                                        <wm-label padding="unset 0.5em" caption="bind:Widgets.listSpendTransactionsMobile.currentItem.category" name="label10" class="f-sm-2 font-semibold"></wm-label>
+                                    </wm-gridcolumn>
+                                    <wm-gridcolumn columnwidth="3" name="gridcolumn12" class="col-xs-3 column-3">
+                                        <wm-label padding="unset 0.5em" caption="bind:Widgets.listSpendTransactionsMobile.currentItem.amount  | toCurrency: Prefab.basecurrency : '2'" name="label12" class="f-sm-2 font-semibold"></wm-label>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                            </wm-layoutgrid>
+                        </wm-listtemplate>
+                    </wm-list>
+                </wm-gridcolumn>
+            </wm-gridrow>
+        </wm-layoutgrid>
+    </wm-container>
+    <wm-container name="containerNoSpendData" show="bind:Variables.svGetSpendAnalysisForDashboard.dataSet.spendTransactions .length < 1 ? true : false" horizontalalign="center" class="no-data-panel" margin="35% unset unset unset" animation="fadeInUp">
+        <wm-picture resizemode="cover" name="pictureNoSpendData" picturesource="resources/images/imagelists/no-spend-analysis.svg" class="no-data-img img-sm"></wm-picture>
+        <wm-label padding="unset 0.5em" name="labelNoProjects" caption="Spend analysis from all of your cardswill appear here, along with your most recent transaction" class="no-data-description"></wm-label>
+    </wm-container>
+</wm-partial>

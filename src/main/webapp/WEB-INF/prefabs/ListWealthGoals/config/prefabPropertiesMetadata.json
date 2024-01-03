@@ -1,0 +1,9 @@
+{
+  "prefabPropertyList" : [ {
+    "key" : "apikey",
+    "defaultValue" : "vrdO4T5327wBeqOUIIABDQ=="
+  }, {
+    "key" : "entityid",
+    "defaultValue" : "SANDBOX"
+  } ]
+}

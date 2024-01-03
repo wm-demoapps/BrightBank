@@ -1,0 +1,69 @@
+{
+  "enforceSecurity" : true,
+  "loginConfig" : {
+    "type" : "PAGE",
+    "pageName" : "LoginOrSignup",
+    "cookieMaxAge" : -1,
+    "sessionTimeout" : {
+      "type" : "DIALOG",
+      "pageName" : null,
+      "timeoutValue" : 30
+    },
+    "sessionConcurrencyConfig" : {
+      "maxSessionsAllowed" : -1
+    },
+    "cookiePath" : "",
+    "cookieBase64Encode" : true
+  },
+  "rememberMeConfig" : {
+    "enabled" : false,
+    "tokenValiditySeconds" : 1296000
+  },
+  "tokenAuthConfig" : {
+    "enabled" : true,
+    "parameter" : "WM_AUTH_TOKEN",
+    "tokenValiditySeconds" : 1800
+  },
+  "csrfConfig" : {
+    "enforceCsrfSecurity" : true,
+    "headerName" : "X-WM-XSRF-TOKEN",
+    "cookieName" : "wm_xsrf_token"
+  },
+  "sessionPersistenceConfig" : {
+    "enabledType" : "IN_MEMORY",
+    "config" : {
+      "REDIS" : {
+        "hostName" : "",
+        "port" : "",
+        "database" : "0",
+        "password" : "7b6a43524a78700d662158",
+        "type" : "REDIS"
+      },
+      "JDBC" : {
+        "serviceName" : "",
+        "type" : "JDBC"
+      }
+    }
+  },
+  "authProviders" : {
+    "DEMO" : {
+      "enabled" : false,
+      "users" : [ {
+        "userid" : "user",
+        "password" : "user",
+        "roles" : [ "user" ]
+      }, {
+        "userid" : "admin",
+        "password" : "admin",
+        "roles" : [ "admin" ]
+      } ],
+      "type" : "DEMO"
+    },
+    "CUSTOM" : {
+      "enabled" : true,
+      "fqCustomAuthenticationManagerClassName" : "com.custom.security.CustomSecurity",
+      "type" : "CUSTOM"
+    }
+  },
+  "secondaryAuthProviders" : { }
+}

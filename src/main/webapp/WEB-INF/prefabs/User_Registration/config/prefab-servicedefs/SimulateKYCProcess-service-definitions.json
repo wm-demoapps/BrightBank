@@ -1,0 +1,101 @@
+{
+  "SimulateKycprocessController_sendOTPForEndUserEmail" : {
+    "id" : "SimulateKycprocessController_sendOTPForEndUserEmail",
+    "crudOperationId" : null,
+    "service" : "SimulateKYCProcess",
+    "controller" : "SimulateKycprocessController",
+    "operationType" : null,
+    "type" : "boolean",
+    "wmServiceOperationInfo" : {
+      "name" : "sendOTPForEndUserEmail",
+      "methodType" : "get",
+      "relativePath" : "/simulateKYCProcess/sendOTPForEndUserEmail",
+      "directPath" : null,
+      "httpMethod" : "get",
+      "parameters" : [ {
+        "name" : "hostName",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "java.lang.String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "identityType",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "java.lang.String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "email",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "java.lang.String",
+        "readOnly" : false,
+        "contentType" : null
+      } ],
+      "definitions" : { },
+      "produces" : null,
+      "consumes" : null,
+      "proxySettings" : {
+        "web" : true,
+        "mobile" : true,
+        "withCredentials" : false
+      },
+      "securityDefinitions" : [ ]
+    }
+  },
+  "SimulateKycprocessController_verifyOTPForEndUserEmail" : {
+    "id" : "SimulateKycprocessController_verifyOTPForEndUserEmail",
+    "crudOperationId" : null,
+    "service" : "SimulateKYCProcess",
+    "controller" : "SimulateKycprocessController",
+    "operationType" : null,
+    "type" : "boolean",
+    "wmServiceOperationInfo" : {
+      "name" : "verifyOTPForEndUserEmail",
+      "methodType" : "get",
+      "relativePath" : "/simulateKYCProcess/verifyOTPForEndUserEmail",
+      "directPath" : null,
+      "httpMethod" : "get",
+      "parameters" : [ {
+        "name" : "hostName",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "java.lang.String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "identityType",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "java.lang.String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "email",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "java.lang.String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "verificationCode",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "java.lang.String",
+        "readOnly" : false,
+        "contentType" : null
+      } ],
+      "definitions" : { },
+      "produces" : null,
+      "consumes" : null,
+      "proxySettings" : {
+        "web" : true,
+        "mobile" : true,
+        "withCredentials" : false
+      },
+      "securityDefinitions" : [ ]
+    }
+  }
+}

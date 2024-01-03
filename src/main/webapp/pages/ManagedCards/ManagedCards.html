@@ -1,0 +1,52 @@
+<wm-page pagetitle="Managed Cards" name="page1">
+    <wm-header content="header" name="header1"></wm-header>
+    <wm-content name="content1">
+        <wm-left-panel columnwidth="2" content="leftnav" name="left_panel1"></wm-left-panel>
+        <wm-page-content columnwidth="10" name="page_content1" class="spacing-large">
+            <wm-layoutgrid name="layoutgrid1" class="spacing-base">
+                <wm-gridrow name="gridrow1">
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn1" class="col-xs-6">
+                        <wm-label name="label1" class="f-lg font-medium" caption="Cards" animation="fadeInDown"></wm-label>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn2" horizontalalign="right" class="col-xs-6">
+                        <wm-button class="btn-secondary" caption="Apply For Card" type="button" margin="-0.5em unset unset unset" name="buttonApplyCard" iconclass="wi wi-plus" on-click="Widgets.dialogApplyCard.open()" height="44px" show="bind:containsCards" deferload="true"
+                            animation="fadeInDown"></wm-button>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow3_1">
+                    <wm-gridcolumn columnwidth="12" name="gridcolumn5_1">
+                        <wm-prefab prefabname="ManagedCards" name="ManagedCards1" servicehost="APIVendor(W)" authtoken="bind:Variables.loggedInUser.dataSet.userAttributes.authtoken" on-select="Actions.goToPage_ManagedCardTransactions.invoke()" on-cardnumberselect="Actions.goToPage_ManagedCardTransactions.invoke()"
+                            on-showcvv="ManagedCards1Showcvv($event, $data)" uikey="qUhpchEnlRYBeqOUIIAADQ==" cardtype="CardFlipView" on-cardscount="ManagedCards1Cardscount($event, $data)" show="bind:containsCards" animation="fadeInUp"></wm-prefab>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow3">
+                    <wm-gridcolumn columnwidth="2" name="gridcolumn4"></wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="8" name="gridcolumn5">
+                        <wm-container name="containerNoData" show="bind:containsCards == false" horizontalalign="center" class="panel" margin="48px unset unset unset" animation="fadeInUp">
+                            <wm-container name="container2" class="no-data-panel">
+                                <wm-picture resizemode="cover" name="pictureNoData" picturesource="resources/images/imagelists/no-cards-found.svg" class="no-data-img"></wm-picture>
+                                <wm-label name="labelNoCards" caption="No data available for Cards" class="no-data-title"></wm-label>
+                                <wm-label caption="you can only see cards information after you apply for Card" class="no-data-description" name="label3"></wm-label>
+                                <wm-button class="btn-transparent" caption="Apply For Card" type="button" margin="24px unset unset unset" name="button2" iconurl="resources/images/imagelists/circle-plus_3x.png" iconwidth="25" on-click="Widgets.dialogApplyCard.open()"></wm-button>
+                            </wm-container>
+                        </wm-container>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="2" name="gridcolumn6"></wm-gridcolumn>
+                </wm-gridrow>
+            </wm-layoutgrid>
+        </wm-page-content>
+    </wm-content>
+    <wm-footer content="footer" name="footer1"></wm-footer>
+    <wm-dialog dialogtype="design-dialog" modal="true" title="Create Card" name="dialogApplyCard" closable="false" showheader="false" class="wizard-dialog">
+        <wm-container name="container3" class="position-absolute right-1 top-1" margin="60px 40px unset unset" zindex="1" show="false">
+            <wm-button class="btn-transparent" caption="" type="button" name="buttonCloseApplyCard" iconclass="wm-sl-r sl-close f-l" on-click="Widgets.dialogApplyCard.close()"></wm-button>
+        </wm-container>
+        <wm-prefab prefabname="ApplyManagedCard" name="ApplyManagedCard1" servicehost="APIVendor(W)" on-close="Widgets.dialogApplyCard.close();Widgets.ManagedCards1.refreshCards()" authtoken="bind:Variables.loggedInUser.dataSet.userAttributes.authtoken" on-cardadd="ApplyManagedCard1Cardadd($event, $data)"
+            on-fundcard="Widgets.dialogApplyCard.close();Widgets.dialog2.open()" on-cardtypeselect="ApplyManagedCard1Cardtypeselect($event, $data)" googleplacesapikey="AIzaSyBDL0LKxMcBXvgdUrCFhw50GemjXmnmghw" wizardlayout="Vertical Layout" currencytype="GBP"
+            height="100%"></wm-prefab>
+    </wm-dialog>
+    <wm-dialog dialogtype="design-dialog" modal="true" title="Transfer Funds to Card" name="dialog2" closable="false" class="wizard-dialog" showheader="false">
+        <wm-prefab prefabname="Transfer_Funds" name="Transfer_Funds1" servicehost="APIVendor(W)" authtoken="bind:Variables.loggedInUser.dataSet.userAttributes.authtoken" selectedbeneficiaryid="bind:Widgets.ApplyManagedCard1.addedcardid" on-transactionsuccess="Widgets.dialog2.close();Widgets.ManagedCards1.refreshCards()"
+            on-cancel="Widgets.dialog2.close()" wizardlayout="Vertical Layout"></wm-prefab>
+    </wm-dialog>
+</wm-page>

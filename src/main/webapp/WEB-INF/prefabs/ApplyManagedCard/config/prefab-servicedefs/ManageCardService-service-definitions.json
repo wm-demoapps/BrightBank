@@ -1,0 +1,193 @@
+{
+  "ManageCardController_getPinForPhysicalCard" : {
+    "id" : "ManageCardController_getPinForPhysicalCard",
+    "crudOperationId" : null,
+    "service" : "ManageCardService",
+    "controller" : "ManageCardController",
+    "operationType" : null,
+    "type" : "string",
+    "wmServiceOperationInfo" : {
+      "name" : "getPinForPhysicalCard",
+      "methodType" : "get",
+      "relativePath" : "/manageCard/pinForphysicalCard",
+      "directPath" : null,
+      "httpMethod" : "get",
+      "parameters" : [ {
+        "name" : "hostName",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "java.lang.String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "authorization",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "java.lang.String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "managedCardId",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "java.lang.String",
+        "readOnly" : false,
+        "contentType" : null
+      } ],
+      "definitions" : { },
+      "produces" : null,
+      "consumes" : null,
+      "proxySettings" : {
+        "web" : true,
+        "mobile" : true,
+        "withCredentials" : false
+      },
+      "securityDefinitions" : [ ]
+    }
+  },
+  "ManageCardController_createManagedCards" : {
+    "id" : "ManageCardController_createManagedCards",
+    "crudOperationId" : null,
+    "service" : "ManageCardService",
+    "controller" : "ManageCardController",
+    "operationType" : null,
+    "type" : "com.applymanagedcard.managedcardmodel.ManagedCardModel",
+    "wmServiceOperationInfo" : {
+      "name" : "createManagedCards",
+      "methodType" : "post",
+      "relativePath" : "/manageCard/managedCards",
+      "directPath" : null,
+      "httpMethod" : "post",
+      "parameters" : [ {
+        "name" : "hostName",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "java.lang.String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "authorization",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "java.lang.String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "Map",
+        "parameterType" : "body",
+        "required" : true,
+        "type" : "java.util.Map",
+        "readOnly" : false,
+        "contentType" : null
+      } ],
+      "definitions" : { },
+      "produces" : null,
+      "consumes" : null,
+      "proxySettings" : {
+        "web" : true,
+        "mobile" : true,
+        "withCredentials" : false
+      },
+      "securityDefinitions" : [ ]
+    }
+  },
+  "ManageCardController_activatePhysicalCard" : {
+    "id" : "ManageCardController_activatePhysicalCard",
+    "crudOperationId" : null,
+    "service" : "ManageCardService",
+    "controller" : "ManageCardController",
+    "operationType" : null,
+    "type" : "com.applymanagedcard.managedcardmodel.ManagedCardModel",
+    "wmServiceOperationInfo" : {
+      "name" : "activatePhysicalCard",
+      "methodType" : "get",
+      "relativePath" : "/manageCard/activatePhysicalCard",
+      "directPath" : null,
+      "httpMethod" : "get",
+      "parameters" : [ {
+        "name" : "hostName",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "java.lang.String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "authorization",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "java.lang.String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "managedCardId",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "java.lang.String",
+        "readOnly" : false,
+        "contentType" : null
+      } ],
+      "definitions" : { },
+      "produces" : null,
+      "consumes" : null,
+      "proxySettings" : {
+        "web" : true,
+        "mobile" : true,
+        "withCredentials" : false
+      },
+      "securityDefinitions" : [ ]
+    }
+  },
+  "ManageCardController_updateManagedCardsToPhysical" : {
+    "id" : "ManageCardController_updateManagedCardsToPhysical",
+    "crudOperationId" : null,
+    "service" : "ManageCardService",
+    "controller" : "ManageCardController",
+    "operationType" : null,
+    "type" : "com.applymanagedcard.managedcardmodel.ManagedCardModel",
+    "wmServiceOperationInfo" : {
+      "name" : "updateManagedCardsToPhysical",
+      "methodType" : "put",
+      "relativePath" : "/manageCard/managedCardsToPhysical",
+      "directPath" : null,
+      "httpMethod" : "put",
+      "parameters" : [ {
+        "name" : "hostName",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "java.lang.String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "authorization",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "java.lang.String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "managedCardId",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "java.lang.String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "Map",
+        "parameterType" : "body",
+        "required" : true,
+        "type" : "java.util.Map",
+        "readOnly" : false,
+        "contentType" : null
+      } ],
+      "definitions" : { },
+      "produces" : null,
+      "consumes" : null,
+      "proxySettings" : {
+        "web" : true,
+        "mobile" : true,
+        "withCredentials" : false
+      },
+      "securityDefinitions" : [ ]
+    }
+  }
+}

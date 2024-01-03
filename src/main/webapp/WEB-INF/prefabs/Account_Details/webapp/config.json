@@ -1,0 +1,104 @@
+{
+  "displayName" : "Account Details",
+  "group" : "",
+  "iconUrl" : "/resources/images/imagelists/icon-transaction-details.svg",
+  "resources" : {
+    "styles" : [ "/pages/Main/Main.css" ],
+    "scripts" : [ ]
+  },
+  "properties" : {
+    "enduserid" : {
+      "type" : "string",
+      "displayName" : "End User Id",
+      "description" : "End User Id value to fetch beneficiaries of that particular user",
+      "bindable" : "in-bound",
+      "widget" : "string",
+      "show" : true,
+      "showAt" : "",
+      "disabled" : false
+    },
+    "ledgerid" : {
+      "type" : "string",
+      "displayName" : "Ledger or Account Id",
+      "description" : "Ledger Id of end user",
+      "bindable" : "in-bound",
+      "widget" : "string",
+      "show" : true,
+      "showAt" : "",
+      "disabled" : false
+    },
+    "servicehost" : {
+      "type" : "string",
+      "displayName" : "Servicehost",
+      "description" : "service to invoke",
+      "bindable" : "in-bound",
+      "value" : "APIVendor(W)",
+      "widget" : "list",
+      "options" : [ "APIVendor(R)", "APIVendor(W)", "APIVendor(B)" ],
+      "show" : true,
+      "showAt" : "",
+      "disabled" : false
+    },
+    "authtoken" : {
+      "type" : "string",
+      "displayName" : "Authtoken",
+      "description" : "Authorisation token for root user",
+      "bindable" : "in-bound",
+      "widget" : "string",
+      "show" : true,
+      "showAt" : "",
+      "disabled" : false
+    },
+    "selectedledgerdetails" : {
+      "type" : "object",
+      "displayName" : "Selected Ledger Details",
+      "description" : "Selected Ledger Details",
+      "bindable" : "out-bound",
+      "value" : "bind:Variables.JS_getManagedAccountById.dataSet",
+      "widget" : "string",
+      "show" : false,
+      "showAt" : "",
+      "disabled" : true
+    },
+    "showtransferfundsbutton" : {
+      "type" : "boolean",
+      "displayName" : "Show TransferFunds Button",
+      "description" : "This property is used to show the transfer button",
+      "bindable" : "in-bound",
+      "widget" : "checkbox",
+      "show" : true,
+      "showAt" : "",
+      "disabled" : false
+    },
+    "showfundaccountbutton" : {
+      "type" : "boolean",
+      "displayName" : "Show FundAccount button",
+      "description" : "This property is used to show the fund account button",
+      "bindable" : "in-bound",
+      "widget" : "checkbox",
+      "show" : true,
+      "showAt" : "",
+      "disabled" : false
+    }
+  },
+  "events" : {
+    "onTransferfundsclick" : {
+      "description" : "Transfer funds button click",
+      "eventData" : "",
+      "displayName" : "Transferfundsclick"
+    },
+    "onFundaccountclick" : {
+      "description" : "Callback action which will be triggered on click on Fund Ledger button",
+      "eventData" : "",
+      "displayName" : "Fundaccountclick"
+    }
+  },
+  "methods" : {
+    "refreshLedgerInfo" : {
+      "description" : "this method will refresh the ledger info when any amount is funded to the ledger",
+      "parameters" : [ ],
+      "returnType" : "void",
+      "example" : ""
+    }
+  }
+}

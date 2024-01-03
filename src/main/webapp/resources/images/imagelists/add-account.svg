@@ -1,0 +1,57 @@
+<svg width="130" height="130" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <linearGradient x1="49.912%" y1="86.584%" x2="49.912%" y2="-6.03%" id="c">
+            <stop stop-color="#606673" stop-opacity="0" offset=".289%"/>
+            <stop stop-color="#373C47" offset="100%"/>
+        </linearGradient>
+        <linearGradient x1="49.121%" y1="90.409%" x2="49.121%" y2="-1.813%" id="d">
+            <stop stop-color="#606673" stop-opacity="0" offset=".289%"/>
+            <stop stop-color="#373C47" offset="100%"/>
+        </linearGradient>
+        <linearGradient x1="49.121%" y1="90.409%" x2="49.121%" y2="-1.813%" id="e">
+            <stop stop-color="#606673" stop-opacity="0" offset=".289%"/>
+            <stop stop-color="#373C47" offset="100%"/>
+        </linearGradient>
+        <path d="M130 64.944c0 16.79-6.32 31.996-16.752 43.4v.318c-14.856 17.424-42.67 27.562-72.065 17.107-11.063-4.435-22.125-13.305-23.073-15.523C-21.083 69.38 7.363 0 64.89 0 100.92 0 130 29.146 130 64.944z" id="a"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <mask id="b" fill="#fff">
+            <use xlink:href="#a"/>
+        </mask>
+        <use fill="#B6B6C7" fill-rule="nonzero" xlink:href="#a"/>
+        <g mask="url(#b)" fill-rule="nonzero">
+            <path fill="#CAD1E0" d="M111.515 65.552H17.823v58.202h93.692z"/>
+            <path fill="url(#c)" opacity=".7" d="M107.615 42.14H13.923v58.201h93.692z" transform="translate(3.9 23.413)"/>
+            <path fill="#D4DAE8" d="M118.105 62.11H10.947v6.026h107.158z"/>
+            <path fill="#EAEEF9" d="m5.215 62.968 59.597-39.555 59.596 39.555z"/>
+            <path fill="#BCC5D6" d="M106.93 56.669H22.694l42.118-27.815z"/>
+            <path fill="#D4DAE8" d="M104.065 56.669H25.558l39.254-26.088z"/>
+            <path fill="#EAEEF9" d="M31.862 68.136H12.665v4.584h19.197z"/>
+            <path fill="#D4DAE8" d="M29.856 73.006H14.67v3.727h15.186z"/>
+            <path fill="#EAEEF9" d="M31.862 117.729H12.665v4.584h19.197z"/>
+            <path fill="#D4DAE8" d="M29.856 114.002H14.67v3.727h15.186z"/>
+            <path fill="#D4DAE8" d="M28.137 76.447h-11.46v37.555h11.46z"/>
+            <path fill="#EAEEF9" d="M53.924 68.136H34.727v4.584h19.197z"/>
+            <path fill="#D4DAE8" d="M51.919 73.006H36.733v3.727H51.92z"/>
+            <path fill="#EAEEF9" d="M53.924 117.729H34.727v4.584h19.197z"/>
+            <path fill="#D4DAE8" d="M51.919 114.002H36.733v3.727H51.92z"/>
+            <path fill="#D4DAE8" d="M50.199 76.447h-11.46v37.555h11.46z"/>
+            <path fill="#EAEEF9" d="M95.183 68.136H75.987v4.584h19.196z"/>
+            <path fill="#D4DAE8" d="M93.177 73.006H77.992v3.727h15.185z"/>
+            <path fill="#EAEEF9" d="M95.183 117.729H75.987v4.584h19.196z"/>
+            <path fill="#D4DAE8" d="M93.177 114.002H77.992v3.727h15.185z"/>
+            <path fill="#D4DAE8" d="M91.172 76.447h-11.46v37.555h11.46z"/>
+            <path fill="#EAEEF9" d="M117.245 68.136H98.048v4.584h19.197z"/>
+            <path fill="#D4DAE8" d="M115.239 73.006h-15.185v3.727h15.185z"/>
+            <path fill="#EAEEF9" d="M117.245 117.729H98.048v4.584h19.197z"/>
+            <path fill="#D4DAE8" d="M115.239 114.002h-15.185v3.727h15.185z"/>
+            <path fill="#D4DAE8" d="M113.52 76.447h-11.46v37.555h11.46z"/>
+            <path fill="#1C3754" opacity=".4" d="M74.267 87.628H55.93v34.685h18.337z"/>
+            <path fill="url(#d)" opacity=".7" d="M70.367 64.215H52.03v34.686h18.337z" transform="translate(3.9 23.413)"/>
+            <path d="M72.834 45.202V46.06c-.286 3.727-3.724 6.596-7.449 6.596-4.011 0-7.163-2.87-7.45-6.596V45.202c0-4.012 3.439-7.453 7.45-7.453s7.45 3.44 7.45 7.453z" fill="#9CA1B4"/>
+            <path d="M68.934 22.362c-.286 4.012-3.724 6.882-7.449 6.882-4.011 0-7.163-2.87-7.45-6.597v-.285c.287-3.727 3.725-6.597 7.45-6.597s6.877 2.87 7.45 6.597z" fill="url(#e)" opacity=".7" transform="translate(3.9 23.413)"/>
+            <path fill="#D4DAE8" d="M120.97 122.313H8.368v4.299H120.97z"/>
+            <path fill="#EAEEF9" d="M124.98 126.612H4.07v4.298h120.91z"/>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,48 @@
+{
+  "CreateUserIdentityController_createNewUserIdentity" : {
+    "id" : "CreateUserIdentityController_createNewUserIdentity",
+    "crudOperationId" : null,
+    "service" : "CreateUserIdentity",
+    "controller" : "CreateUserIdentityController",
+    "operationType" : null,
+    "type" : "com.user_registration.userregistrationmodel.UserRegistrationModel",
+    "wmServiceOperationInfo" : {
+      "name" : "createNewUserIdentity",
+      "methodType" : "post",
+      "relativePath" : "/createUserIdentity/newUserIdentity",
+      "directPath" : null,
+      "httpMethod" : "post",
+      "parameters" : [ {
+        "name" : "hostName",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "java.lang.String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "identityType",
+        "parameterType" : "query",
+        "required" : false,
+        "type" : "java.lang.String",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "Map",
+        "parameterType" : "body",
+        "required" : true,
+        "type" : "java.util.Map",
+        "readOnly" : false,
+        "contentType" : null
+      } ],
+      "definitions" : { },
+      "produces" : null,
+      "consumes" : null,
+      "proxySettings" : {
+        "web" : true,
+        "mobile" : true,
+        "withCredentials" : false
+      },
+      "securityDefinitions" : [ ]
+    }
+  }
+}

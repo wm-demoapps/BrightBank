@@ -1,0 +1,284 @@
+{
+  "jsGetManagedAccounts" : {
+    "_id" : "wm-jsGetManagedAccounts-wm.ServiceVariable-1677749348446",
+    "name" : "jsGetManagedAccounts",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "authorization",
+      "value" : "bind:authtoken",
+      "type" : "string"
+    } ],
+    "type" : "com.wavemaker.createwealthgoal.managedaccountmodel.ManagedAccountModel",
+    "service" : "ManagedAccounts",
+    "operation" : "getManagedAccount",
+    "operationId" : "ManagedAccountsController_getManagedAccount",
+    "operationType" : "get",
+    "serviceType" : "JavaService",
+    "dataSet" : [ ],
+    "isList" : true,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "ManagedAccounts"
+  },
+  "stvCreateNewGoal" : {
+    "_id" : "wm-stvNewGoalDetails-wm.Variable-1677692866081",
+    "name" : "stvCreateNewGoal",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "id" : "",
+      "name" : "",
+      "goalCategoryId" : "",
+      "timeToGoal" : "",
+      "savingFrequencyId" : "",
+      "recurringDay" : "",
+      "recurringDebitAmount" : "",
+      "isAutoDebitEnabled" : "",
+      "createdOn" : "",
+      "userId" : "",
+      "recuringDebitAccountId" : "",
+      "amount" : "",
+      "isActive" : true
+    },
+    "type" : "entry",
+    "isList" : false,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "stvCustomGoal" : {
+    "_id" : "wm-stvCustomGoal-wm.Variable-1677752193431",
+    "name" : "stvCustomGoal",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "id" : "",
+      "name" : "",
+      "displayName" : "",
+      "icon" : "",
+      "isActive" : ""
+    },
+    "type" : "entry",
+    "isList" : false,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "stvDayOfMonth" : {
+    "_id" : "wm-stvDayOfMonth-wm.Variable-1677922460752",
+    "name" : "stvDayOfMonth",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "name" : "01",
+      "dataValue" : "1st of the month"
+    }, {
+      "name" : "02",
+      "dataValue" : "2nd of the month"
+    }, {
+      "name" : "03",
+      "dataValue" : "3rd of the month"
+    }, {
+      "name" : "04",
+      "dataValue" : "4th of the month"
+    }, {
+      "name" : "05",
+      "dataValue" : "5th of the month"
+    }, {
+      "name" : "06",
+      "dataValue" : "6th of the month"
+    }, {
+      "name" : "07",
+      "dataValue" : "7th of the month"
+    }, {
+      "name" : "08",
+      "dataValue" : "8th of the month"
+    }, {
+      "name" : "09",
+      "dataValue" : "9th of the month"
+    }, {
+      "name" : "10",
+      "dataValue" : "10th of the month"
+    }, {
+      "name" : "11",
+      "dataValue" : "11th of the month"
+    }, {
+      "name" : "12",
+      "dataValue" : "12th of the month"
+    }, {
+      "name" : "13",
+      "dataValue" : "13th of the month"
+    }, {
+      "name" : "14",
+      "dataValue" : "14th of the month"
+    }, {
+      "name" : "15",
+      "dataValue" : "15th of the month"
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "stvDays" : {
+    "_id" : "wm-stvDays-wm.Variable-1677919559580",
+    "name" : "stvDays",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "key" : 0,
+      "name" : "Sunday",
+      "dataValue" : "Sunday"
+    }, {
+      "key" : 1,
+      "name" : "Monday",
+      "dataValue" : "Monday"
+    }, {
+      "key" : 2,
+      "name" : "Tuesday",
+      "dataValue" : "Tuesday"
+    }, {
+      "key" : 3,
+      "name" : "Wednessday",
+      "dataValue" : "Wednessday"
+    }, {
+      "key" : 4,
+      "name" : "Thursday",
+      "dataValue" : "Thursday"
+    }, {
+      "key" : 5,
+      "name" : "Friday",
+      "dataValue" : "Friday"
+    }, {
+      "key" : 6,
+      "name" : "Saturday",
+      "dataValue" : "Saturday"
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "supportedLocale" : {
+    "_id" : "wm-wm.Variable1402640443182",
+    "name" : "supportedLocale",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataSet" : {
+      "en" : "English"
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  },
+  "svGetGoalFormFields" : {
+    "_id" : "wm-svGetGoalFormFields-wm.ServiceVariable-1678707916138",
+    "name" : "svGetGoalFormFields",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "sort",
+      "value" : "id desc",
+      "type" : "string"
+    } ],
+    "type" : "com.wavemaker.createwealthgoal.BrightBankAPI.GoalFormFields",
+    "service" : "BrightBankAPI",
+    "operation" : "BrightBankAPI_GoalFormFieldsController_findGoalFormFields",
+    "operationId" : "BrightBankAPI_GoalFormFieldsController_findGoalFormFields",
+    "operationType" : "list",
+    "serviceType" : "OpenAPIService",
+    "dataSet" : [ ],
+    "isList" : true,
+    "maxResults" : 20,
+    "startUpdate" : true,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "GoalFormFields"
+  },
+  "svGetSavingFrequencies" : {
+    "_id" : "wm-svGetSavingFrequencies-wm.ServiceVariable-1677676162024",
+    "name" : "svGetSavingFrequencies",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "q",
+      "value" : "isActive=true",
+      "type" : "string"
+    } ],
+    "type" : "com.wavemaker.createwealthgoal.BrightBankAPI.SavingFrequency",
+    "service" : "BrightBankAPI",
+    "operation" : "BrightBankAPI_SavingFrequencyController_findSavingFrequencies",
+    "operationId" : "BrightBankAPI_SavingFrequencyController_findSavingFrequencies",
+    "operationType" : "list",
+    "serviceType" : "OpenAPIService",
+    "dataSet" : [ ],
+    "isList" : true,
+    "maxResults" : 20,
+    "startUpdate" : true,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "SavingFrequency"
+  },
+  "svGetWealthGoalCategories" : {
+    "_id" : "wm-serviceVariable1-wm.ServiceVariable-1677669249497",
+    "name" : "svGetWealthGoalCategories",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "type" : "com.wavemaker.createwealthgoal.BrightBankAPI.WealthGoalCategory",
+    "service" : "BrightBankAPI",
+    "operation" : "BrightBankAPI_WealthGoalCategoryController_findWealthGoalCategories",
+    "operationId" : "BrightBankAPI_WealthGoalCategoryController_findWealthGoalCategories",
+    "operationType" : "list",
+    "serviceType" : "OpenAPIService",
+    "dataSet" : [ ],
+    "isList" : true,
+    "maxResults" : 20,
+    "onBeforeDatasetReady" : "svGetWealthGoalCategoriesonBeforeDatasetReady(variable, data, options)",
+    "startUpdate" : true,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "WealthGoalCategory"
+  },
+  "wsCreateWealthGoal" : {
+    "_id" : "wm-wsCreateWealthGoal1-wm.ServiceVariable-1678212686553",
+    "name" : "wsCreateWealthGoal",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "isList" : false,
+      "target" : "RequestBody",
+      "value" : "{\n\"name\": \"\",\n\"goalCategoryId\": \"\",\n\"timeToGoal\": \"\",\n\"savingFrequencyId\": \"\",\n\"recurringDay\": \"\",\n\"recurringDebitAmount\": \"\",\n\"isAutoDebitEnabled\": \"\",\n\"createdOn\": \"\",\n\"userId\": \"\",\n\"recuringDebitAccountId\": \"\",\n\"amount\": \"\",\n\"isActive\": \"\"\n}",
+      "type" : "svCreateNewGoal.RootRequest"
+    } ],
+    "type" : "svCreateNewGoal.RootResponse",
+    "service" : "svCreateNewGoal",
+    "operation" : "invoke",
+    "operationId" : "svCreateNewGoal_RestServiceVirtualController-invoke",
+    "operationType" : "post",
+    "serviceType" : "RestService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "onSuccess" : "Widgets.dialogVerificationSuccess.close();Widgets.dialogSuccessGoal.open()",
+    "startUpdate" : false,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "RestServiceVirtual"
+  }
+}

@@ -1,0 +1,56 @@
+<wm-partial name="header" type="header">
+    <wm-layoutgrid name="headerlayout">
+        <wm-gridrow name="gridrow1">
+            <wm-gridcolumn columnwidth="1" name="headerleft" class="headerleft" horizontalalign="center">
+                <wm-picture name="picture3" picturesource="bind:'resources/images/imagelists/'+Variables.wsGetActiveTheme.dataSet.content[$i].themeId+'/logo-bright-short-color.svg'" pictureplaceholder="resources/images/logos/logo-bright-short-color.svg" resizemode="contain"
+                    animation="fadeInLeft"></wm-picture>
+            </wm-gridcolumn>
+            <wm-gridcolumn columnwidth="7" name="gridcolumn1">
+                <wm-container name="container2" display="inline-block" class="pull-left" animation="fadeInDown">
+                    <wm-label name="label1" caption="bind:getGreetingTime() + '!'" margin="unset unset 0px unset" fontunit="px" class="f-m font-semibold"></wm-label>
+                    <wm-label padding="unset 0.5em unset 0.25em" caption="bind:Variables.consumerGet.dataSet.rootUser.name" class="text-muted f-m" margin="unset unset 0px unset" fontunit="px" name="label31"></wm-label>
+                </wm-container>
+                <wm-container name="container1" display="inline-block" bordercolor="var(--border-color)" borderstyle="solid" borderwidth="0px 0px 0px 1px" margin="0.25em unset unset 0.5em" padding="unset unset unset 1.25em" showindevice="sm,md,lg" class="pull-left"
+                    animation="fadeInDown">
+                    <wm-label name="label6" caption="bind:&quot;Last Login: &quot;" class="f-xxs-2 text-muted" showindevice="all"></wm-label>
+                    <wm-label padding="unset unset unset 0.35em" caption="bind:(Variables.getLoginTime.dataSet.result | toDate: 'dd/MM/yyyy, hh:mm:ss a')" class="f-xxs-2 font-medium text-muted" showindevice="all" name="label6_1"></wm-label>
+                </wm-container>
+            </wm-gridcolumn>
+            <wm-gridcolumn columnwidth="4" name="gridcolumn2" horizontalalign="right">
+                <wm-container name="container3" display="inline-block" animation="fadeInRight">
+                    <wm-container name="container4" display="inline-block" showindevice="sm,md,lg" class="pull-left" margin="unset 1em unset unset">
+                        <wm-label name="label1" caption="bind:Variables.consumerGet.dataSet.rootUser.name +' '+Variables.consumerGet.dataSet.rootUser.surname" showindevice="sm,md,lg" class="f-sm-2 font-medium text-ellipsis" margin="unset unset 0px unset"></wm-label>
+                        <wm-label name="label2" caption="bind:Variables.loggedInUser.dataSet.roles.join(', ')" margin="unset unset 0px unset" fontunit="em" class="f-xxs-2 text-muted"></wm-label>
+                    </wm-container>
+                    <wm-popover popoverwidth="180" popoverheight="auto" margin="unset 30px unset unset" name="popover1" iconurl="resources/images/imagelists/group.svg" iconwidth="40" iconheight="40" caption="" content="popover_userprofile" popoverarrow="false"
+                        autoclose="always"></wm-popover>
+                    <wm-picture resizemode="cover" name="picture3_1" width="40" height="40" shape="circle" picturesource="resources/images/imagelists/group.svg" showindevice="sm,md,lg" show="false"></wm-picture>
+                </wm-container>
+                <wm-anchor caption="" on-click="Widgets.dialogConfirm.open()" iconclass="" name="anchorLogout" iconurl="resources/images/logos/icon-logout_3x.png" iconwidth="22px" iconheight="20px" margin="unset 24px" showindevice="all" show="false"></wm-anchor>
+            </wm-gridcolumn>
+        </wm-gridrow>
+    </wm-layoutgrid>
+    <!--<wm-dialog dialogtype="design-dialog" modal="false" title="" iconclass="wi wi-file-text" name="dialogConfirm" showheader="false" closable="false" width="400px" height="300px">-->
+    <!--    <wm-layoutgrid name="layoutgrid1">-->
+    <!--        <wm-gridrow name="gridrow3" padding="48px unset unset unset">-->
+    <!--            <wm-gridcolumn columnwidth="12" name="gridcolumn16" horizontalalign="center" class="col-xs-12">-->
+    <!--                <wm-picture name="picture1" picturesource="resources/images/logos/icon-logout_3x.png" margin="4em unset unset unset" width="35px" height="30px" show="false"></wm-picture>-->
+    <!--                <wm-icon name="icon1" iconclass="wi wi-power-off f-xl text-highlight"></wm-icon>-->
+    <!--            </wm-gridcolumn>-->
+    <!--        </wm-gridrow>-->
+    <!--        <wm-gridrow name="gridrow4">-->
+    <!--            <wm-gridcolumn columnwidth="1" name="gridcolumn10"></wm-gridcolumn>-->
+    <!--            <wm-gridcolumn columnwidth="10" name="gridcolumn17" horizontalalign="center" class="col-xs-12">-->
+    <!--                <wm-label padding="unset 0.5em" name="label5" caption="Are you sure you want to Logout?" fontsize="18" margin="2em unset unset unset"></wm-label>-->
+    <!--            </wm-gridcolumn>-->
+    <!--            <wm-gridcolumn columnwidth="1" name="gridcolumn11"></wm-gridcolumn>-->
+    <!--        </wm-gridrow>-->
+    <!--        <wm-gridrow name="gridrow5" padding="24px unset unset unset">-->
+    <!--            <wm-gridcolumn columnwidth="12" name="gridcolumn18" horizontalalign="center" class="col-xs-6">-->
+    <!--                <wm-button class="btn-default" caption="CANCEL" type="button" margin="unset 20px unset unset" name="buttonCancel" on-click="Widgets.dialogConfirm.close()" width="120px" height="44px"></wm-button>-->
+    <!--                <wm-button class="btn-secondary" caption="LOGOUT" type="button" name="buttonConfirm" on-click="Actions.logoutAction.invoke()" width="120px" height="44px"></wm-button>-->
+    <!--            </wm-gridcolumn>-->
+    <!--        </wm-gridrow>-->
+    <!--    </wm-layoutgrid>-->
+    <!--</wm-dialog>-->
+</wm-partial>

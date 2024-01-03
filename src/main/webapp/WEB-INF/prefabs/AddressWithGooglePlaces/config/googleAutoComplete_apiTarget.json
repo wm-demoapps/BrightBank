@@ -1,0 +1,196 @@
+{
+  "basePath" : "${rest.googleAutoComplete.basepath}",
+  "paths" : {
+    "/api/place/autocomplete/json" : {
+      "x-WM-BASE_PATH" : "/api/place/autocomplete/json",
+      "x-WM-TAG" : "googleAutoComplete",
+      "x-WM-RELATIVE_PATH" : "",
+      "get" : {
+        "x-WM-METHOD_NAME" : "invoke",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "produces" : [ "application/json" ],
+        "operationId" : "googleAutoComplete_invoke",
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "$ref" : "#/definitions/RootResponse"
+            },
+            "description" : "Success"
+          }
+        },
+        "parameters" : [ {
+          "x-WM-VARIABLE_KEY" : "",
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "input",
+          "format" : "string",
+          "description" : "input",
+          "type" : "string",
+          "required" : false,
+          "x-WM-VARIABLE_TYPE" : "PROMPT"
+        }, {
+          "x-WM-VARIABLE_KEY" : "",
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "types",
+          "format" : "string",
+          "description" : "types",
+          "type" : "string",
+          "required" : false,
+          "x-WM-VARIABLE_TYPE" : "PROMPT"
+        }, {
+          "x-WM-VARIABLE_KEY" : "",
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "key",
+          "format" : "string",
+          "description" : "key",
+          "type" : "string",
+          "required" : false,
+          "x-WM-VARIABLE_TYPE" : "PROMPT"
+        } ],
+        "tags" : [ "googleAutoComplete" ],
+        "consumes" : [ "application/json" ]
+      },
+      "x-WM-COMPLETE_PATH" : "${rest.googleAutoComplete.scheme}://${rest.googleAutoComplete.host}${rest.googleAutoComplete.basepath}/api/place/autocomplete/json"
+    }
+  },
+  "host" : "${rest.googleAutoComplete.host}",
+  "schemes" : [ "${rest.googleAutoComplete.scheme}" ],
+  "definitions" : {
+    "Response.structured_formatting" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "googleAutoComplete.Response.structured_formatting",
+      "x-WM-TAGS" : [ "googleAutoComplete" ],
+      "required" : [ "main_text", "main_text_matched_substrings", "secondary_text" ],
+      "properties" : {
+        "main_text_matched_substrings" : {
+          "x-WM-IS_LIST" : true,
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Response.main_text_matched_substringsEntryItem"
+          }
+        },
+        "secondary_text" : {
+          "type" : "string"
+        },
+        "main_text" : {
+          "type" : "string"
+        }
+      }
+    },
+    "Response.predictionsEntryItem" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "googleAutoComplete.Response.predictionsEntryItem",
+      "x-WM-TAGS" : [ "googleAutoComplete" ],
+      "required" : [ "description", "matched_substrings", "place_id", "reference", "structured_formatting", "terms", "types" ],
+      "properties" : {
+        "reference" : {
+          "type" : "string"
+        },
+        "types" : {
+          "x-WM-IS_LIST" : true,
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        },
+        "matched_substrings" : {
+          "x-WM-IS_LIST" : true,
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Response.matched_substringsEntryItem"
+          }
+        },
+        "terms" : {
+          "x-WM-IS_LIST" : true,
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Response.termsEntryItem"
+          }
+        },
+        "structured_formatting" : {
+          "$ref" : "#/definitions/Response.structured_formatting"
+        },
+        "description" : {
+          "type" : "string"
+        },
+        "place_id" : {
+          "type" : "string"
+        }
+      }
+    },
+    "Response.matched_substringsEntryItem" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "googleAutoComplete.Response.matched_substringsEntryItem",
+      "x-WM-TAGS" : [ "googleAutoComplete" ],
+      "required" : [ "length", "offset" ],
+      "properties" : {
+        "offset" : {
+          "format" : "int32",
+          "type" : "integer"
+        },
+        "length" : {
+          "format" : "int32",
+          "type" : "integer"
+        }
+      }
+    },
+    "Response.termsEntryItem" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "googleAutoComplete.Response.termsEntryItem",
+      "x-WM-TAGS" : [ "googleAutoComplete" ],
+      "required" : [ "offset", "value" ],
+      "properties" : {
+        "offset" : {
+          "format" : "int32",
+          "type" : "integer"
+        },
+        "value" : {
+          "type" : "string"
+        }
+      }
+    },
+    "RootResponse" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "googleAutoComplete.RootResponse",
+      "x-WM-TAGS" : [ "googleAutoComplete" ],
+      "required" : [ "predictions", "status" ],
+      "properties" : {
+        "predictions" : {
+          "x-WM-IS_LIST" : true,
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Response.predictionsEntryItem"
+          }
+        },
+        "status" : {
+          "type" : "string"
+        }
+      }
+    },
+    "Response.main_text_matched_substringsEntryItem" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "googleAutoComplete.Response.main_text_matched_substringsEntryItem",
+      "x-WM-TAGS" : [ "googleAutoComplete" ],
+      "required" : [ "length", "offset" ],
+      "properties" : {
+        "offset" : {
+          "format" : "int32",
+          "type" : "integer"
+        },
+        "length" : {
+          "format" : "int32",
+          "type" : "integer"
+        }
+      }
+    }
+  },
+  "swagger" : "2.0",
+  "info" : {
+    "x-WM-USE_PROXY_FOR_WEB" : true,
+    "x-WM-USE_PROXY_FOR_MOBILE" : true,
+    "x-WM-API_ID" : "1b8207c6-b83c-45c4-85d2-869b7457b68d",
+    "x-WM-SERVICE_ID" : "googleapis",
+    "version" : "2.0",
+    "x-WM-SERVICE_TYPE" : "RestService",
+    "x-WM-USE_WITH_CREDENTIALS" : false
+  },
+  "tags" : [ {
+    "name" : "googleAutoComplete"
+  } ]
+}

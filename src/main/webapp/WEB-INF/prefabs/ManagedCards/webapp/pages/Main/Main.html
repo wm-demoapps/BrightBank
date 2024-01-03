@@ -1,0 +1,10 @@
+<wm-prefab-container name="prefab_container1">
+    <!--<wm-composite name="composite1">-->
+    <!--    <wm-label class="col-md-3 control-label" name="label1"></wm-label>-->
+    <!--    <wm-container class="col-md-9" name="container1">-->
+    <!--        <wm-textarea name="textarea1" on-change="textarea1Change($event, widget, newVal, oldVal)"></wm-textarea>-->
+    <!--    </wm-container>-->
+    <!--</wm-composite>-->
+    <!--<wm-html name="html1"><span id="cardNumber"></span></wm-html>-->
+    <wm-container name="container1" content="bind:cardtype==&quot;SimpleCard&quot;?&quot;SimpleCard&quot;:(cardtype==&quot;CardFlipView&quot;?&quot;SimpleCardFlip&quot;:&quot;CardWithMoreOptions&quot;)"></wm-container>
+</wm-prefab-container>

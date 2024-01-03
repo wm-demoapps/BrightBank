@@ -1,0 +1,108 @@
+<wm-prefab-container name="prefab_container1" show="true" height="100%">
+    <wm-container name="container4_1" class="fullbleed-notification-popup" backgroundimage="resources/images/imagelists/bg-bottom-pattern.svg" backgroundrepeat="no-repeat" backgroundposition="bottom center" height="100%">
+        <wm-layoutgrid name="layoutgrid4">
+            <wm-gridrow name="gridrow11" class="p-xl">
+                <wm-gridcolumn columnwidth="6" name="gridcolumn17">
+                    <wm-label name="label3" class="f-lg font-semibold" caption="Create Card"></wm-label>
+                </wm-gridcolumn>
+                <wm-gridcolumn columnwidth="6" name="gridcolumn18" horizontalalign="right"></wm-gridcolumn>
+            </wm-gridrow>
+            <wm-gridrow name="gridrow12">
+                <wm-gridcolumn columnwidth="3" name="gridcolumn20_1"></wm-gridcolumn>
+                <wm-gridcolumn columnwidth="6" name="gridcolumn20">
+                    <wm-container name="container4" show="true">
+                        <wm-list listclass="list-group" itemsperrow="xs-2 sm-2 md-2 lg-2" template="true" template-name="Contact Card" class="list-card active-card" statehandler="none" name="CardsTypeDataList1" dataset="bind:Variables.CardsTypeData.dataSet" navigation="None"
+                            on-click="CardsTypeDataList1Click($event, widget)" on-mouseenter="CardsTypeDataList1Mouseenter($event, widget)" on-mouseleave="CardsTypeDataList1Mouseleave($event, widget)" itemclass="pointer">
+                            <wm-listtemplate layout="media" name="listtemplate1">
+                                <wm-card name="ContactCard">
+                                    <wm-card-content horizontalalign="center" name="card_content1">
+                                        <wm-layoutgrid name="layoutgrid7_1">
+                                            <wm-gridrow name="gridrow22_3">
+                                                <wm-gridcolumn columnwidth="12" horizontalalign="center" name="gridcolumn35">
+                                                    <wm-picture name="Picture" picturesource="bind:Variables.CardsTypeData.dataSet[$i].initialPicture" cursor="pointer" height="143" resizemode="contain"></wm-picture>
+                                                    <wm-label name="Name" class="f-sm p" margin="unset unset 0em unset" caption="bind:Variables.CardsTypeData.dataSet[$i].name" whitespace="nowrap"></wm-label>
+                                                </wm-gridcolumn>
+                                            </wm-gridrow>
+                                        </wm-layoutgrid>
+                                    </wm-card-content>
+                                </wm-card>
+                            </wm-listtemplate>
+                        </wm-list>
+                    </wm-container>
+                </wm-gridcolumn>
+                <wm-gridcolumn columnwidth="3" name="gridcolumn21"></wm-gridcolumn>
+            </wm-gridrow>
+        </wm-layoutgrid>
+    </wm-container>
+    <wm-container name="container3" show="false" content="bind:wizardlayout==&quot;Horizontal Layout&quot;?&quot;HorizontalLayout&quot;:&quot;VerticalLayout&quot;" height="100%">
+        <wm-param name="selectedCardType" value="bind:Widgets.CardsTypeDataList1.selecteditem.name" type="string"></wm-param>
+    </wm-container>
+    <wm-container name="container5_1" class="fullbleed-notification-popup" show="false">
+        <wm-container name="container5" show="true">
+            <wm-layoutgrid name="layoutgrid8">
+                <wm-gridrow name="gridrow22_1">
+                    <wm-gridcolumn columnwidth="12" name="gridcolumn43" horizontalalign="center" padding="2em unset unset unset">
+                        <wm-picture name="picture3" picturesource="resources/images/imagelists/img-applied-created-successfully.png"></wm-picture>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow23">
+                    <wm-gridcolumn columnwidth="1" name="gridcolumn34_1"></wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="10" name="gridcolumn44" horizontalalign="center" padding="2em unset unset unset">
+                        <wm-label padding="unset 0.5em" name="label15" class="p" caption="You have successfully applied for the card" fontweight="bold" fontsize="24" color="#00af64"></wm-label>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="1" name="gridcolumn33_1"></wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow26_1">
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn51"></wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn52" horizontalalign="center" padding="2em unset unset unset">
+                        <wm-button class="btn-secondary" caption="Add Money" type="button" margin="unset 0.5em" name="button3" show="bind:servicehost == 'APIVendor(W)'" width="150px" height="44px" on-click="button3Click($event, widget)"></wm-button>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn53"></wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow27">
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn36"></wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn55" horizontalalign="center" padding="unset unset 35px unset">
+                        <wm-button caption="Done" type="button" margin="1.7em 0.5em unset 0.5em" name="button4" on-click="button4Click($event, widget)" width="150px" height="44px" conditionalclass="bind:servicehost == 'APIVendor(W)' ? 'btn-default' : 'btn-secondary'"></wm-button>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn35_2"></wm-gridcolumn>
+                </wm-gridrow>
+            </wm-layoutgrid>
+        </wm-container>
+    </wm-container>
+    <wm-form errormessage="" captionposition="top" title="" enctype="application/x-www-form-urlencoded" method="post" dataset="bind:Variables.CreateVirtualCardRailsBank.dataSet" captionalign="left" name="CreateCardRailsBankForm1" show="false" on-submit="CreateCardRailsBankForm1Submit($event, widget, $formData)"
+        iconclass="wm-sl-l sl-credit-card">
+        <wm-layoutgrid columns="1" name="layoutgrid7">
+            <wm-gridrow name="gridrow1">
+                <wm-gridcolumn name="gridcolumn1" columnwidth="12" class="col-xs-12">
+                    <wm-form-field name="type" key="type" type="string" displayname="Card Type" widget="switch" show="true" dataset="DEBIT CARD,CREDIT CARD" defaultvalue="DEBIT CARD" required="true" placeholder=""></wm-form-field>
+                </wm-gridcolumn>
+            </wm-gridrow>
+            <wm-gridrow name="gridrow20">
+                <wm-gridcolumn columnwidth="12" name="gridcolumn39_3" class="col-xs-12">
+                    <wm-form-field name="ledgerId" readonly="false" displayname="Select Ledger" key="ledgerId" type="string" show="true" widget="select" placeholder="Select value" dataset="bind:Variables.getLedgersOfEndUser.dataSet" datafield="All Fields" displayexpression="bind:$[ledger_meta.ledgerName]"
+                        required="true" validationmessage="Select Ledger" on-change="ledgerIdChange($event, widget, newVal, oldVal)"></wm-form-field>
+                </wm-gridcolumn>
+            </wm-gridrow>
+            <wm-gridrow name="gridrow21">
+                <wm-gridcolumn columnwidth="12" name="gridcolumn40_2" class="col-xs-12">
+                    <wm-form-field name="nameOnCard" readonly="false" displayname="Name On Card" key="nameOnCard" type="string" show="true" widget="text" inputtype="text" placeholder="Enter value" required="true" validationmessage="Please enter name to print on card" defaultvalue="bind:defaultcardholdername"></wm-form-field>
+                </wm-gridcolumn>
+            </wm-gridrow>
+            <wm-gridrow name="gridrow22_2">
+                <wm-gridcolumn columnwidth="12" name="gridcolumn41_2" class="col-xs-12">
+                    <wm-form-field name="spentLimit" readonly="false" displayname="Spend Limit" key="spentLimit" type="string" show="true" widget="currency" textalign="right" placeholder="Enter value"></wm-form-field>
+                </wm-gridcolumn>
+            </wm-gridrow>
+            <wm-gridrow name="gridrow1">
+                <wm-gridcolumn name="gridcolumn1" columnwidth="12">
+                    <wm-form-field name="enduserId" key="enduserId" type="string" displayname="Enduser Id" widget="text" show="false" defaultvalue="bind:enduserid"></wm-form-field>
+                </wm-gridcolumn>
+            </wm-gridrow>
+        </wm-layoutgrid>
+        <wm-form-field name="expiryDate" readonly="false" displayname="Expiry Date" key="expiryDate" type="string" show="false" widget="date" datepattern="MMM d, yyyy" placeholder="Select date" defaultvalue="bind:getExpiryDate()"></wm-form-field>
+        <wm-form-field name="cardType" displayname="Card Type" key="cardType" type="string" show="false" widget="text" defaultvalue="bind:Variables.selectedCardType.dataSet.dataValue" inputtype="text" placeholder="Enter value"></wm-form-field>
+        <wm-form-action key="custom" display-name="Cancel" show="true" class="btn-default" title="Cancel" action="CreateCardRailsBankForm1_customAction($event)" shortcutkey="" disabled="false" widget-type="button" type="button" update-mode="true"></wm-form-action>
+        <wm-form-action key="save" display-name="Apply" show="true" class="form-save btn-secondary" title="Apply" action="CreateCardRailsBankForm1_saveAction($event)" disabled="false" widget-type="button" type="button" update-mode="true"></wm-form-action>
+    </wm-form>
+    <wm-spinner show="false" name="spinner1" caption="Please wait..." iconclass="fa fa-spinner fa-spin fa-pull-left fa-spin" class="spinnerStyles"></wm-spinner>
+</wm-prefab-container>

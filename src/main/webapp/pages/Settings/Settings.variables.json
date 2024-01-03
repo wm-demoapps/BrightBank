@@ -1,0 +1,236 @@
+{
+  "nfGoalFormFieldSccessDelete" : {
+    "_id" : "wm-nfGoalFormFieldSccessDelete-wm.NotificationVariable-1678702752927",
+    "name" : "nfGoalFormFieldSccessDelete",
+    "owner" : "Page",
+    "category" : "wm.NotificationVariable",
+    "dataBinding" : [ {
+      "target" : "content",
+      "value" : "inline",
+      "type" : "string"
+    }, {
+      "target" : "text",
+      "value" : "Goal form filed deleted successfully",
+      "type" : "string"
+    }, {
+      "target" : "duration",
+      "value" : "3000",
+      "type" : "number"
+    }, {
+      "target" : "class",
+      "value" : "Success",
+      "type" : "string"
+    }, {
+      "target" : "toasterPosition",
+      "value" : "bottom right",
+      "type" : "string"
+    } ],
+    "operation" : "toast",
+    "dataSet" : [ ]
+  },
+  "nfSuccessThemeUpdate" : {
+    "_id" : "wm-nfSuccessThemeUpdate-wm.NotificationVariable-1678599048899",
+    "name" : "nfSuccessThemeUpdate",
+    "owner" : "Page",
+    "category" : "wm.NotificationVariable",
+    "dataBinding" : [ {
+      "target" : "content",
+      "value" : "inline",
+      "type" : "string"
+    }, {
+      "target" : "text",
+      "value" : "Theme updated sucessfully",
+      "type" : "string"
+    }, {
+      "target" : "duration",
+      "value" : "3000",
+      "type" : "number"
+    }, {
+      "target" : "class",
+      "value" : "Success",
+      "type" : "string"
+    }, {
+      "target" : "toasterPosition",
+      "value" : "bottom right",
+      "type" : "string"
+    } ],
+    "operation" : "toast"
+  },
+  "stvFieldTypes" : {
+    "_id" : "wm-stvFieldTypes-wm.Variable-1678704645017",
+    "name" : "stvFieldTypes",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "name" : "text",
+      "dataValue" : "text"
+    }, {
+      "name" : "number",
+      "dataValue" : "number"
+    }, {
+      "name" : "double",
+      "dataValue" : "double"
+    }, {
+      "name" : "boolean",
+      "dataValue" : "boolean"
+    }, {
+      "name" : "checkboxset",
+      "dataValue" : "checkboxset"
+    }, {
+      "name" : "richtext",
+      "dataValue" : "richtext"
+    }, {
+      "name" : "textarea",
+      "dataValue" : "textarea"
+    }, {
+      "name" : "select",
+      "dataValue" : "select"
+    }, {
+      "name" : "date",
+      "dataValue" : "date"
+    }, {
+      "name" : "time",
+      "dataValue" : "time"
+    }, {
+      "name" : "timestamp",
+      "dataValue" : "timestamp"
+    }, {
+      "name" : "switch",
+      "dataValue" : "switch"
+    }, {
+      "name" : "password",
+      "dataValue" : "password"
+    }, {
+      "name" : "currency",
+      "dataValue" : "currency"
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "wsCreateNewGoalField" : {
+    "_id" : "wm-wsCreateNewGoalField-wm.ServiceVariable-1678704207344",
+    "name" : "wsCreateNewGoalField",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "isList" : false,
+      "target" : "RequestBody",
+      "value" : "{\n\t\"name\": \"Goal Time\",\n\t\"type\": \"Double\",\n\t\"isActive\": true\n}",
+      "type" : "CreateGoalFormField.RootRequest"
+    } ],
+    "type" : "CreateGoalFormField.RootResponse",
+    "service" : "CreateGoalFormField",
+    "operation" : "invoke",
+    "operationId" : "CreateGoalFormField_RestServiceVirtualController-invoke",
+    "operationType" : "post",
+    "serviceType" : "RestService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "onSuccess" : "Variables.wsGetGoalFormFields.invoke();Widgets.dialogCreateNewGoalField.close()",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "isDefault" : true,
+    "controller" : "RestServiceVirtual"
+  },
+  "wsDeleteGoalFormField" : {
+    "_id" : "wm-wsDeleteGoalFormField-wm.ServiceVariable-1678703510302",
+    "name" : "wsDeleteGoalFormField",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "goal_id",
+      "value" : "bind:Widgets.GoalFormFieldsTable1.selecteditem.id",
+      "type" : "string"
+    } ],
+    "type" : "DeleteGoalField.RootResponse",
+    "service" : "DeleteGoalField",
+    "operation" : "invoke",
+    "operationId" : "DeleteGoalField_RestServiceVirtualController-invoke",
+    "serviceType" : "RestService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "onSuccess" : "Actions.nfGoalFormFieldSccessDelete.invoke();Variables.wsGetGoalFormFields.invoke()",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false
+  },
+  "wsGetGoalFormFields" : {
+    "_id" : "wm-wsGetGoalFormFields-wm.ServiceVariable-1678701959670",
+    "name" : "wsGetGoalFormFields",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "sort",
+      "value" : "id desc",
+      "type" : "string"
+    } ],
+    "type" : "GoalFormFields.RootResponse",
+    "service" : "GoalFormFields",
+    "operation" : "invoke",
+    "operationId" : "GoalFormFields_RestServiceVirtualController-invoke",
+    "operationType" : "get",
+    "serviceType" : "RestService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : true,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "isDefault" : true,
+    "controller" : "RestServiceVirtual"
+  },
+  "wsUpdateTheme" : {
+    "_id" : "wm-wsUpdateTheme-wm.ServiceVariable-1678601561075",
+    "name" : "wsUpdateTheme",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "isList" : false,
+      "target" : "RequestBody",
+      "value" : "{\n\t\"id\": 1,\n\t\"name\": \"sample\",\n\t\"themeId\": 2\n}",
+      "type" : "UpdateTheme.RootRequest"
+    }, {
+      "target" : "id",
+      "value" : "1",
+      "type" : "string"
+    }, {
+      "target" : "RequestBody.name",
+      "value" : "bind:Widgets.getThemeTypeList1.selecteditem.name",
+      "type" : "java.lang.String"
+    }, {
+      "target" : "RequestBody.id",
+      "value" : "bind:Widgets.getThemeTypeList1.selecteditem.id",
+      "type" : "java.lang.Integer"
+    }, {
+      "target" : "RequestBody.themeId",
+      "value" : "bind:Widgets.getThemeTypeList1.selecteditem.id",
+      "type" : "java.lang.Integer"
+    } ],
+    "type" : "UpdateTheme.RootResponse",
+    "service" : "UpdateTheme",
+    "operation" : "invoke",
+    "operationId" : "UpdateTheme_RestServiceVirtualController-invoke",
+    "serviceType" : "RestService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "onSuccess" : "Variables.wsGetActiveTheme.invoke();Actions.nfSuccessThemeUpdate.invoke();Actions.goToPage_Settings.invoke()",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false
+  }
+}

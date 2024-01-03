@@ -1,0 +1,6 @@
+{
+  "id" : "wvrCardPurchaseAtMerchant",
+  "type" : "RestService",
+  "title" : "wvrCardPurchaseAtMerchant",
+  "mockEnabled" : false
+}

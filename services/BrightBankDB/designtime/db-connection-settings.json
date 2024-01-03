@@ -1,0 +1,75 @@
+{
+  "username" : "root",
+  "password" : "sample_password",
+  "url" : "jdbc:mariadb://11.111.11.111:8030/BrightBankDB?useUnicode=yes&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&allowPublicKeyRetrieval=true",
+  "driverClass" : "org.mariadb.jdbc.Driver",
+  "dialect" : "com.wavemaker.runtime.data.dialect.MySQLDialect",
+  "serviceId" : "BrightBankDB",
+  "packageName" : "com.weavrbank.brightbankdb",
+  "dbType" : "MySQL",
+  "host" : "11.111.11.111",
+  "dbName" : "BrightBankDB",
+  "port" : "8030",
+  "schemaName" : null,
+  "tableFilter" : [ {
+    "table" : "account_preferences",
+    "schema" : null
+  }, {
+    "table" : "cssproperty",
+    "schema" : null
+  }, {
+    "table" : "goal_form_fields",
+    "schema" : null
+  }, {
+    "table" : "goal_transactions",
+    "schema" : null
+  }, {
+    "table" : "ListTransaction",
+    "schema" : null
+  }, {
+    "table" : "ListTransactions",
+    "schema" : null
+  }, {
+    "table" : "MERCHANT_DETAILS",
+    "schema" : null
+  }, {
+    "table" : "saving_frequency",
+    "schema" : null
+  }, {
+    "table" : "theme_config",
+    "schema" : null
+  }, {
+    "table" : "themedetail",
+    "schema" : null
+  }, {
+    "table" : "themetype",
+    "schema" : null
+  }, {
+    "table" : "user_details",
+    "schema" : null
+  }, {
+    "table" : "wealth_goal_category",
+    "schema" : null
+  }, {
+    "table" : "wealth_goals",
+    "schema" : null
+  } ],
+  "schemaFilter" : [ ],
+  "impersonateUser" : false,
+  "activeDirectoryDomain" : null,
+  "hbm2ddl" : "none",
+  "maxPageSize" : 100,
+  "minPoolSize" : 2,
+  "maxPoolSize" : 4,
+  "transactionTimeout" : 30,
+  "dataSourceType" : "WM_MANAGED_DATASOURCE",
+  "jndiName" : "",
+  "reloadInfo" : {
+    "reload" : false,
+    "reason" : null,
+    "message" : null,
+    "reImport" : false
+  },
+  "readOnly" : false,
+  "metadataDialect" : ""
+}

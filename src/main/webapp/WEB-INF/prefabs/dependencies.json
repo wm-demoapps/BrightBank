@@ -1,0 +1,169 @@
+[ {
+  "name" : "Account_Details",
+  "version" : "2.1",
+  "platformVersion" : null,
+  "publisherId" : null,
+  "publisherName" : null,
+  "artifactType" : "PREFAB",
+  "artifactDependencyList" : null
+}, {
+  "name" : "AccountsSummary",
+  "version" : "2.0",
+  "platformVersion" : null,
+  "publisherId" : null,
+  "publisherName" : null,
+  "artifactType" : "PREFAB",
+  "artifactDependencyList" : null
+}, {
+  "name" : "AddressWithGooglePlaces",
+  "version" : "7.0.0",
+  "platformVersion" : null,
+  "publisherId" : "ent126649177c15",
+  "publisherName" : "fintech",
+  "artifactType" : "PREFAB",
+  "artifactDependencyList" : null
+}, {
+  "name" : "ApplyManagedCard",
+  "version" : "8.0.0",
+  "platformVersion" : null,
+  "publisherId" : "ent126649177c15",
+  "publisherName" : "fintech",
+  "artifactType" : "PREFAB",
+  "artifactDependencyList" : [ {
+    "name" : "AddressWithGooglePlaces",
+    "version" : "7.0.0",
+    "platformVersion" : null,
+    "publisherId" : "ent126649177c15",
+    "publisherName" : "fintech",
+    "artifactType" : "PREFAB",
+    "artifactDependencyList" : null
+  } ]
+}, {
+  "name" : "CardSpendAnalysis",
+  "version" : "3.0.0",
+  "platformVersion" : null,
+  "publisherId" : "ent126413346cd3",
+  "publisherName" : "igniters",
+  "artifactType" : "PREFAB",
+  "artifactDependencyList" : null
+}, {
+  "name" : "CardsSummary",
+  "version" : "1.2",
+  "platformVersion" : null,
+  "publisherId" : null,
+  "publisherName" : null,
+  "artifactType" : "PREFAB",
+  "artifactDependencyList" : null
+}, {
+  "name" : "CreateWealthGoal",
+  "version" : "3.0.0",
+  "platformVersion" : null,
+  "publisherId" : "ent126413346cd3",
+  "publisherName" : "igniters",
+  "artifactType" : "PREFAB",
+  "artifactDependencyList" : [ {
+    "name" : "RangeSlider",
+    "version" : "3.0.0",
+    "platformVersion" : null,
+    "publisherId" : "ent126413346cd3",
+    "publisherName" : "igniters",
+    "artifactType" : "PREFAB",
+    "artifactDependencyList" : null
+  } ]
+}, {
+  "name" : "Create_Account",
+  "version" : "6.9",
+  "platformVersion" : null,
+  "publisherId" : null,
+  "publisherName" : null,
+  "artifactType" : "PREFAB",
+  "artifactDependencyList" : null
+}, {
+  "name" : "ListWealthGoals",
+  "version" : "4.0.1",
+  "platformVersion" : null,
+  "publisherId" : "ent126413346cd3",
+  "publisherName" : "igniters",
+  "artifactType" : "PREFAB",
+  "artifactDependencyList" : null
+}, {
+  "name" : "List_Transactions",
+  "version" : "3.0",
+  "platformVersion" : null,
+  "publisherId" : null,
+  "publisherName" : null,
+  "artifactType" : "PREFAB",
+  "artifactDependencyList" : null
+}, {
+  "name" : "ManagedCardDetails",
+  "version" : "6.7",
+  "platformVersion" : null,
+  "publisherId" : null,
+  "publisherName" : null,
+  "artifactType" : "PREFAB",
+  "artifactDependencyList" : null
+}, {
+  "name" : "ManagedCards",
+  "version" : "10.0.2",
+  "platformVersion" : null,
+  "publisherId" : "ent126649177c15",
+  "publisherName" : "fintech",
+  "artifactType" : "PREFAB",
+  "artifactDependencyList" : null
+}, {
+  "name" : "Managed_Accounts",
+  "version" : "2.5",
+  "platformVersion" : null,
+  "publisherId" : null,
+  "publisherName" : null,
+  "artifactType" : "PREFAB",
+  "artifactDependencyList" : null
+}, {
+  "name" : "NetWorthDashboard",
+  "version" : "2.1",
+  "platformVersion" : null,
+  "publisherId" : null,
+  "publisherName" : null,
+  "artifactType" : "PREFAB",
+  "artifactDependencyList" : null
+}, {
+  "name" : "QRCode",
+  "version" : "2.0.0",
+  "platformVersion" : null,
+  "publisherId" : null,
+  "publisherName" : null,
+  "artifactType" : "PREFAB",
+  "artifactDependencyList" : null
+}, {
+  "name" : "Transfer_Funds",
+  "version" : "8.0.1",
+  "platformVersion" : null,
+  "publisherId" : "ent126649177c15",
+  "publisherName" : "fintech",
+  "artifactType" : "PREFAB",
+  "artifactDependencyList" : null
+}, {
+  "name" : "UpcomingGoalPayments",
+  "version" : "2.0",
+  "platformVersion" : null,
+  "publisherId" : null,
+  "publisherName" : null,
+  "artifactType" : "PREFAB",
+  "artifactDependencyList" : null
+}, {
+  "name" : "User_Registration",
+  "version" : "8.0.1",
+  "platformVersion" : null,
+  "publisherId" : "ent126649177c15",
+  "publisherName" : "fintech",
+  "artifactType" : "PREFAB",
+  "artifactDependencyList" : [ {
+    "name" : "AddressWithGooglePlaces",
+    "version" : "7.0.0",
+    "platformVersion" : null,
+    "publisherId" : "ent126649177c15",
+    "publisherName" : "fintech",
+    "artifactType" : "PREFAB",
+    "artifactDependencyList" : null
+  } ]
+} ]

@@ -1,0 +1,6 @@
+{
+  "id" : "UpdateTheme",
+  "type" : "RestService",
+  "title" : "UpdateTheme",
+  "mockEnabled" : false
+}

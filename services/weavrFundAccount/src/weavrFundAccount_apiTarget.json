@@ -1,0 +1,113 @@
+{
+  "basePath" : "${rest.weavrFundAccount.basepath}",
+  "paths" : {
+    "/api/accounts/{managed_account_id}/deposit" : {
+      "post" : {
+        "x-WM-METHOD_NAME" : "invoke",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "produces" : [ "application/json" ],
+        "operationId" : "weavrFundAccount_RestServiceVirtualController-invoke",
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "$ref" : "#/definitions/RootResponse"
+            },
+            "description" : "Success"
+          }
+        },
+        "parameters" : [ {
+          "x-WM-VARIABLE_KEY" : "",
+          "x-WM-EDITABLE" : true,
+          "in" : "header",
+          "name" : "programme-key",
+          "format" : "string",
+          "description" : "programme-key",
+          "type" : "string",
+          "items" : {
+            "type" : "string"
+          },
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.String",
+          "required" : false,
+          "x-WM-VARIABLE_TYPE" : "PROMPT"
+        }, {
+          "schema" : {
+            "$ref" : "#/definitions/RootRequest"
+          },
+          "x-WM-VARIABLE_KEY" : "",
+          "in" : "body",
+          "name" : "RequestBody",
+          "description" : "RequestBody",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Object",
+          "required" : false,
+          "x-WM-VARIABLE_TYPE" : "PROMPT"
+        }, {
+          "x-WM-VARIABLE_KEY" : "",
+          "in" : "path",
+          "name" : "managed_account_id",
+          "format" : "string",
+          "type" : "string",
+          "required" : true,
+          "x-WM-VARIABLE_TYPE" : "PROMPT"
+        } ],
+        "tags" : [ "RestServiceVirtualController" ],
+        "consumes" : [ "application/json" ]
+      },
+      "x-WM-BASE_PATH" : "/api/accounts/{managed_account_id}/deposit",
+      "x-WM-TAG" : "RestServiceVirtualController",
+      "x-WM-RELATIVE_PATH" : "",
+      "x-WM-COMPLETE_PATH" : "${rest.weavrFundAccount.scheme}://${rest.weavrFundAccount.host}${rest.weavrFundAccount.basepath}/api/accounts/{managed_account_id}/deposit"
+    }
+  },
+  "host" : "${rest.weavrFundAccount.host}",
+  "schemes" : [ "${rest.weavrFundAccount.scheme}" ],
+  "definitions" : {
+    "Request.depositAmount" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "weavrFundAccount.Request.depositAmount",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "required" : [ "amount", "currency" ],
+      "properties" : {
+        "amount" : {
+          "format" : "int32",
+          "type" : "integer"
+        },
+        "currency" : {
+          "type" : "string"
+        }
+      }
+    },
+    "RootRequest" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "weavrFundAccount.RootRequest",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "required" : [ "depositAmount" ],
+      "properties" : {
+        "depositAmount" : {
+          "$ref" : "#/definitions/Request.depositAmount"
+        }
+      }
+    },
+    "RootResponse" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "weavrFundAccount.RootResponse",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "required" : [ "code" ],
+      "properties" : {
+        "code" : {
+          "type" : "string"
+        }
+      }
+    }
+  },
+  "swagger" : "2.0",
+  "info" : {
+    "x-WM-USE_PROXY_FOR_WEB" : true,
+    "x-WM-USE_PROXY_FOR_MOBILE" : true,
+    "x-WM-API_ID" : "ad43e294-868e-410b-8281-c9c442da7e6f",
+    "x-WM-SERVICE_ID" : "weavr",
+    "version" : "2.0",
+    "x-WM-SERVICE_TYPE" : "RestService",
+    "x-WM-USE_WITH_CREDENTIALS" : false
+  },
+  "tags" : [ {
+    "name" : "RestServiceVirtualController",
+    "description" : "Rest service swagger documentation"
+  } ]
+}

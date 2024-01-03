@@ -1,0 +1,96 @@
+<wm-page layouttype="one-column" columns="1" name="page1" pagetitle="Login">
+    <wm-content name="content1" height="100%">
+        <wm-page-content columnwidth="12" name="column1" padding="0px" class="login">
+            <wm-container width="100%" height="100%" backgroundrepeat="no-repeat" backgroundposition="0 0" backgroundsize="100% 100%" backgroundattachment="fixed" name="loginPageContainer" backgroundimage="resources/images/imagelists/img-pattern-bg.png">
+                <wm-layoutgrid name="loginGrid" height="100%">
+                    <wm-gridrow name="gridrow6_1">
+                        <wm-gridcolumn columnwidth="4" name="gridcolumn10_1" horizontalalign="center" class="col-xs-12" padding="unset unset 2em unset"></wm-gridcolumn>
+                        <wm-gridcolumn columnwidth="4" name="gridcolumn15_1"></wm-gridcolumn>
+                        <wm-gridcolumn columnwidth="4" name="gridcolumn16_1"></wm-gridcolumn>
+                    </wm-gridrow>
+                    <wm-gridrow name="gridrow13">
+                        <wm-gridcolumn columnwidth="6" name="gridcolumn15">
+                            <wm-layoutgrid name="layoutgrid3">
+                                <wm-gridrow name="gridrow13_1">
+                                    <wm-gridcolumn columnwidth="12" name="gridcolumn17_1">
+                                        <wm-picture name="picture1" picturesource="resources/images/imagelists/logo-bright.png" width="172px" height="37px" margin="2em unset unset 13em"></wm-picture>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                                <wm-gridrow name="gridrow14">
+                                    <wm-gridcolumn columnwidth="12" name="gridcolumn19">
+                                        <wm-html name="html1" fontweight="bold" fontsize="3" fontunit="em" margin="3em unset unset 4em"><span style="color:#ffffff;">One platform to <br>access a complete set <br> of <span style="color:#f7d100;">Global Financial </span>capabilities.</span>
+                                        </wm-html>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                            </wm-layoutgrid>
+                        </wm-gridcolumn>
+                        <wm-gridcolumn columnwidth="2" name="gridcolumn16"></wm-gridcolumn>
+                        <wm-gridcolumn columnwidth="4" name="gridcolumn17">
+                            <wm-container name="container1" class="panel" backgroundcolor="#ffffff" color="#bdbdbd" margin="2em 4em unset unset">
+                                <wm-label name="label1" caption="Login" horizontalalign="center" class="p" margin="0px unset" fontsize="20" padding="1em unset" color="#1e1e1e" textalign="center"></wm-label>
+                                <wm-login name="loginForm" title="" autocomplete="nofill">
+                                    <wm-form name="form1">
+                                        <wm-layoutgrid name="layoutgrid2">
+                                            <wm-gridrow name="gridrow2">
+                                                <wm-gridcolumn columnwidth="12" name="gridcolumn4" padding="unset unset 1em unset">
+                                                    <wm-container class="input-group" name="container3">
+                                                        <wm-text placeholder="Username" name="j_username" class="app-login-username" width="100%" autocomplete="false" autocorrect="off" autocapitalize="off" updateon="default" required="true"></wm-text>
+                                                        <wm-container class="input-group-addon" name="container4">
+                                                            <wm-icon name="icon1" iconclass="wi wi-user"></wm-icon>
+                                                        </wm-container>
+                                                    </wm-container>
+                                                </wm-gridcolumn>
+                                            </wm-gridrow>
+                                            <wm-gridrow name="gridrow3">
+                                                <wm-gridcolumn columnwidth="12" name="gridcolumn7" padding="unset unset 1em unset">
+                                                    <wm-container class="input-group" name="container3">
+                                                        <wm-text type="password" name="j_password" placeholder="Password" class="app-login-passworØd" width="100%" autocomplete="true" autocorrect="off" autocapitalize="off" updateon="default" required="true"></wm-text>
+                                                        <wm-container class="input-group-addon" name="container6">
+                                                            <wm-icon name="icon1" iconclass="wi wi-lock-outline"></wm-icon>
+                                                        </wm-container>
+                                                    </wm-container>
+                                                </wm-gridcolumn>
+                                            </wm-gridrow>
+                                            <wm-gridrow name="gridrow6">
+                                                <wm-gridcolumn columnwidth="12" name="gridcolumn14" class="col-xs-12">
+                                                    <wm-anchor margin="unset 0.5em" name="anchor1" caption="Forgot Password?"></wm-anchor>
+                                                </wm-gridcolumn>
+                                            </wm-gridrow>
+                                            <wm-gridrow name="gridrow4">
+                                                <wm-gridcolumn columnwidth="12" name="gridcolumn10" padding="2em unset unset unset">
+                                                    <wm-button type="button" caption="Login" width="100%" class="app-login-button btn-primary" name="loginButton" fontsize="1.2" fontunit="em"></wm-button>
+                                                </wm-gridcolumn>
+                                            </wm-gridrow>
+                                            <wm-gridrow name="gridrow32">
+                                                <wm-gridcolumn columnwidth="12" name="gridcolumn45"></wm-gridcolumn>
+                                            </wm-gridrow>
+                                            <wm-gridrow name="gridrow33">
+                                                <wm-gridcolumn columnwidth="12" name="gridcolumn46" horizontalalign="center" padding="3em unset unset unset">
+                                                    <wm-label padding="unset 0.5em" class="text-muted" caption="Don't have an account?" name="label5"></wm-label>
+                                                </wm-gridcolumn>
+                                            </wm-gridrow>
+                                            <wm-gridrow name="gridrow34">
+                                                <wm-gridcolumn columnwidth="12" name="gridcolumn47" horizontalalign="center"></wm-gridcolumn>
+                                            </wm-gridrow>
+                                            <wm-gridrow name="gridrow35">
+                                                <wm-gridcolumn columnwidth="12" name="gridcolumn48" horizontalalign="center" padding="1em unset unset unset">
+                                                    <wm-button class="btn-default" caption="Register as new user" type="button" margin="unset 0.5em" name="button2" width="100%" on-click="Actions.goToPage_RegisterUser.invoke()"></wm-button>
+                                                </wm-gridcolumn>
+                                            </wm-gridrow>
+                                            <wm-gridrow name="gridrow36">
+                                                <wm-gridcolumn columnwidth="12" name="gridcolumn49" horizontalalign="center"></wm-gridcolumn>
+                                            </wm-gridrow>
+                                            <wm-gridrow name="gridrow37">
+                                                <wm-gridcolumn columnwidth="12" name="gridcolumn50" horizontalalign="center"></wm-gridcolumn>
+                                            </wm-gridrow>
+                                        </wm-layoutgrid>
+                                    </wm-form>
+                                </wm-login>
+                            </wm-container>
+                        </wm-gridcolumn>
+                    </wm-gridrow>
+                </wm-layoutgrid>
+            </wm-container>
+        </wm-page-content>
+    </wm-content>
+</wm-page>

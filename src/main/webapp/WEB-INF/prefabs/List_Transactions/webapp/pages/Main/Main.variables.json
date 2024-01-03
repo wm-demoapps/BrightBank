@@ -1,0 +1,79 @@
+{
+  "AccountTransactions" : {
+    "_id" : "wm-AccountTransactions-wm.Variable-1629194824246",
+    "name" : "AccountTransactions",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ {
+      "target" : "dataBinding",
+      "value" : "bind:Prefab.servicehost==\"Railsbank\"?(Variables.JS_getAccountTransactions.dataSet):(Prefab.servicehost==\"Weavr\"?(Variables.JS_getAccountTransactions.dataSet[0].entry):(Variables.JS_getAccountTransactions.dataSet[0].entries))"
+    } ],
+    "dataSet" : [ {
+      "data" : ""
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "JS_getAccountTransactions" : {
+    "_id" : "wm-JS_getAccountTransactions-wm.ServiceVariable-1626847703471",
+    "name" : "JS_getAccountTransactions",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "hostName",
+      "value" : "bind:servicehost",
+      "type" : "string"
+    }, {
+      "target" : "authorization",
+      "value" : "bind:authtoken",
+      "type" : "string"
+    }, {
+      "target" : "accountOrCardId",
+      "value" : "bind:id",
+      "type" : "string"
+    }, {
+      "target" : "itemsPerPage",
+      "value" : "bind:itemsperpage",
+      "type" : "integer"
+    }, {
+      "target" : "fromDate",
+      "value" : "bind:Widgets.dateFrom.timestamp",
+      "type" : "string"
+    }, {
+      "target" : "transactionsType",
+      "value" : "bind:transactionlisttype",
+      "type" : "string"
+    } ],
+    "type" : "com.list_transactions.transactionsmodel.TransactionsModel",
+    "service" : "TransactionListService",
+    "operation" : "getAccountTransactions",
+    "operationId" : "TransactionListController_getAccountTransactions",
+    "operationType" : "get",
+    "serviceType" : "JavaService",
+    "dataSet" : [ ],
+    "isList" : true,
+    "maxResults" : 20,
+    "onSuccess" : "JS_getAccountTransactionsonSuccess(variable, data, options)",
+    "onError" : "JS_getAccountTransactionsonError(variable, data, options)",
+    "startUpdate" : false,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "TransactionList"
+  },
+  "supportedLocale" : {
+    "_id" : "wm-wm.Variable1402640443182",
+    "name" : "supportedLocale",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataSet" : {
+      "en" : "English"
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  }
+}

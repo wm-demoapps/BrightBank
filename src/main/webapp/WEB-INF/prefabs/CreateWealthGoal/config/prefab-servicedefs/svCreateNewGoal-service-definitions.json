@@ -1,0 +1,120 @@
+{
+  "svCreateNewGoal_RestServiceVirtualController-invoke" : {
+    "id" : "svCreateNewGoal_RestServiceVirtualController-invoke",
+    "crudOperationId" : null,
+    "service" : "onwavemaker",
+    "controller" : "RestServiceVirtualController",
+    "operationType" : null,
+    "type" : "svCreateNewGoal.RootResponse",
+    "wmServiceOperationInfo" : {
+      "name" : "invoke",
+      "methodType" : "post",
+      "relativePath" : "/svCreateNewGoal/BrightBankDB/WealthGoals",
+      "directPath" : null,
+      "httpMethod" : "post",
+      "parameters" : [ {
+        "name" : "RequestBody",
+        "parameterType" : "body",
+        "required" : false,
+        "type" : "java.lang.Object",
+        "readOnly" : false,
+        "contentType" : null
+      } ],
+      "definitions" : {
+        "svCreateNewGoal.RootRequest" : [ {
+          "name" : "amount",
+          "parameterType" : null,
+          "required" : true,
+          "type" : "java.lang.String",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "name",
+          "parameterType" : null,
+          "required" : true,
+          "type" : "java.lang.String",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "timeToGoal",
+          "parameterType" : null,
+          "required" : true,
+          "type" : "java.lang.String",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "goalCategoryId",
+          "parameterType" : null,
+          "required" : true,
+          "type" : "java.lang.String",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "recuringDebitAccountId",
+          "parameterType" : null,
+          "required" : true,
+          "type" : "java.lang.String",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "savingFrequencyId",
+          "parameterType" : null,
+          "required" : true,
+          "type" : "java.lang.String",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "recurringDebitAmount",
+          "parameterType" : null,
+          "required" : true,
+          "type" : "java.lang.String",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "userId",
+          "parameterType" : null,
+          "required" : true,
+          "type" : "java.lang.String",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "isActive",
+          "parameterType" : null,
+          "required" : true,
+          "type" : "java.lang.String",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "recurringDay",
+          "parameterType" : null,
+          "required" : true,
+          "type" : "java.lang.String",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "isAutoDebitEnabled",
+          "parameterType" : null,
+          "required" : true,
+          "type" : "java.lang.String",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "createdOn",
+          "parameterType" : null,
+          "required" : true,
+          "type" : "java.lang.String",
+          "readOnly" : false,
+          "contentType" : null
+        } ]
+      },
+      "produces" : [ "application/json" ],
+      "consumes" : [ "application/json" ],
+      "proxySettings" : {
+        "web" : true,
+        "mobile" : true,
+        "withCredentials" : false
+      },
+      "securityDefinitions" : [ ]
+    }
+  }
+}

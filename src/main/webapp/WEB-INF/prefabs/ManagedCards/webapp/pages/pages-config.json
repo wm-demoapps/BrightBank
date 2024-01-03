@@ -1,0 +1,34 @@
+[ {
+  "name" : "CardWithMoreOptions",
+  "type" : "PARTIAL",
+  "params" : [ ]
+}, {
+  "name" : "Main",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "Partial_CVV",
+  "type" : "PARTIAL",
+  "params" : [ {
+    "name" : "cardNumber",
+    "type" : "string"
+  }, {
+    "name" : "cardCVV",
+    "type" : "string"
+  }, {
+    "name" : "index",
+    "type" : "integer"
+  } ]
+}, {
+  "name" : "SimpleCard",
+  "type" : "PARTIAL",
+  "params" : [ ]
+}, {
+  "name" : "SimpleCardFlip",
+  "type" : "PARTIAL",
+  "params" : [ ]
+}, {
+  "name" : "popoverPartial",
+  "type" : "PARTIAL",
+  "params" : [ ]
+} ]

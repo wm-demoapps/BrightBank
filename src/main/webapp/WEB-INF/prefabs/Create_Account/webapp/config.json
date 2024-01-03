@@ -1,0 +1,66 @@
+{
+  "displayName" : "Create Account",
+  "group" : "",
+  "iconUrl" : "/resources/images/imagelists/icon-manage-external-accounts.svg",
+  "resources" : {
+    "styles" : [ "/pages/Main/Main.css" ],
+    "scripts" : [ ]
+  },
+  "properties" : {
+    "enduserid" : {
+      "type" : "string",
+      "displayName" : "End User/Managed Profile Id",
+      "description" : "End User Id / Managed accounts profile Id value of user",
+      "bindable" : "in-bound",
+      "widget" : "string",
+      "show" : true,
+      "showAt" : "",
+      "disabled" : false
+    },
+    "ledgerid" : {
+      "type" : "string",
+      "displayName" : "Ledger Id",
+      "description" : "Ledger Id of newly added ledger for the end user",
+      "bindable" : "out-bound",
+      "widget" : "string",
+      "show" : false,
+      "showAt" : "",
+      "disabled" : true
+    },
+    "servicehost" : {
+      "type" : "string",
+      "displayName" : "Servicehost",
+      "description" : "Service to invoke",
+      "bindable" : "in-bound",
+      "value" : "APIVendor(W)",
+      "widget" : "list",
+      "options" : [ "APIVendor(R)", "APIVendor(W)", "APIVendor(B)" ],
+      "show" : true,
+      "showAt" : "",
+      "disabled" : false
+    },
+    "authtoken" : {
+      "type" : "string",
+      "displayName" : "Authtoken",
+      "description" : "Authorisation header for weavr",
+      "bindable" : "in-bound",
+      "widget" : "string",
+      "show" : true,
+      "showAt" : "",
+      "disabled" : false
+    }
+  },
+  "events" : {
+    "onLedgeradd" : {
+      "description" : "Callback action which will be triggered on adding a ledger for end user",
+      "eventData" : "",
+      "displayName" : "Ledger Add"
+    },
+    "onCancel" : {
+      "description" : "Callback action which will be triggered on cancel button click",
+      "eventData" : "",
+      "displayName" : "Cancel"
+    }
+  },
+  "methods" : { }
+}

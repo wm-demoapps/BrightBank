@@ -1,0 +1,74 @@
+{
+  "RBSwagger_POST_v1-customer-ledgers" : {
+    "id" : "RBSwagger_POST_v1-customer-ledgers",
+    "crudOperationId" : "RBSwagger.customer",
+    "service" : "RBSwagger",
+    "controller" : "customer",
+    "operationType" : null,
+    "type" : "object",
+    "wmServiceOperationInfo" : {
+      "name" : "RBSwagger_POST_v1-customer-ledgers",
+      "methodType" : "post",
+      "relativePath" : "/RBSwagger/v1/customer/ledgers",
+      "directPath" : null,
+      "httpMethod" : "post",
+      "parameters" : [ {
+        "name" : "body",
+        "parameterType" : "body",
+        "required" : false,
+        "type" : "String",
+        "readOnly" : false,
+        "contentType" : null
+      } ],
+      "definitions" : { },
+      "produces" : null,
+      "consumes" : null,
+      "proxySettings" : {
+        "web" : true,
+        "mobile" : true,
+        "withCredentials" : false
+      },
+      "securityDefinitions" : [ {
+        "type" : "apiKey",
+        "name" : "Authorization",
+        "in" : "header"
+      } ]
+    }
+  },
+  "RBSwagger_POST_v1-customer-ledgers-ledger_id-assign-iban" : {
+    "id" : "RBSwagger_POST_v1-customer-ledgers-ledger_id-assign-iban",
+    "crudOperationId" : "RBSwagger.customer",
+    "service" : "RBSwagger",
+    "controller" : "customer",
+    "operationType" : null,
+    "type" : "object",
+    "wmServiceOperationInfo" : {
+      "name" : "RBSwagger_POST_v1-customer-ledgers-ledger_id-assign-iban",
+      "methodType" : "post",
+      "relativePath" : "/RBSwagger/v1/customer/ledgers/{ledger_id}/assign-iban",
+      "directPath" : null,
+      "httpMethod" : "post",
+      "parameters" : [ {
+        "name" : "ledger_id",
+        "parameterType" : "path",
+        "required" : true,
+        "type" : "String",
+        "readOnly" : false,
+        "contentType" : null
+      } ],
+      "definitions" : { },
+      "produces" : null,
+      "consumes" : null,
+      "proxySettings" : {
+        "web" : true,
+        "mobile" : true,
+        "withCredentials" : false
+      },
+      "securityDefinitions" : [ {
+        "type" : "apiKey",
+        "name" : "Authorization",
+        "in" : "header"
+      } ]
+    }
+  }
+}

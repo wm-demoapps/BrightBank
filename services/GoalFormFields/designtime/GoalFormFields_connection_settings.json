@@ -1,0 +1,33 @@
+{
+  "endpointAddress" : "https://dev-brightbankdb.onwavemaker.com/services/BrightBankDB/GoalFormFields",
+  "method" : "GET",
+  "headers" : { },
+  "redirectEnabled" : true,
+  "requestBody" : "",
+  "queryParams" : {
+    "sort" : "id desc"
+  },
+  "authDetails" : null,
+  "contentType" : "application/json",
+  "multiParamInfoList" : null,
+  "sampleHttpResponseDetails" : {
+    "statusCode" : 200,
+    "headers" : {
+      "Server" : [ "nginx/1.18.0 (Ubuntu)" ],
+      "Date" : [ "Wed, 23 Aug 2023 05:13:38 GMT" ],
+      "Content-Type" : [ "application/json;charset=UTF-8" ],
+      "Transfer-Encoding" : [ "chunked" ],
+      "Connection" : [ "keep-alive" ],
+      "X-WM-Request-Track-Id" : [ "app.UIoArki8" ],
+      "Cache-Control" : [ "max-age=0" ],
+      "X-XSS-Protection" : [ "1; mode=block" ],
+      "Content-Security-Policy" : [ "frame-ancestors 'self'" ],
+      "X-Content-Type-Options" : [ "nosniff" ],
+      "Vary" : [ "Origin", "Access-Control-Request-Method", "Access-Control-Request-Headers" ],
+      "Server-Timing" : [ "server;dur=15" ],
+      "ETag" : [ "\"04eeadc77522f7c21d4632e3b41e529bd\"" ]
+    },
+    "responseBody" : "{\"content\":[{\"id\":32,\"name\":\"sample\",\"type\":\"text\",\"isActive\":null}],\"last\":true,\"totalPages\":1,\"totalElements\":10,\"sort\":[{\"direction\":\"DESC\",\"property\":\"id\",\"ignoreCase\":false,\"nullHandling\":\"NATIVE\",\"ascending\":false}],\"number\":0,\"size\":20,\"first\":true,\"numberOfElements\":10,\"empty\":false}",
+    "convertedResponse" : null
+  }
+}

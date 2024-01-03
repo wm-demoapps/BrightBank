@@ -1,0 +1,29 @@
+{
+  "svGetAllCards" : {
+    "_id" : "wm-svGetAllCards-wm.ServiceVariable-1677754253480",
+    "name" : "svGetAllCards",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "isList" : true,
+      "target" : "state",
+      "value" : "ACTIVE",
+      "type" : "integer"
+    } ],
+    "type" : "void",
+    "service" : "weavrLogin",
+    "operation" : "weavrLogin_managedCardsGet",
+    "operationId" : "weavrLogin_managedCardsGet",
+    "serviceType" : "OpenAPIService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "onBeforeDatasetReady" : "svGetAllCardsonBeforeDatasetReady(variable, data, options)",
+    "startUpdate" : true,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "Managed Cards"
+  }
+}

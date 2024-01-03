@@ -1,0 +1,65 @@
+{
+  "GetAccountDetailsById" : {
+    "_id" : "wm-GetAccountDetailsById-wm.ServiceVariable-1675413536784",
+    "name" : "GetAccountDetailsById",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "id",
+      "value" : "bind:pageParams.accountId",
+      "type" : "string"
+    } ],
+    "type" : "com.weavrbank.weavrLogin.ManagedAccount",
+    "service" : "weavrLogin",
+    "operation" : "weavrLogin_managedAccountGet",
+    "operationId" : "weavrLogin_managedAccountGet",
+    "serviceType" : "OpenAPIService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "Managed Accounts"
+  },
+  "weavrFundAccount" : {
+    "_id" : "wm-weavrFundAccount-wm.ServiceVariable-1626154528044",
+    "name" : "weavrFundAccount",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "programme-key",
+      "value" : "bind:\"vrdO4T5327wBeqOUIIABDQ==\"",
+      "type" : "string"
+    }, {
+      "target" : "managed_account_id",
+      "value" : "bind:Widgets.text1.datavalue",
+      "type" : "string"
+    }, {
+      "target" : "RequestBody.depositAmount.currency",
+      "value" : "bind:Widgets.Account_Details1.selectedledgerdetails.currency"
+    }, {
+      "target" : "RequestBody.depositAmount.amount",
+      "value" : "bind:Widgets.text2.datavalue"
+    } ],
+    "type" : "weavrFundAccount.RootResponse",
+    "service" : "weavrFundAccount",
+    "operation" : "invoke",
+    "operationId" : "weavrFundAccount_RestServiceVirtualController-invoke",
+    "operationType" : "post",
+    "serviceType" : "RestService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "onBeforeUpdate" : "weavrFundAccountonBeforeUpdate(variable, inputData, options)",
+    "onSuccess" : "weavrFundAccountonSuccess(variable, data, options)",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "RestServiceVirtual"
+  }
+}

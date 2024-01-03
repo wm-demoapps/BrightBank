@@ -1,0 +1,219 @@
+{
+  "qrGoalTransactionSummryByGoal" : {
+    "name" : "qrGoalTransactionSummryByGoal",
+    "description" : "to get summary amount by goal",
+    "version" : "V2",
+    "queryString" : "select \nSUM(amount) as total_amount_paid\nfrom\ngoal_transactions gr\n\nwhere gr.goal_id=:goal_id",
+    "countQueryString" : "select count(*) from (select \nSUM(amount) as total_amount_paid\nfrom\ngoal_transactions gr\n\nwhere gr.goal_id=:goal_id) wmTempTable",
+    "offlineQueryString" : null,
+    "nativeSql" : true,
+    "fetchCount" : true,
+    "type" : "SELECT",
+    "parameters" : [ {
+      "name" : "goal_id",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "1",
+      "required" : true
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "identifiers" : [ ],
+    "response" : {
+      "typeRef" : "com.weavrbank.brightbankdb.models.query.QrGoalTransactionSummryByGoalResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "PAGINATED",
+      "properties" : [ {
+        "name" : "total_amount_paid",
+        "fieldName" : "totalAmountPaid",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.math.BigInteger",
+          "list" : false
+        }
+      } ]
+    }
+  },
+  "qrWealthGoalsList" : {
+    "name" : "qrWealthGoalsList",
+    "description" : "To get lost of gols with time left goal end date",
+    "version" : "V2",
+    "queryString" : "select \nwg.*,\nDATE_ADD(DATE(wg.created_on), INTERVAL wg.time_to_goal YEAR) AS goal_end_date,\nabs(timestampdiff(MONTH,DATE_ADD(DATE(wg.created_on), INTERVAL wg.time_to_goal YEAR),CURDATE())) as months_left,\nCASE\n    WHEN DATE(wg.created_on) = CURDATE() THEN 'true'\n    ELSE 'false'\nEND AS is_created_today,\n\n(select SUM(amount) from goal_transactions gr where gr.goal_id=wg.id)  as total_amount_paid\n\nfrom \nwealth_goals wg where user_id=:user_id",
+    "countQueryString" : "select count(*) from (select \nwg.*,\nDATE_ADD(DATE(wg.created_on), INTERVAL wg.time_to_goal YEAR) AS goal_end_date,\nabs(timestampdiff(MONTH,DATE_ADD(DATE(wg.created_on), INTERVAL wg.time_to_goal YEAR),CURDATE())) as months_left,\nCASE\n    WHEN DATE(wg.created_on) = CURDATE() THEN 'true'\n    ELSE 'false'\nEND AS is_created_today,\n\n(select SUM(amount) from goal_transactions gr where gr.goal_id=wg.id)  as total_amount_paid\n\nfrom \nwealth_goals wg where user_id=:user_id) wmTempTable",
+    "offlineQueryString" : null,
+    "nativeSql" : true,
+    "fetchCount" : true,
+    "type" : "SELECT",
+    "parameters" : [ {
+      "name" : "user_id",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "wmuser@wm.com",
+      "required" : true
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "identifiers" : [ ],
+    "response" : {
+      "typeRef" : "com.weavrbank.brightbankdb.models.query.QrWealthGoalsListResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "PAGINATED",
+      "properties" : [ {
+        "name" : "ID",
+        "fieldName" : "id",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.Long",
+          "list" : false
+        }
+      }, {
+        "name" : "name",
+        "fieldName" : "name",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "goal_category_id",
+        "fieldName" : "goalCategoryId",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.Long",
+          "list" : false
+        }
+      }, {
+        "name" : "time_to_goal",
+        "fieldName" : "timeToGoal",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.Long",
+          "list" : false
+        }
+      }, {
+        "name" : "saving_frequency_id",
+        "fieldName" : "savingFrequencyId",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.Long",
+          "list" : false
+        }
+      }, {
+        "name" : "recurring_day",
+        "fieldName" : "recurringDay",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.sql.Date",
+          "list" : false
+        }
+      }, {
+        "name" : "recurring_debit_amount",
+        "fieldName" : "recurringDebitAmount",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.Long",
+          "list" : false
+        }
+      }, {
+        "name" : "is_auto_debit_enabled",
+        "fieldName" : "isAutoDebitEnabled",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.Boolean",
+          "list" : false
+        }
+      }, {
+        "name" : "created_on",
+        "fieldName" : "createdOn",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.time.LocalDateTime",
+          "list" : false
+        }
+      }, {
+        "name" : "user_id",
+        "fieldName" : "userId",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "recuring_debit_account_id",
+        "fieldName" : "recuringDebitAccountId",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "amount",
+        "fieldName" : "amount",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.Long",
+          "list" : false
+        }
+      }, {
+        "name" : "goal_end_date",
+        "fieldName" : "goalEndDate",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.sql.Date",
+          "list" : false
+        }
+      }, {
+        "name" : "months_left",
+        "fieldName" : "monthsLeft",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.Long",
+          "list" : false
+        }
+      }, {
+        "name" : "is_created_today",
+        "fieldName" : "isCreatedToday",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "total_amount_paid",
+        "fieldName" : "totalAmountPaid",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.math.BigInteger",
+          "list" : false
+        }
+      } ]
+    }
+  }
+}
