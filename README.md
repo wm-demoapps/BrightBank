@@ -1,6 +1,8 @@
 # About Application and Pefab usage
 Bright Bank is a user-friendly banking app that prioritizes your financial well-being. With secure login, a comprehensive dashboard summarizing spend analysis, upcoming payments, net worth, and detailed account/card management, it simplifies your financial life. You can create accounts, access transaction details, add funds, make transactions, manage cards, and set wealth goals - **all in one place. Achieve financial success with Bright Bank.
 
+<a href="https://showcase.onwavemaker.com/BrightBank/" target="_blank">Click Here</a> for more details on Sales Vision app
+
 ## Aplication Properties
   ### Email connector
   Add the email server properties to use email connector
