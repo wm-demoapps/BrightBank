@@ -13,7 +13,7 @@ Bright Bank is a user-friendly banking app that prioritizes your financial well-
   connector.email.default.email.transport.protocol : smtp
   ```
   ### App environment variables
-  Register account with **Weavr (https : //portal.weavr.io/register)** and download/save weavr environment where it contains all the account/card/transaction keys and app tokens.
+  Register account with **Weavr (https : //portal.weavr.io/register)** and download/save weavr environment where it contains all the account/card/transaction keys and app tokens. Once registered with weavr, contact support to changes model for our user to use seamliess features of weavr (Account creation, transfer funds...etc). 
   ```
   app.environment.apikey : 
   app.environment.consumer_profile_id : 
@@ -218,10 +218,10 @@ Bright Bank is a user-friendly banking app that prioritizes your financial well-
 
 
 Note : 
-- **Mandatory to provied DdatabAse connection details.
-- **Update the server properties directly in this path  src/main/webapp/WEB-INF/prefabs/<Prefab_name>/config/prefab-conf/prefabProperties.properties if you are unable to updaet from the Application UI
-- ** For DashBoard and Crads Page value should be **Dashobard** and for SpendAnalasis it should be **FullSpendAnalysis**
-- **Adde the aoikey for below properties in all the profiles
+- Mandatory to provied Databse connection details. <a href="https://github.com/wm-demoapps/BrightBank/blob/main/BrightBankDB_bk_04_jan_2024.sql" target="_blank">Click Here</a> to get DB script
+- Update the server properties directly in this path  src/main/webapp/WEB-INF/prefabs/<Prefab_name>/config/prefab-conf/prefabProperties.properties if you are unable to updaet from the Application UI
+- For DashBoard and Crads Page value should be **Dashobard** and for SpendAnalasis it should be **FullSpendAnalysis**.
+- Adde the apikey for below properties in all the profiles
 ```
     prefab.ApplyManagedCard.rest.weavr.apikey.header.apikey=
     prefab.ManagedCardTransactions.rest.weavr.apikey.header.apikey=
